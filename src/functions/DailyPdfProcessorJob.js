@@ -251,6 +251,7 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
   const fileName = entry.entryName;
   const rpa_appointment_id_match = fileName.trim().match(/^([0-9]+)_/);
   const rpa_appointment_id = rpa_appointment_id_match[1];
+  let retryStatus;
   try {
     const buffer = entry.getData();
 
@@ -260,7 +261,9 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
 
     await checkDuplicate(fileName, session);
 
-    const apiData = await callMedicalApi(buffer, fileName);
+    retryStatus = await checkRetryStatus(rpa_appointment_id, session);
+
+    const apiData = await callMedicalApi(buffer, fileName, retryStatus);
 
     const result = await sendToBackend(
       apiData,
@@ -300,6 +303,34 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     }
 
     log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
+
+    // Attempt to update retry count on backend
+    try {
+      log(`📤 Updating retry count for appointment ${rpa_appointment_id}`);
+      await updateRetryCount(
+        rpa_appointment_id,
+        retryStatus.retry_count,
+        session,
+      );
+      log(`✅ Retry count updated successfully`);
+    } catch (retryErr) {
+      log(`⚠️  Failed to update retry count: ${retryErr.message}`);
+
+      // Add retry update error to error details
+      errorDetails.retryUpdateError = {
+        message: retryErr.message,
+      };
+
+      if (retryErr.response) {
+        errorDetails.retryUpdateError.status = retryErr.response.status;
+        errorDetails.retryUpdateError.statusText = retryErr.response.statusText;
+        errorDetails.retryUpdateError.data = retryErr.response.data;
+      } else if (retryErr.request) {
+        errorDetails.retryUpdateError.request = "No response received";
+      } else {
+        errorDetails.retryUpdateError.internal = retryErr.toString();
+      }
+    }
 
     failedRpaApplicationIds.push(rpa_appointment_id);
 
@@ -345,6 +376,51 @@ async function checkDuplicate(fileName, session) {
   }
 }
 
+/* -------------------------------------------------------------------------- */
+
+async function checkRetryStatus(rpaAppointmentId, session) {
+  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.getRetryCount`;
+
+  const input = encodeURIComponent(JSON.stringify({ fileName }));
+
+  const res = await axios.get(`${url}?input=${input}`, {
+    headers: {
+      Cookie: session.cookieHeader,
+      "Content-Type": "application/json",
+    },
+    timeout: 600000,
+  });
+
+  log("retry status=", res?.data?.result?.data);
+
+  if (res?.data?.result?.data?.retry_count > 2) {
+    const err = new Error("Max retries exhausted");
+    throw err;
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+async function updateRetryCount(rpaAppointmentId, retryCount, session) {
+  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalRetry.updateRetryCount`;
+
+  const payload = {
+    input: {
+      rpa_appointment_id: rpaAppointmentId,
+      retry_count: retryCount || 1,
+    },
+  };
+
+  const res = await axios.post(url, payload, {
+    headers: {
+      Cookie: session.cookieHeader,
+      "Content-Type": "application/json",
+    },
+    timeout: 600000,
+  });
+
+  return res.data;
+}
 /* -------------------------------------------------------------------------- */
 
 async function callMedicalApi(buffer, fileName) {
