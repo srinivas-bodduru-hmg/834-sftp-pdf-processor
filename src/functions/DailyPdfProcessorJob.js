@@ -26,7 +26,7 @@ const CONFIG = {
 
   CONTAINER: "834labs-sftp",
 
-  BATCH_SIZE: 5,
+  BATCH_SIZE: 3,
 };
 
 const ERROR_CODES = {
@@ -62,9 +62,7 @@ app.timer("DailyPdfProcessorJob", {
 
       const folderPrefix = "The PreOP Center/";
 
-      for await (const blob of container.listBlobsFlat({
-        prefix: folderPrefix,
-      })) {
+      for await (const blob of container.listBlobsFlat()) {
         if (!blob.name.endsWith(".zip")) continue;
         await processZipBlob(container, blob.name, session, stats, log);
       }
@@ -239,10 +237,9 @@ async function processZipBlob(container, blobName, session, stats, log) {
   const batchSize = CONFIG.BATCH_SIZE || 1;
   const totalBatches = Math.ceil(pdfs.length / batchSize) || 1;
   const avgBatchTime = aggregateBatchTime / totalBatches;
-  const avgPDFTime = aggregateBatchTime / (pdfs.length || 1);
 
   log(
-    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s , AvgTimeTakenPerPDF: ${(avgPDFTime / 1000).toFixed(2)}s, )`,
+    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
   );
 }
 
