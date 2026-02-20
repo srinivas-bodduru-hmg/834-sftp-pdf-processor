@@ -26,7 +26,7 @@ const CONFIG = {
 
   CONTAINER: "834labs-sftp",
 
-  BATCH_SIZE: 3,
+  BATCH_SIZE: 5,
 };
 
 const ERROR_CODES = {
@@ -242,7 +242,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
   const avgPDFTime = aggregateBatchTime / (pdfs.length || 1);
 
   log(
-    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s , AvgTimeTakenPerPDF: ${(avgPDFTime / 1000).toFixed(2)}s, "Failed IDs:", ${failedRpaApplicationIds})`,
+    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s , AvgTimeTakenPerPDF: ${(avgPDFTime / 1000).toFixed(2)}s, )`,
   );
 }
 
@@ -279,12 +279,37 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
       claimId: result.claimId,
     };
   } catch (err) {
-    log(`❌ ${fileName}: ${err.message}`);
+    let errorDetails = {
+      message: err.message,
+      code: err.code,
+    };
+
+    // If this is an HTTP/API error (Axios)
+    if (err.response) {
+      errorDetails.status = err.response.status;
+      errorDetails.statusText = err.response.statusText;
+      errorDetails.data = err.response.data;
+      errorDetails.headers = err.response.headers;
+    }
+
+    // If request was sent but no response
+    else if (err.request) {
+      errorDetails.request = "No response received from API";
+    }
+
+    // Other errors (coding, timeout, etc.)
+    else {
+      errorDetails.internal = err.toString();
+    }
+
+    log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
+
     failedRpaApplicationIds.push(rpa_appointment_id);
+
     return {
       success: false,
       errorCode: err.code,
-      error: err.message,
+      error: errorDetails,
     };
   }
 }
