@@ -1,0 +1,890 @@
+'local.settings.json' found in root directory (/Users/srinivasbodduru/834-sftp-pdf-processor).
+Resolving worker runtime to 'node'.
+
+
+Azure Functions Core Tools
+Core Tools Version:       4.6.0+ab90faafcab539d63cd3d0ce5faf1bca4395fccc (64-bit)
+Function Runtime Version: 4.1045.200.25556
+
+[2026-02-16T13:36:07.384Z] Worker process started and initialized.
+
+Functions:
+
+	DailyPdfProcessorJob: timerTrigger
+
+For detailed output, run func with --verbose flag.
+[2026-02-16T13:36:09.334Z] Executing 'Functions.DailyPdfProcessorJob' (Reason='Timer fired at 2026-02-16T19:06:09.3211400+05:30', Id=1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1)
+[2026-02-16T13:36:09.334Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup, ScheduleStatus: {"Last":"2026-02-16T18:20:30.212155+05:30","Next":"2026-02-17T02:30:00+05:30","LastUpdated":"2026-02-16T18:20:30.212155+05:30"}
+[2026-02-16T13:36:09.367Z] 🚀 Daily PDF Processor Started
+[2026-02-16T13:36:09.368Z] 🔐 Logging in...
+[2026-02-16T13:36:11.515Z] ✅ Authenticated (userId: 3ef58454-9fc4-46a8-a8b3-761018fb5657)
+[2026-02-16T13:36:11.515Z] 📦 Connecting to Blob Storage...
+[2026-02-16T13:36:11.515Z] ✅ Connected to 834labs-sftp
+[2026-02-16T13:36:13.552Z] 
+[2026-02-16T13:36:13.552Z] 📁 Processing ZIP: The PreOP Center/tebra_facesheets_TPC_2025-08-13_2934.zip
+[2026-02-16T13:36:13.638Z] Host lock lease acquired by instance ID '000000000000000000000000F178F181'.
+[2026-02-16T13:36:30.936Z] 📄 Found 223 PDFs
+[2026-02-16T13:36:30.937Z] 📦 Starting batch 1-3
+[2026-02-16T13:36:30.938Z]    ➡️ 100_Borlo_191572207.pdf
+[2026-02-16T13:36:30.939Z]    ➡️ 101_Cox_191614146.pdf
+[2026-02-16T13:36:30.939Z]    ➡️ 102_BARNES_191581179.pdf
+[2026-02-16T13:36:32.453Z] ❌ 102_BARNES_191581179.pdf: Duplicate file
+[2026-02-16T13:36:32.461Z] ❌ 100_Borlo_191572207.pdf: Duplicate file
+[2026-02-16T13:36:32.482Z] ❌ 101_Cox_191614146.pdf: Duplicate file
+[2026-02-16T13:36:32.482Z] 📊 Batch 1-3 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 1.55s)
+[2026-02-16T13:36:32.482Z] 📦 Starting batch 4-6
+[2026-02-16T13:36:32.482Z]    ➡️ 103_Morrow_191507488.pdf
+[2026-02-16T13:36:32.482Z]    ➡️ 104_HILL_191672870.pdf
+[2026-02-16T13:36:32.482Z]    ➡️ 105_ADAIR_191569478.pdf
+[2026-02-16T13:36:32.812Z] ❌ 105_ADAIR_191569478.pdf: Duplicate file
+[2026-02-16T13:36:32.814Z] ❌ 103_Morrow_191507488.pdf: Duplicate file
+[2026-02-16T13:36:32.828Z] ❌ 104_HILL_191672870.pdf: Duplicate file
+[2026-02-16T13:36:32.828Z] 📊 Batch 4-6 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
+[2026-02-16T13:36:32.828Z] 📦 Starting batch 7-9
+[2026-02-16T13:36:32.828Z]    ➡️ 106_Mirdo_191631755.pdf
+[2026-02-16T13:36:32.828Z]    ➡️ 107_ACCARDO_191722554.pdf
+[2026-02-16T13:36:32.828Z]    ➡️ 108_Howell_191702213.pdf
+[2026-02-16T13:36:33.147Z] ❌ 107_ACCARDO_191722554.pdf: Duplicate file
+[2026-02-16T13:36:33.150Z] ❌ 106_Mirdo_191631755.pdf: Duplicate file
+[2026-02-16T13:36:33.192Z] ❌ 108_Howell_191702213.pdf: Duplicate file
+[2026-02-16T13:36:33.192Z] 📊 Batch 7-9 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.37s)
+[2026-02-16T13:36:33.192Z] 📦 Starting batch 10-12
+[2026-02-16T13:36:33.192Z]    ➡️ 109_Simpson_191753258.pdf
+[2026-02-16T13:36:33.192Z]    ➡️ 110_Hance_191754204.pdf
+[2026-02-16T13:36:33.192Z]    ➡️ 111_Gregson_191754771.pdf
+[2026-02-16T13:36:33.522Z] ❌ 109_Simpson_191753258.pdf: Duplicate file
+[2026-02-16T13:36:33.525Z] ❌ 111_Gregson_191754771.pdf: Duplicate file
+[2026-02-16T13:36:33.525Z] ❌ 110_Hance_191754204.pdf: Duplicate file
+[2026-02-16T13:36:33.525Z] 📊 Batch 10-12 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
+[2026-02-16T13:36:33.525Z] 📦 Starting batch 13-15
+[2026-02-16T13:36:33.525Z]    ➡️ 112_Hardin_191755109.pdf
+[2026-02-16T13:36:33.525Z]    ➡️ 113_Cunningham_191755755.pdf
+[2026-02-16T13:36:33.525Z]    ➡️ 114_Hanks_191767844.pdf
+[2026-02-16T13:36:33.890Z] ❌ 114_Hanks_191767844.pdf: Duplicate file
+[2026-02-16T13:36:33.890Z] ❌ 113_Cunningham_191755755.pdf: Duplicate file
+[2026-02-16T13:36:33.906Z] ❌ 112_Hardin_191755109.pdf: Duplicate file
+[2026-02-16T13:36:33.906Z] 📊 Batch 13-15 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.38s)
+[2026-02-16T13:36:33.906Z] 📦 Starting batch 16-18
+[2026-02-16T13:36:33.906Z]    ➡️ 115_Johnson_191771285.pdf
+[2026-02-16T13:36:33.906Z]    ➡️ 116_Haddad_191780329.pdf
+[2026-02-16T13:36:33.906Z]    ➡️ 117_HALL_191802393.pdf
+[2026-02-16T13:36:34.214Z] ❌ 116_Haddad_191780329.pdf: Duplicate file
+[2026-02-16T13:36:34.226Z] ❌ 117_HALL_191802393.pdf: Duplicate file
+[2026-02-16T13:36:34.239Z] ❌ 115_Johnson_191771285.pdf: Duplicate file
+[2026-02-16T13:36:34.239Z] 📊 Batch 16-18 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:34.239Z] 📦 Starting batch 19-21
+[2026-02-16T13:36:34.239Z]    ➡️ 118_GUINLE_191810717.pdf
+[2026-02-16T13:36:34.239Z]    ➡️ 119_Parks_191823081.pdf
+[2026-02-16T13:36:34.239Z]    ➡️ 120_SANGSTER_191828764.pdf
+[2026-02-16T13:36:34.530Z] ❌ 120_SANGSTER_191828764.pdf: Duplicate file
+[2026-02-16T13:36:34.545Z] ❌ 119_Parks_191823081.pdf: Duplicate file
+[2026-02-16T13:36:34.561Z] ❌ 118_GUINLE_191810717.pdf: Duplicate file
+[2026-02-16T13:36:34.561Z] 📊 Batch 19-21 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:34.561Z] 📦 Starting batch 22-24
+[2026-02-16T13:36:34.561Z]    ➡️ 121_HALL_191802393.pdf
+[2026-02-16T13:36:34.561Z]    ➡️ 124_Hanissian_191951952.pdf
+[2026-02-16T13:36:34.561Z]    ➡️ 125_Liberto_191957504.pdf
+[2026-02-16T13:36:34.925Z] ❌ 125_Liberto_191957504.pdf: Duplicate file
+[2026-02-16T13:36:34.938Z] ❌ 124_Hanissian_191951952.pdf: Duplicate file
+[2026-02-16T13:36:34.946Z] ❌ 121_HALL_191802393.pdf: Duplicate file
+[2026-02-16T13:36:34.946Z] 📊 Batch 22-24 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.39s)
+[2026-02-16T13:36:34.947Z] 📦 Starting batch 25-27
+[2026-02-16T13:36:34.947Z]    ➡️ 126_Spight_191958621.pdf
+[2026-02-16T13:36:34.947Z]    ➡️ 127_SIMMONS_191960264.pdf
+[2026-02-16T13:36:34.947Z]    ➡️ 128_Painter_191968235.pdf
+[2026-02-16T13:36:35.241Z] ❌ 128_Painter_191968235.pdf: Duplicate file
+[2026-02-16T13:36:35.253Z] ❌ 127_SIMMONS_191960264.pdf: Duplicate file
+[2026-02-16T13:36:35.266Z] ❌ 126_Spight_191958621.pdf: Duplicate file
+[2026-02-16T13:36:35.266Z] 📊 Batch 25-27 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:35.267Z] 📦 Starting batch 28-30
+[2026-02-16T13:36:35.267Z]    ➡️ 129_Russell_191968888.pdf
+[2026-02-16T13:36:35.267Z]    ➡️ 130_Loving_191995535.pdf
+[2026-02-16T13:36:35.267Z]    ➡️ 131_SWAN_191955269.pdf
+[2026-02-16T13:36:35.588Z] ❌ 129_Russell_191968888.pdf: Duplicate file
+[2026-02-16T13:36:35.589Z] ❌ 131_SWAN_191955269.pdf: Duplicate file
+[2026-02-16T13:36:35.596Z] ❌ 130_Loving_191995535.pdf: Duplicate file
+[2026-02-16T13:36:35.597Z] 📊 Batch 28-30 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:35.597Z] 📦 Starting batch 31-33
+[2026-02-16T13:36:35.597Z]    ➡️ 132_Dark_191997455.pdf
+[2026-02-16T13:36:35.597Z]    ➡️ 133_Hoel_191999719.pdf
+[2026-02-16T13:36:35.597Z]    ➡️ 137_TEMPLETON_192003201.pdf
+[2026-02-16T13:36:35.906Z] ❌ 133_Hoel_191999719.pdf: Duplicate file
+[2026-02-16T13:36:35.912Z] ❌ 137_TEMPLETON_192003201.pdf: Duplicate file
+[2026-02-16T13:36:35.917Z] ❌ 132_Dark_191997455.pdf: Duplicate file
+[2026-02-16T13:36:35.917Z] 📊 Batch 31-33 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:35.917Z] 📦 Starting batch 34-36
+[2026-02-16T13:36:35.917Z]    ➡️ 138_Rice_192004752.pdf
+[2026-02-16T13:36:35.917Z]    ➡️ 139_Pechak_192008311.pdf
+[2026-02-16T13:36:35.917Z]    ➡️ 140_Archibald_192048154.pdf
+[2026-02-16T13:36:36.196Z] ❌ 140_Archibald_192048154.pdf: Duplicate file
+[2026-02-16T13:36:36.237Z] ❌ 139_Pechak_192008311.pdf: Duplicate file
+[2026-02-16T13:36:36.242Z] ❌ 138_Rice_192004752.pdf: Duplicate file
+[2026-02-16T13:36:36.242Z] 📊 Batch 34-36 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:36.242Z] 📦 Starting batch 37-39
+[2026-02-16T13:36:36.243Z]    ➡️ 141_Moon_192048521.pdf
+[2026-02-16T13:36:36.243Z]    ➡️ 143_Abee_192060656.pdf
+[2026-02-16T13:36:36.243Z]    ➡️ 144_Dabbs_192062563.pdf
+[2026-02-16T13:36:36.562Z] ❌ 143_Abee_192060656.pdf: Duplicate file
+[2026-02-16T13:36:36.598Z] ❌ 144_Dabbs_192062563.pdf: Duplicate file
+[2026-02-16T13:36:36.616Z] ❌ 141_Moon_192048521.pdf: Duplicate file
+[2026-02-16T13:36:36.616Z] 📊 Batch 37-39 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.37s)
+[2026-02-16T13:36:36.616Z] 📦 Starting batch 40-42
+[2026-02-16T13:36:36.616Z]    ➡️ 145_Moorman_192065455.pdf
+[2026-02-16T13:36:36.616Z]    ➡️ 148_EDWARDS_192004159.pdf
+[2026-02-16T13:36:36.616Z]    ➡️ 149_Everett_192097881.pdf
+[2026-02-16T13:36:36.909Z] ❌ 148_EDWARDS_192004159.pdf: Duplicate file
+[2026-02-16T13:36:36.911Z] ❌ 145_Moorman_192065455.pdf: Duplicate file
+[2026-02-16T13:36:36.933Z] ❌ 149_Everett_192097881.pdf: Duplicate file
+[2026-02-16T13:36:36.933Z] 📊 Batch 40-42 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:36.933Z] 📦 Starting batch 43-45
+[2026-02-16T13:36:36.934Z]    ➡️ 150_Sims_192102325.pdf
+[2026-02-16T13:36:36.934Z]    ➡️ 151_Barnett_192104198.pdf
+[2026-02-16T13:36:36.934Z]    ➡️ 152_Taylor_192099780.pdf
+[2026-02-16T13:36:37.285Z] ❌ 151_Barnett_192104198.pdf: Duplicate file
+[2026-02-16T13:36:37.299Z] ❌ 152_Taylor_192099780.pdf: Duplicate file
+[2026-02-16T13:36:37.305Z] ❌ 150_Sims_192102325.pdf: Duplicate file
+[2026-02-16T13:36:37.305Z] 📊 Batch 43-45 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.37s)
+[2026-02-16T13:36:37.306Z] 📦 Starting batch 46-48
+[2026-02-16T13:36:37.306Z]    ➡️ 153_BRADY_192128886.pdf
+[2026-02-16T13:36:37.306Z]    ➡️ 154_Johnson_192147896.pdf
+[2026-02-16T13:36:37.306Z]    ➡️ 155_Taylor_192099780.pdf
+[2026-02-16T13:36:37.620Z] ❌ 153_BRADY_192128886.pdf: Duplicate file
+[2026-02-16T13:36:37.621Z] ❌ 155_Taylor_192099780.pdf: Duplicate file
+[2026-02-16T13:36:37.637Z] ❌ 154_Johnson_192147896.pdf: Duplicate file
+[2026-02-16T13:36:37.638Z] 📊 Batch 46-48 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:37.638Z] 📦 Starting batch 49-51
+[2026-02-16T13:36:37.638Z]    ➡️ 157_Williams_192226714.pdf
+[2026-02-16T13:36:37.638Z]    ➡️ 158_Rogers_192257048.pdf
+[2026-02-16T13:36:37.638Z]    ➡️ 159_Wessels_191581790.pdf
+[2026-02-16T13:36:37.919Z] ❌ 157_Williams_192226714.pdf: Duplicate file
+[2026-02-16T13:36:37.996Z] ❌ 158_Rogers_192257048.pdf: Duplicate file
+[2026-02-16T13:36:38.002Z] ❌ 159_Wessels_191581790.pdf: Duplicate file
+[2026-02-16T13:36:38.002Z] 📊 Batch 49-51 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.36s)
+[2026-02-16T13:36:38.002Z] 📦 Starting batch 52-54
+[2026-02-16T13:36:38.002Z]    ➡️ 160_Morgan_192272729.pdf
+[2026-02-16T13:36:38.002Z]    ➡️ 161_McConnell_192277691.pdf
+[2026-02-16T13:36:38.002Z]    ➡️ 162_Holmes-Johnson_192278370.pdf
+[2026-02-16T13:36:38.335Z] ❌ 162_Holmes-Johnson_192278370.pdf: Duplicate file
+[2026-02-16T13:36:38.339Z] ❌ 161_McConnell_192277691.pdf: Duplicate file
+[2026-02-16T13:36:38.355Z] ❌ 160_Morgan_192272729.pdf: Duplicate file
+[2026-02-16T13:36:38.356Z] 📊 Batch 52-54 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
+[2026-02-16T13:36:38.356Z] 📦 Starting batch 55-57
+[2026-02-16T13:36:38.357Z]    ➡️ 163_Neenan_192279227.pdf
+[2026-02-16T13:36:38.357Z]    ➡️ 164_Holmes-Johnson_192278370.pdf
+[2026-02-16T13:36:38.357Z]    ➡️ 165_Painter_191968235.pdf
+[2026-02-16T13:36:38.654Z] ❌ 164_Holmes-Johnson_192278370.pdf: Duplicate file
+[2026-02-16T13:36:38.661Z] ❌ 165_Painter_191968235.pdf: Duplicate file
+[2026-02-16T13:36:38.680Z] ❌ 163_Neenan_192279227.pdf: Duplicate file
+[2026-02-16T13:36:38.680Z] 📊 Batch 55-57 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:38.680Z] 📦 Starting batch 58-60
+[2026-02-16T13:36:38.680Z]    ➡️ 166_Martini_192059067.pdf
+[2026-02-16T13:36:38.680Z]    ➡️ 168_Mullins_192311331.pdf
+[2026-02-16T13:36:38.680Z]    ➡️ 169_Mcgoff_192270659.pdf
+[2026-02-16T13:36:38.967Z] ❌ 169_Mcgoff_192270659.pdf: Duplicate file
+[2026-02-16T13:36:38.994Z] ❌ 168_Mullins_192311331.pdf: Duplicate file
+[2026-02-16T13:36:38.998Z] ❌ 166_Martini_192059067.pdf: Duplicate file
+[2026-02-16T13:36:38.998Z] 📊 Batch 58-60 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:38.998Z] 📦 Starting batch 61-63
+[2026-02-16T13:36:38.998Z]    ➡️ 171_Crafton_192267673.pdf
+[2026-02-16T13:36:38.998Z]    ➡️ 172_Crumpton_192270364.pdf
+[2026-02-16T13:36:38.998Z]    ➡️ 174_Hamilton_191716150.pdf
+[2026-02-16T13:36:39.302Z] ❌ 171_Crafton_192267673.pdf: Duplicate file
+[2026-02-16T13:36:39.303Z] ❌ 172_Crumpton_192270364.pdf: Duplicate file
+[2026-02-16T13:36:39.318Z] ❌ 174_Hamilton_191716150.pdf: Duplicate file
+[2026-02-16T13:36:39.318Z] 📊 Batch 61-63 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:39.319Z] 📦 Starting batch 64-66
+[2026-02-16T13:36:39.319Z]    ➡️ 175_Meadow_192339299.pdf
+[2026-02-16T13:36:39.319Z]    ➡️ 176_Young_192422436.pdf
+[2026-02-16T13:36:39.319Z]    ➡️ 178_Taylor_192099780.pdf
+[2026-02-16T13:36:39.622Z] ❌ 176_Young_192422436.pdf: Duplicate file
+[2026-02-16T13:36:39.636Z] ❌ 175_Meadow_192339299.pdf: Duplicate file
+[2026-02-16T13:36:39.647Z] ❌ 178_Taylor_192099780.pdf: Duplicate file
+[2026-02-16T13:36:39.647Z] 📊 Batch 64-66 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:39.647Z] 📦 Starting batch 67-69
+[2026-02-16T13:36:39.647Z]    ➡️ 179_WILLIAMS_192430545.pdf
+[2026-02-16T13:36:39.647Z]    ➡️ 180_Kent_192431258.pdf
+[2026-02-16T13:36:39.648Z]    ➡️ 182_Wolfe_192436217.pdf
+[2026-02-16T13:36:39.927Z] ❌ 180_Kent_192431258.pdf: Duplicate file
+[2026-02-16T13:36:39.941Z] ❌ 182_Wolfe_192436217.pdf: Duplicate file
+[2026-02-16T13:36:39.981Z] ❌ 179_WILLIAMS_192430545.pdf: Duplicate file
+[2026-02-16T13:36:39.981Z] 📊 Batch 67-69 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:39.981Z] 📦 Starting batch 70-72
+[2026-02-16T13:36:39.981Z]    ➡️ 183_TRIPLETT_192439051.pdf
+[2026-02-16T13:36:39.981Z]    ➡️ 184_Moyes_192440869.pdf
+[2026-02-16T13:36:39.981Z]    ➡️ 185_Hess_192453688.pdf
+[2026-02-16T13:36:40.268Z] ❌ 185_Hess_192453688.pdf: Duplicate file
+[2026-02-16T13:36:40.280Z] ❌ 184_Moyes_192440869.pdf: Duplicate file
+[2026-02-16T13:36:40.291Z] ❌ 183_TRIPLETT_192439051.pdf: Duplicate file
+[2026-02-16T13:36:40.291Z] 📊 Batch 70-72 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:40.292Z] 📦 Starting batch 73-75
+[2026-02-16T13:36:40.292Z]    ➡️ 186_SHELLEY_191125734.pdf
+[2026-02-16T13:36:40.292Z]    ➡️ 188_Cousins_192480340.pdf
+[2026-02-16T13:36:40.292Z]    ➡️ 189_Ballentine_192487061.pdf
+[2026-02-16T13:36:40.601Z] ❌ 189_Ballentine_192487061.pdf: Duplicate file
+[2026-02-16T13:36:40.605Z] ❌ 186_SHELLEY_191125734.pdf: Duplicate file
+[2026-02-16T13:36:40.605Z] ❌ 188_Cousins_192480340.pdf: Duplicate file
+[2026-02-16T13:36:40.605Z] 📊 Batch 73-75 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:40.605Z] 📦 Starting batch 76-78
+[2026-02-16T13:36:40.605Z]    ➡️ 190_Harrison_192489973.pdf
+[2026-02-16T13:36:40.605Z]    ➡️ 191_Vallier_192429093.pdf
+[2026-02-16T13:36:40.605Z]    ➡️ 192_MOBLEY_192443723.pdf
+[2026-02-16T13:36:40.883Z] ❌ 192_MOBLEY_192443723.pdf: Duplicate file
+[2026-02-16T13:36:40.905Z] ❌ 190_Harrison_192489973.pdf: Duplicate file
+[2026-02-16T13:36:40.937Z] ❌ 191_Vallier_192429093.pdf: Duplicate file
+[2026-02-16T13:36:40.937Z] 📊 Batch 76-78 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:40.937Z] 📦 Starting batch 79-81
+[2026-02-16T13:36:40.937Z]    ➡️ 193_HAYES_192441805.pdf
+[2026-02-16T13:36:40.937Z]    ➡️ 194_white_192528932.pdf
+[2026-02-16T13:36:40.937Z]    ➡️ 197_Lacy_191203521.pdf
+[2026-02-16T13:36:41.219Z] ❌ 194_white_192528932.pdf: Duplicate file
+[2026-02-16T13:36:41.230Z] ❌ 197_Lacy_191203521.pdf: Duplicate file
+[2026-02-16T13:36:41.240Z] ❌ 193_HAYES_192441805.pdf: Duplicate file
+[2026-02-16T13:36:41.240Z] 📊 Batch 79-81 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:41.241Z] 📦 Starting batch 82-84
+[2026-02-16T13:36:41.241Z]    ➡️ 198_Lunati_192538177.pdf
+[2026-02-16T13:36:41.241Z]    ➡️ 199_COLLIER_192537479.pdf
+[2026-02-16T13:36:41.241Z]    ➡️ 200_Rico_192533114.pdf
+[2026-02-16T13:36:41.543Z] ❌ 200_Rico_192533114.pdf: Duplicate file
+[2026-02-16T13:36:41.559Z] ❌ 199_COLLIER_192537479.pdf: Duplicate file
+[2026-02-16T13:36:41.568Z] ❌ 198_Lunati_192538177.pdf: Duplicate file
+[2026-02-16T13:36:41.568Z] 📊 Batch 82-84 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:41.568Z] 📦 Starting batch 85-87
+[2026-02-16T13:36:41.568Z]    ➡️ 201_Mirdo_191631755.pdf
+[2026-02-16T13:36:41.568Z]    ➡️ 202_Jones_192584607.pdf
+[2026-02-16T13:36:41.568Z]    ➡️ 203_BURKS_192587417.pdf
+[2026-02-16T13:36:41.877Z] ❌ 202_Jones_192584607.pdf: Duplicate file
+[2026-02-16T13:36:41.890Z] ❌ 203_BURKS_192587417.pdf: Duplicate file
+[2026-02-16T13:36:41.894Z] ❌ 201_Mirdo_191631755.pdf: Duplicate file
+[2026-02-16T13:36:41.894Z] 📊 Batch 85-87 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:41.895Z] 📦 Starting batch 88-90
+[2026-02-16T13:36:41.895Z]    ➡️ 205_Fleming_191513066.pdf
+[2026-02-16T13:36:41.895Z]    ➡️ 206_Jayroe_192589745.pdf
+[2026-02-16T13:36:41.895Z]    ➡️ 207_Kaserman_192648611.pdf
+[2026-02-16T13:36:42.190Z] ❌ 206_Jayroe_192589745.pdf: Duplicate file
+[2026-02-16T13:36:42.191Z] ❌ 207_Kaserman_192648611.pdf: Duplicate file
+[2026-02-16T13:36:42.218Z] ❌ 205_Fleming_191513066.pdf: Duplicate file
+[2026-02-16T13:36:42.218Z] 📊 Batch 88-90 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:42.218Z] 📦 Starting batch 91-93
+[2026-02-16T13:36:42.218Z]    ➡️ 208_Hagan_192649325.pdf
+[2026-02-16T13:36:42.219Z]    ➡️ 209_ANDERSON_192584061.pdf
+[2026-02-16T13:36:42.219Z]    ➡️ 210_Cody_192437196.pdf
+[2026-02-16T13:36:42.509Z] ❌ 210_Cody_192437196.pdf: Duplicate file
+[2026-02-16T13:36:42.519Z] ❌ 209_ANDERSON_192584061.pdf: Duplicate file
+[2026-02-16T13:36:42.531Z] ❌ 208_Hagan_192649325.pdf: Duplicate file
+[2026-02-16T13:36:42.531Z] 📊 Batch 91-93 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:42.531Z] 📦 Starting batch 94-96
+[2026-02-16T13:36:42.531Z]    ➡️ 211_Stachar_192664987.pdf
+[2026-02-16T13:36:42.531Z]    ➡️ 213_Herron_192588029.pdf
+[2026-02-16T13:36:42.531Z]    ➡️ 214_Mirdo_191631755.pdf
+[2026-02-16T13:36:42.830Z] ❌ 213_Herron_192588029.pdf: Duplicate file
+[2026-02-16T13:36:42.830Z] ❌ 214_Mirdo_191631755.pdf: Duplicate file
+[2026-02-16T13:36:42.835Z] ❌ 211_Stachar_192664987.pdf: Duplicate file
+[2026-02-16T13:36:42.835Z] 📊 Batch 94-96 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:42.835Z] 📦 Starting batch 97-99
+[2026-02-16T13:36:42.835Z]    ➡️ 215_COLLIER_192537479.pdf
+[2026-02-16T13:36:42.835Z]    ➡️ 216_Clark_192655998.pdf
+[2026-02-16T13:36:42.835Z]    ➡️ 217_GUENTHER_192724276.pdf
+[2026-02-16T13:36:43.121Z] ❌ 215_COLLIER_192537479.pdf: Duplicate file
+[2026-02-16T13:36:43.150Z] ❌ 217_GUENTHER_192724276.pdf: Duplicate file
+[2026-02-16T13:36:43.154Z] ❌ 216_Clark_192655998.pdf: Duplicate file
+[2026-02-16T13:36:43.154Z] 📊 Batch 97-99 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:43.155Z] 📦 Starting batch 100-102
+[2026-02-16T13:36:43.155Z]    ➡️ 218_Reyes_192271936.pdf
+[2026-02-16T13:36:43.155Z]    ➡️ 219_Sherman_192734863.pdf
+[2026-02-16T13:36:43.155Z]    ➡️ 220_Sloas_192735361.pdf
+[2026-02-16T13:36:43.450Z] ❌ 220_Sloas_192735361.pdf: Duplicate file
+[2026-02-16T13:36:43.454Z] ❌ 218_Reyes_192271936.pdf: Duplicate file
+[2026-02-16T13:36:43.454Z] ❌ 219_Sherman_192734863.pdf: Duplicate file
+[2026-02-16T13:36:43.454Z] 📊 Batch 100-102 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:43.455Z] 📦 Starting batch 103-105
+[2026-02-16T13:36:43.455Z]    ➡️ 221_Hardy_192762875.pdf
+[2026-02-16T13:36:43.455Z]    ➡️ 222_Castillo-cohen_192591480.pdf
+[2026-02-16T13:36:43.455Z]    ➡️ 223_Adams_192777687.pdf
+[2026-02-16T13:36:43.751Z] ❌ 222_Castillo-cohen_192591480.pdf: Duplicate file
+[2026-02-16T13:36:43.774Z] ❌ 221_Hardy_192762875.pdf: Duplicate file
+[2026-02-16T13:36:43.788Z] ❌ 223_Adams_192777687.pdf: Duplicate file
+[2026-02-16T13:36:43.788Z] 📊 Batch 103-105 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:43.788Z] 📦 Starting batch 106-108
+[2026-02-16T13:36:43.788Z]    ➡️ 224_Whitlow_192779815.pdf
+[2026-02-16T13:36:43.788Z]    ➡️ 225_THOMPSON_192781278.pdf
+[2026-02-16T13:36:43.788Z]    ➡️ 226_Clifton_191248346.pdf
+[2026-02-16T13:36:44.072Z] ❌ 224_Whitlow_192779815.pdf: Duplicate file
+[2026-02-16T13:36:44.077Z] ❌ 226_Clifton_191248346.pdf: Duplicate file
+[2026-02-16T13:36:44.090Z] ❌ 225_THOMPSON_192781278.pdf: Duplicate file
+[2026-02-16T13:36:44.090Z] 📊 Batch 106-108 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:44.090Z] 📦 Starting batch 109-111
+[2026-02-16T13:36:44.090Z]    ➡️ 227_Hardy_192649879.pdf
+[2026-02-16T13:36:44.090Z]    ➡️ 228_GILL_192812784.pdf
+[2026-02-16T13:36:44.090Z]    ➡️ 229_Tate_192813369.pdf
+[2026-02-16T13:36:44.375Z] ❌ 228_GILL_192812784.pdf: Duplicate file
+[2026-02-16T13:36:44.379Z] ❌ 227_Hardy_192649879.pdf: Duplicate file
+[2026-02-16T13:36:44.391Z] ❌ 229_Tate_192813369.pdf: Duplicate file
+[2026-02-16T13:36:44.391Z] 📊 Batch 109-111 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:44.391Z] 📦 Starting batch 112-114
+[2026-02-16T13:36:44.391Z]    ➡️ 231_NUTT_192816085.pdf
+[2026-02-16T13:36:44.391Z]    ➡️ 232_Riedel_192820457.pdf
+[2026-02-16T13:36:44.391Z]    ➡️ 233_Hall_192824381.pdf
+[2026-02-16T13:36:44.687Z] ❌ 233_Hall_192824381.pdf: Duplicate file
+[2026-02-16T13:36:44.700Z] ❌ 231_NUTT_192816085.pdf: Duplicate file
+[2026-02-16T13:36:44.704Z] ❌ 232_Riedel_192820457.pdf: Duplicate file
+[2026-02-16T13:36:44.704Z] 📊 Batch 112-114 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:44.704Z] 📦 Starting batch 115-117
+[2026-02-16T13:36:44.704Z]    ➡️ 234_Carter_192821478.pdf
+[2026-02-16T13:36:44.704Z]    ➡️ 236_LaCroix_192823483.pdf
+[2026-02-16T13:36:44.704Z]    ➡️ 237_Foret_192885603.pdf
+[2026-02-16T13:36:45.030Z] ❌ 234_Carter_192821478.pdf: Duplicate file
+[2026-02-16T13:36:45.040Z] ❌ 237_Foret_192885603.pdf: Duplicate file
+[2026-02-16T13:36:45.049Z] ❌ 236_LaCroix_192823483.pdf: Duplicate file
+[2026-02-16T13:36:45.050Z] 📊 Batch 115-117 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
+[2026-02-16T13:36:45.050Z] 📦 Starting batch 118-120
+[2026-02-16T13:36:45.050Z]    ➡️ 239_Ross_192818807.pdf
+[2026-02-16T13:36:45.050Z]    ➡️ 240_LINDSEY_192916443.pdf
+[2026-02-16T13:36:45.050Z]    ➡️ 241_Thompson_192924053.pdf
+[2026-02-16T13:36:45.337Z] ❌ 241_Thompson_192924053.pdf: Duplicate file
+[2026-02-16T13:36:45.344Z] ❌ 240_LINDSEY_192916443.pdf: Duplicate file
+[2026-02-16T13:36:45.361Z] ❌ 239_Ross_192818807.pdf: Duplicate file
+[2026-02-16T13:36:45.361Z] 📊 Batch 118-120 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:45.361Z] 📦 Starting batch 121-123
+[2026-02-16T13:36:45.361Z]    ➡️ 242_Jones_192933998.pdf
+[2026-02-16T13:36:45.361Z]    ➡️ 243_LINDSEY_192916443.pdf
+[2026-02-16T13:36:45.361Z]    ➡️ 244_Hardy_192649879.pdf
+[2026-02-16T13:36:45.646Z] ❌ 242_Jones_192933998.pdf: Duplicate file
+[2026-02-16T13:36:45.653Z] ❌ 244_Hardy_192649879.pdf: Duplicate file
+[2026-02-16T13:36:45.657Z] ❌ 243_LINDSEY_192916443.pdf: Duplicate file
+[2026-02-16T13:36:45.657Z] 📊 Batch 121-123 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:45.657Z] 📦 Starting batch 124-126
+[2026-02-16T13:36:45.657Z]    ➡️ 245_LUNATI_192761829.pdf
+[2026-02-16T13:36:45.657Z]    ➡️ 246_STRASSER_192976785.pdf
+[2026-02-16T13:36:45.657Z]    ➡️ 247_IRBY_192977303.pdf
+[2026-02-16T13:36:45.946Z] ❌ 246_STRASSER_192976785.pdf: Duplicate file
+[2026-02-16T13:36:45.986Z] ❌ 247_IRBY_192977303.pdf: Duplicate file
+[2026-02-16T13:36:45.990Z] ❌ 245_LUNATI_192761829.pdf: Duplicate file
+[2026-02-16T13:36:45.990Z] 📊 Batch 124-126 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:45.990Z] 📦 Starting batch 127-129
+[2026-02-16T13:36:45.990Z]    ➡️ 248_McLemore_192977575.pdf
+[2026-02-16T13:36:45.990Z]    ➡️ 250_RICHARDSON_192885038.pdf
+[2026-02-16T13:36:45.990Z]    ➡️ 252_Hall_192824381.pdf
+[2026-02-16T13:36:46.288Z] ❌ 250_RICHARDSON_192885038.pdf: Duplicate file
+[2026-02-16T13:36:46.340Z] ❌ 248_McLemore_192977575.pdf: Duplicate file
+[2026-02-16T13:36:46.340Z] ❌ 252_Hall_192824381.pdf: Duplicate file
+[2026-02-16T13:36:46.340Z] 📊 Batch 127-129 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
+[2026-02-16T13:36:46.340Z] 📦 Starting batch 130-132
+[2026-02-16T13:36:46.340Z]    ➡️ 253_Hall_193040757.pdf
+[2026-02-16T13:36:46.340Z]    ➡️ 254_Richardson_193043177.pdf
+[2026-02-16T13:36:46.341Z]    ➡️ 255_LUNATI_192761829.pdf
+[2026-02-16T13:36:47.433Z] ❌ 253_Hall_193040757.pdf: Duplicate file
+[2026-02-16T13:36:47.454Z] ❌ 254_Richardson_193043177.pdf: Duplicate file
+[2026-02-16T13:36:47.499Z] ❌ 255_LUNATI_192761829.pdf: Duplicate file
+[2026-02-16T13:36:47.499Z] 📊 Batch 130-132 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 1.16s)
+[2026-02-16T13:36:47.499Z] 📦 Starting batch 133-135
+[2026-02-16T13:36:47.499Z]    ➡️ 256_BRADLEY_192994772.pdf
+[2026-02-16T13:36:47.499Z]    ➡️ 257_LOVE_193085805.pdf
+[2026-02-16T13:36:47.499Z]    ➡️ 258_Carter_193086628.pdf
+[2026-02-16T13:36:47.819Z] ❌ 257_LOVE_193085805.pdf: Duplicate file
+[2026-02-16T13:36:47.823Z] ❌ 258_Carter_193086628.pdf: Duplicate file
+[2026-02-16T13:36:47.839Z] ❌ 256_BRADLEY_192994772.pdf: Duplicate file
+[2026-02-16T13:36:47.839Z] 📊 Batch 133-135 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
+[2026-02-16T13:36:47.840Z] 📦 Starting batch 136-138
+[2026-02-16T13:36:47.840Z]    ➡️ 259_Kellicut_193097660.pdf
+[2026-02-16T13:36:47.840Z]    ➡️ 261_McMillan_193044369.pdf
+[2026-02-16T13:36:47.840Z]    ➡️ 262_Torrance-Matthews_193089461.pdf
+[2026-02-16T13:36:48.136Z] ❌ 262_Torrance-Matthews_193089461.pdf: Duplicate file
+[2026-02-16T13:36:48.153Z] ❌ 261_McMillan_193044369.pdf: Duplicate file
+[2026-02-16T13:36:48.188Z] ❌ 259_Kellicut_193097660.pdf: Duplicate file
+[2026-02-16T13:36:48.188Z] 📊 Batch 136-138 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
+[2026-02-16T13:36:48.188Z] 📦 Starting batch 139-141
+[2026-02-16T13:36:48.188Z]    ➡️ 263_BAKER_193134461.pdf
+[2026-02-16T13:36:48.188Z]    ➡️ 264_Smith_193137151.pdf
+[2026-02-16T13:36:48.188Z]    ➡️ 265_Pentecost_193137380.pdf
+[2026-02-16T13:36:48.495Z] ❌ 264_Smith_193137151.pdf: Duplicate file
+[2026-02-16T13:36:48.495Z] ❌ 265_Pentecost_193137380.pdf: Duplicate file
+[2026-02-16T13:36:48.503Z] ❌ 263_BAKER_193134461.pdf: Duplicate file
+[2026-02-16T13:36:48.503Z] 📊 Batch 139-141 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:48.503Z] 📦 Starting batch 142-144
+[2026-02-16T13:36:48.503Z]    ➡️ 266_Scruggs_193137210.pdf
+[2026-02-16T13:36:48.503Z]    ➡️ 267_Bland_193192634.pdf
+[2026-02-16T13:36:48.503Z]    ➡️ 268_WILLIAMS_193202396.pdf
+[2026-02-16T13:36:48.787Z] ❌ 267_Bland_193192634.pdf: Duplicate file
+[2026-02-16T13:36:48.799Z] ❌ 268_WILLIAMS_193202396.pdf: Duplicate file
+[2026-02-16T13:36:48.802Z] ❌ 266_Scruggs_193137210.pdf: Duplicate file
+[2026-02-16T13:36:48.803Z] 📊 Batch 142-144 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:48.803Z] 📦 Starting batch 145-147
+[2026-02-16T13:36:48.803Z]    ➡️ 269_Riedel_192820457.pdf
+[2026-02-16T13:36:48.803Z]    ➡️ 270_LUNATI_192761829.pdf
+[2026-02-16T13:36:48.803Z]    ➡️ 271_Tigue_193332808.pdf
+[2026-02-16T13:36:49.087Z] ❌ 269_Riedel_192820457.pdf: Duplicate file
+[2026-02-16T13:36:49.087Z] ❌ 271_Tigue_193332808.pdf: Duplicate file
+[2026-02-16T13:36:49.111Z] ❌ 270_LUNATI_192761829.pdf: Duplicate file
+[2026-02-16T13:36:49.111Z] 📊 Batch 145-147 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:49.111Z] 📦 Starting batch 148-150
+[2026-02-16T13:36:49.112Z]    ➡️ 272_Rogers_193271713.pdf
+[2026-02-16T13:36:49.112Z]    ➡️ 273_Boyce_193271895.pdf
+[2026-02-16T13:36:49.112Z]    ➡️ 274_Hall_193214062.pdf
+[2026-02-16T13:36:49.394Z] ❌ 273_Boyce_193271895.pdf: Duplicate file
+[2026-02-16T13:36:49.400Z] ❌ 272_Rogers_193271713.pdf: Duplicate file
+[2026-02-16T13:36:49.409Z] ❌ 274_Hall_193214062.pdf: Duplicate file
+[2026-02-16T13:36:49.409Z] 📊 Batch 148-150 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:49.409Z] 📦 Starting batch 151-153
+[2026-02-16T13:36:49.409Z]    ➡️ 275_LAY_193361349.pdf
+[2026-02-16T13:36:49.409Z]    ➡️ 276_Johnson_193271765.pdf
+[2026-02-16T13:36:49.409Z]    ➡️ 277_Johnston_193389662.pdf
+[2026-02-16T13:36:49.710Z] ❌ 276_Johnson_193271765.pdf: Duplicate file
+[2026-02-16T13:36:49.714Z] ❌ 277_Johnston_193389662.pdf: Duplicate file
+[2026-02-16T13:36:49.714Z] ❌ 275_LAY_193361349.pdf: Duplicate file
+[2026-02-16T13:36:49.715Z] 📊 Batch 151-153 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:49.715Z] 📦 Starting batch 154-156
+[2026-02-16T13:36:49.715Z]    ➡️ 279_Hall_193040757.pdf
+[2026-02-16T13:36:49.715Z]    ➡️ 285_Hollingsworth_193411618.pdf
+[2026-02-16T13:36:49.715Z]    ➡️ 286_Edmondson_193412527.pdf
+[2026-02-16T13:36:50.001Z] ❌ 285_Hollingsworth_193411618.pdf: Duplicate file
+[2026-02-16T13:36:50.008Z] ❌ 279_Hall_193040757.pdf: Duplicate file
+[2026-02-16T13:36:50.018Z] ❌ 286_Edmondson_193412527.pdf: Duplicate file
+[2026-02-16T13:36:50.018Z] 📊 Batch 154-156 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:50.018Z] 📦 Starting batch 157-159
+[2026-02-16T13:36:50.018Z]    ➡️ 287_Huselton_193415793.pdf
+[2026-02-16T13:36:50.018Z]    ➡️ 288_COOPER_193410786.pdf
+[2026-02-16T13:36:50.018Z]    ➡️ 289_Lee_193410937.pdf
+[2026-02-16T13:36:50.309Z] ❌ 287_Huselton_193415793.pdf: Duplicate file
+[2026-02-16T13:36:50.309Z] ❌ 289_Lee_193410937.pdf: Duplicate file
+[2026-02-16T13:36:50.329Z] ❌ 288_COOPER_193410786.pdf: Duplicate file
+[2026-02-16T13:36:50.329Z] 📊 Batch 157-159 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:36:50.329Z] 📦 Starting batch 160-162
+[2026-02-16T13:36:50.329Z]    ➡️ 290_Fair_193411047.pdf
+[2026-02-16T13:36:50.329Z]    ➡️ 292_Chunn_193411111.pdf
+[2026-02-16T13:36:50.329Z]    ➡️ 293_THOMPSON_193411463.pdf
+[2026-02-16T13:36:50.635Z] ❌ 293_THOMPSON_193411463.pdf: Duplicate file
+[2026-02-16T13:36:50.636Z] ❌ 292_Chunn_193411111.pdf: Duplicate file
+[2026-02-16T13:36:50.657Z] ❌ 290_Fair_193411047.pdf: Duplicate file
+[2026-02-16T13:36:50.657Z] 📊 Batch 160-162 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:50.658Z] 📦 Starting batch 163-165
+[2026-02-16T13:36:50.658Z]    ➡️ 294_Edmondson_193412527.pdf
+[2026-02-16T13:36:50.658Z]    ➡️ 295_Pieri_192727767.pdf
+[2026-02-16T13:36:50.658Z]    ➡️ 297_Gillespie_193369339.pdf
+[2026-02-16T13:36:50.941Z] ❌ 297_Gillespie_193369339.pdf: Duplicate file
+[2026-02-16T13:36:50.942Z] ❌ 295_Pieri_192727767.pdf: Duplicate file
+[2026-02-16T13:36:50.958Z] ❌ 294_Edmondson_193412527.pdf: Duplicate file
+[2026-02-16T13:36:50.958Z] 📊 Batch 163-165 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:50.958Z] 📦 Starting batch 166-168
+[2026-02-16T13:36:50.959Z]    ➡️ 299_LAWSON_193436070.pdf
+[2026-02-16T13:36:50.959Z]    ➡️ 300_Wright_193437201.pdf
+[2026-02-16T13:36:50.959Z]    ➡️ 301_BOWIE_193439718.pdf
+[2026-02-16T13:36:51.241Z] ❌ 301_BOWIE_193439718.pdf: Duplicate file
+[2026-02-16T13:36:51.245Z] ❌ 300_Wright_193437201.pdf: Duplicate file
+[2026-02-16T13:36:51.261Z] ❌ 299_LAWSON_193436070.pdf: Duplicate file
+[2026-02-16T13:36:51.261Z] 📊 Batch 166-168 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:51.262Z] 📦 Starting batch 169-171
+[2026-02-16T13:36:51.262Z]    ➡️ 302_Barnes_193441289.pdf
+[2026-02-16T13:36:51.262Z]    ➡️ 303_Armstrong_193410293.pdf
+[2026-02-16T13:36:51.262Z]    ➡️ 304_Lewis_193452219.pdf
+[2026-02-16T13:36:51.553Z] ❌ 302_Barnes_193441289.pdf: Duplicate file
+[2026-02-16T13:36:51.553Z] ❌ 303_Armstrong_193410293.pdf: Duplicate file
+[2026-02-16T13:36:51.564Z] ❌ 304_Lewis_193452219.pdf: Duplicate file
+[2026-02-16T13:36:51.564Z] 📊 Batch 169-171 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:51.565Z] 📦 Starting batch 172-174
+[2026-02-16T13:36:51.565Z]    ➡️ 305_HUINKER_193454663.pdf
+[2026-02-16T13:36:51.565Z]    ➡️ 308_Kelley_193531831.pdf
+[2026-02-16T13:36:51.565Z]    ➡️ 311_Diggs_193553915.pdf
+[2026-02-16T13:36:51.837Z] ❌ 308_Kelley_193531831.pdf: Duplicate file
+[2026-02-16T13:36:51.850Z] ❌ 311_Diggs_193553915.pdf: Duplicate file
+[2026-02-16T13:36:51.865Z] ❌ 305_HUINKER_193454663.pdf: Duplicate file
+[2026-02-16T13:36:51.865Z] 📊 Batch 172-174 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:51.865Z] 📦 Starting batch 175-177
+[2026-02-16T13:36:51.865Z]    ➡️ 312_Gause_193586396.pdf
+[2026-02-16T13:36:51.865Z]    ➡️ 313_Childs_193586533.pdf
+[2026-02-16T13:36:51.865Z]    ➡️ 314_Mitchell_193587015.pdf
+[2026-02-16T13:36:52.158Z] ❌ 314_Mitchell_193587015.pdf: Duplicate file
+[2026-02-16T13:36:52.159Z] ❌ 313_Childs_193586533.pdf: Duplicate file
+[2026-02-16T13:36:52.162Z] ❌ 312_Gause_193586396.pdf: Duplicate file
+[2026-02-16T13:36:52.162Z] 📊 Batch 175-177 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:52.162Z] 📦 Starting batch 178-180
+[2026-02-16T13:36:52.162Z]    ➡️ 315_Walton_193586959.pdf
+[2026-02-16T13:36:52.162Z]    ➡️ 317_Ham_193586809.pdf
+[2026-02-16T13:36:52.163Z]    ➡️ 318_JONES_193590521.pdf
+[2026-02-16T13:36:52.436Z] ❌ 318_JONES_193590521.pdf: Duplicate file
+[2026-02-16T13:36:52.447Z] ❌ 317_Ham_193586809.pdf: Duplicate file
+[2026-02-16T13:36:52.485Z] ❌ 315_Walton_193586959.pdf: Duplicate file
+[2026-02-16T13:36:52.485Z] 📊 Batch 178-180 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:52.485Z] 📦 Starting batch 181-183
+[2026-02-16T13:36:52.485Z]    ➡️ 319_Sealy_193586714.pdf
+[2026-02-16T13:36:52.485Z]    ➡️ 320_Rouser_191366385.pdf
+[2026-02-16T13:36:52.485Z]    ➡️ 321_Watkins_192829247.pdf
+[2026-02-16T13:36:52.871Z] ❌ 319_Sealy_193586714.pdf: Duplicate file
+[2026-02-16T13:36:52.876Z] ❌ 321_Watkins_192829247.pdf: Duplicate file
+[2026-02-16T13:36:52.876Z] ❌ 320_Rouser_191366385.pdf: Duplicate file
+[2026-02-16T13:36:52.876Z] 📊 Batch 181-183 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.39s)
+[2026-02-16T13:36:52.876Z] 📦 Starting batch 184-186
+[2026-02-16T13:36:52.876Z]    ➡️ 322_Wilson_193554773.pdf
+[2026-02-16T13:36:52.876Z]    ➡️ 323_Jones_193609357.pdf
+[2026-02-16T13:36:52.876Z]    ➡️ 324_Sipe_193602954.pdf
+[2026-02-16T13:36:53.186Z] ❌ 322_Wilson_193554773.pdf: Duplicate file
+[2026-02-16T13:36:53.187Z] ❌ 323_Jones_193609357.pdf: Duplicate file
+[2026-02-16T13:36:53.192Z] ❌ 324_Sipe_193602954.pdf: Duplicate file
+[2026-02-16T13:36:53.192Z] 📊 Batch 184-186 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:53.192Z] 📦 Starting batch 187-189
+[2026-02-16T13:36:53.192Z]    ➡️ 325_Carr_193602254.pdf
+[2026-02-16T13:36:53.192Z]    ➡️ 326_BURNS_193601125.pdf
+[2026-02-16T13:36:53.192Z]    ➡️ 329_Davis_193651928.pdf
+[2026-02-16T13:36:53.493Z] ❌ 326_BURNS_193601125.pdf: Duplicate file
+[2026-02-16T13:36:53.506Z] ❌ 325_Carr_193602254.pdf: Duplicate file
+[2026-02-16T13:36:53.522Z] ❌ 329_Davis_193651928.pdf: Duplicate file
+[2026-02-16T13:36:53.523Z] 📊 Batch 187-189 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:53.523Z] 📦 Starting batch 190-192
+[2026-02-16T13:36:53.523Z]    ➡️ 332_Campos_193696735.pdf
+[2026-02-16T13:36:53.523Z]    ➡️ 334_Mann_193698288.pdf
+[2026-02-16T13:36:53.523Z]    ➡️ 335_Campos_193696735.pdf
+[2026-02-16T13:36:53.837Z] ❌ 335_Campos_193696735.pdf: Duplicate file
+[2026-02-16T13:36:53.840Z] ❌ 332_Campos_193696735.pdf: Duplicate file
+[2026-02-16T13:36:53.840Z] ❌ 334_Mann_193698288.pdf: Duplicate file
+[2026-02-16T13:36:53.841Z] 📊 Batch 190-192 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:53.841Z] 📦 Starting batch 193-195
+[2026-02-16T13:36:53.841Z]    ➡️ 336_HAYES_192441805.pdf
+[2026-02-16T13:36:53.841Z]    ➡️ 338_Cunningham_193722371.pdf
+[2026-02-16T13:36:53.841Z]    ➡️ 339_Hampton_193638207.pdf
+[2026-02-16T13:36:54.152Z] ❌ 339_Hampton_193638207.pdf: Duplicate file
+[2026-02-16T13:36:54.166Z] ❌ 336_HAYES_192441805.pdf: Duplicate file
+[2026-02-16T13:36:54.181Z] ❌ 338_Cunningham_193722371.pdf: Duplicate file
+[2026-02-16T13:36:54.181Z] 📊 Batch 193-195 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
+[2026-02-16T13:36:54.181Z] 📦 Starting batch 196-198
+[2026-02-16T13:36:54.181Z]    ➡️ 340_Zelinski_193730098.pdf
+[2026-02-16T13:36:54.181Z]    ➡️ 342_Conner_193735974.pdf
+[2026-02-16T13:36:54.181Z]    ➡️ 343_French_193741221.pdf
+[2026-02-16T13:36:54.475Z] ❌ 343_French_193741221.pdf: Duplicate file
+[2026-02-16T13:36:54.476Z] ❌ 342_Conner_193735974.pdf: Duplicate file
+[2026-02-16T13:36:54.508Z] ❌ 340_Zelinski_193730098.pdf: Duplicate file
+[2026-02-16T13:36:54.508Z] 📊 Batch 196-198 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:54.508Z] 📦 Starting batch 199-201
+[2026-02-16T13:36:54.508Z]    ➡️ 345_Johnson_193700549.pdf
+[2026-02-16T13:36:54.508Z]    ➡️ 346_Smith_193746806.pdf
+[2026-02-16T13:36:54.509Z]    ➡️ 347_HAYES_192441805.pdf
+[2026-02-16T13:36:54.793Z] ❌ 346_Smith_193746806.pdf: Duplicate file
+[2026-02-16T13:36:54.794Z] ❌ 347_HAYES_192441805.pdf: Duplicate file
+[2026-02-16T13:36:54.831Z] ❌ 345_Johnson_193700549.pdf: Duplicate file
+[2026-02-16T13:36:54.831Z] 📊 Batch 199-201 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:54.831Z] 📦 Starting batch 202-204
+[2026-02-16T13:36:54.831Z]    ➡️ 350_Lawson_193799470.pdf
+[2026-02-16T13:36:54.831Z]    ➡️ 353_Dieber_193799594.pdf
+[2026-02-16T13:36:54.831Z]    ➡️ 357_Blancq_193781805.pdf
+[2026-02-16T13:36:55.165Z] ❌ 350_Lawson_193799470.pdf: Duplicate file
+[2026-02-16T13:36:55.169Z] ❌ 353_Dieber_193799594.pdf: Duplicate file
+[2026-02-16T13:36:55.169Z] ❌ 357_Blancq_193781805.pdf: Duplicate file
+[2026-02-16T13:36:55.169Z] 📊 Batch 202-204 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
+[2026-02-16T13:36:55.169Z] 📦 Starting batch 205-207
+[2026-02-16T13:36:55.169Z]    ➡️ 358_Fontana_193410605.pdf
+[2026-02-16T13:36:55.169Z]    ➡️ 363_HAYES_192441805.pdf
+[2026-02-16T13:36:55.169Z]    ➡️ 366_Stone_193890184.pdf
+[2026-02-16T13:36:55.466Z] ❌ 358_Fontana_193410605.pdf: Duplicate file
+[2026-02-16T13:36:55.466Z] ❌ 363_HAYES_192441805.pdf: Duplicate file
+[2026-02-16T13:36:55.470Z] ❌ 366_Stone_193890184.pdf: Duplicate file
+[2026-02-16T13:36:55.471Z] 📊 Batch 205-207 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
+[2026-02-16T13:36:55.471Z] 📦 Starting batch 208-210
+[2026-02-16T13:36:55.471Z]    ➡️ 367_Davis_193898642.pdf
+[2026-02-16T13:36:55.471Z]    ➡️ 36_FLEENOR_191124855.pdf
+[2026-02-16T13:36:55.471Z]    ➡️ 42_RITTER_191204097.pdf
+[2026-02-16T13:36:55.770Z] ❌ 367_Davis_193898642.pdf: Duplicate file
+[2026-02-16T13:36:55.771Z] ❌ 36_FLEENOR_191124855.pdf: Duplicate file
+[2026-02-16T13:36:55.794Z] ❌ 42_RITTER_191204097.pdf: Duplicate file
+[2026-02-16T13:36:55.794Z] 📊 Batch 208-210 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:55.795Z] 📦 Starting batch 211-213
+[2026-02-16T13:36:55.795Z]    ➡️ 44_Garrison_191127309.pdf
+[2026-02-16T13:36:55.795Z]    ➡️ 46_Morgan_191256449.pdf
+[2026-02-16T13:36:55.795Z]    ➡️ 52_SHAW_191242603.pdf
+[2026-02-16T13:36:56.097Z] ❌ 46_Morgan_191256449.pdf: Duplicate file
+[2026-02-16T13:36:56.098Z] ❌ 52_SHAW_191242603.pdf: Duplicate file
+[2026-02-16T13:36:56.111Z] ❌ 44_Garrison_191127309.pdf: Duplicate file
+[2026-02-16T13:36:56.111Z] 📊 Batch 211-213 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:56.111Z] 📦 Starting batch 214-216
+[2026-02-16T13:36:56.112Z]    ➡️ 59_Clifton_191248346.pdf
+[2026-02-16T13:36:56.112Z]    ➡️ 62_MARCONI_191360851.pdf
+[2026-02-16T13:36:56.112Z]    ➡️ 63_Yates_191362705.pdf
+[2026-02-16T13:36:56.429Z] ❌ 59_Clifton_191248346.pdf: Duplicate file
+[2026-02-16T13:36:56.433Z] ❌ 63_Yates_191362705.pdf: Duplicate file
+[2026-02-16T13:36:56.438Z] ❌ 62_MARCONI_191360851.pdf: Duplicate file
+[2026-02-16T13:36:56.438Z] 📊 Batch 214-216 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:36:56.439Z] 📦 Starting batch 217-219
+[2026-02-16T13:36:56.439Z]    ➡️ 64_Moorlach_191365644.pdf
+[2026-02-16T13:36:56.439Z]    ➡️ 66_Anderson_191395848.pdf
+[2026-02-16T13:36:56.439Z]    ➡️ 72_CHALMERS_191397242.pdf
+[2026-02-16T13:36:56.756Z] ❌ 72_CHALMERS_191397242.pdf: Duplicate file
+[2026-02-16T13:36:56.759Z] ❌ 64_Moorlach_191365644.pdf: Duplicate file
+[2026-02-16T13:36:56.772Z] ❌ 66_Anderson_191395848.pdf: Duplicate file
+[2026-02-16T13:36:56.772Z] 📊 Batch 217-219 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
+[2026-02-16T13:36:56.772Z] 📦 Starting batch 220-222
+[2026-02-16T13:36:56.772Z]    ➡️ 74_GRIFFITH_191398182.pdf
+[2026-02-16T13:36:56.773Z]    ➡️ 76_Farris_191397687.pdf
+[2026-02-16T13:36:56.773Z]    ➡️ 80_Turner_191463986.pdf
+[2026-02-16T13:36:57.065Z] ❌ 74_GRIFFITH_191398182.pdf: Duplicate file
+[2026-02-16T13:36:57.092Z] ❌ 80_Turner_191463986.pdf: Duplicate file
+[2026-02-16T13:36:57.093Z] ❌ 76_Farris_191397687.pdf: Duplicate file
+[2026-02-16T13:36:57.094Z] 📊 Batch 220-222 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
+[2026-02-16T13:36:57.094Z] 📦 Starting batch 223-223
+[2026-02-16T13:36:57.094Z]    ➡️ 89_Holmes_191512222.pdf
+[2026-02-16T13:36:57.374Z] ❌ 89_Holmes_191512222.pdf: Duplicate file
+[2026-02-16T13:36:57.374Z] 📊 Batch 223-223 (Processed: 0, Skipped: 1, Failed: 0, Total: 1, TimeTaken: 0.28s)
+[2026-02-16T13:36:57.374Z] 
+[2026-02-16T13:36:57.374Z] 📁 ZIP The PreOP Center/tebra_facesheets_TPC_2025-08-13_2934.zip (Processed: 0, Skipped: 223, Failed: 0, Total: 223, TimeTaken: 43.82, AvgTimeTakenPerBatch: 0.35s , AvgTimeTakenPerPDF: 0.12s, "Failed IDs:", 102,100,101,105,103,104,107,106,108,109,111,110,114,113,112,116,117,115,120,119,118,125,124,121,128,127,126,129,131,130,133,137,132,140,139,138,143,144,141,148,145,149,151,152,150,153,155,154,157,158,159,162,161,160,164,165,163,169,168,166,171,172,174,176,175,178,180,182,179,185,184,183,189,186,188,192,190,191,194,197,193,200,199,198,202,203,201,206,207,205,210,209,208,213,214,211,215,217,216,220,218,219,222,221,223,224,226,225,228,227,229,233,231,232,234,237,236,241,240,239,242,244,243,246,247,245,250,248,252,253,254,255,257,258,256,262,261,259,264,265,263,267,268,266,269,271,270,273,272,274,276,277,275,285,279,286,287,289,288,293,292,290,297,295,294,301,300,299,302,303,304,308,311,305,314,313,312,318,317,315,319,321,320,322,323,324,326,325,329,335,332,334,339,336,338,343,342,340,346,347,345,350,353,357,358,363,366,367,36,42,46,52,44,59,63,62,72,64,66,74,80,76,89)
+[2026-02-16T13:36:57.374Z] 
+[2026-02-16T13:36:57.374Z] 📁 Processing ZIP: The PreOP Center/tebra_facesheets_TPC_2025-10-13_1895.zip
+[2026-02-16T13:36:59.572Z] 📄 Found 247 PDFs
+[2026-02-16T13:36:59.572Z] 📦 Starting batch 1-3
+[2026-02-16T13:36:59.572Z]    ➡️ 134_VINCENT_191995961.pdf
+[2026-02-16T13:36:59.572Z]    ➡️ 135_Brady_191344679.pdf
+[2026-02-16T13:36:59.573Z]    ➡️ 136_Hill_191998110.pdf
+[2026-02-16T13:36:59.922Z] ❌ 136_Hill_191998110.pdf: Duplicate file
+[2026-02-16T13:36:59.956Z] ❌ 135_Brady_191344679.pdf: Duplicate file
+[2026-02-16T13:36:59.961Z] ❌ 134_VINCENT_191995961.pdf: Duplicate file
+[2026-02-16T13:36:59.961Z] 📊 Batch 1-3 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.39s)
+[2026-02-16T13:36:59.961Z] 📦 Starting batch 4-6
+[2026-02-16T13:36:59.961Z]    ➡️ 142_Horton_191998794.pdf
+[2026-02-16T13:36:59.961Z]    ➡️ 146_Moore_192005412.pdf
+[2026-02-16T13:36:59.961Z]    ➡️ 147_Purvis_192067249.pdf
+[2026-02-16T13:37:00.269Z] ❌ 146_Moore_192005412.pdf: Duplicate file
+[2026-02-16T13:37:00.269Z] ❌ 147_Purvis_192067249.pdf: Duplicate file
+[2026-02-16T13:37:00.292Z] ❌ 142_Horton_191998794.pdf: Duplicate file
+[2026-02-16T13:37:00.293Z] 📊 Batch 4-6 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
+[2026-02-16T13:37:00.293Z] 📦 Starting batch 7-9
+[2026-02-16T13:37:00.293Z]    ➡️ 156_McCormick_192220736.pdf
+[2026-02-16T13:37:00.293Z]    ➡️ 167_Compton_192273583.pdf
+[2026-02-16T13:37:00.293Z]    ➡️ 177_Jefferson_192221827.pdf
+[2026-02-16T13:37:00.606Z] ❌ 167_Compton_192273583.pdf: Duplicate file
+[2026-02-16T13:37:00.606Z] ❌ 177_Jefferson_192221827.pdf: Duplicate file
+[2026-02-16T13:37:00.636Z] ❌ 156_McCormick_192220736.pdf: Duplicate file
+[2026-02-16T13:37:00.637Z] 📊 Batch 7-9 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
+[2026-02-16T13:37:00.637Z] 📦 Starting batch 10-12
+[2026-02-16T13:37:00.637Z]    ➡️ 187_Law_192477094.pdf
+[2026-02-16T13:37:00.637Z]    ➡️ 195_Pitcock_192221391.pdf
+[2026-02-16T13:37:00.637Z]    ➡️ 196_Basar_192530300.pdf
+[2026-02-16T13:37:00.930Z] ❌ 195_Pitcock_192221391.pdf: Duplicate file
+[2026-02-16T13:37:00.931Z] ❌ 196_Basar_192530300.pdf: Duplicate file
+[2026-02-16T13:37:00.994Z] ❌ 187_Law_192477094.pdf: Duplicate file
+[2026-02-16T13:37:00.994Z] 📊 Batch 10-12 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.36s)
+[2026-02-16T13:37:00.994Z] 📦 Starting batch 13-15
+[2026-02-16T13:37:00.994Z]    ➡️ 204_Guy_192585208.pdf
+[2026-02-16T13:37:00.994Z]    ➡️ 280_Francis_193369380.pdf
+[2026-02-16T13:37:00.994Z]    ➡️ 281_Moore_193271648.pdf
+[2026-02-16T13:37:01.299Z] ❌ 281_Moore_193271648.pdf: Duplicate file
+[2026-02-16T13:37:01.302Z] ❌ 204_Guy_192585208.pdf: Duplicate file
+[2026-02-16T13:37:01.306Z] ❌ 280_Francis_193369380.pdf: Duplicate file
+[2026-02-16T13:37:01.307Z] 📊 Batch 13-15 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
+[2026-02-16T13:37:01.307Z] 📦 Starting batch 16-18
+[2026-02-16T13:37:01.307Z]    ➡️ 283_Sharp_193412711.pdf
+[2026-02-16T13:37:01.307Z]    ➡️ 306_Laughlin_193436014.pdf
+[2026-02-16T13:37:01.307Z]    ➡️ 310_Ware_193554238.pdf
+[2026-02-16T13:37:01.619Z] ❌ 283_Sharp_193412711.pdf: Duplicate file
+[2026-02-16T13:37:01.674Z] ❌ 310_Ware_193554238.pdf: Duplicate file
+[2026-02-16T13:37:01.688Z] ❌ 306_Laughlin_193436014.pdf: Duplicate file
+[2026-02-16T13:37:01.688Z] 📊 Batch 16-18 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.38s)
+[2026-02-16T13:37:01.688Z] 📦 Starting batch 19-21
+[2026-02-16T13:37:01.688Z]    ➡️ 328_Pechak_192008311.pdf
+[2026-02-16T13:37:01.688Z]    ➡️ 333_Pearson-Rucker_193695932.pdf
+[2026-02-16T13:37:01.688Z]    ➡️ 341_Roth_193734654.pdf
+[2026-02-16T13:37:02.118Z] ❌ 333_Pearson-Rucker_193695932.pdf: Duplicate file
+[2026-02-16T13:37:34.281Z] ✅ 328_Pechak_192008311.pdf → 1fdd4de0-f8a4-4582-b5d2-7176486124a0
+[2026-02-16T13:38:02.720Z] ✅ 341_Roth_193734654.pdf → ced35811-7b71-404b-bcda-cb3e3771e208
+[2026-02-16T13:38:02.721Z] 📊 Batch 19-21 (Processed: 2, Skipped: 1, Failed: 0, Total: 3, TimeTaken: 61.03s)
+[2026-02-16T13:38:02.721Z] 📦 Starting batch 22-24
+[2026-02-16T13:38:02.721Z]    ➡️ 348_Grigsby_193745639.pdf
+[2026-02-16T13:38:02.721Z]    ➡️ 349_Campos_193696735.pdf
+[2026-02-16T13:38:02.721Z]    ➡️ 354_Haas_193799726.pdf
+[2026-02-16T13:38:20.889Z] ✅ 348_Grigsby_193745639.pdf → ce30947d-b6fb-4400-96ab-d29e798a8b8c
+[2026-02-16T13:38:43.187Z] ✅ 354_Haas_193799726.pdf → 1b4a729d-9764-45e7-9f3b-00ae098e3912
+[2026-02-16T13:38:45.590Z] ✅ 349_Campos_193696735.pdf → a886b9c4-1c5e-4580-8c7c-3ae1142289a8
+[2026-02-16T13:38:45.590Z] 📊 Batch 22-24 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 42.87s)
+[2026-02-16T13:38:45.590Z] 📦 Starting batch 25-27
+[2026-02-16T13:38:45.590Z]    ➡️ 355_Edmondson_193412527.pdf
+[2026-02-16T13:38:45.590Z]    ➡️ 359_Campbell_193806183.pdf
+[2026-02-16T13:38:45.590Z]    ➡️ 360_KING_191511026.pdf
+[2026-02-16T13:39:13.436Z] ✅ 355_Edmondson_193412527.pdf → e683b41a-b1e5-4b34-ae15-e5c16c14b273
+[2026-02-16T13:39:13.846Z] ✅ 359_Campbell_193806183.pdf → 39888551-553a-4c7c-92bd-21e5d70a4e40
+[2026-02-16T13:39:36.041Z] ✅ 360_KING_191511026.pdf → 33a3d9c6-06df-4547-89e3-c952d41ecc1e
+[2026-02-16T13:39:36.042Z] 📊 Batch 25-27 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 50.45s)
+[2026-02-16T13:39:36.042Z] 📦 Starting batch 28-30
+[2026-02-16T13:39:36.042Z]    ➡️ 361_Milstead_193836683.pdf
+[2026-02-16T13:39:36.042Z]    ➡️ 364_Olvey_193855957.pdf
+[2026-02-16T13:39:36.042Z]    ➡️ 365_Borden_193866203.pdf
+[2026-02-16T13:39:54.936Z] ✅ 361_Milstead_193836683.pdf → 62133f6c-5bd0-4e4c-b829-08b93be444cc
+[2026-02-16T13:39:56.661Z] ✅ 365_Borden_193866203.pdf → 4271f878-4c8f-4bf7-919e-510a46d1bf2b
+[2026-02-16T13:40:12.411Z] ✅ 364_Olvey_193855957.pdf → 450e6e20-03ac-4f3c-9e41-bb64f6f1cdb7
+[2026-02-16T13:40:12.412Z] 📊 Batch 28-30 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 36.37s)
+[2026-02-16T13:40:12.412Z] 📦 Starting batch 31-33
+[2026-02-16T13:40:12.412Z]    ➡️ 368_Williams_193586909.pdf
+[2026-02-16T13:40:12.412Z]    ➡️ 369_PRICE_193933048.pdf
+[2026-02-16T13:40:12.412Z]    ➡️ 370_Lee_193933233.pdf
+[2026-02-16T13:40:34.986Z] ✅ 368_Williams_193586909.pdf → c187ba41-a30c-4884-8809-75f4c5123f8b
+[2026-02-16T13:40:37.078Z] ❌ 369_PRICE_193933048.pdf: Request failed with status code 500
+[2026-02-16T13:40:37.085Z] ❌ 370_Lee_193933233.pdf: Request failed with status code 500
+[2026-02-16T13:40:37.085Z] 📊 Batch 31-33 (Processed: 1, Skipped: 0, Failed: 2, Total: 3, TimeTaken: 24.67s)
+[2026-02-16T13:40:37.085Z] 📦 Starting batch 34-36
+[2026-02-16T13:40:37.085Z]    ➡️ 371_BRYANT_193940082.pdf
+[2026-02-16T13:40:37.086Z]    ➡️ 372_Halsted_193940021.pdf
+[2026-02-16T13:40:37.086Z]    ➡️ 373_Wrenn_193960180.pdf
+[2026-02-16T13:40:56.799Z] ✅ 372_Halsted_193940021.pdf → 84fccd58-d3ae-4c1a-86d7-223100248e40
+[2026-02-16T13:40:58.887Z] ✅ 371_BRYANT_193940082.pdf → c83b038c-5123-4b3a-99e1-5bb2ef8bdaa6
+[2026-02-16T13:41:12.314Z] ✅ 373_Wrenn_193960180.pdf → b5aed1d3-75a0-42d8-b883-8215d59e57e9
+[2026-02-16T13:41:12.315Z] 📊 Batch 34-36 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 35.23s)
+[2026-02-16T13:41:12.315Z] 📦 Starting batch 37-39
+[2026-02-16T13:41:12.315Z]    ➡️ 374_Ruffin_193940192.pdf
+[2026-02-16T13:41:12.315Z]    ➡️ 376_HUDSON_193960220.pdf
+[2026-02-16T13:41:12.315Z]    ➡️ 377_Mitchell_194018319.pdf
+[2026-02-16T13:41:31.160Z] ✅ 374_Ruffin_193940192.pdf → d24c9d42-baf5-4a4e-afaa-80845d2499b7
+[2026-02-16T13:41:51.988Z] ✅ 377_Mitchell_194018319.pdf → 7ddfa5be-269d-4d55-b068-3f41a3c07d37
+[2026-02-16T13:43:06.540Z] ✅ 376_HUDSON_193960220.pdf → 45df48b1-24c1-464f-9380-8d02092eac86
+[2026-02-16T13:43:06.541Z] 📊 Batch 37-39 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 114.22s)
+[2026-02-16T13:43:06.541Z] 📦 Starting batch 40-42
+[2026-02-16T13:43:06.541Z]    ➡️ 378_Regenhardt_194018835.pdf
+[2026-02-16T13:43:06.541Z]    ➡️ 380_Hamilton_193961273.pdf
+[2026-02-16T13:43:06.541Z]    ➡️ 382_NIVENS_194019143.pdf
+[2026-02-16T13:43:30.530Z] ✅ 378_Regenhardt_194018835.pdf → da984147-4c72-4f44-a183-778446dc924a
+[2026-02-16T13:43:45.570Z] ✅ 382_NIVENS_194019143.pdf → f2f32675-2914-4d70-879f-10a473aaca8a
+[2026-02-16T13:45:01.062Z] ✅ 380_Hamilton_193961273.pdf → d434e2d6-36f2-417e-8f74-1a1123a385f7
+[2026-02-16T13:45:01.064Z] 📊 Batch 40-42 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 114.53s)
+[2026-02-16T13:45:01.065Z] 📦 Starting batch 43-45
+[2026-02-16T13:45:01.065Z]    ➡️ 383_Hoffman_194019233.pdf
+[2026-02-16T13:45:01.065Z]    ➡️ 384_Duke_194024357.pdf
+[2026-02-16T13:45:01.065Z]    ➡️ 385_PEARSON_194024482.pdf
+[2026-02-16T13:45:30.694Z] ✅ 383_Hoffman_194019233.pdf → 82999e58-f451-41ee-90f6-b0eb0014ac98
+[2026-02-16T13:46:40.368Z] ✅ 385_PEARSON_194024482.pdf → c29d1a6d-3f37-4c1c-bc0f-5877239931ca
+[2026-02-16T13:46:40.588Z] ✅ 384_Duke_194024357.pdf → 3a5de391-2c5a-41dc-bbd8-6f4904607242
+[2026-02-16T13:46:40.588Z] 📊 Batch 43-45 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 99.53s)
+[2026-02-16T13:46:40.588Z] 📦 Starting batch 46-48
+[2026-02-16T13:46:40.588Z]    ➡️ 386_Martin_194024545.pdf
+[2026-02-16T13:46:40.589Z]    ➡️ 387_Guy_192585208.pdf
+[2026-02-16T13:46:40.589Z]    ➡️ 388_Dotson_193805112.pdf
+[2026-02-16T13:47:05.507Z] ❌ 386_Martin_194024545.pdf: Request failed with status code 500
+[2026-02-16T13:47:05.862Z] ✅ 387_Guy_192585208.pdf → 6a988ce7-162b-4b61-81cd-9b17460253ec
+[2026-02-16T13:47:25.997Z] ✅ 388_Dotson_193805112.pdf → 81eebcd5-4e44-4d96-92fd-19f36ae157a7
+[2026-02-16T13:47:25.997Z] 📊 Batch 46-48 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 45.41s)
+[2026-02-16T13:47:25.998Z] 📦 Starting batch 49-51
+[2026-02-16T13:47:25.998Z]    ➡️ 389_Kobasic_194068604.pdf
+[2026-02-16T13:47:25.998Z]    ➡️ 390_Pruitt_194068746.pdf
+[2026-02-16T13:47:25.998Z]    ➡️ 391_James_191360392.pdf
+[2026-02-16T13:47:44.057Z] ❌ 391_James_191360392.pdf: Request failed with status code 500
+[2026-02-16T13:49:22.166Z] ✅ 389_Kobasic_194068604.pdf → 1e0874d6-e0d8-4be8-93e1-c42cad8b430d
+[2026-02-16T13:49:36.056Z] ✅ 390_Pruitt_194068746.pdf → ca7096c6-e444-4ee1-847b-808bf545cffb
+[2026-02-16T13:49:36.056Z] 📊 Batch 49-51 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 130.06s)
+[2026-02-16T13:49:36.056Z] 📦 Starting batch 52-54
+[2026-02-16T13:49:36.056Z]    ➡️ 392_Roberts_194017946.pdf
+[2026-02-16T13:49:36.056Z]    ➡️ 393_Johnson_194076653.pdf
+[2026-02-16T13:49:36.056Z]    ➡️ 395_Lewis_194091594.pdf
+[2026-02-16T13:49:59.954Z] ✅ 395_Lewis_194091594.pdf → 12c44cd8-d0fb-486a-af6a-bc5ff9b6b2ec
+[2026-02-16T13:50:00.667Z] ✅ 392_Roberts_194017946.pdf → d69815f5-a1b5-4d07-8841-cf9666c4d1e7
+[2026-02-16T13:50:15.738Z] ✅ 393_Johnson_194076653.pdf → 756ab88f-e68b-4247-8da9-b8a86e9877bd
+[2026-02-16T13:50:15.738Z] 📊 Batch 52-54 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 39.68s)
+[2026-02-16T13:50:15.739Z] 📦 Starting batch 55-57
+[2026-02-16T13:50:15.739Z]    ➡️ 397_Parker_193959962.pdf
+[2026-02-16T13:50:15.739Z]    ➡️ 399_Russell_194121856.pdf
+[2026-02-16T13:50:15.739Z]    ➡️ 400_Lovan_194131232.pdf
+[2026-02-16T13:50:43.551Z] ✅ 400_Lovan_194131232.pdf → cc8e084b-2dc0-42a3-837b-329c58b7e8fa
+[2026-02-16T13:50:59.520Z] ✅ 397_Parker_193959962.pdf → 246e3bd8-160e-419d-ade5-9a2fa5ae402b
+[2026-02-16T13:51:22.885Z] ✅ 399_Russell_194121856.pdf → f989eeff-e1f9-4b7d-af98-0078014b2594
+[2026-02-16T13:51:22.886Z] 📊 Batch 55-57 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 67.15s)
+[2026-02-16T13:51:22.887Z] 📦 Starting batch 58-60
+[2026-02-16T13:51:22.887Z]    ➡️ 401_Nale_194122367.pdf
+[2026-02-16T13:51:22.888Z]    ➡️ 404_ROGERS_191299224.pdf
+[2026-02-16T13:51:22.888Z]    ➡️ 405_Malone_194141597.pdf
+[2026-02-16T13:51:45.320Z] ❌ 404_ROGERS_191299224.pdf: Request failed with status code 500
+[2026-02-16T13:51:57.866Z] ✅ 401_Nale_194122367.pdf → bb9a437b-9281-44b1-a1d2-a08849e33784
+[2026-02-16T13:53:52.612Z] ✅ 405_Malone_194141597.pdf → 0e7d4237-317b-45e0-b5e3-ac0bbbd8f978
+[2026-02-16T13:53:52.613Z] 📊 Batch 58-60 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 149.73s)
+[2026-02-16T13:53:52.613Z] 📦 Starting batch 61-63
+[2026-02-16T13:53:52.613Z]    ➡️ 406_Avery_191337392.pdf
+[2026-02-16T13:53:52.613Z]    ➡️ 407_Cody_194091718.pdf
+[2026-02-16T13:53:52.613Z]    ➡️ 409_Holland_194180630.pdf
+[2026-02-16T13:54:12.442Z] ❌ 407_Cody_194091718.pdf: Request failed with status code 500
+[2026-02-16T13:54:27.277Z] ✅ 406_Avery_191337392.pdf → c810b2f0-644c-4585-a613-7ea4988b1c1e
+[2026-02-16T13:54:29.723Z] ✅ 409_Holland_194180630.pdf → ff053041-f4c0-4974-bfa4-787aad61a666
+[2026-02-16T13:54:29.723Z] 📊 Batch 61-63 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 37.11s)
+[2026-02-16T13:54:29.723Z] 📦 Starting batch 64-66
+[2026-02-16T13:54:29.723Z]    ➡️ 410_Anderson_194181867.pdf
+[2026-02-16T13:54:29.724Z]    ➡️ 413_Sneed_193411156.pdf
+[2026-02-16T13:54:29.725Z]    ➡️ 414_Williams_194141894.pdf
+[2026-02-16T13:54:48.971Z] ✅ 410_Anderson_194181867.pdf → da677e32-b9a2-4f5f-8fd4-8436cebf7316
+[2026-02-16T13:54:50.740Z] ✅ 413_Sneed_193411156.pdf → baad4fa1-4915-4b75-ba4b-a8566facefe6
+[2026-02-16T13:55:33.519Z] ❌ 414_Williams_194141894.pdf: read ECONNRESET
+[2026-02-16T13:55:33.519Z] 📊 Batch 64-66 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 63.80s)
+[2026-02-16T13:55:33.523Z] 📦 Starting batch 67-69
+[2026-02-16T13:55:33.523Z]    ➡️ 415_Harris_194091278.pdf
+[2026-02-16T13:55:33.524Z]    ➡️ 416_VANLEEUWEN_194141676.pdf
+[2026-02-16T13:55:33.524Z]    ➡️ 417_Word_194225839.pdf
+[2026-02-16T13:55:58.949Z] ✅ 416_VANLEEUWEN_194141676.pdf → 369e92ca-0b8f-4791-9480-2fc0f531a045
+[2026-02-16T13:56:14.708Z] ✅ 417_Word_194225839.pdf → 14e7da99-c3dc-4104-b1de-6de52c0793ea
+[2026-02-16T13:56:16.539Z] ✅ 415_Harris_194091278.pdf → e98e3f0f-acc7-477c-9454-6fd5f92e7e5a
+[2026-02-16T13:56:16.539Z] 📊 Batch 67-69 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 43.02s)
+[2026-02-16T13:56:16.540Z] 📦 Starting batch 70-72
+[2026-02-16T13:56:16.540Z]    ➡️ 419_Harris_194262618.pdf
+[2026-02-16T13:56:16.540Z]    ➡️ 420_Zacher_192098751.pdf
+[2026-02-16T13:56:16.540Z]    ➡️ 421_Ratliff_194266787.pdf
+[2026-02-16T13:56:34.676Z] ❌ 419_Harris_194262618.pdf: Request failed with status code 500
+[2026-02-16T13:56:35.733Z] ✅ 420_Zacher_192098751.pdf → 9fa60bd4-2839-4314-b897-e06c12944bd8
+[2026-02-16T13:56:45.305Z] ❌ 421_Ratliff_194266787.pdf: Request failed with status code 500
+[2026-02-16T13:56:45.306Z] 📊 Batch 70-72 (Processed: 1, Skipped: 0, Failed: 2, Total: 3, TimeTaken: 28.77s)
+[2026-02-16T13:56:45.306Z] 📦 Starting batch 73-75
+[2026-02-16T13:56:45.306Z]    ➡️ 422_CLARK_194269215.pdf
+[2026-02-16T13:56:45.306Z]    ➡️ 423_CLARK_194269215.pdf
+[2026-02-16T13:56:45.306Z]    ➡️ 424_Fisher_194262532.pdf
+[2026-02-16T13:57:08.066Z] ✅ 422_CLARK_194269215.pdf → 479a5cf1-cb7b-4481-a3a4-a01f001329d0
+[2026-02-16T13:57:08.070Z] ✅ 423_CLARK_194269215.pdf → 9dcfbcab-6d17-49ce-b77d-898688825136
+[2026-02-16T13:57:48.648Z] ❌ 424_Fisher_194262532.pdf: read ECONNRESET
+[2026-02-16T13:57:48.650Z] 📊 Batch 73-75 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 63.34s)
+[2026-02-16T13:57:48.650Z] 📦 Starting batch 76-78
+[2026-02-16T13:57:48.650Z]    ➡️ 425_Franklin_193960308.pdf
+[2026-02-16T13:57:48.650Z]    ➡️ 426_Pearson_194311703.pdf
+[2026-02-16T13:57:48.650Z]    ➡️ 427_Bell_194311806.pdf
+[2026-02-16T13:58:09.786Z] ✅ 425_Franklin_193960308.pdf → 9d2185c4-e8cc-4e7d-aa00-4489f482ee56
+[2026-02-16T13:58:10.279Z] ✅ 426_Pearson_194311703.pdf → e9ebeb47-88a4-4a2b-9376-524c2325ef8e
+[2026-02-16T13:58:26.615Z] ✅ 427_Bell_194311806.pdf → 9546dfb7-9dff-4b8d-a741-dec28e843139
+[2026-02-16T13:58:26.616Z] 📊 Batch 76-78 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 37.97s)
+[2026-02-16T13:58:26.616Z] 📦 Starting batch 79-81
+[2026-02-16T13:58:26.616Z]    ➡️ 428_Brooks_194311880.pdf
+[2026-02-16T13:58:26.616Z]    ➡️ 429_FASANO_194344154.pdf
+[2026-02-16T13:58:26.616Z]    ➡️ 430_Wilson_194407612.pdf
+[2026-02-16T13:58:49.176Z] ✅ 428_Brooks_194311880.pdf → a320781b-4c75-452a-aec7-3e7c02e62251
+[2026-02-16T13:58:52.514Z] ✅ 430_Wilson_194407612.pdf → 044478a5-5de0-48d7-8aaa-2f8369cef466
+[2026-02-16T13:59:07.074Z] ✅ 429_FASANO_194344154.pdf → 7846c8ef-bde3-4d4e-bf06-c9c86cc08dbc
+[2026-02-16T13:59:07.074Z] 📊 Batch 79-81 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 40.46s)
+[2026-02-16T13:59:07.076Z] 📦 Starting batch 82-84
+[2026-02-16T13:59:07.076Z]    ➡️ 431_Ortiz_194316452.pdf
+[2026-02-16T13:59:07.076Z]    ➡️ 432_Gay_194180515.pdf
+[2026-02-16T13:59:07.076Z]    ➡️ 433_Brown_194452376.pdf
+[2026-02-16T13:59:25.608Z] ✅ 431_Ortiz_194316452.pdf → 7d60da2d-fed9-4a9b-86db-c53b2af33f6a
+[2026-02-16T13:59:28.052Z] ✅ 432_Gay_194180515.pdf → 0fb7f617-55dd-4052-9808-eddfdf165243
+[2026-02-16T13:59:59.162Z] ✅ 433_Brown_194452376.pdf → 4d05eef1-7389-400f-9500-3d8120e4cdfe
+[2026-02-16T13:59:59.164Z] 📊 Batch 82-84 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 52.07s)
+[2026-02-16T13:59:59.164Z] 📦 Starting batch 85-87
+[2026-02-16T13:59:59.164Z]    ➡️ 434_Britt_194376665.pdf
+[2026-02-16T13:59:59.164Z]    ➡️ 435_Green_194380404.pdf
+[2026-02-16T13:59:59.164Z]    ➡️ 436_Blanchard_194250717.pdf
+[2026-02-16T14:00:18.643Z] ✅ 434_Britt_194376665.pdf → e5ec6032-221d-4de9-9838-edc20e3c2d7e
+[2026-02-16T14:00:20.533Z] ✅ 436_Blanchard_194250717.pdf → 1f3aa6aa-1702-43a8-a4ff-32973de34fbf
+[2026-02-16T14:00:52.431Z] ✅ 435_Green_194380404.pdf → 3500fcf5-7d5d-4a86-9bbb-2b7da16a6d62
+[2026-02-16T14:00:52.432Z] 📊 Batch 85-87 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 53.28s)
+[2026-02-16T14:00:52.432Z] 📦 Starting batch 88-90
+[2026-02-16T14:00:52.432Z]    ➡️ 437_GIBSON_194407462.pdf
+[2026-02-16T14:00:52.432Z]    ➡️ 438_King_194453286.pdf
+[2026-02-16T14:00:52.432Z]    ➡️ 439_Carr_194500342.pdf
+[2026-02-16T14:01:32.822Z] ✅ 439_Carr_194500342.pdf → 29af6d19-b139-4191-85e8-e3a5075b9436
+[2026-02-16T14:02:37.221Z] ❌ 437_GIBSON_194407462.pdf: Request failed with status code 500
+[2026-02-16T14:03:08.999Z] ✅ 438_King_194453286.pdf → 75b7e98f-2dc9-41e8-ab20-d28db63c5429
+[2026-02-16T14:03:08.999Z] 📊 Batch 88-90 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 136.57s)
+[2026-02-16T14:03:08.999Z] 📦 Starting batch 91-93
+[2026-02-16T14:03:08.999Z]    ➡️ 440_Mikell_194453758.pdf
+[2026-02-16T14:03:08.999Z]    ➡️ 441_Cunningham_194498819.pdf
+[2026-02-16T14:03:08.999Z]    ➡️ 442_Spain_194181803.pdf
+[2026-02-16T14:03:31.452Z] ✅ 441_Cunningham_194498819.pdf → 47a9a54b-809d-45d5-bc43-045ae7208ae7
+[2026-02-16T14:03:41.477Z] ✅ 440_Mikell_194453758.pdf → 9010e787-e866-4cc7-8a15-915a008b9beb
+[2026-02-16T14:05:27.880Z] ✅ 442_Spain_194181803.pdf → ead0c161-14f0-4dfd-858e-d60996f0a77b
+[2026-02-16T14:05:27.880Z] 📊 Batch 91-93 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 138.88s)
+[2026-02-16T14:05:27.880Z] 📦 Starting batch 94-96
+[2026-02-16T14:05:27.880Z]    ➡️ 444_HILL_194501985.pdf
+[2026-02-16T14:05:27.880Z]    ➡️ 445_LOPEZ_194501401.pdf
+[2026-02-16T14:05:27.880Z]    ➡️ 446_Ford_194527566.pdf
+[2026-02-16T14:05:54.679Z] ✅ 445_LOPEZ_194501401.pdf → d21661f5-3ed6-4a70-a4ed-a69f32e0a737
+[2026-02-16T14:06:00.911Z] ✅ 444_HILL_194501985.pdf → 51892e8b-428c-43a3-af2a-850da8ae72f7
+[2026-02-16T14:06:09.348Z] Timeout value of 00:30:00 exceeded by function 'Functions.DailyPdfProcessorJob' (Id: '1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1'). Initiating cancellation.
+[2026-02-16T14:06:09.378Z] Executed 'Functions.DailyPdfProcessorJob' (Failed, Id=1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1, Duration=1800050ms)
+[2026-02-16T14:06:09.378Z] Microsoft.Azure.WebJobs.Host: Timeout value of 00:30:00 was exceeded by function: Functions.DailyPdfProcessorJob.
+[2026-02-16T14:06:11.386Z] A function timeout has occurred. Restarting worker process executing invocationId '1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1'.
+[2026-02-16T14:06:11.753Z] Worker process started and initialized.
+[2026-02-16T14:06:21.756Z] Attempt to restart language worker process(es) completed.
+[2026-02-16T14:07:09.674Z] Language Worker Process exited. Pid=35342.
+[2026-02-16T14:07:09.674Z] node exited with code 130 (0x82). .
+[2026-02-16T14:07:09.952Z] Worker process started and initialized.
