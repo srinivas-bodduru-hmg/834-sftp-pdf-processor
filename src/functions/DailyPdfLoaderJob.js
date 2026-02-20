@@ -1,0 +1,82 @@
+const { app } = require("@azure/functions");
+const axios = require("axios");
+
+/**
+ * 7 AM Job - Triggers Scraping API
+ */
+app.timer("DailyPdfLoaderJob", {
+  schedule: "0 0 7 * * *", // 7 AM (UTC by default)
+  runOnStartup: true,
+
+  handler: async (timer, context) => {
+    const log = (...args) => context.log(...args);
+
+    log("🚀 DailyPdfLoaderJob (7AM) Started");
+
+    try {
+      // Step 1: Calculate yesterday -> today
+      log("📅 Step 1: Calculating date range");
+      const today = new Date();
+      log(`   Current date: ${today.toISOString()}`);
+      
+      const yesterday = new Date(today);
+      yesterday.setDate(today.getDate() - 1);
+      log(`   Yesterday date: ${yesterday.toISOString()}`);
+
+      const format = (d) => d.toISOString().split("T")[0];
+      const formattedYesterday = format(yesterday);
+      const formattedToday = format(today);
+      log(`   Formatted range: ${formattedYesterday} to ${formattedToday}`);
+
+      // Step 2: Create payload
+      log("📋 Step 2: Creating payload");
+      const payload = {
+        start_date: formattedYesterday,
+        end_date: formattedToday,
+        practice_name: "Germantown",
+        entity: "270681372",
+        sub_entity: "270681372001",
+      };
+      log("   Payload created:", JSON.stringify(payload, null, 2));
+
+      // Step 3: Make API call
+      log("📤 Step 3: Calling Tebra API endpoint");
+      const apiUrl = "http://57.154.234.15:8010/run-tebra";
+      log(`   URL: ${apiUrl}`);
+      log("   Sending request with 10 minute timeout...");
+
+      const response = await axios.post(
+        apiUrl,
+        payload,
+        { timeout: 10 * 60 * 1000 }, // 10 min timeout
+      );
+
+      // Step 4: Handle success
+      log("✅ Step 4: API call successful");
+      log(`   Status Code: ${response.status}`);
+      log(`   Response Data:`, JSON.stringify(response.data, null, 2));
+      log("🎉 DailyPdfLoaderJob completed successfully");
+
+    } catch (err) {
+      log("❌ DailyPdfLoaderJob Failed - Error handling initiated");
+      log(`   Error Type: ${err.name}`);
+      log(`   Error Message: ${err.message}`);
+
+      if (err.response) {
+        log("📊 HTTP Response Error Details:");
+        log(`   Status Code: ${err.response.status}`);
+        log(`   Status Text: ${err.response.statusText}`);
+        log(`   Response Data:`, JSON.stringify(err.response.data, null, 2));
+      } else if (err.request) {
+        log("🌐 Request was made but no response received:");
+        log(`   Request:`, err.request);
+      } else {
+        log("⚠️  Error occurred during request setup:");
+        log(`   Details: ${err.message}`);
+      }
+
+      log("💾 Logging complete, re-throwing error for Azure Functions retry mechanism");
+      throw err; // Important for retry
+    }
+  },
+});
