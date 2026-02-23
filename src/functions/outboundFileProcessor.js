@@ -1,112 +1,163 @@
-const { app } = require('@azure/functions');
-const { getProcessorConfig, validateProcessorConfig, processOutboundFilesJob } = require('../shared/processorLogic');
-const { drizzle } = require('drizzle-orm/postgres-js');
-const postgres = require('postgres');
+const { app } = require("@azure/functions");
+const axios = require("axios");
+const jwt = require("jsonwebtoken");
 
-// Initialize database connection (lazy-loaded)
-let db = null;
-let dbSchema = null;
+const CONFIG = {
+  BACKEND_URL:
+    process.env.BACKEND_API_URL || "https://your-backend.azurewebsites.net",
 
-/**
- * Initialize database connection
- */
-async function initializeDatabase(config) {
-  if (db) {
-    return { db, schema: dbSchema };
-  }
+  BACKEND_EMAIL: process.env.BACKEND_EMAIL,
+  BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
 
-  try {
-    const client = postgres(config.database.url);
-    db = drizzle(client);
+  MEDICAL_API_URL: process.env.MEDICAL_EXTRACTION_API_URL,
+  MEDICAL_API_TOKEN: process.env.MEDICAL_EXTRACTION_API_TOKEN,
 
-    // Import schema (adjust path if needed)
-    // For now, we'll use a simplified schema definition
-    dbSchema = {
-      outboundFiles: {},
-      inboundFiles: {},
-      claimAttachments: {},
-      claimProcessingHistory: {},
-      claimHeader: {},
-    };
+  ACCOUNT_URL: process.env.ACCOUNT_URL,
 
-    return { db, schema: dbSchema };
-  } catch (error) {
-    console.error('[Outbound File Processor] Failed to initialize database:', error.message);
-    throw error;
-  }
-}
+  CONTAINER: "834labs-sftp",
 
-/**
- * Azure Function Timer Trigger: Outbound File Processor
- * Runs at 15 and 45 minutes past each hour (0 15,45 * * * *)
- *
- * Processes unprocessed outbound files from Azure Blob Storage:
- * 1. Downloads files from Azure
- * 2. Handles "PleaseRead" error files by parsing and linking to claims
- * 3. Handles "ErrorReport" files by parsing and linking to claims
- * 4. Uploads files to Azure attachment storage
- * 5. Inserts metadata records to database (atomic transaction)
- * 6. Updates claim status to 'G' (processed)
- * 7. Marks file as processed
- */
-app.timer('outboundFileProcessor', {
-  schedule: '0 15,45 * * * *', // At 15 and 45 minutes past each hour
+  BATCH_SIZE: 3,
+};
+
+// /**
+//  * Azure Function Timer Trigger: Outbound File Processor
+//  * Runs every 30 minutes (0 */30 * * * *)
+//  *
+//  * Pulls outbound files from SFTP:
+//  * 1. Downloads files from /outbound directory
+//  * 2. Uploads to Azure Blob Storage (OfficeAlly/OUTBOUND folder)
+//  * 3. Inserts metadata record to database (atomic transaction)
+//  * 4. Deletes from SFTP (non-blocking cleanup)
+//  */
+app.timer("outboundScheduler", {
+  schedule: "0 */30 * * * *", // Every 30 minutes at :00 and :30
   runOnStartup: true,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
-
-    context.log('[Outbound File Processor] ⏰ Timer trigger fired');
-
+    context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
+    context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
+    let session;
     try {
-      // Get and validate configuration
-      const config = getProcessorConfig();
-      validateProcessorConfig(config);
-
-      // Initialize database connection
-      let database = null;
-      try {
-        context.log('[Outbound File Processor] Initializing database connection...');
-        const dbConnection = await initializeDatabase(config);
-        database = dbConnection.db;
-      } catch (dbError) {
-        context.log(`[Outbound File Processor] ❌ Database initialization failed: ${dbError.message}`);
-        // Throw error - can't process files without database
-        throw dbError;
-      }
-
-      // Process outbound files
-      const logger = (msg) => {
-        context.log(msg);
-        console.log(msg);
-      };
-
-      context.log('[Outbound File Processor] Starting file processing...');
-      const result = await processOutboundFilesJob(database, config, logger);
-
-      // Log final results
-      const duration = Date.now() - startTime;
-      context.log(`[Outbound File Processor] ✅ Execution completed`);
-      context.log(`  - Files processed: ${result.filesProcessed}`);
-      context.log(`  - Errors: ${result.errors.length}`);
-      context.log(`  - Duration: ${duration}ms`);
-
-      if (result.errors.length > 0) {
-        context.log(`  - Errors: ${result.errors.join('; ')}`);
-      }
-
-      // Return execution summary (visible in Application Insights)
-      return {
-        success: result.errors.length === 0,
-        filesProcessed: result.filesProcessed,
-        errors: result.errors,
-        duration,
-      };
+      session = await login(context);
     } catch (error) {
-      context.log(`[Outbound File Processor] ❌ Error: ${error.message}`);
-      context.log(`Stack: ${error.stack}`);
-
-      // Throw error to trigger Application Insights alerts if configured
-      throw new Error(`[Outbound File Processor] Job failed: ${error.message}`);
+      context.log("[Outbound Scheduler] ❌ Login failed:", error.message);
+      context.log("[Outbound Scheduler] ❌ Login failed:");
+      context.log(`   Message: ${error.message}`);
+      throw error;
     }
+    try {
+       const url = `${CONFIG.BACKEND_URL}/api/trpc/scheduler.outboundFileProcessorSchedulerStart`;
+      const res = await axios.post(`${url}`, {
+        headers: {
+          Cookie: session.cookieHeader,
+          "Content-Type": "application/json",
+        },
+        timeout: 600000,
+      });
+    } catch (error) {
+      context.log(
+        "[Outbound Scheduler] ❌ Axios request failed:",
+        error.message,
+      );
+      context.log("[Outbound Scheduler] ❌ Axios request failed:");
+      context.log(`   Message: ${error.message}`);
+
+      // If this is an HTTP/API error (Axios)
+
+      let errorDetails = {
+        message: error.message,
+        code: error.code,
+      };
+
+      if (error.response) {
+        errorDetails.status = error.response.status;
+        errorDetails.statusText = error.response.statusText;
+        errorDetails.data = error.response.data;
+        errorDetails.headers = error.response.headers;
+      }
+
+      // If request was sent but no response
+      else if (error.request) {
+        errorDetails.request = "No response received from API";
+      }
+
+      // Other errors (coding, timeout, etc.)
+      else {
+        errorDetails.internal = error.toString();
+      }
+
+      context.log(`❌ ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
+
+      if (error.response) {
+        context.log(
+          "[Outbound Scheduler] HTTP Error Details:",
+          error.response.status,
+        );
+        context.log(`   HTTP Status: ${error.response.status}`);
+        context.log(`   Data: ${JSON.stringify(error.response.data)}`);
+      }
+
+      throw error;
+    }
+
+    context.log("[Outbound Scheduler] 📥 Axios response received");
+    context.log("[Outbound Scheduler] 📥 Axios response received");
+
+    context.log("[Outbound Scheduler] ✅ Backend login successful");
+    context.log("[Outbound Scheduler] ✅ Backend login successful");
+
+    const duration = Date.now() - startTime;
+    context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
+    context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
+
+    return {
+      success: true,
+      duration,
+    };
   },
 });
+
+async function login(context) {
+  context.log("🔐 Logging in...");
+
+  const res = await axios.post(
+    `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
+    {
+      0: {
+        email: CONFIG.BACKEND_EMAIL,
+        password: CONFIG.BACKEND_PASSWORD,
+      },
+    },
+    { withCredentials: true, timeout: 600000 },
+  );
+
+  const cookies = res.headers["set-cookie"];
+
+  if (!cookies) {
+    throw new Error("Login failed: No cookies");
+  }
+
+  const cookieHeader = cookies.map((c) => c.split(";")[0]).join("; ");
+
+  const tokenCookie = cookies.find((c) => c.includes("TOKEN="));
+
+  let userId = null;
+
+  if (tokenCookie) {
+    const token = tokenCookie.split("TOKEN=")[1].split(";")[0];
+    const decoded = jwt.decode(token);
+    userId = decoded?.userId;
+  }
+
+  if (!tokenCookie) {
+    throw new Error("Login failed: No tokenCookie");
+  }
+
+  if (!userId) {
+    throw new Error("Login failed: No userId");
+  }
+
+  context.log(`✅ Authenticated (userId: ${userId})`);
+
+  return { cookieHeader, userId };
+}

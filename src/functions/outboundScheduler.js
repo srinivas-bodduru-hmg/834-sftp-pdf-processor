@@ -1,6 +1,6 @@
-const { app } = require('@azure/functions');
-const axios = require('axios');
-
+const { app } = require("@azure/functions");
+const axios = require("axios");
+const jwt = require("jsonwebtoken");
 
 const CONFIG = {
   BACKEND_URL:
@@ -19,8 +19,6 @@ const CONFIG = {
   BATCH_SIZE: 3,
 };
 
-
-
 // /**
 //  * Azure Function Timer Trigger: Outbound File Processor
 //  * Runs every 30 minutes (0 */30 * * * *)
@@ -31,59 +29,135 @@ const CONFIG = {
 //  * 3. Inserts metadata record to database (atomic transaction)
 //  * 4. Deletes from SFTP (non-blocking cleanup)
 //  */
-app.timer('outboundScheduler', {
-  schedule: '0 */30 * * * *', // Every 30 minutes at :00 and :30
+app.timer("outboundScheduler", {
+  schedule: "0 */30 * * * *", // Every 30 minutes at :00 and :30
+  runOnStartup: true,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
-    console.log('[Outbound Scheduler] ⏰ Timer trigger fired');
-    context.log('[Outbound Scheduler] ⏰ Timer trigger fired');
-
+    context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
+    context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
+    let session;
     try {
-      if (myTimer.isPastDue) {
-        console.log('[Outbound Scheduler] ⚠️  Timer is past due!');
-        context.log('[Outbound Scheduler] ⚠️  Timer is past due!');
-      }
-
-      console.log('[Outbound Scheduler] 🔐 Attempting backend login...');
-      context.log('[Outbound Scheduler] 🔐 Attempting backend login...');
-
-      const res = await axios.post(
-        `${CONFIG.BACKEND_URL}/server/src/routers/scheduler.router/schedulerRouter.outboundSchedulerStart`,
-        {
-          0: {
-            email: CONFIG.BACKEND_EMAIL,
-            password: CONFIG.BACKEND_PASSWORD,
-          },
-        },
-        { withCredentials: true, timeout: 600000 },
-      );
-
-      console.log('[Outbound Scheduler] ✅ Backend login successful');
-      context.log('[Outbound Scheduler] ✅ Backend login successful');
-      context.log(`   Status: ${res.status}`);
-
-      const duration = Date.now() - startTime;
-      console.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
-      context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
-
-      return {
-        success: true,
-        duration,
-      };
+      session = await login(context);
     } catch (error) {
-      const duration = Date.now() - startTime;
-      console.error('[Outbound Scheduler] ❌ Error occurred:', error.message);
-      context.log.error('[Outbound Scheduler] ❌ Error occurred:');
-      context.log.error(`   Message: ${error.message}`);
-      context.log.error(`   Duration: ${duration}ms`);
+      context.log("[Outbound Scheduler] ❌ Login failed:", error.message);
+      context.log("[Outbound Scheduler] ❌ Login failed:");
+      context.log(`   Message: ${error.message}`);
+      throw error;
+    }
+    try {
+       const url = `${CONFIG.BACKEND_URL}/api/trpc/scheduler.outboundSchedulerStart`;
+      const res = await axios.post(`${url}`, {
+        headers: {
+          Cookie: session.cookieHeader,
+          "Content-Type": "application/json",
+        },
+        timeout: 600000,
+      });
+    } catch (error) {
+      context.log(
+        "[Outbound Scheduler] ❌ Axios request failed:",
+        error.message,
+      );
+      context.log("[Outbound Scheduler] ❌ Axios request failed:");
+      context.log(`   Message: ${error.message}`);
+
+      // If this is an HTTP/API error (Axios)
+
+      let errorDetails = {
+        message: error.message,
+        code: error.code,
+      };
 
       if (error.response) {
-        console.error('[Outbound Scheduler] HTTP Error Details:', error.response.status);
-        context.log.error(`   HTTP Status: ${error.response.status}`);
-        context.log.error(`   Data: ${JSON.stringify(error.response.data)}`);
+        errorDetails.status = error.response.status;
+        errorDetails.statusText = error.response.statusText;
+        errorDetails.data = error.response.data;
+        errorDetails.headers = error.response.headers;
+      }
+
+      // If request was sent but no response
+      else if (error.request) {
+        errorDetails.request = "No response received from API";
+      }
+
+      // Other errors (coding, timeout, etc.)
+      else {
+        errorDetails.internal = error.toString();
+      }
+
+      context.log(`❌ ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
+
+      if (error.response) {
+        context.log(
+          "[Outbound Scheduler] HTTP Error Details:",
+          error.response.status,
+        );
+        context.log(`   HTTP Status: ${error.response.status}`);
+        context.log(`   Data: ${JSON.stringify(error.response.data)}`);
       }
 
       throw error;
     }
+
+    context.log("[Outbound Scheduler] 📥 Axios response received");
+    context.log("[Outbound Scheduler] 📥 Axios response received");
+
+    context.log("[Outbound Scheduler] ✅ Backend login successful");
+    context.log("[Outbound Scheduler] ✅ Backend login successful");
+
+    const duration = Date.now() - startTime;
+    context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
+    context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
+
+    return {
+      success: true,
+      duration,
+    };
   },
 });
+
+async function login(context) {
+  context.log("🔐 Logging in...");
+
+  const res = await axios.post(
+    `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
+    {
+      0: {
+        email: CONFIG.BACKEND_EMAIL,
+        password: CONFIG.BACKEND_PASSWORD,
+      },
+    },
+    { withCredentials: true, timeout: 600000 },
+  );
+
+  const cookies = res.headers["set-cookie"];
+
+  if (!cookies) {
+    throw new Error("Login failed: No cookies");
+  }
+
+  const cookieHeader = cookies.map((c) => c.split(";")[0]).join("; ");
+
+  const tokenCookie = cookies.find((c) => c.includes("TOKEN="));
+
+  let userId = null;
+
+  if (tokenCookie) {
+    const token = tokenCookie.split("TOKEN=")[1].split(";")[0];
+    const decoded = jwt.decode(token);
+    userId = decoded?.userId;
+  }
+
+  if (!tokenCookie) {
+    throw new Error("Login failed: No tokenCookie");
+  }
+
+  if (!userId) {
+    throw new Error("Login failed: No userId");
+  }
+
+  context.log(`✅ Authenticated (userId: ${userId})`);
+
+  return { cookieHeader, userId };
+}
