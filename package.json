@@ -13,7 +13,10 @@
     "@azure/identity": "^4.2.1",
     "adm-zip": "^0.5.16",
     "axios": "^1.13.4",
-    "form-data": "^4.0.0"
+    "form-data": "^4.0.0",
+    "ssh2-sftp-client": "^12.0.1",
+    "drizzle-orm": "*",
+    "postgres": "^3.4.7"
   },
   "devDependencies": {
     "azure-functions-core-tools": "^4.0.0"

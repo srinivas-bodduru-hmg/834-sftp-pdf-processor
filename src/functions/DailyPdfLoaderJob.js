@@ -9,7 +9,11 @@ app.timer("DailyPdfLoaderJob", {
   runOnStartup: true,
 
   handler: async (timer, context) => {
-    const log = (...args) => context.log(...args);
+    const log = (...args) => {
+      const msg = args.join(' ');
+      context.log(msg);
+      console.log(msg);
+    };
 
     log("🚀 DailyPdfLoaderJob (7AM) Started");
 
@@ -58,8 +62,11 @@ app.timer("DailyPdfLoaderJob", {
       log("🎉 DailyPdfLoaderJob completed successfully");
 
     } catch (err) {
+      console.error("❌ DailyPdfLoaderJob Failed - Error handling initiated");
       log("❌ DailyPdfLoaderJob Failed - Error handling initiated");
+      console.error(`   Error Type: ${err.name}`);
       log(`   Error Type: ${err.name}`);
+      console.error(`   Error Message: ${err.message}`);
       log(`   Error Message: ${err.message}`);
 
       if (err.response) {
