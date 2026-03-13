@@ -1,890 +1,1239 @@
-'local.settings.json' found in root directory (/Users/srinivasbodduru/834-sftp-pdf-processor).
-Resolving worker runtime to 'node'.
 
 
 Azure Functions Core Tools
-Core Tools Version:       4.6.0+ab90faafcab539d63cd3d0ce5faf1bca4395fccc (64-bit)
+Core Tools Version:       4.7.0+af9404fa5872d8fa5fa2454a7cfeb2ee0cda2832 (64-bit)
 Function Runtime Version: 4.1045.200.25556
 
-[2026-02-16T13:36:07.384Z] Worker process started and initialized.
+[2026-03-13T09:34:27.474Z] Worker process started and initialized.
 
 Functions:
 
 	DailyPdfProcessorJob: timerTrigger
 
 For detailed output, run func with --verbose flag.
-[2026-02-16T13:36:09.334Z] Executing 'Functions.DailyPdfProcessorJob' (Reason='Timer fired at 2026-02-16T19:06:09.3211400+05:30', Id=1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1)
-[2026-02-16T13:36:09.334Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup, ScheduleStatus: {"Last":"2026-02-16T18:20:30.212155+05:30","Next":"2026-02-17T02:30:00+05:30","LastUpdated":"2026-02-16T18:20:30.212155+05:30"}
-[2026-02-16T13:36:09.367Z] 🚀 Daily PDF Processor Started
-[2026-02-16T13:36:09.368Z] 🔐 Logging in...
-[2026-02-16T13:36:11.515Z] ✅ Authenticated (userId: 3ef58454-9fc4-46a8-a8b3-761018fb5657)
-[2026-02-16T13:36:11.515Z] 📦 Connecting to Blob Storage...
-[2026-02-16T13:36:11.515Z] ✅ Connected to 834labs-sftp
-[2026-02-16T13:36:13.552Z] 
-[2026-02-16T13:36:13.552Z] 📁 Processing ZIP: The PreOP Center/tebra_facesheets_TPC_2025-08-13_2934.zip
-[2026-02-16T13:36:13.638Z] Host lock lease acquired by instance ID '000000000000000000000000F178F181'.
-[2026-02-16T13:36:30.936Z] 📄 Found 223 PDFs
-[2026-02-16T13:36:30.937Z] 📦 Starting batch 1-3
-[2026-02-16T13:36:30.938Z]    ➡️ 100_Borlo_191572207.pdf
-[2026-02-16T13:36:30.939Z]    ➡️ 101_Cox_191614146.pdf
-[2026-02-16T13:36:30.939Z]    ➡️ 102_BARNES_191581179.pdf
-[2026-02-16T13:36:32.453Z] ❌ 102_BARNES_191581179.pdf: Duplicate file
-[2026-02-16T13:36:32.461Z] ❌ 100_Borlo_191572207.pdf: Duplicate file
-[2026-02-16T13:36:32.482Z] ❌ 101_Cox_191614146.pdf: Duplicate file
-[2026-02-16T13:36:32.482Z] 📊 Batch 1-3 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 1.55s)
-[2026-02-16T13:36:32.482Z] 📦 Starting batch 4-6
-[2026-02-16T13:36:32.482Z]    ➡️ 103_Morrow_191507488.pdf
-[2026-02-16T13:36:32.482Z]    ➡️ 104_HILL_191672870.pdf
-[2026-02-16T13:36:32.482Z]    ➡️ 105_ADAIR_191569478.pdf
-[2026-02-16T13:36:32.812Z] ❌ 105_ADAIR_191569478.pdf: Duplicate file
-[2026-02-16T13:36:32.814Z] ❌ 103_Morrow_191507488.pdf: Duplicate file
-[2026-02-16T13:36:32.828Z] ❌ 104_HILL_191672870.pdf: Duplicate file
-[2026-02-16T13:36:32.828Z] 📊 Batch 4-6 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
-[2026-02-16T13:36:32.828Z] 📦 Starting batch 7-9
-[2026-02-16T13:36:32.828Z]    ➡️ 106_Mirdo_191631755.pdf
-[2026-02-16T13:36:32.828Z]    ➡️ 107_ACCARDO_191722554.pdf
-[2026-02-16T13:36:32.828Z]    ➡️ 108_Howell_191702213.pdf
-[2026-02-16T13:36:33.147Z] ❌ 107_ACCARDO_191722554.pdf: Duplicate file
-[2026-02-16T13:36:33.150Z] ❌ 106_Mirdo_191631755.pdf: Duplicate file
-[2026-02-16T13:36:33.192Z] ❌ 108_Howell_191702213.pdf: Duplicate file
-[2026-02-16T13:36:33.192Z] 📊 Batch 7-9 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.37s)
-[2026-02-16T13:36:33.192Z] 📦 Starting batch 10-12
-[2026-02-16T13:36:33.192Z]    ➡️ 109_Simpson_191753258.pdf
-[2026-02-16T13:36:33.192Z]    ➡️ 110_Hance_191754204.pdf
-[2026-02-16T13:36:33.192Z]    ➡️ 111_Gregson_191754771.pdf
-[2026-02-16T13:36:33.522Z] ❌ 109_Simpson_191753258.pdf: Duplicate file
-[2026-02-16T13:36:33.525Z] ❌ 111_Gregson_191754771.pdf: Duplicate file
-[2026-02-16T13:36:33.525Z] ❌ 110_Hance_191754204.pdf: Duplicate file
-[2026-02-16T13:36:33.525Z] 📊 Batch 10-12 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-02-16T13:36:33.525Z] 📦 Starting batch 13-15
-[2026-02-16T13:36:33.525Z]    ➡️ 112_Hardin_191755109.pdf
-[2026-02-16T13:36:33.525Z]    ➡️ 113_Cunningham_191755755.pdf
-[2026-02-16T13:36:33.525Z]    ➡️ 114_Hanks_191767844.pdf
-[2026-02-16T13:36:33.890Z] ❌ 114_Hanks_191767844.pdf: Duplicate file
-[2026-02-16T13:36:33.890Z] ❌ 113_Cunningham_191755755.pdf: Duplicate file
-[2026-02-16T13:36:33.906Z] ❌ 112_Hardin_191755109.pdf: Duplicate file
-[2026-02-16T13:36:33.906Z] 📊 Batch 13-15 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.38s)
-[2026-02-16T13:36:33.906Z] 📦 Starting batch 16-18
-[2026-02-16T13:36:33.906Z]    ➡️ 115_Johnson_191771285.pdf
-[2026-02-16T13:36:33.906Z]    ➡️ 116_Haddad_191780329.pdf
-[2026-02-16T13:36:33.906Z]    ➡️ 117_HALL_191802393.pdf
-[2026-02-16T13:36:34.214Z] ❌ 116_Haddad_191780329.pdf: Duplicate file
-[2026-02-16T13:36:34.226Z] ❌ 117_HALL_191802393.pdf: Duplicate file
-[2026-02-16T13:36:34.239Z] ❌ 115_Johnson_191771285.pdf: Duplicate file
-[2026-02-16T13:36:34.239Z] 📊 Batch 16-18 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:34.239Z] 📦 Starting batch 19-21
-[2026-02-16T13:36:34.239Z]    ➡️ 118_GUINLE_191810717.pdf
-[2026-02-16T13:36:34.239Z]    ➡️ 119_Parks_191823081.pdf
-[2026-02-16T13:36:34.239Z]    ➡️ 120_SANGSTER_191828764.pdf
-[2026-02-16T13:36:34.530Z] ❌ 120_SANGSTER_191828764.pdf: Duplicate file
-[2026-02-16T13:36:34.545Z] ❌ 119_Parks_191823081.pdf: Duplicate file
-[2026-02-16T13:36:34.561Z] ❌ 118_GUINLE_191810717.pdf: Duplicate file
-[2026-02-16T13:36:34.561Z] 📊 Batch 19-21 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:34.561Z] 📦 Starting batch 22-24
-[2026-02-16T13:36:34.561Z]    ➡️ 121_HALL_191802393.pdf
-[2026-02-16T13:36:34.561Z]    ➡️ 124_Hanissian_191951952.pdf
-[2026-02-16T13:36:34.561Z]    ➡️ 125_Liberto_191957504.pdf
-[2026-02-16T13:36:34.925Z] ❌ 125_Liberto_191957504.pdf: Duplicate file
-[2026-02-16T13:36:34.938Z] ❌ 124_Hanissian_191951952.pdf: Duplicate file
-[2026-02-16T13:36:34.946Z] ❌ 121_HALL_191802393.pdf: Duplicate file
-[2026-02-16T13:36:34.946Z] 📊 Batch 22-24 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.39s)
-[2026-02-16T13:36:34.947Z] 📦 Starting batch 25-27
-[2026-02-16T13:36:34.947Z]    ➡️ 126_Spight_191958621.pdf
-[2026-02-16T13:36:34.947Z]    ➡️ 127_SIMMONS_191960264.pdf
-[2026-02-16T13:36:34.947Z]    ➡️ 128_Painter_191968235.pdf
-[2026-02-16T13:36:35.241Z] ❌ 128_Painter_191968235.pdf: Duplicate file
-[2026-02-16T13:36:35.253Z] ❌ 127_SIMMONS_191960264.pdf: Duplicate file
-[2026-02-16T13:36:35.266Z] ❌ 126_Spight_191958621.pdf: Duplicate file
-[2026-02-16T13:36:35.266Z] 📊 Batch 25-27 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:35.267Z] 📦 Starting batch 28-30
-[2026-02-16T13:36:35.267Z]    ➡️ 129_Russell_191968888.pdf
-[2026-02-16T13:36:35.267Z]    ➡️ 130_Loving_191995535.pdf
-[2026-02-16T13:36:35.267Z]    ➡️ 131_SWAN_191955269.pdf
-[2026-02-16T13:36:35.588Z] ❌ 129_Russell_191968888.pdf: Duplicate file
-[2026-02-16T13:36:35.589Z] ❌ 131_SWAN_191955269.pdf: Duplicate file
-[2026-02-16T13:36:35.596Z] ❌ 130_Loving_191995535.pdf: Duplicate file
-[2026-02-16T13:36:35.597Z] 📊 Batch 28-30 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:35.597Z] 📦 Starting batch 31-33
-[2026-02-16T13:36:35.597Z]    ➡️ 132_Dark_191997455.pdf
-[2026-02-16T13:36:35.597Z]    ➡️ 133_Hoel_191999719.pdf
-[2026-02-16T13:36:35.597Z]    ➡️ 137_TEMPLETON_192003201.pdf
-[2026-02-16T13:36:35.906Z] ❌ 133_Hoel_191999719.pdf: Duplicate file
-[2026-02-16T13:36:35.912Z] ❌ 137_TEMPLETON_192003201.pdf: Duplicate file
-[2026-02-16T13:36:35.917Z] ❌ 132_Dark_191997455.pdf: Duplicate file
-[2026-02-16T13:36:35.917Z] 📊 Batch 31-33 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:35.917Z] 📦 Starting batch 34-36
-[2026-02-16T13:36:35.917Z]    ➡️ 138_Rice_192004752.pdf
-[2026-02-16T13:36:35.917Z]    ➡️ 139_Pechak_192008311.pdf
-[2026-02-16T13:36:35.917Z]    ➡️ 140_Archibald_192048154.pdf
-[2026-02-16T13:36:36.196Z] ❌ 140_Archibald_192048154.pdf: Duplicate file
-[2026-02-16T13:36:36.237Z] ❌ 139_Pechak_192008311.pdf: Duplicate file
-[2026-02-16T13:36:36.242Z] ❌ 138_Rice_192004752.pdf: Duplicate file
-[2026-02-16T13:36:36.242Z] 📊 Batch 34-36 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:36.242Z] 📦 Starting batch 37-39
-[2026-02-16T13:36:36.243Z]    ➡️ 141_Moon_192048521.pdf
-[2026-02-16T13:36:36.243Z]    ➡️ 143_Abee_192060656.pdf
-[2026-02-16T13:36:36.243Z]    ➡️ 144_Dabbs_192062563.pdf
-[2026-02-16T13:36:36.562Z] ❌ 143_Abee_192060656.pdf: Duplicate file
-[2026-02-16T13:36:36.598Z] ❌ 144_Dabbs_192062563.pdf: Duplicate file
-[2026-02-16T13:36:36.616Z] ❌ 141_Moon_192048521.pdf: Duplicate file
-[2026-02-16T13:36:36.616Z] 📊 Batch 37-39 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.37s)
-[2026-02-16T13:36:36.616Z] 📦 Starting batch 40-42
-[2026-02-16T13:36:36.616Z]    ➡️ 145_Moorman_192065455.pdf
-[2026-02-16T13:36:36.616Z]    ➡️ 148_EDWARDS_192004159.pdf
-[2026-02-16T13:36:36.616Z]    ➡️ 149_Everett_192097881.pdf
-[2026-02-16T13:36:36.909Z] ❌ 148_EDWARDS_192004159.pdf: Duplicate file
-[2026-02-16T13:36:36.911Z] ❌ 145_Moorman_192065455.pdf: Duplicate file
-[2026-02-16T13:36:36.933Z] ❌ 149_Everett_192097881.pdf: Duplicate file
-[2026-02-16T13:36:36.933Z] 📊 Batch 40-42 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:36.933Z] 📦 Starting batch 43-45
-[2026-02-16T13:36:36.934Z]    ➡️ 150_Sims_192102325.pdf
-[2026-02-16T13:36:36.934Z]    ➡️ 151_Barnett_192104198.pdf
-[2026-02-16T13:36:36.934Z]    ➡️ 152_Taylor_192099780.pdf
-[2026-02-16T13:36:37.285Z] ❌ 151_Barnett_192104198.pdf: Duplicate file
-[2026-02-16T13:36:37.299Z] ❌ 152_Taylor_192099780.pdf: Duplicate file
-[2026-02-16T13:36:37.305Z] ❌ 150_Sims_192102325.pdf: Duplicate file
-[2026-02-16T13:36:37.305Z] 📊 Batch 43-45 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.37s)
-[2026-02-16T13:36:37.306Z] 📦 Starting batch 46-48
-[2026-02-16T13:36:37.306Z]    ➡️ 153_BRADY_192128886.pdf
-[2026-02-16T13:36:37.306Z]    ➡️ 154_Johnson_192147896.pdf
-[2026-02-16T13:36:37.306Z]    ➡️ 155_Taylor_192099780.pdf
-[2026-02-16T13:36:37.620Z] ❌ 153_BRADY_192128886.pdf: Duplicate file
-[2026-02-16T13:36:37.621Z] ❌ 155_Taylor_192099780.pdf: Duplicate file
-[2026-02-16T13:36:37.637Z] ❌ 154_Johnson_192147896.pdf: Duplicate file
-[2026-02-16T13:36:37.638Z] 📊 Batch 46-48 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:37.638Z] 📦 Starting batch 49-51
-[2026-02-16T13:36:37.638Z]    ➡️ 157_Williams_192226714.pdf
-[2026-02-16T13:36:37.638Z]    ➡️ 158_Rogers_192257048.pdf
-[2026-02-16T13:36:37.638Z]    ➡️ 159_Wessels_191581790.pdf
-[2026-02-16T13:36:37.919Z] ❌ 157_Williams_192226714.pdf: Duplicate file
-[2026-02-16T13:36:37.996Z] ❌ 158_Rogers_192257048.pdf: Duplicate file
-[2026-02-16T13:36:38.002Z] ❌ 159_Wessels_191581790.pdf: Duplicate file
-[2026-02-16T13:36:38.002Z] 📊 Batch 49-51 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.36s)
-[2026-02-16T13:36:38.002Z] 📦 Starting batch 52-54
-[2026-02-16T13:36:38.002Z]    ➡️ 160_Morgan_192272729.pdf
-[2026-02-16T13:36:38.002Z]    ➡️ 161_McConnell_192277691.pdf
-[2026-02-16T13:36:38.002Z]    ➡️ 162_Holmes-Johnson_192278370.pdf
-[2026-02-16T13:36:38.335Z] ❌ 162_Holmes-Johnson_192278370.pdf: Duplicate file
-[2026-02-16T13:36:38.339Z] ❌ 161_McConnell_192277691.pdf: Duplicate file
-[2026-02-16T13:36:38.355Z] ❌ 160_Morgan_192272729.pdf: Duplicate file
-[2026-02-16T13:36:38.356Z] 📊 Batch 52-54 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
-[2026-02-16T13:36:38.356Z] 📦 Starting batch 55-57
-[2026-02-16T13:36:38.357Z]    ➡️ 163_Neenan_192279227.pdf
-[2026-02-16T13:36:38.357Z]    ➡️ 164_Holmes-Johnson_192278370.pdf
-[2026-02-16T13:36:38.357Z]    ➡️ 165_Painter_191968235.pdf
-[2026-02-16T13:36:38.654Z] ❌ 164_Holmes-Johnson_192278370.pdf: Duplicate file
-[2026-02-16T13:36:38.661Z] ❌ 165_Painter_191968235.pdf: Duplicate file
-[2026-02-16T13:36:38.680Z] ❌ 163_Neenan_192279227.pdf: Duplicate file
-[2026-02-16T13:36:38.680Z] 📊 Batch 55-57 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:38.680Z] 📦 Starting batch 58-60
-[2026-02-16T13:36:38.680Z]    ➡️ 166_Martini_192059067.pdf
-[2026-02-16T13:36:38.680Z]    ➡️ 168_Mullins_192311331.pdf
-[2026-02-16T13:36:38.680Z]    ➡️ 169_Mcgoff_192270659.pdf
-[2026-02-16T13:36:38.967Z] ❌ 169_Mcgoff_192270659.pdf: Duplicate file
-[2026-02-16T13:36:38.994Z] ❌ 168_Mullins_192311331.pdf: Duplicate file
-[2026-02-16T13:36:38.998Z] ❌ 166_Martini_192059067.pdf: Duplicate file
-[2026-02-16T13:36:38.998Z] 📊 Batch 58-60 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:38.998Z] 📦 Starting batch 61-63
-[2026-02-16T13:36:38.998Z]    ➡️ 171_Crafton_192267673.pdf
-[2026-02-16T13:36:38.998Z]    ➡️ 172_Crumpton_192270364.pdf
-[2026-02-16T13:36:38.998Z]    ➡️ 174_Hamilton_191716150.pdf
-[2026-02-16T13:36:39.302Z] ❌ 171_Crafton_192267673.pdf: Duplicate file
-[2026-02-16T13:36:39.303Z] ❌ 172_Crumpton_192270364.pdf: Duplicate file
-[2026-02-16T13:36:39.318Z] ❌ 174_Hamilton_191716150.pdf: Duplicate file
-[2026-02-16T13:36:39.318Z] 📊 Batch 61-63 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:39.319Z] 📦 Starting batch 64-66
-[2026-02-16T13:36:39.319Z]    ➡️ 175_Meadow_192339299.pdf
-[2026-02-16T13:36:39.319Z]    ➡️ 176_Young_192422436.pdf
-[2026-02-16T13:36:39.319Z]    ➡️ 178_Taylor_192099780.pdf
-[2026-02-16T13:36:39.622Z] ❌ 176_Young_192422436.pdf: Duplicate file
-[2026-02-16T13:36:39.636Z] ❌ 175_Meadow_192339299.pdf: Duplicate file
-[2026-02-16T13:36:39.647Z] ❌ 178_Taylor_192099780.pdf: Duplicate file
-[2026-02-16T13:36:39.647Z] 📊 Batch 64-66 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:39.647Z] 📦 Starting batch 67-69
-[2026-02-16T13:36:39.647Z]    ➡️ 179_WILLIAMS_192430545.pdf
-[2026-02-16T13:36:39.647Z]    ➡️ 180_Kent_192431258.pdf
-[2026-02-16T13:36:39.648Z]    ➡️ 182_Wolfe_192436217.pdf
-[2026-02-16T13:36:39.927Z] ❌ 180_Kent_192431258.pdf: Duplicate file
-[2026-02-16T13:36:39.941Z] ❌ 182_Wolfe_192436217.pdf: Duplicate file
-[2026-02-16T13:36:39.981Z] ❌ 179_WILLIAMS_192430545.pdf: Duplicate file
-[2026-02-16T13:36:39.981Z] 📊 Batch 67-69 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:39.981Z] 📦 Starting batch 70-72
-[2026-02-16T13:36:39.981Z]    ➡️ 183_TRIPLETT_192439051.pdf
-[2026-02-16T13:36:39.981Z]    ➡️ 184_Moyes_192440869.pdf
-[2026-02-16T13:36:39.981Z]    ➡️ 185_Hess_192453688.pdf
-[2026-02-16T13:36:40.268Z] ❌ 185_Hess_192453688.pdf: Duplicate file
-[2026-02-16T13:36:40.280Z] ❌ 184_Moyes_192440869.pdf: Duplicate file
-[2026-02-16T13:36:40.291Z] ❌ 183_TRIPLETT_192439051.pdf: Duplicate file
-[2026-02-16T13:36:40.291Z] 📊 Batch 70-72 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:40.292Z] 📦 Starting batch 73-75
-[2026-02-16T13:36:40.292Z]    ➡️ 186_SHELLEY_191125734.pdf
-[2026-02-16T13:36:40.292Z]    ➡️ 188_Cousins_192480340.pdf
-[2026-02-16T13:36:40.292Z]    ➡️ 189_Ballentine_192487061.pdf
-[2026-02-16T13:36:40.601Z] ❌ 189_Ballentine_192487061.pdf: Duplicate file
-[2026-02-16T13:36:40.605Z] ❌ 186_SHELLEY_191125734.pdf: Duplicate file
-[2026-02-16T13:36:40.605Z] ❌ 188_Cousins_192480340.pdf: Duplicate file
-[2026-02-16T13:36:40.605Z] 📊 Batch 73-75 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:40.605Z] 📦 Starting batch 76-78
-[2026-02-16T13:36:40.605Z]    ➡️ 190_Harrison_192489973.pdf
-[2026-02-16T13:36:40.605Z]    ➡️ 191_Vallier_192429093.pdf
-[2026-02-16T13:36:40.605Z]    ➡️ 192_MOBLEY_192443723.pdf
-[2026-02-16T13:36:40.883Z] ❌ 192_MOBLEY_192443723.pdf: Duplicate file
-[2026-02-16T13:36:40.905Z] ❌ 190_Harrison_192489973.pdf: Duplicate file
-[2026-02-16T13:36:40.937Z] ❌ 191_Vallier_192429093.pdf: Duplicate file
-[2026-02-16T13:36:40.937Z] 📊 Batch 76-78 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:40.937Z] 📦 Starting batch 79-81
-[2026-02-16T13:36:40.937Z]    ➡️ 193_HAYES_192441805.pdf
-[2026-02-16T13:36:40.937Z]    ➡️ 194_white_192528932.pdf
-[2026-02-16T13:36:40.937Z]    ➡️ 197_Lacy_191203521.pdf
-[2026-02-16T13:36:41.219Z] ❌ 194_white_192528932.pdf: Duplicate file
-[2026-02-16T13:36:41.230Z] ❌ 197_Lacy_191203521.pdf: Duplicate file
-[2026-02-16T13:36:41.240Z] ❌ 193_HAYES_192441805.pdf: Duplicate file
-[2026-02-16T13:36:41.240Z] 📊 Batch 79-81 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:41.241Z] 📦 Starting batch 82-84
-[2026-02-16T13:36:41.241Z]    ➡️ 198_Lunati_192538177.pdf
-[2026-02-16T13:36:41.241Z]    ➡️ 199_COLLIER_192537479.pdf
-[2026-02-16T13:36:41.241Z]    ➡️ 200_Rico_192533114.pdf
-[2026-02-16T13:36:41.543Z] ❌ 200_Rico_192533114.pdf: Duplicate file
-[2026-02-16T13:36:41.559Z] ❌ 199_COLLIER_192537479.pdf: Duplicate file
-[2026-02-16T13:36:41.568Z] ❌ 198_Lunati_192538177.pdf: Duplicate file
-[2026-02-16T13:36:41.568Z] 📊 Batch 82-84 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:41.568Z] 📦 Starting batch 85-87
-[2026-02-16T13:36:41.568Z]    ➡️ 201_Mirdo_191631755.pdf
-[2026-02-16T13:36:41.568Z]    ➡️ 202_Jones_192584607.pdf
-[2026-02-16T13:36:41.568Z]    ➡️ 203_BURKS_192587417.pdf
-[2026-02-16T13:36:41.877Z] ❌ 202_Jones_192584607.pdf: Duplicate file
-[2026-02-16T13:36:41.890Z] ❌ 203_BURKS_192587417.pdf: Duplicate file
-[2026-02-16T13:36:41.894Z] ❌ 201_Mirdo_191631755.pdf: Duplicate file
-[2026-02-16T13:36:41.894Z] 📊 Batch 85-87 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:41.895Z] 📦 Starting batch 88-90
-[2026-02-16T13:36:41.895Z]    ➡️ 205_Fleming_191513066.pdf
-[2026-02-16T13:36:41.895Z]    ➡️ 206_Jayroe_192589745.pdf
-[2026-02-16T13:36:41.895Z]    ➡️ 207_Kaserman_192648611.pdf
-[2026-02-16T13:36:42.190Z] ❌ 206_Jayroe_192589745.pdf: Duplicate file
-[2026-02-16T13:36:42.191Z] ❌ 207_Kaserman_192648611.pdf: Duplicate file
-[2026-02-16T13:36:42.218Z] ❌ 205_Fleming_191513066.pdf: Duplicate file
-[2026-02-16T13:36:42.218Z] 📊 Batch 88-90 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:42.218Z] 📦 Starting batch 91-93
-[2026-02-16T13:36:42.218Z]    ➡️ 208_Hagan_192649325.pdf
-[2026-02-16T13:36:42.219Z]    ➡️ 209_ANDERSON_192584061.pdf
-[2026-02-16T13:36:42.219Z]    ➡️ 210_Cody_192437196.pdf
-[2026-02-16T13:36:42.509Z] ❌ 210_Cody_192437196.pdf: Duplicate file
-[2026-02-16T13:36:42.519Z] ❌ 209_ANDERSON_192584061.pdf: Duplicate file
-[2026-02-16T13:36:42.531Z] ❌ 208_Hagan_192649325.pdf: Duplicate file
-[2026-02-16T13:36:42.531Z] 📊 Batch 91-93 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:42.531Z] 📦 Starting batch 94-96
-[2026-02-16T13:36:42.531Z]    ➡️ 211_Stachar_192664987.pdf
-[2026-02-16T13:36:42.531Z]    ➡️ 213_Herron_192588029.pdf
-[2026-02-16T13:36:42.531Z]    ➡️ 214_Mirdo_191631755.pdf
-[2026-02-16T13:36:42.830Z] ❌ 213_Herron_192588029.pdf: Duplicate file
-[2026-02-16T13:36:42.830Z] ❌ 214_Mirdo_191631755.pdf: Duplicate file
-[2026-02-16T13:36:42.835Z] ❌ 211_Stachar_192664987.pdf: Duplicate file
-[2026-02-16T13:36:42.835Z] 📊 Batch 94-96 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:42.835Z] 📦 Starting batch 97-99
-[2026-02-16T13:36:42.835Z]    ➡️ 215_COLLIER_192537479.pdf
-[2026-02-16T13:36:42.835Z]    ➡️ 216_Clark_192655998.pdf
-[2026-02-16T13:36:42.835Z]    ➡️ 217_GUENTHER_192724276.pdf
-[2026-02-16T13:36:43.121Z] ❌ 215_COLLIER_192537479.pdf: Duplicate file
-[2026-02-16T13:36:43.150Z] ❌ 217_GUENTHER_192724276.pdf: Duplicate file
-[2026-02-16T13:36:43.154Z] ❌ 216_Clark_192655998.pdf: Duplicate file
-[2026-02-16T13:36:43.154Z] 📊 Batch 97-99 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:43.155Z] 📦 Starting batch 100-102
-[2026-02-16T13:36:43.155Z]    ➡️ 218_Reyes_192271936.pdf
-[2026-02-16T13:36:43.155Z]    ➡️ 219_Sherman_192734863.pdf
-[2026-02-16T13:36:43.155Z]    ➡️ 220_Sloas_192735361.pdf
-[2026-02-16T13:36:43.450Z] ❌ 220_Sloas_192735361.pdf: Duplicate file
-[2026-02-16T13:36:43.454Z] ❌ 218_Reyes_192271936.pdf: Duplicate file
-[2026-02-16T13:36:43.454Z] ❌ 219_Sherman_192734863.pdf: Duplicate file
-[2026-02-16T13:36:43.454Z] 📊 Batch 100-102 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:43.455Z] 📦 Starting batch 103-105
-[2026-02-16T13:36:43.455Z]    ➡️ 221_Hardy_192762875.pdf
-[2026-02-16T13:36:43.455Z]    ➡️ 222_Castillo-cohen_192591480.pdf
-[2026-02-16T13:36:43.455Z]    ➡️ 223_Adams_192777687.pdf
-[2026-02-16T13:36:43.751Z] ❌ 222_Castillo-cohen_192591480.pdf: Duplicate file
-[2026-02-16T13:36:43.774Z] ❌ 221_Hardy_192762875.pdf: Duplicate file
-[2026-02-16T13:36:43.788Z] ❌ 223_Adams_192777687.pdf: Duplicate file
-[2026-02-16T13:36:43.788Z] 📊 Batch 103-105 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:43.788Z] 📦 Starting batch 106-108
-[2026-02-16T13:36:43.788Z]    ➡️ 224_Whitlow_192779815.pdf
-[2026-02-16T13:36:43.788Z]    ➡️ 225_THOMPSON_192781278.pdf
-[2026-02-16T13:36:43.788Z]    ➡️ 226_Clifton_191248346.pdf
-[2026-02-16T13:36:44.072Z] ❌ 224_Whitlow_192779815.pdf: Duplicate file
-[2026-02-16T13:36:44.077Z] ❌ 226_Clifton_191248346.pdf: Duplicate file
-[2026-02-16T13:36:44.090Z] ❌ 225_THOMPSON_192781278.pdf: Duplicate file
-[2026-02-16T13:36:44.090Z] 📊 Batch 106-108 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:44.090Z] 📦 Starting batch 109-111
-[2026-02-16T13:36:44.090Z]    ➡️ 227_Hardy_192649879.pdf
-[2026-02-16T13:36:44.090Z]    ➡️ 228_GILL_192812784.pdf
-[2026-02-16T13:36:44.090Z]    ➡️ 229_Tate_192813369.pdf
-[2026-02-16T13:36:44.375Z] ❌ 228_GILL_192812784.pdf: Duplicate file
-[2026-02-16T13:36:44.379Z] ❌ 227_Hardy_192649879.pdf: Duplicate file
-[2026-02-16T13:36:44.391Z] ❌ 229_Tate_192813369.pdf: Duplicate file
-[2026-02-16T13:36:44.391Z] 📊 Batch 109-111 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:44.391Z] 📦 Starting batch 112-114
-[2026-02-16T13:36:44.391Z]    ➡️ 231_NUTT_192816085.pdf
-[2026-02-16T13:36:44.391Z]    ➡️ 232_Riedel_192820457.pdf
-[2026-02-16T13:36:44.391Z]    ➡️ 233_Hall_192824381.pdf
-[2026-02-16T13:36:44.687Z] ❌ 233_Hall_192824381.pdf: Duplicate file
-[2026-02-16T13:36:44.700Z] ❌ 231_NUTT_192816085.pdf: Duplicate file
-[2026-02-16T13:36:44.704Z] ❌ 232_Riedel_192820457.pdf: Duplicate file
-[2026-02-16T13:36:44.704Z] 📊 Batch 112-114 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:44.704Z] 📦 Starting batch 115-117
-[2026-02-16T13:36:44.704Z]    ➡️ 234_Carter_192821478.pdf
-[2026-02-16T13:36:44.704Z]    ➡️ 236_LaCroix_192823483.pdf
-[2026-02-16T13:36:44.704Z]    ➡️ 237_Foret_192885603.pdf
-[2026-02-16T13:36:45.030Z] ❌ 234_Carter_192821478.pdf: Duplicate file
-[2026-02-16T13:36:45.040Z] ❌ 237_Foret_192885603.pdf: Duplicate file
-[2026-02-16T13:36:45.049Z] ❌ 236_LaCroix_192823483.pdf: Duplicate file
-[2026-02-16T13:36:45.050Z] 📊 Batch 115-117 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
-[2026-02-16T13:36:45.050Z] 📦 Starting batch 118-120
-[2026-02-16T13:36:45.050Z]    ➡️ 239_Ross_192818807.pdf
-[2026-02-16T13:36:45.050Z]    ➡️ 240_LINDSEY_192916443.pdf
-[2026-02-16T13:36:45.050Z]    ➡️ 241_Thompson_192924053.pdf
-[2026-02-16T13:36:45.337Z] ❌ 241_Thompson_192924053.pdf: Duplicate file
-[2026-02-16T13:36:45.344Z] ❌ 240_LINDSEY_192916443.pdf: Duplicate file
-[2026-02-16T13:36:45.361Z] ❌ 239_Ross_192818807.pdf: Duplicate file
-[2026-02-16T13:36:45.361Z] 📊 Batch 118-120 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:45.361Z] 📦 Starting batch 121-123
-[2026-02-16T13:36:45.361Z]    ➡️ 242_Jones_192933998.pdf
-[2026-02-16T13:36:45.361Z]    ➡️ 243_LINDSEY_192916443.pdf
-[2026-02-16T13:36:45.361Z]    ➡️ 244_Hardy_192649879.pdf
-[2026-02-16T13:36:45.646Z] ❌ 242_Jones_192933998.pdf: Duplicate file
-[2026-02-16T13:36:45.653Z] ❌ 244_Hardy_192649879.pdf: Duplicate file
-[2026-02-16T13:36:45.657Z] ❌ 243_LINDSEY_192916443.pdf: Duplicate file
-[2026-02-16T13:36:45.657Z] 📊 Batch 121-123 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:45.657Z] 📦 Starting batch 124-126
-[2026-02-16T13:36:45.657Z]    ➡️ 245_LUNATI_192761829.pdf
-[2026-02-16T13:36:45.657Z]    ➡️ 246_STRASSER_192976785.pdf
-[2026-02-16T13:36:45.657Z]    ➡️ 247_IRBY_192977303.pdf
-[2026-02-16T13:36:45.946Z] ❌ 246_STRASSER_192976785.pdf: Duplicate file
-[2026-02-16T13:36:45.986Z] ❌ 247_IRBY_192977303.pdf: Duplicate file
-[2026-02-16T13:36:45.990Z] ❌ 245_LUNATI_192761829.pdf: Duplicate file
-[2026-02-16T13:36:45.990Z] 📊 Batch 124-126 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:45.990Z] 📦 Starting batch 127-129
-[2026-02-16T13:36:45.990Z]    ➡️ 248_McLemore_192977575.pdf
-[2026-02-16T13:36:45.990Z]    ➡️ 250_RICHARDSON_192885038.pdf
-[2026-02-16T13:36:45.990Z]    ➡️ 252_Hall_192824381.pdf
-[2026-02-16T13:36:46.288Z] ❌ 250_RICHARDSON_192885038.pdf: Duplicate file
-[2026-02-16T13:36:46.340Z] ❌ 248_McLemore_192977575.pdf: Duplicate file
-[2026-02-16T13:36:46.340Z] ❌ 252_Hall_192824381.pdf: Duplicate file
-[2026-02-16T13:36:46.340Z] 📊 Batch 127-129 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
-[2026-02-16T13:36:46.340Z] 📦 Starting batch 130-132
-[2026-02-16T13:36:46.340Z]    ➡️ 253_Hall_193040757.pdf
-[2026-02-16T13:36:46.340Z]    ➡️ 254_Richardson_193043177.pdf
-[2026-02-16T13:36:46.341Z]    ➡️ 255_LUNATI_192761829.pdf
-[2026-02-16T13:36:47.433Z] ❌ 253_Hall_193040757.pdf: Duplicate file
-[2026-02-16T13:36:47.454Z] ❌ 254_Richardson_193043177.pdf: Duplicate file
-[2026-02-16T13:36:47.499Z] ❌ 255_LUNATI_192761829.pdf: Duplicate file
-[2026-02-16T13:36:47.499Z] 📊 Batch 130-132 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 1.16s)
-[2026-02-16T13:36:47.499Z] 📦 Starting batch 133-135
-[2026-02-16T13:36:47.499Z]    ➡️ 256_BRADLEY_192994772.pdf
-[2026-02-16T13:36:47.499Z]    ➡️ 257_LOVE_193085805.pdf
-[2026-02-16T13:36:47.499Z]    ➡️ 258_Carter_193086628.pdf
-[2026-02-16T13:36:47.819Z] ❌ 257_LOVE_193085805.pdf: Duplicate file
-[2026-02-16T13:36:47.823Z] ❌ 258_Carter_193086628.pdf: Duplicate file
-[2026-02-16T13:36:47.839Z] ❌ 256_BRADLEY_192994772.pdf: Duplicate file
-[2026-02-16T13:36:47.839Z] 📊 Batch 133-135 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-02-16T13:36:47.840Z] 📦 Starting batch 136-138
-[2026-02-16T13:36:47.840Z]    ➡️ 259_Kellicut_193097660.pdf
-[2026-02-16T13:36:47.840Z]    ➡️ 261_McMillan_193044369.pdf
-[2026-02-16T13:36:47.840Z]    ➡️ 262_Torrance-Matthews_193089461.pdf
-[2026-02-16T13:36:48.136Z] ❌ 262_Torrance-Matthews_193089461.pdf: Duplicate file
-[2026-02-16T13:36:48.153Z] ❌ 261_McMillan_193044369.pdf: Duplicate file
-[2026-02-16T13:36:48.188Z] ❌ 259_Kellicut_193097660.pdf: Duplicate file
-[2026-02-16T13:36:48.188Z] 📊 Batch 136-138 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.35s)
-[2026-02-16T13:36:48.188Z] 📦 Starting batch 139-141
-[2026-02-16T13:36:48.188Z]    ➡️ 263_BAKER_193134461.pdf
-[2026-02-16T13:36:48.188Z]    ➡️ 264_Smith_193137151.pdf
-[2026-02-16T13:36:48.188Z]    ➡️ 265_Pentecost_193137380.pdf
-[2026-02-16T13:36:48.495Z] ❌ 264_Smith_193137151.pdf: Duplicate file
-[2026-02-16T13:36:48.495Z] ❌ 265_Pentecost_193137380.pdf: Duplicate file
-[2026-02-16T13:36:48.503Z] ❌ 263_BAKER_193134461.pdf: Duplicate file
-[2026-02-16T13:36:48.503Z] 📊 Batch 139-141 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:48.503Z] 📦 Starting batch 142-144
-[2026-02-16T13:36:48.503Z]    ➡️ 266_Scruggs_193137210.pdf
-[2026-02-16T13:36:48.503Z]    ➡️ 267_Bland_193192634.pdf
-[2026-02-16T13:36:48.503Z]    ➡️ 268_WILLIAMS_193202396.pdf
-[2026-02-16T13:36:48.787Z] ❌ 267_Bland_193192634.pdf: Duplicate file
-[2026-02-16T13:36:48.799Z] ❌ 268_WILLIAMS_193202396.pdf: Duplicate file
-[2026-02-16T13:36:48.802Z] ❌ 266_Scruggs_193137210.pdf: Duplicate file
-[2026-02-16T13:36:48.803Z] 📊 Batch 142-144 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:48.803Z] 📦 Starting batch 145-147
-[2026-02-16T13:36:48.803Z]    ➡️ 269_Riedel_192820457.pdf
-[2026-02-16T13:36:48.803Z]    ➡️ 270_LUNATI_192761829.pdf
-[2026-02-16T13:36:48.803Z]    ➡️ 271_Tigue_193332808.pdf
-[2026-02-16T13:36:49.087Z] ❌ 269_Riedel_192820457.pdf: Duplicate file
-[2026-02-16T13:36:49.087Z] ❌ 271_Tigue_193332808.pdf: Duplicate file
-[2026-02-16T13:36:49.111Z] ❌ 270_LUNATI_192761829.pdf: Duplicate file
-[2026-02-16T13:36:49.111Z] 📊 Batch 145-147 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:49.111Z] 📦 Starting batch 148-150
-[2026-02-16T13:36:49.112Z]    ➡️ 272_Rogers_193271713.pdf
-[2026-02-16T13:36:49.112Z]    ➡️ 273_Boyce_193271895.pdf
-[2026-02-16T13:36:49.112Z]    ➡️ 274_Hall_193214062.pdf
-[2026-02-16T13:36:49.394Z] ❌ 273_Boyce_193271895.pdf: Duplicate file
-[2026-02-16T13:36:49.400Z] ❌ 272_Rogers_193271713.pdf: Duplicate file
-[2026-02-16T13:36:49.409Z] ❌ 274_Hall_193214062.pdf: Duplicate file
-[2026-02-16T13:36:49.409Z] 📊 Batch 148-150 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:49.409Z] 📦 Starting batch 151-153
-[2026-02-16T13:36:49.409Z]    ➡️ 275_LAY_193361349.pdf
-[2026-02-16T13:36:49.409Z]    ➡️ 276_Johnson_193271765.pdf
-[2026-02-16T13:36:49.409Z]    ➡️ 277_Johnston_193389662.pdf
-[2026-02-16T13:36:49.710Z] ❌ 276_Johnson_193271765.pdf: Duplicate file
-[2026-02-16T13:36:49.714Z] ❌ 277_Johnston_193389662.pdf: Duplicate file
-[2026-02-16T13:36:49.714Z] ❌ 275_LAY_193361349.pdf: Duplicate file
-[2026-02-16T13:36:49.715Z] 📊 Batch 151-153 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:49.715Z] 📦 Starting batch 154-156
-[2026-02-16T13:36:49.715Z]    ➡️ 279_Hall_193040757.pdf
-[2026-02-16T13:36:49.715Z]    ➡️ 285_Hollingsworth_193411618.pdf
-[2026-02-16T13:36:49.715Z]    ➡️ 286_Edmondson_193412527.pdf
-[2026-02-16T13:36:50.001Z] ❌ 285_Hollingsworth_193411618.pdf: Duplicate file
-[2026-02-16T13:36:50.008Z] ❌ 279_Hall_193040757.pdf: Duplicate file
-[2026-02-16T13:36:50.018Z] ❌ 286_Edmondson_193412527.pdf: Duplicate file
-[2026-02-16T13:36:50.018Z] 📊 Batch 154-156 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:50.018Z] 📦 Starting batch 157-159
-[2026-02-16T13:36:50.018Z]    ➡️ 287_Huselton_193415793.pdf
-[2026-02-16T13:36:50.018Z]    ➡️ 288_COOPER_193410786.pdf
-[2026-02-16T13:36:50.018Z]    ➡️ 289_Lee_193410937.pdf
-[2026-02-16T13:36:50.309Z] ❌ 287_Huselton_193415793.pdf: Duplicate file
-[2026-02-16T13:36:50.309Z] ❌ 289_Lee_193410937.pdf: Duplicate file
-[2026-02-16T13:36:50.329Z] ❌ 288_COOPER_193410786.pdf: Duplicate file
-[2026-02-16T13:36:50.329Z] 📊 Batch 157-159 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:36:50.329Z] 📦 Starting batch 160-162
-[2026-02-16T13:36:50.329Z]    ➡️ 290_Fair_193411047.pdf
-[2026-02-16T13:36:50.329Z]    ➡️ 292_Chunn_193411111.pdf
-[2026-02-16T13:36:50.329Z]    ➡️ 293_THOMPSON_193411463.pdf
-[2026-02-16T13:36:50.635Z] ❌ 293_THOMPSON_193411463.pdf: Duplicate file
-[2026-02-16T13:36:50.636Z] ❌ 292_Chunn_193411111.pdf: Duplicate file
-[2026-02-16T13:36:50.657Z] ❌ 290_Fair_193411047.pdf: Duplicate file
-[2026-02-16T13:36:50.657Z] 📊 Batch 160-162 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:50.658Z] 📦 Starting batch 163-165
-[2026-02-16T13:36:50.658Z]    ➡️ 294_Edmondson_193412527.pdf
-[2026-02-16T13:36:50.658Z]    ➡️ 295_Pieri_192727767.pdf
-[2026-02-16T13:36:50.658Z]    ➡️ 297_Gillespie_193369339.pdf
-[2026-02-16T13:36:50.941Z] ❌ 297_Gillespie_193369339.pdf: Duplicate file
-[2026-02-16T13:36:50.942Z] ❌ 295_Pieri_192727767.pdf: Duplicate file
-[2026-02-16T13:36:50.958Z] ❌ 294_Edmondson_193412527.pdf: Duplicate file
-[2026-02-16T13:36:50.958Z] 📊 Batch 163-165 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:50.958Z] 📦 Starting batch 166-168
-[2026-02-16T13:36:50.959Z]    ➡️ 299_LAWSON_193436070.pdf
-[2026-02-16T13:36:50.959Z]    ➡️ 300_Wright_193437201.pdf
-[2026-02-16T13:36:50.959Z]    ➡️ 301_BOWIE_193439718.pdf
-[2026-02-16T13:36:51.241Z] ❌ 301_BOWIE_193439718.pdf: Duplicate file
-[2026-02-16T13:36:51.245Z] ❌ 300_Wright_193437201.pdf: Duplicate file
-[2026-02-16T13:36:51.261Z] ❌ 299_LAWSON_193436070.pdf: Duplicate file
-[2026-02-16T13:36:51.261Z] 📊 Batch 166-168 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:51.262Z] 📦 Starting batch 169-171
-[2026-02-16T13:36:51.262Z]    ➡️ 302_Barnes_193441289.pdf
-[2026-02-16T13:36:51.262Z]    ➡️ 303_Armstrong_193410293.pdf
-[2026-02-16T13:36:51.262Z]    ➡️ 304_Lewis_193452219.pdf
-[2026-02-16T13:36:51.553Z] ❌ 302_Barnes_193441289.pdf: Duplicate file
-[2026-02-16T13:36:51.553Z] ❌ 303_Armstrong_193410293.pdf: Duplicate file
-[2026-02-16T13:36:51.564Z] ❌ 304_Lewis_193452219.pdf: Duplicate file
-[2026-02-16T13:36:51.564Z] 📊 Batch 169-171 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:51.565Z] 📦 Starting batch 172-174
-[2026-02-16T13:36:51.565Z]    ➡️ 305_HUINKER_193454663.pdf
-[2026-02-16T13:36:51.565Z]    ➡️ 308_Kelley_193531831.pdf
-[2026-02-16T13:36:51.565Z]    ➡️ 311_Diggs_193553915.pdf
-[2026-02-16T13:36:51.837Z] ❌ 308_Kelley_193531831.pdf: Duplicate file
-[2026-02-16T13:36:51.850Z] ❌ 311_Diggs_193553915.pdf: Duplicate file
-[2026-02-16T13:36:51.865Z] ❌ 305_HUINKER_193454663.pdf: Duplicate file
-[2026-02-16T13:36:51.865Z] 📊 Batch 172-174 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:51.865Z] 📦 Starting batch 175-177
-[2026-02-16T13:36:51.865Z]    ➡️ 312_Gause_193586396.pdf
-[2026-02-16T13:36:51.865Z]    ➡️ 313_Childs_193586533.pdf
-[2026-02-16T13:36:51.865Z]    ➡️ 314_Mitchell_193587015.pdf
-[2026-02-16T13:36:52.158Z] ❌ 314_Mitchell_193587015.pdf: Duplicate file
-[2026-02-16T13:36:52.159Z] ❌ 313_Childs_193586533.pdf: Duplicate file
-[2026-02-16T13:36:52.162Z] ❌ 312_Gause_193586396.pdf: Duplicate file
-[2026-02-16T13:36:52.162Z] 📊 Batch 175-177 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:52.162Z] 📦 Starting batch 178-180
-[2026-02-16T13:36:52.162Z]    ➡️ 315_Walton_193586959.pdf
-[2026-02-16T13:36:52.162Z]    ➡️ 317_Ham_193586809.pdf
-[2026-02-16T13:36:52.163Z]    ➡️ 318_JONES_193590521.pdf
-[2026-02-16T13:36:52.436Z] ❌ 318_JONES_193590521.pdf: Duplicate file
-[2026-02-16T13:36:52.447Z] ❌ 317_Ham_193586809.pdf: Duplicate file
-[2026-02-16T13:36:52.485Z] ❌ 315_Walton_193586959.pdf: Duplicate file
-[2026-02-16T13:36:52.485Z] 📊 Batch 178-180 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:52.485Z] 📦 Starting batch 181-183
-[2026-02-16T13:36:52.485Z]    ➡️ 319_Sealy_193586714.pdf
-[2026-02-16T13:36:52.485Z]    ➡️ 320_Rouser_191366385.pdf
-[2026-02-16T13:36:52.485Z]    ➡️ 321_Watkins_192829247.pdf
-[2026-02-16T13:36:52.871Z] ❌ 319_Sealy_193586714.pdf: Duplicate file
-[2026-02-16T13:36:52.876Z] ❌ 321_Watkins_192829247.pdf: Duplicate file
-[2026-02-16T13:36:52.876Z] ❌ 320_Rouser_191366385.pdf: Duplicate file
-[2026-02-16T13:36:52.876Z] 📊 Batch 181-183 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.39s)
-[2026-02-16T13:36:52.876Z] 📦 Starting batch 184-186
-[2026-02-16T13:36:52.876Z]    ➡️ 322_Wilson_193554773.pdf
-[2026-02-16T13:36:52.876Z]    ➡️ 323_Jones_193609357.pdf
-[2026-02-16T13:36:52.876Z]    ➡️ 324_Sipe_193602954.pdf
-[2026-02-16T13:36:53.186Z] ❌ 322_Wilson_193554773.pdf: Duplicate file
-[2026-02-16T13:36:53.187Z] ❌ 323_Jones_193609357.pdf: Duplicate file
-[2026-02-16T13:36:53.192Z] ❌ 324_Sipe_193602954.pdf: Duplicate file
-[2026-02-16T13:36:53.192Z] 📊 Batch 184-186 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:53.192Z] 📦 Starting batch 187-189
-[2026-02-16T13:36:53.192Z]    ➡️ 325_Carr_193602254.pdf
-[2026-02-16T13:36:53.192Z]    ➡️ 326_BURNS_193601125.pdf
-[2026-02-16T13:36:53.192Z]    ➡️ 329_Davis_193651928.pdf
-[2026-02-16T13:36:53.493Z] ❌ 326_BURNS_193601125.pdf: Duplicate file
-[2026-02-16T13:36:53.506Z] ❌ 325_Carr_193602254.pdf: Duplicate file
-[2026-02-16T13:36:53.522Z] ❌ 329_Davis_193651928.pdf: Duplicate file
-[2026-02-16T13:36:53.523Z] 📊 Batch 187-189 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:53.523Z] 📦 Starting batch 190-192
-[2026-02-16T13:36:53.523Z]    ➡️ 332_Campos_193696735.pdf
-[2026-02-16T13:36:53.523Z]    ➡️ 334_Mann_193698288.pdf
-[2026-02-16T13:36:53.523Z]    ➡️ 335_Campos_193696735.pdf
-[2026-02-16T13:36:53.837Z] ❌ 335_Campos_193696735.pdf: Duplicate file
-[2026-02-16T13:36:53.840Z] ❌ 332_Campos_193696735.pdf: Duplicate file
-[2026-02-16T13:36:53.840Z] ❌ 334_Mann_193698288.pdf: Duplicate file
-[2026-02-16T13:36:53.841Z] 📊 Batch 190-192 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:53.841Z] 📦 Starting batch 193-195
-[2026-02-16T13:36:53.841Z]    ➡️ 336_HAYES_192441805.pdf
-[2026-02-16T13:36:53.841Z]    ➡️ 338_Cunningham_193722371.pdf
-[2026-02-16T13:36:53.841Z]    ➡️ 339_Hampton_193638207.pdf
-[2026-02-16T13:36:54.152Z] ❌ 339_Hampton_193638207.pdf: Duplicate file
-[2026-02-16T13:36:54.166Z] ❌ 336_HAYES_192441805.pdf: Duplicate file
-[2026-02-16T13:36:54.181Z] ❌ 338_Cunningham_193722371.pdf: Duplicate file
-[2026-02-16T13:36:54.181Z] 📊 Batch 193-195 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-02-16T13:36:54.181Z] 📦 Starting batch 196-198
-[2026-02-16T13:36:54.181Z]    ➡️ 340_Zelinski_193730098.pdf
-[2026-02-16T13:36:54.181Z]    ➡️ 342_Conner_193735974.pdf
-[2026-02-16T13:36:54.181Z]    ➡️ 343_French_193741221.pdf
-[2026-02-16T13:36:54.475Z] ❌ 343_French_193741221.pdf: Duplicate file
-[2026-02-16T13:36:54.476Z] ❌ 342_Conner_193735974.pdf: Duplicate file
-[2026-02-16T13:36:54.508Z] ❌ 340_Zelinski_193730098.pdf: Duplicate file
-[2026-02-16T13:36:54.508Z] 📊 Batch 196-198 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:54.508Z] 📦 Starting batch 199-201
-[2026-02-16T13:36:54.508Z]    ➡️ 345_Johnson_193700549.pdf
-[2026-02-16T13:36:54.508Z]    ➡️ 346_Smith_193746806.pdf
-[2026-02-16T13:36:54.509Z]    ➡️ 347_HAYES_192441805.pdf
-[2026-02-16T13:36:54.793Z] ❌ 346_Smith_193746806.pdf: Duplicate file
-[2026-02-16T13:36:54.794Z] ❌ 347_HAYES_192441805.pdf: Duplicate file
-[2026-02-16T13:36:54.831Z] ❌ 345_Johnson_193700549.pdf: Duplicate file
-[2026-02-16T13:36:54.831Z] 📊 Batch 199-201 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:54.831Z] 📦 Starting batch 202-204
-[2026-02-16T13:36:54.831Z]    ➡️ 350_Lawson_193799470.pdf
-[2026-02-16T13:36:54.831Z]    ➡️ 353_Dieber_193799594.pdf
-[2026-02-16T13:36:54.831Z]    ➡️ 357_Blancq_193781805.pdf
-[2026-02-16T13:36:55.165Z] ❌ 350_Lawson_193799470.pdf: Duplicate file
-[2026-02-16T13:36:55.169Z] ❌ 353_Dieber_193799594.pdf: Duplicate file
-[2026-02-16T13:36:55.169Z] ❌ 357_Blancq_193781805.pdf: Duplicate file
-[2026-02-16T13:36:55.169Z] 📊 Batch 202-204 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-02-16T13:36:55.169Z] 📦 Starting batch 205-207
-[2026-02-16T13:36:55.169Z]    ➡️ 358_Fontana_193410605.pdf
-[2026-02-16T13:36:55.169Z]    ➡️ 363_HAYES_192441805.pdf
-[2026-02-16T13:36:55.169Z]    ➡️ 366_Stone_193890184.pdf
-[2026-02-16T13:36:55.466Z] ❌ 358_Fontana_193410605.pdf: Duplicate file
-[2026-02-16T13:36:55.466Z] ❌ 363_HAYES_192441805.pdf: Duplicate file
-[2026-02-16T13:36:55.470Z] ❌ 366_Stone_193890184.pdf: Duplicate file
-[2026-02-16T13:36:55.471Z] 📊 Batch 205-207 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-02-16T13:36:55.471Z] 📦 Starting batch 208-210
-[2026-02-16T13:36:55.471Z]    ➡️ 367_Davis_193898642.pdf
-[2026-02-16T13:36:55.471Z]    ➡️ 36_FLEENOR_191124855.pdf
-[2026-02-16T13:36:55.471Z]    ➡️ 42_RITTER_191204097.pdf
-[2026-02-16T13:36:55.770Z] ❌ 367_Davis_193898642.pdf: Duplicate file
-[2026-02-16T13:36:55.771Z] ❌ 36_FLEENOR_191124855.pdf: Duplicate file
-[2026-02-16T13:36:55.794Z] ❌ 42_RITTER_191204097.pdf: Duplicate file
-[2026-02-16T13:36:55.794Z] 📊 Batch 208-210 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:55.795Z] 📦 Starting batch 211-213
-[2026-02-16T13:36:55.795Z]    ➡️ 44_Garrison_191127309.pdf
-[2026-02-16T13:36:55.795Z]    ➡️ 46_Morgan_191256449.pdf
-[2026-02-16T13:36:55.795Z]    ➡️ 52_SHAW_191242603.pdf
-[2026-02-16T13:36:56.097Z] ❌ 46_Morgan_191256449.pdf: Duplicate file
-[2026-02-16T13:36:56.098Z] ❌ 52_SHAW_191242603.pdf: Duplicate file
-[2026-02-16T13:36:56.111Z] ❌ 44_Garrison_191127309.pdf: Duplicate file
-[2026-02-16T13:36:56.111Z] 📊 Batch 211-213 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:56.111Z] 📦 Starting batch 214-216
-[2026-02-16T13:36:56.112Z]    ➡️ 59_Clifton_191248346.pdf
-[2026-02-16T13:36:56.112Z]    ➡️ 62_MARCONI_191360851.pdf
-[2026-02-16T13:36:56.112Z]    ➡️ 63_Yates_191362705.pdf
-[2026-02-16T13:36:56.429Z] ❌ 59_Clifton_191248346.pdf: Duplicate file
-[2026-02-16T13:36:56.433Z] ❌ 63_Yates_191362705.pdf: Duplicate file
-[2026-02-16T13:36:56.438Z] ❌ 62_MARCONI_191360851.pdf: Duplicate file
-[2026-02-16T13:36:56.438Z] 📊 Batch 214-216 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:36:56.439Z] 📦 Starting batch 217-219
-[2026-02-16T13:36:56.439Z]    ➡️ 64_Moorlach_191365644.pdf
-[2026-02-16T13:36:56.439Z]    ➡️ 66_Anderson_191395848.pdf
-[2026-02-16T13:36:56.439Z]    ➡️ 72_CHALMERS_191397242.pdf
-[2026-02-16T13:36:56.756Z] ❌ 72_CHALMERS_191397242.pdf: Duplicate file
-[2026-02-16T13:36:56.759Z] ❌ 64_Moorlach_191365644.pdf: Duplicate file
-[2026-02-16T13:36:56.772Z] ❌ 66_Anderson_191395848.pdf: Duplicate file
-[2026-02-16T13:36:56.772Z] 📊 Batch 217-219 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-02-16T13:36:56.772Z] 📦 Starting batch 220-222
-[2026-02-16T13:36:56.772Z]    ➡️ 74_GRIFFITH_191398182.pdf
-[2026-02-16T13:36:56.773Z]    ➡️ 76_Farris_191397687.pdf
-[2026-02-16T13:36:56.773Z]    ➡️ 80_Turner_191463986.pdf
-[2026-02-16T13:36:57.065Z] ❌ 74_GRIFFITH_191398182.pdf: Duplicate file
-[2026-02-16T13:36:57.092Z] ❌ 80_Turner_191463986.pdf: Duplicate file
-[2026-02-16T13:36:57.093Z] ❌ 76_Farris_191397687.pdf: Duplicate file
-[2026-02-16T13:36:57.094Z] 📊 Batch 220-222 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-02-16T13:36:57.094Z] 📦 Starting batch 223-223
-[2026-02-16T13:36:57.094Z]    ➡️ 89_Holmes_191512222.pdf
-[2026-02-16T13:36:57.374Z] ❌ 89_Holmes_191512222.pdf: Duplicate file
-[2026-02-16T13:36:57.374Z] 📊 Batch 223-223 (Processed: 0, Skipped: 1, Failed: 0, Total: 1, TimeTaken: 0.28s)
-[2026-02-16T13:36:57.374Z] 
-[2026-02-16T13:36:57.374Z] 📁 ZIP The PreOP Center/tebra_facesheets_TPC_2025-08-13_2934.zip (Processed: 0, Skipped: 223, Failed: 0, Total: 223, TimeTaken: 43.82, AvgTimeTakenPerBatch: 0.35s , AvgTimeTakenPerPDF: 0.12s, "Failed IDs:", 102,100,101,105,103,104,107,106,108,109,111,110,114,113,112,116,117,115,120,119,118,125,124,121,128,127,126,129,131,130,133,137,132,140,139,138,143,144,141,148,145,149,151,152,150,153,155,154,157,158,159,162,161,160,164,165,163,169,168,166,171,172,174,176,175,178,180,182,179,185,184,183,189,186,188,192,190,191,194,197,193,200,199,198,202,203,201,206,207,205,210,209,208,213,214,211,215,217,216,220,218,219,222,221,223,224,226,225,228,227,229,233,231,232,234,237,236,241,240,239,242,244,243,246,247,245,250,248,252,253,254,255,257,258,256,262,261,259,264,265,263,267,268,266,269,271,270,273,272,274,276,277,275,285,279,286,287,289,288,293,292,290,297,295,294,301,300,299,302,303,304,308,311,305,314,313,312,318,317,315,319,321,320,322,323,324,326,325,329,335,332,334,339,336,338,343,342,340,346,347,345,350,353,357,358,363,366,367,36,42,46,52,44,59,63,62,72,64,66,74,80,76,89)
-[2026-02-16T13:36:57.374Z] 
-[2026-02-16T13:36:57.374Z] 📁 Processing ZIP: The PreOP Center/tebra_facesheets_TPC_2025-10-13_1895.zip
-[2026-02-16T13:36:59.572Z] 📄 Found 247 PDFs
-[2026-02-16T13:36:59.572Z] 📦 Starting batch 1-3
-[2026-02-16T13:36:59.572Z]    ➡️ 134_VINCENT_191995961.pdf
-[2026-02-16T13:36:59.572Z]    ➡️ 135_Brady_191344679.pdf
-[2026-02-16T13:36:59.573Z]    ➡️ 136_Hill_191998110.pdf
-[2026-02-16T13:36:59.922Z] ❌ 136_Hill_191998110.pdf: Duplicate file
-[2026-02-16T13:36:59.956Z] ❌ 135_Brady_191344679.pdf: Duplicate file
-[2026-02-16T13:36:59.961Z] ❌ 134_VINCENT_191995961.pdf: Duplicate file
-[2026-02-16T13:36:59.961Z] 📊 Batch 1-3 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.39s)
-[2026-02-16T13:36:59.961Z] 📦 Starting batch 4-6
-[2026-02-16T13:36:59.961Z]    ➡️ 142_Horton_191998794.pdf
-[2026-02-16T13:36:59.961Z]    ➡️ 146_Moore_192005412.pdf
-[2026-02-16T13:36:59.961Z]    ➡️ 147_Purvis_192067249.pdf
-[2026-02-16T13:37:00.269Z] ❌ 146_Moore_192005412.pdf: Duplicate file
-[2026-02-16T13:37:00.269Z] ❌ 147_Purvis_192067249.pdf: Duplicate file
-[2026-02-16T13:37:00.292Z] ❌ 142_Horton_191998794.pdf: Duplicate file
-[2026-02-16T13:37:00.293Z] 📊 Batch 4-6 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.33s)
-[2026-02-16T13:37:00.293Z] 📦 Starting batch 7-9
-[2026-02-16T13:37:00.293Z]    ➡️ 156_McCormick_192220736.pdf
-[2026-02-16T13:37:00.293Z]    ➡️ 167_Compton_192273583.pdf
-[2026-02-16T13:37:00.293Z]    ➡️ 177_Jefferson_192221827.pdf
-[2026-02-16T13:37:00.606Z] ❌ 167_Compton_192273583.pdf: Duplicate file
-[2026-02-16T13:37:00.606Z] ❌ 177_Jefferson_192221827.pdf: Duplicate file
-[2026-02-16T13:37:00.636Z] ❌ 156_McCormick_192220736.pdf: Duplicate file
-[2026-02-16T13:37:00.637Z] 📊 Batch 7-9 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-02-16T13:37:00.637Z] 📦 Starting batch 10-12
-[2026-02-16T13:37:00.637Z]    ➡️ 187_Law_192477094.pdf
-[2026-02-16T13:37:00.637Z]    ➡️ 195_Pitcock_192221391.pdf
-[2026-02-16T13:37:00.637Z]    ➡️ 196_Basar_192530300.pdf
-[2026-02-16T13:37:00.930Z] ❌ 195_Pitcock_192221391.pdf: Duplicate file
-[2026-02-16T13:37:00.931Z] ❌ 196_Basar_192530300.pdf: Duplicate file
-[2026-02-16T13:37:00.994Z] ❌ 187_Law_192477094.pdf: Duplicate file
-[2026-02-16T13:37:00.994Z] 📊 Batch 10-12 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.36s)
-[2026-02-16T13:37:00.994Z] 📦 Starting batch 13-15
-[2026-02-16T13:37:00.994Z]    ➡️ 204_Guy_192585208.pdf
-[2026-02-16T13:37:00.994Z]    ➡️ 280_Francis_193369380.pdf
-[2026-02-16T13:37:00.994Z]    ➡️ 281_Moore_193271648.pdf
-[2026-02-16T13:37:01.299Z] ❌ 281_Moore_193271648.pdf: Duplicate file
-[2026-02-16T13:37:01.302Z] ❌ 204_Guy_192585208.pdf: Duplicate file
-[2026-02-16T13:37:01.306Z] ❌ 280_Francis_193369380.pdf: Duplicate file
-[2026-02-16T13:37:01.307Z] 📊 Batch 13-15 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-02-16T13:37:01.307Z] 📦 Starting batch 16-18
-[2026-02-16T13:37:01.307Z]    ➡️ 283_Sharp_193412711.pdf
-[2026-02-16T13:37:01.307Z]    ➡️ 306_Laughlin_193436014.pdf
-[2026-02-16T13:37:01.307Z]    ➡️ 310_Ware_193554238.pdf
-[2026-02-16T13:37:01.619Z] ❌ 283_Sharp_193412711.pdf: Duplicate file
-[2026-02-16T13:37:01.674Z] ❌ 310_Ware_193554238.pdf: Duplicate file
-[2026-02-16T13:37:01.688Z] ❌ 306_Laughlin_193436014.pdf: Duplicate file
-[2026-02-16T13:37:01.688Z] 📊 Batch 16-18 (Processed: 0, Skipped: 3, Failed: 0, Total: 3, TimeTaken: 0.38s)
-[2026-02-16T13:37:01.688Z] 📦 Starting batch 19-21
-[2026-02-16T13:37:01.688Z]    ➡️ 328_Pechak_192008311.pdf
-[2026-02-16T13:37:01.688Z]    ➡️ 333_Pearson-Rucker_193695932.pdf
-[2026-02-16T13:37:01.688Z]    ➡️ 341_Roth_193734654.pdf
-[2026-02-16T13:37:02.118Z] ❌ 333_Pearson-Rucker_193695932.pdf: Duplicate file
-[2026-02-16T13:37:34.281Z] ✅ 328_Pechak_192008311.pdf → 1fdd4de0-f8a4-4582-b5d2-7176486124a0
-[2026-02-16T13:38:02.720Z] ✅ 341_Roth_193734654.pdf → ced35811-7b71-404b-bcda-cb3e3771e208
-[2026-02-16T13:38:02.721Z] 📊 Batch 19-21 (Processed: 2, Skipped: 1, Failed: 0, Total: 3, TimeTaken: 61.03s)
-[2026-02-16T13:38:02.721Z] 📦 Starting batch 22-24
-[2026-02-16T13:38:02.721Z]    ➡️ 348_Grigsby_193745639.pdf
-[2026-02-16T13:38:02.721Z]    ➡️ 349_Campos_193696735.pdf
-[2026-02-16T13:38:02.721Z]    ➡️ 354_Haas_193799726.pdf
-[2026-02-16T13:38:20.889Z] ✅ 348_Grigsby_193745639.pdf → ce30947d-b6fb-4400-96ab-d29e798a8b8c
-[2026-02-16T13:38:43.187Z] ✅ 354_Haas_193799726.pdf → 1b4a729d-9764-45e7-9f3b-00ae098e3912
-[2026-02-16T13:38:45.590Z] ✅ 349_Campos_193696735.pdf → a886b9c4-1c5e-4580-8c7c-3ae1142289a8
-[2026-02-16T13:38:45.590Z] 📊 Batch 22-24 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 42.87s)
-[2026-02-16T13:38:45.590Z] 📦 Starting batch 25-27
-[2026-02-16T13:38:45.590Z]    ➡️ 355_Edmondson_193412527.pdf
-[2026-02-16T13:38:45.590Z]    ➡️ 359_Campbell_193806183.pdf
-[2026-02-16T13:38:45.590Z]    ➡️ 360_KING_191511026.pdf
-[2026-02-16T13:39:13.436Z] ✅ 355_Edmondson_193412527.pdf → e683b41a-b1e5-4b34-ae15-e5c16c14b273
-[2026-02-16T13:39:13.846Z] ✅ 359_Campbell_193806183.pdf → 39888551-553a-4c7c-92bd-21e5d70a4e40
-[2026-02-16T13:39:36.041Z] ✅ 360_KING_191511026.pdf → 33a3d9c6-06df-4547-89e3-c952d41ecc1e
-[2026-02-16T13:39:36.042Z] 📊 Batch 25-27 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 50.45s)
-[2026-02-16T13:39:36.042Z] 📦 Starting batch 28-30
-[2026-02-16T13:39:36.042Z]    ➡️ 361_Milstead_193836683.pdf
-[2026-02-16T13:39:36.042Z]    ➡️ 364_Olvey_193855957.pdf
-[2026-02-16T13:39:36.042Z]    ➡️ 365_Borden_193866203.pdf
-[2026-02-16T13:39:54.936Z] ✅ 361_Milstead_193836683.pdf → 62133f6c-5bd0-4e4c-b829-08b93be444cc
-[2026-02-16T13:39:56.661Z] ✅ 365_Borden_193866203.pdf → 4271f878-4c8f-4bf7-919e-510a46d1bf2b
-[2026-02-16T13:40:12.411Z] ✅ 364_Olvey_193855957.pdf → 450e6e20-03ac-4f3c-9e41-bb64f6f1cdb7
-[2026-02-16T13:40:12.412Z] 📊 Batch 28-30 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 36.37s)
-[2026-02-16T13:40:12.412Z] 📦 Starting batch 31-33
-[2026-02-16T13:40:12.412Z]    ➡️ 368_Williams_193586909.pdf
-[2026-02-16T13:40:12.412Z]    ➡️ 369_PRICE_193933048.pdf
-[2026-02-16T13:40:12.412Z]    ➡️ 370_Lee_193933233.pdf
-[2026-02-16T13:40:34.986Z] ✅ 368_Williams_193586909.pdf → c187ba41-a30c-4884-8809-75f4c5123f8b
-[2026-02-16T13:40:37.078Z] ❌ 369_PRICE_193933048.pdf: Request failed with status code 500
-[2026-02-16T13:40:37.085Z] ❌ 370_Lee_193933233.pdf: Request failed with status code 500
-[2026-02-16T13:40:37.085Z] 📊 Batch 31-33 (Processed: 1, Skipped: 0, Failed: 2, Total: 3, TimeTaken: 24.67s)
-[2026-02-16T13:40:37.085Z] 📦 Starting batch 34-36
-[2026-02-16T13:40:37.085Z]    ➡️ 371_BRYANT_193940082.pdf
-[2026-02-16T13:40:37.086Z]    ➡️ 372_Halsted_193940021.pdf
-[2026-02-16T13:40:37.086Z]    ➡️ 373_Wrenn_193960180.pdf
-[2026-02-16T13:40:56.799Z] ✅ 372_Halsted_193940021.pdf → 84fccd58-d3ae-4c1a-86d7-223100248e40
-[2026-02-16T13:40:58.887Z] ✅ 371_BRYANT_193940082.pdf → c83b038c-5123-4b3a-99e1-5bb2ef8bdaa6
-[2026-02-16T13:41:12.314Z] ✅ 373_Wrenn_193960180.pdf → b5aed1d3-75a0-42d8-b883-8215d59e57e9
-[2026-02-16T13:41:12.315Z] 📊 Batch 34-36 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 35.23s)
-[2026-02-16T13:41:12.315Z] 📦 Starting batch 37-39
-[2026-02-16T13:41:12.315Z]    ➡️ 374_Ruffin_193940192.pdf
-[2026-02-16T13:41:12.315Z]    ➡️ 376_HUDSON_193960220.pdf
-[2026-02-16T13:41:12.315Z]    ➡️ 377_Mitchell_194018319.pdf
-[2026-02-16T13:41:31.160Z] ✅ 374_Ruffin_193940192.pdf → d24c9d42-baf5-4a4e-afaa-80845d2499b7
-[2026-02-16T13:41:51.988Z] ✅ 377_Mitchell_194018319.pdf → 7ddfa5be-269d-4d55-b068-3f41a3c07d37
-[2026-02-16T13:43:06.540Z] ✅ 376_HUDSON_193960220.pdf → 45df48b1-24c1-464f-9380-8d02092eac86
-[2026-02-16T13:43:06.541Z] 📊 Batch 37-39 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 114.22s)
-[2026-02-16T13:43:06.541Z] 📦 Starting batch 40-42
-[2026-02-16T13:43:06.541Z]    ➡️ 378_Regenhardt_194018835.pdf
-[2026-02-16T13:43:06.541Z]    ➡️ 380_Hamilton_193961273.pdf
-[2026-02-16T13:43:06.541Z]    ➡️ 382_NIVENS_194019143.pdf
-[2026-02-16T13:43:30.530Z] ✅ 378_Regenhardt_194018835.pdf → da984147-4c72-4f44-a183-778446dc924a
-[2026-02-16T13:43:45.570Z] ✅ 382_NIVENS_194019143.pdf → f2f32675-2914-4d70-879f-10a473aaca8a
-[2026-02-16T13:45:01.062Z] ✅ 380_Hamilton_193961273.pdf → d434e2d6-36f2-417e-8f74-1a1123a385f7
-[2026-02-16T13:45:01.064Z] 📊 Batch 40-42 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 114.53s)
-[2026-02-16T13:45:01.065Z] 📦 Starting batch 43-45
-[2026-02-16T13:45:01.065Z]    ➡️ 383_Hoffman_194019233.pdf
-[2026-02-16T13:45:01.065Z]    ➡️ 384_Duke_194024357.pdf
-[2026-02-16T13:45:01.065Z]    ➡️ 385_PEARSON_194024482.pdf
-[2026-02-16T13:45:30.694Z] ✅ 383_Hoffman_194019233.pdf → 82999e58-f451-41ee-90f6-b0eb0014ac98
-[2026-02-16T13:46:40.368Z] ✅ 385_PEARSON_194024482.pdf → c29d1a6d-3f37-4c1c-bc0f-5877239931ca
-[2026-02-16T13:46:40.588Z] ✅ 384_Duke_194024357.pdf → 3a5de391-2c5a-41dc-bbd8-6f4904607242
-[2026-02-16T13:46:40.588Z] 📊 Batch 43-45 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 99.53s)
-[2026-02-16T13:46:40.588Z] 📦 Starting batch 46-48
-[2026-02-16T13:46:40.588Z]    ➡️ 386_Martin_194024545.pdf
-[2026-02-16T13:46:40.589Z]    ➡️ 387_Guy_192585208.pdf
-[2026-02-16T13:46:40.589Z]    ➡️ 388_Dotson_193805112.pdf
-[2026-02-16T13:47:05.507Z] ❌ 386_Martin_194024545.pdf: Request failed with status code 500
-[2026-02-16T13:47:05.862Z] ✅ 387_Guy_192585208.pdf → 6a988ce7-162b-4b61-81cd-9b17460253ec
-[2026-02-16T13:47:25.997Z] ✅ 388_Dotson_193805112.pdf → 81eebcd5-4e44-4d96-92fd-19f36ae157a7
-[2026-02-16T13:47:25.997Z] 📊 Batch 46-48 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 45.41s)
-[2026-02-16T13:47:25.998Z] 📦 Starting batch 49-51
-[2026-02-16T13:47:25.998Z]    ➡️ 389_Kobasic_194068604.pdf
-[2026-02-16T13:47:25.998Z]    ➡️ 390_Pruitt_194068746.pdf
-[2026-02-16T13:47:25.998Z]    ➡️ 391_James_191360392.pdf
-[2026-02-16T13:47:44.057Z] ❌ 391_James_191360392.pdf: Request failed with status code 500
-[2026-02-16T13:49:22.166Z] ✅ 389_Kobasic_194068604.pdf → 1e0874d6-e0d8-4be8-93e1-c42cad8b430d
-[2026-02-16T13:49:36.056Z] ✅ 390_Pruitt_194068746.pdf → ca7096c6-e444-4ee1-847b-808bf545cffb
-[2026-02-16T13:49:36.056Z] 📊 Batch 49-51 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 130.06s)
-[2026-02-16T13:49:36.056Z] 📦 Starting batch 52-54
-[2026-02-16T13:49:36.056Z]    ➡️ 392_Roberts_194017946.pdf
-[2026-02-16T13:49:36.056Z]    ➡️ 393_Johnson_194076653.pdf
-[2026-02-16T13:49:36.056Z]    ➡️ 395_Lewis_194091594.pdf
-[2026-02-16T13:49:59.954Z] ✅ 395_Lewis_194091594.pdf → 12c44cd8-d0fb-486a-af6a-bc5ff9b6b2ec
-[2026-02-16T13:50:00.667Z] ✅ 392_Roberts_194017946.pdf → d69815f5-a1b5-4d07-8841-cf9666c4d1e7
-[2026-02-16T13:50:15.738Z] ✅ 393_Johnson_194076653.pdf → 756ab88f-e68b-4247-8da9-b8a86e9877bd
-[2026-02-16T13:50:15.738Z] 📊 Batch 52-54 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 39.68s)
-[2026-02-16T13:50:15.739Z] 📦 Starting batch 55-57
-[2026-02-16T13:50:15.739Z]    ➡️ 397_Parker_193959962.pdf
-[2026-02-16T13:50:15.739Z]    ➡️ 399_Russell_194121856.pdf
-[2026-02-16T13:50:15.739Z]    ➡️ 400_Lovan_194131232.pdf
-[2026-02-16T13:50:43.551Z] ✅ 400_Lovan_194131232.pdf → cc8e084b-2dc0-42a3-837b-329c58b7e8fa
-[2026-02-16T13:50:59.520Z] ✅ 397_Parker_193959962.pdf → 246e3bd8-160e-419d-ade5-9a2fa5ae402b
-[2026-02-16T13:51:22.885Z] ✅ 399_Russell_194121856.pdf → f989eeff-e1f9-4b7d-af98-0078014b2594
-[2026-02-16T13:51:22.886Z] 📊 Batch 55-57 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 67.15s)
-[2026-02-16T13:51:22.887Z] 📦 Starting batch 58-60
-[2026-02-16T13:51:22.887Z]    ➡️ 401_Nale_194122367.pdf
-[2026-02-16T13:51:22.888Z]    ➡️ 404_ROGERS_191299224.pdf
-[2026-02-16T13:51:22.888Z]    ➡️ 405_Malone_194141597.pdf
-[2026-02-16T13:51:45.320Z] ❌ 404_ROGERS_191299224.pdf: Request failed with status code 500
-[2026-02-16T13:51:57.866Z] ✅ 401_Nale_194122367.pdf → bb9a437b-9281-44b1-a1d2-a08849e33784
-[2026-02-16T13:53:52.612Z] ✅ 405_Malone_194141597.pdf → 0e7d4237-317b-45e0-b5e3-ac0bbbd8f978
-[2026-02-16T13:53:52.613Z] 📊 Batch 58-60 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 149.73s)
-[2026-02-16T13:53:52.613Z] 📦 Starting batch 61-63
-[2026-02-16T13:53:52.613Z]    ➡️ 406_Avery_191337392.pdf
-[2026-02-16T13:53:52.613Z]    ➡️ 407_Cody_194091718.pdf
-[2026-02-16T13:53:52.613Z]    ➡️ 409_Holland_194180630.pdf
-[2026-02-16T13:54:12.442Z] ❌ 407_Cody_194091718.pdf: Request failed with status code 500
-[2026-02-16T13:54:27.277Z] ✅ 406_Avery_191337392.pdf → c810b2f0-644c-4585-a613-7ea4988b1c1e
-[2026-02-16T13:54:29.723Z] ✅ 409_Holland_194180630.pdf → ff053041-f4c0-4974-bfa4-787aad61a666
-[2026-02-16T13:54:29.723Z] 📊 Batch 61-63 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 37.11s)
-[2026-02-16T13:54:29.723Z] 📦 Starting batch 64-66
-[2026-02-16T13:54:29.723Z]    ➡️ 410_Anderson_194181867.pdf
-[2026-02-16T13:54:29.724Z]    ➡️ 413_Sneed_193411156.pdf
-[2026-02-16T13:54:29.725Z]    ➡️ 414_Williams_194141894.pdf
-[2026-02-16T13:54:48.971Z] ✅ 410_Anderson_194181867.pdf → da677e32-b9a2-4f5f-8fd4-8436cebf7316
-[2026-02-16T13:54:50.740Z] ✅ 413_Sneed_193411156.pdf → baad4fa1-4915-4b75-ba4b-a8566facefe6
-[2026-02-16T13:55:33.519Z] ❌ 414_Williams_194141894.pdf: read ECONNRESET
-[2026-02-16T13:55:33.519Z] 📊 Batch 64-66 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 63.80s)
-[2026-02-16T13:55:33.523Z] 📦 Starting batch 67-69
-[2026-02-16T13:55:33.523Z]    ➡️ 415_Harris_194091278.pdf
-[2026-02-16T13:55:33.524Z]    ➡️ 416_VANLEEUWEN_194141676.pdf
-[2026-02-16T13:55:33.524Z]    ➡️ 417_Word_194225839.pdf
-[2026-02-16T13:55:58.949Z] ✅ 416_VANLEEUWEN_194141676.pdf → 369e92ca-0b8f-4791-9480-2fc0f531a045
-[2026-02-16T13:56:14.708Z] ✅ 417_Word_194225839.pdf → 14e7da99-c3dc-4104-b1de-6de52c0793ea
-[2026-02-16T13:56:16.539Z] ✅ 415_Harris_194091278.pdf → e98e3f0f-acc7-477c-9454-6fd5f92e7e5a
-[2026-02-16T13:56:16.539Z] 📊 Batch 67-69 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 43.02s)
-[2026-02-16T13:56:16.540Z] 📦 Starting batch 70-72
-[2026-02-16T13:56:16.540Z]    ➡️ 419_Harris_194262618.pdf
-[2026-02-16T13:56:16.540Z]    ➡️ 420_Zacher_192098751.pdf
-[2026-02-16T13:56:16.540Z]    ➡️ 421_Ratliff_194266787.pdf
-[2026-02-16T13:56:34.676Z] ❌ 419_Harris_194262618.pdf: Request failed with status code 500
-[2026-02-16T13:56:35.733Z] ✅ 420_Zacher_192098751.pdf → 9fa60bd4-2839-4314-b897-e06c12944bd8
-[2026-02-16T13:56:45.305Z] ❌ 421_Ratliff_194266787.pdf: Request failed with status code 500
-[2026-02-16T13:56:45.306Z] 📊 Batch 70-72 (Processed: 1, Skipped: 0, Failed: 2, Total: 3, TimeTaken: 28.77s)
-[2026-02-16T13:56:45.306Z] 📦 Starting batch 73-75
-[2026-02-16T13:56:45.306Z]    ➡️ 422_CLARK_194269215.pdf
-[2026-02-16T13:56:45.306Z]    ➡️ 423_CLARK_194269215.pdf
-[2026-02-16T13:56:45.306Z]    ➡️ 424_Fisher_194262532.pdf
-[2026-02-16T13:57:08.066Z] ✅ 422_CLARK_194269215.pdf → 479a5cf1-cb7b-4481-a3a4-a01f001329d0
-[2026-02-16T13:57:08.070Z] ✅ 423_CLARK_194269215.pdf → 9dcfbcab-6d17-49ce-b77d-898688825136
-[2026-02-16T13:57:48.648Z] ❌ 424_Fisher_194262532.pdf: read ECONNRESET
-[2026-02-16T13:57:48.650Z] 📊 Batch 73-75 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 63.34s)
-[2026-02-16T13:57:48.650Z] 📦 Starting batch 76-78
-[2026-02-16T13:57:48.650Z]    ➡️ 425_Franklin_193960308.pdf
-[2026-02-16T13:57:48.650Z]    ➡️ 426_Pearson_194311703.pdf
-[2026-02-16T13:57:48.650Z]    ➡️ 427_Bell_194311806.pdf
-[2026-02-16T13:58:09.786Z] ✅ 425_Franklin_193960308.pdf → 9d2185c4-e8cc-4e7d-aa00-4489f482ee56
-[2026-02-16T13:58:10.279Z] ✅ 426_Pearson_194311703.pdf → e9ebeb47-88a4-4a2b-9376-524c2325ef8e
-[2026-02-16T13:58:26.615Z] ✅ 427_Bell_194311806.pdf → 9546dfb7-9dff-4b8d-a741-dec28e843139
-[2026-02-16T13:58:26.616Z] 📊 Batch 76-78 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 37.97s)
-[2026-02-16T13:58:26.616Z] 📦 Starting batch 79-81
-[2026-02-16T13:58:26.616Z]    ➡️ 428_Brooks_194311880.pdf
-[2026-02-16T13:58:26.616Z]    ➡️ 429_FASANO_194344154.pdf
-[2026-02-16T13:58:26.616Z]    ➡️ 430_Wilson_194407612.pdf
-[2026-02-16T13:58:49.176Z] ✅ 428_Brooks_194311880.pdf → a320781b-4c75-452a-aec7-3e7c02e62251
-[2026-02-16T13:58:52.514Z] ✅ 430_Wilson_194407612.pdf → 044478a5-5de0-48d7-8aaa-2f8369cef466
-[2026-02-16T13:59:07.074Z] ✅ 429_FASANO_194344154.pdf → 7846c8ef-bde3-4d4e-bf06-c9c86cc08dbc
-[2026-02-16T13:59:07.074Z] 📊 Batch 79-81 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 40.46s)
-[2026-02-16T13:59:07.076Z] 📦 Starting batch 82-84
-[2026-02-16T13:59:07.076Z]    ➡️ 431_Ortiz_194316452.pdf
-[2026-02-16T13:59:07.076Z]    ➡️ 432_Gay_194180515.pdf
-[2026-02-16T13:59:07.076Z]    ➡️ 433_Brown_194452376.pdf
-[2026-02-16T13:59:25.608Z] ✅ 431_Ortiz_194316452.pdf → 7d60da2d-fed9-4a9b-86db-c53b2af33f6a
-[2026-02-16T13:59:28.052Z] ✅ 432_Gay_194180515.pdf → 0fb7f617-55dd-4052-9808-eddfdf165243
-[2026-02-16T13:59:59.162Z] ✅ 433_Brown_194452376.pdf → 4d05eef1-7389-400f-9500-3d8120e4cdfe
-[2026-02-16T13:59:59.164Z] 📊 Batch 82-84 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 52.07s)
-[2026-02-16T13:59:59.164Z] 📦 Starting batch 85-87
-[2026-02-16T13:59:59.164Z]    ➡️ 434_Britt_194376665.pdf
-[2026-02-16T13:59:59.164Z]    ➡️ 435_Green_194380404.pdf
-[2026-02-16T13:59:59.164Z]    ➡️ 436_Blanchard_194250717.pdf
-[2026-02-16T14:00:18.643Z] ✅ 434_Britt_194376665.pdf → e5ec6032-221d-4de9-9838-edc20e3c2d7e
-[2026-02-16T14:00:20.533Z] ✅ 436_Blanchard_194250717.pdf → 1f3aa6aa-1702-43a8-a4ff-32973de34fbf
-[2026-02-16T14:00:52.431Z] ✅ 435_Green_194380404.pdf → 3500fcf5-7d5d-4a86-9bbb-2b7da16a6d62
-[2026-02-16T14:00:52.432Z] 📊 Batch 85-87 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 53.28s)
-[2026-02-16T14:00:52.432Z] 📦 Starting batch 88-90
-[2026-02-16T14:00:52.432Z]    ➡️ 437_GIBSON_194407462.pdf
-[2026-02-16T14:00:52.432Z]    ➡️ 438_King_194453286.pdf
-[2026-02-16T14:00:52.432Z]    ➡️ 439_Carr_194500342.pdf
-[2026-02-16T14:01:32.822Z] ✅ 439_Carr_194500342.pdf → 29af6d19-b139-4191-85e8-e3a5075b9436
-[2026-02-16T14:02:37.221Z] ❌ 437_GIBSON_194407462.pdf: Request failed with status code 500
-[2026-02-16T14:03:08.999Z] ✅ 438_King_194453286.pdf → 75b7e98f-2dc9-41e8-ab20-d28db63c5429
-[2026-02-16T14:03:08.999Z] 📊 Batch 88-90 (Processed: 2, Skipped: 0, Failed: 1, Total: 3, TimeTaken: 136.57s)
-[2026-02-16T14:03:08.999Z] 📦 Starting batch 91-93
-[2026-02-16T14:03:08.999Z]    ➡️ 440_Mikell_194453758.pdf
-[2026-02-16T14:03:08.999Z]    ➡️ 441_Cunningham_194498819.pdf
-[2026-02-16T14:03:08.999Z]    ➡️ 442_Spain_194181803.pdf
-[2026-02-16T14:03:31.452Z] ✅ 441_Cunningham_194498819.pdf → 47a9a54b-809d-45d5-bc43-045ae7208ae7
-[2026-02-16T14:03:41.477Z] ✅ 440_Mikell_194453758.pdf → 9010e787-e866-4cc7-8a15-915a008b9beb
-[2026-02-16T14:05:27.880Z] ✅ 442_Spain_194181803.pdf → ead0c161-14f0-4dfd-858e-d60996f0a77b
-[2026-02-16T14:05:27.880Z] 📊 Batch 91-93 (Processed: 3, Skipped: 0, Failed: 0, Total: 3, TimeTaken: 138.88s)
-[2026-02-16T14:05:27.880Z] 📦 Starting batch 94-96
-[2026-02-16T14:05:27.880Z]    ➡️ 444_HILL_194501985.pdf
-[2026-02-16T14:05:27.880Z]    ➡️ 445_LOPEZ_194501401.pdf
-[2026-02-16T14:05:27.880Z]    ➡️ 446_Ford_194527566.pdf
-[2026-02-16T14:05:54.679Z] ✅ 445_LOPEZ_194501401.pdf → d21661f5-3ed6-4a70-a4ed-a69f32e0a737
-[2026-02-16T14:06:00.911Z] ✅ 444_HILL_194501985.pdf → 51892e8b-428c-43a3-af2a-850da8ae72f7
-[2026-02-16T14:06:09.348Z] Timeout value of 00:30:00 exceeded by function 'Functions.DailyPdfProcessorJob' (Id: '1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1'). Initiating cancellation.
-[2026-02-16T14:06:09.378Z] Executed 'Functions.DailyPdfProcessorJob' (Failed, Id=1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1, Duration=1800050ms)
-[2026-02-16T14:06:09.378Z] Microsoft.Azure.WebJobs.Host: Timeout value of 00:30:00 was exceeded by function: Functions.DailyPdfProcessorJob.
-[2026-02-16T14:06:11.386Z] A function timeout has occurred. Restarting worker process executing invocationId '1e5fd3b8-fd96-4c83-83c4-f8a8e08e2df1'.
-[2026-02-16T14:06:11.753Z] Worker process started and initialized.
-[2026-02-16T14:06:21.756Z] Attempt to restart language worker process(es) completed.
-[2026-02-16T14:07:09.674Z] Language Worker Process exited. Pid=35342.
-[2026-02-16T14:07:09.674Z] node exited with code 130 (0x82). .
-[2026-02-16T14:07:09.952Z] Worker process started and initialized.
+[2026-03-13T09:34:29.170Z] Executing 'Functions.DailyPdfProcessorJob' (Reason='Timer fired at 2026-03-13T15:04:29.1601410+05:30', Id=3fc0ab3d-bc09-4b4e-8ec6-078cfb031f5d)
+[2026-03-13T09:34:29.171Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup, ScheduleStatus: {"Last":"2026-03-13T14:33:40.447963+05:30","Next":"2026-03-14T02:30:00+05:30","LastUpdated":"2026-03-13T14:33:40.447963+05:30"}
+[2026-03-13T09:34:29.202Z] 🚀 Daily PDF Processor Started
+[2026-03-13T09:34:29.202Z] 🔐 Logging in...
+[2026-03-13T09:34:30.668Z] ✅ Authenticated userId=3ef58454-9fc4-46a8-a8b3-761018fb5657
+[2026-03-13T09:34:30.668Z] 📦 Connected to blob storage
+[2026-03-13T09:34:33.351Z] 📁 Processing ZIP PrePostPlus/tebra_facesheets_2026-02-12.zip
+[2026-03-13T09:34:33.546Z] Host lock lease acquired by instance ID '000000000000000000000000435D1EEA'.
+[2026-03-13T09:34:36.389Z] 📄 Found 201 PDFs
+[2026-03-13T09:34:37.408Z] ❌ 1008_Dale_198064740.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.408Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:37.443Z] ❌ 1001_Forney_197965597.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.443Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:37.460Z] ❌ 1010_Lank_198069275.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.460Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:37.717Z] ❌ 1014_Ramey_198078693.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.717Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:37.726Z] ❌ 1013_Willis_198072182.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.726Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:37.731Z] ❌ 1012_George_198071629.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.731Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:37.993Z] ❌ 1023_Washington_198110992.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.993Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:37.993Z] ❌ 1021_Brown_198091521.pdf ERROR: Duplicate file
+[2026-03-13T09:34:37.993Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.009Z] ❌ 1022_Horn_198079303.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.010Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.273Z] ❌ 1028_Warford_198113164.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.274Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.275Z] ❌ 1027_Thomas_198116373.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.275Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.278Z] ❌ 1025_Jackson_198112023.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.278Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.544Z] ❌ 1031_Gordon_198131608.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.544Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.544Z] ❌ 1032_Cromeans_198087267.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.544Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.548Z] ❌ 1030_Farstad_197911848.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.548Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.811Z] ❌ 1034_Armbruster_198134246.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.811Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.813Z] ❌ 1035_Donahoo_198135038.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.813Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:38.823Z] ❌ 1033_Jewell_198133879.pdf ERROR: Duplicate file
+[2026-03-13T09:34:38.823Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.092Z] ❌ 1047_Watkins_198183537.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.092Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.099Z] ❌ 1038_Mulroy_198076245.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.099Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.111Z] ❌ 1045_Bosi_198173740.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.112Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.372Z] ❌ 1058_Woodson_198271377.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.373Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.384Z] ❌ 1051_Antoine_198136759.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.384Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.388Z] ❌ 1057_Meyer_197321870.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.389Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.655Z] ❌ 1066_Berretta_198340230.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.655Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.661Z] ❌ 1063_Johnson_198331239.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.661Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.669Z] ❌ 1065_Patrick_198339403.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.669Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.938Z] ❌ 1068_Williams_198185512.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.938Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.938Z] ❌ 1070_Hubbard_198377863.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.938Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:39.945Z] ❌ 1069_Jones_198373465.pdf ERROR: Duplicate file
+[2026-03-13T09:34:39.945Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.208Z] ❌ 1072_Thomas_198383209.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.209Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.212Z] ❌ 1075_Holliday_198395345.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.213Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.229Z] ❌ 1071_Sherley_198377168.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.229Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.490Z] ❌ 1078_Stanfill_198423243.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.490Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.492Z] ❌ 1077_Owens_197317024.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.492Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.498Z] ❌ 1076_Granados_198398751.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.498Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.760Z] ❌ 1085_Walker_198457515.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.760Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.762Z] ❌ 1079_Payne_198425400.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.762Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:40.769Z] ❌ 1084_Wilkerson_198455003.pdf ERROR: Duplicate file
+[2026-03-13T09:34:40.769Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.031Z] ❌ 1089_Hall_198474948.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.031Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.035Z] ❌ 1087_Harris_198393313.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.035Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.040Z] ❌ 1088_Owen_198474475.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.040Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.301Z] ❌ 1097_Brehm_198504228.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.301Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.304Z] ❌ 1092_Young_198482898.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.304Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.309Z] ❌ 1093_Adlon_198483702.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.309Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.568Z] ❌ 1100_Sizemore_198544499.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.568Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.582Z] ❌ 1098_Talley_198524845.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.582Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.582Z] ❌ 1099_Rivera_198543469.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.583Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.847Z] ❌ 1101_Vincent_198543982.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.847Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.853Z] ❌ 1103_Brown_197516611.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.853Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:41.862Z] ❌ 1102_Ellenburg_198585010.pdf ERROR: Duplicate file
+[2026-03-13T09:34:41.863Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.126Z] ❌ 1105_Mackey_197628279.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.127Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.128Z] ❌ 1104_Allen_198597659.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.128Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.135Z] ❌ 1106_Bolton_198603481.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.135Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.397Z] ❌ 1113_Carr_198642480.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.397Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.399Z] ❌ 1112_Harrington_197677319.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.399Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.402Z] ❌ 1108_Wilson_198475438.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.402Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.663Z] ❌ 1117_Geary_198658992.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.663Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.666Z] ❌ 1114_Ruffin_198643205.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.666Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.670Z] ❌ 1116_Stueckrath_198649345.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.671Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.933Z] ❌ 1120_Owens_197430251.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.933Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.938Z] ❌ 1118_Richards_198676273.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.938Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:42.941Z] ❌ 1119_Pruitt_198676340.pdf ERROR: Duplicate file
+[2026-03-13T09:34:42.941Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.213Z] ❌ 1123_Burse_198719079.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.213Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.213Z] ❌ 1121_Skinner_198720748.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.213Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.216Z] ❌ 1122_Davis_198719645.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.216Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.492Z] ❌ 1125_Drew_198736925.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.492Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.496Z] ❌ 1126_Rainey_198738959.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.496Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.497Z] ❌ 1124_Davis_198737082.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.497Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.764Z] ❌ 1128_Stroinski_198757757.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.764Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.769Z] ❌ 1129_Weathers_198779500.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.769Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:43.775Z] ❌ 1127_Ellis_198742899.pdf ERROR: Duplicate file
+[2026-03-13T09:34:43.775Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.036Z] ❌ 1139_Almond_198757899.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.036Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.039Z] ❌ 1130_Reyes_198782833.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.039Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.048Z] ❌ 1136_Ward_Washington_198856423.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.049Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.307Z] ❌ 1145_Gatlin_198906026.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.307Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.315Z] ❌ 1142_Johnson_198720473.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.315Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.319Z] ❌ 1140_Prince_198894828.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.319Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.579Z] ❌ 1149_Byer_199007481.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.579Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.582Z] ❌ 1148_Free_198604814.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.582Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.586Z] ❌ 1147_Price_198854889.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.586Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.848Z] ❌ 1152_Eckles_199025830.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.848Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.850Z] ❌ 1150_Lewis_198855142.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.850Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:44.856Z] ❌ 1151_Hug_198775445.pdf ERROR: Duplicate file
+[2026-03-13T09:34:44.856Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.119Z] ❌ 1155_West_197677376.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.120Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.120Z] ❌ 1153_Purifoy_199026386.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.120Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.126Z] ❌ 1154_Sherron_199059098.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.126Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.382Z] ❌ 1158_Maiden_198745645.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.383Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.389Z] ❌ 1157_Jones_199213857.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.389Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.396Z] ❌ 1156_YOUNG_198378588.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.396Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.659Z] ❌ 1161_Jones_199240765.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.659Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.660Z] ❌ 1159_Bradshaw_199210958.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.660Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.664Z] ❌ 1160_Smith_199237952.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.664Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.925Z] ❌ 1164_Vennemann_199271986.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.925Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.940Z] ❌ 1163_Ezzell_199242237.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.941Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:45.941Z] ❌ 1162_Campbell_199241664.pdf ERROR: Duplicate file
+[2026-03-13T09:34:45.941Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.206Z] ❌ 1167_Roland_199292147.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.206Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.209Z] ❌ 1165_Wathen_199273309.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.209Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.213Z] ❌ 1166_Murphy_199292708.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.213Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.475Z] ❌ 1170_Smith_199322221.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.475Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.476Z] ❌ 1169_Norris_199323096.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.476Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.481Z] ❌ 1168_Jenkins_199315637.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.481Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.740Z] ❌ 1173_Hurtt_199325805.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.740Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.746Z] ❌ 1172_Icenberger_199333657.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.746Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:46.749Z] ❌ 1171_Schild_199323880.pdf ERROR: Duplicate file
+[2026-03-13T09:34:46.749Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.009Z] ❌ 1176_Turner_Spencer_199354829.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.009Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.022Z] ❌ 1175_Chamberlin_199339844.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.022Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.022Z] ❌ 1174_Coker_199319420.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.022Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.283Z] ❌ 1179_STAGNER_199365972.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.283Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.287Z] ❌ 1177_Phillips_199360873.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.287Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.289Z] ❌ 1178_Herring_199361440.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.289Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.552Z] ❌ 1182_Hilliard_199356995.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.552Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.555Z] ❌ 1180_Parker_199384212.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.555Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.559Z] ❌ 1181_Hall_199362767.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.559Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.823Z] ❌ 1185_Farmer_199408770.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.823Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.824Z] ❌ 1183_Mcnair_199405861.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.824Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:47.830Z] ❌ 1184_Dolan_199404161.pdf ERROR: Duplicate file
+[2026-03-13T09:34:47.831Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.091Z] ❌ 1188_Ulm_199417202.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.091Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.096Z] ❌ 1186_Spears_199406858.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.096Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.100Z] ❌ 1187_EVANS_199417707.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.100Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.359Z] ❌ 1191_Griffin_199469159.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.360Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.366Z] ❌ 1190_RANSOM_199423605.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.366Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.372Z] ❌ 1189_Hall_198474948.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.372Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.630Z] ❌ 1195_Ford_199499542.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.630Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.638Z] ❌ 1194_Plymel_199494614.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.638Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.655Z] ❌ 1193_Wright_199475189.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.655Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.915Z] ❌ 1198_Alvarez_197446583.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.915Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.920Z] ❌ 1197_Sumner_199529161.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.921Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:48.924Z] ❌ 1196_Davis_199542437.pdf ERROR: Duplicate file
+[2026-03-13T09:34:48.924Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.191Z] ❌ 1199_Lovett_199552213.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.191Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.191Z] ❌ 1201_Cartwright_199585395.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.191Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.198Z] ❌ 1200_Schorman_199553797.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.198Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.466Z] ❌ 1204_Hobbs_199595388.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.466Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.469Z] ❌ 1203_Spessert_199592823.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.469Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.474Z] ❌ 1202_Taylor_197523871.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.474Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.736Z] ❌ 1207_Darnell_199639680.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.736Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.743Z] ❌ 1208_Free_198604814.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.743Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:49.756Z] ❌ 1205_WASHINGTON_199606205.pdf ERROR: Duplicate file
+[2026-03-13T09:34:49.756Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:50.016Z] ❌ 1215_Grohe_198909413.pdf ERROR: Duplicate file
+[2026-03-13T09:34:50.016Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:50.019Z] ❌ 1210_Tatum_199598372.pdf ERROR: Duplicate file
+[2026-03-13T09:34:50.019Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:50.027Z] ❌ 1211_Brown_199665510.pdf ERROR: Duplicate file
+[2026-03-13T09:34:50.027Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:50.286Z] ❌ 1224_Golden_199901728.pdf ERROR: Duplicate file
+[2026-03-13T09:34:50.286Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:50.291Z] ❌ 1217_Ford_199770621.pdf ERROR: Duplicate file
+[2026-03-13T09:34:50.292Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:50.296Z] ❌ 1222_Morley_199818055.pdf ERROR: Duplicate file
+[2026-03-13T09:34:50.296Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:34:50.816Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1233', retry_count: 0 } } }
+[2026-03-13T09:34:50.828Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1228', retry_count: 0 } } }
+[2026-03-13T09:34:50.830Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1232', retry_count: 0 } } }
+[2026-03-13T09:36:10.705Z] ✅ 1233_Catafygiotu_198837169.pdf → f3ebf0b9-c0d2-4284-b70d-dcaec2802cde
+[2026-03-13T09:36:10.780Z] ✅ 1228_Henderson_199940374.pdf → 71ae890d-5369-47bb-8675-a3f1aef57409
+[2026-03-13T09:36:10.824Z] ✅ 1232_Floyd_198455803.pdf → a67aabe8-800f-4f72-805c-fd43bf877341
+[2026-03-13T09:36:11.328Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1234', retry_count: 0 } } }
+[2026-03-13T09:36:11.342Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1235', retry_count: 0 } } }
+[2026-03-13T09:36:11.366Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1236', retry_count: 0 } } }
+[2026-03-13T09:36:33.320Z] ✅ 1234_Johnston_199628503.pdf → b8c98585-8734-459e-a943-cbc9c6b74db5
+[2026-03-13T09:37:19.006Z] ✅ 1236_Fisher_199893529.pdf → a58020e9-2c9a-4b9c-9475-461d5f491eb0
+[2026-03-13T09:37:19.111Z] ✅ 1235_Anderson_199933018.pdf → 1339263c-b988-48ff-992c-642ad76ef8c7
+[2026-03-13T09:37:19.656Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1237', retry_count: 0 } } }
+[2026-03-13T09:37:19.660Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1238', retry_count: 0 } } }
+[2026-03-13T09:37:20.441Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1240', retry_count: 0 } } }
+[2026-03-13T09:38:28.932Z] ✅ 1238_Burton_199090275.pdf → f66c48c7-3f28-48da-92d1-ae3c927a5d05
+[2026-03-13T09:38:28.988Z] ✅ 1237_Alston_199903111.pdf → 4e704941-f633-467a-b29e-4105831f5536
+[2026-03-13T09:39:03.542Z] ✅ 1240_Coffield_199951138.pdf → c4170d6c-9707-44a6-b4cb-a8efab8c9e4a
+[2026-03-13T09:39:04.060Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1242', retry_count: 0 } } }
+[2026-03-13T09:39:04.762Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1243', retry_count: 0 } } }
+[2026-03-13T09:39:04.860Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1245', retry_count: 0 } } }
+[2026-03-13T09:39:35.385Z] ✅ 1242_Johnson_199801589.pdf → 9af0f890-8805-4539-a058-bee7c9d72034
+[2026-03-13T09:40:06.218Z] ❌ 1245_M_Steward_199894100.pdf ERROR: read ECONNRESET
+[2026-03-13T09:40:06.218Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:40:45.141Z] ❌ 1243_Golden_199901728.pdf ERROR: Request failed with status code 500
+[2026-03-13T09:40:45.141Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:40:45.695Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1247', retry_count: 0 } } }
+[2026-03-13T09:40:46.420Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1250', retry_count: 0 } } }
+[2026-03-13T09:40:46.511Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1249', retry_count: 0 } } }
+[2026-03-13T09:41:20.850Z] ✅ 1247_Garcia_Benossi_199901602.pdf → 2f144cd3-ad0b-425e-b155-542598ea286e
+[2026-03-13T09:42:21.248Z] ✅ 1250_Hollingsworth_199593099.pdf → 2c1e5dc9-97bb-4e49-b694-9053f8ea76f7
+[2026-03-13T09:42:21.401Z] ✅ 1249_Tanner_199901476.pdf → a5b08efb-0f0c-44a5-a255-5cd430817cb6
+[2026-03-13T09:42:21.937Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1252', retry_count: 0 } } }
+[2026-03-13T09:42:21.952Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1251', retry_count: 0 } } }
+[2026-03-13T09:42:22.730Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1253', retry_count: 0 } } }
+[2026-03-13T09:42:41.039Z] ✅ 1252_Ridley_199819458.pdf → cb24d387-ac3b-4490-accf-809ce0357466
+[2026-03-13T09:43:20.902Z] ✅ 1251_Gates_199638827.pdf → e2450b81-5bb2-4d1a-aee6-44dd2e3e1517
+[2026-03-13T09:43:21.145Z] ✅ 1253_Zenker_200169037.pdf → f7615f1f-4e27-45c9-b0cc-eab6e67d3046
+[2026-03-13T09:43:21.676Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1256', retry_count: 0 } } }
+[2026-03-13T09:43:21.677Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1255', retry_count: 0 } } }
+[2026-03-13T09:43:22.455Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1257', retry_count: 0 } } }
+[2026-03-13T09:44:36.554Z] ✅ 1255_Strain_199665186.pdf → 0b32b775-2088-48ef-9bd6-8faa5ec5c456
+[2026-03-13T09:44:36.694Z] ✅ 1256_Dunahoo_199952580.pdf → 0dec1653-e78d-4a78-b845-132bbc09dcae
+[2026-03-13T09:44:53.337Z] ✅ 1257_Massie_200323116.pdf → 863438eb-e1be-49a1-b8c1-b34db151b148
+[2026-03-13T09:44:53.842Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1259', retry_count: 0 } } }
+[2026-03-13T09:44:54.575Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1260', retry_count: 0 } } }
+[2026-03-13T09:44:54.635Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1261', retry_count: 0 } } }
+[2026-03-13T09:45:26.467Z] ✅ 1259_Gray_200368322.pdf → 1a07d79e-f896-4a68-9fbe-72384f4668cd
+[2026-03-13T09:46:02.004Z] ✅ 1260_Behm_200325402.pdf → a401a1d2-9477-42a0-b2cd-1ab4f6e5679f
+[2026-03-13T09:46:02.224Z] ✅ 1261_Hopper_197570974.pdf → 31a0d671-d224-4514-a6a8-6195e4933ac5
+[2026-03-13T09:46:02.763Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1262', retry_count: 0 } } }
+[2026-03-13T09:46:02.772Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1265', retry_count: 0 } } }
+[2026-03-13T09:46:03.498Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1266', retry_count: 0 } } }
+[2026-03-13T09:46:20.193Z] ✅ 1262_Pryor_197540348.pdf → 9b2b0696-5591-44a6-863b-6664a5708311
+[2026-03-13T09:47:14.953Z] ✅ 1265_Patrick_200432994.pdf → 95f16fdd-58e7-4ddb-aacd-b2b86f517fb0
+[2026-03-13T09:47:15.206Z] ✅ 1266_Jones_200434440.pdf → 10b5d187-b26d-47b2-80dc-248d8c927857
+[2026-03-13T09:47:15.737Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1268', retry_count: 0 } } }
+[2026-03-13T09:47:15.742Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1267', retry_count: 0 } } }
+[2026-03-13T09:47:16.537Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1270', retry_count: 0 } } }
+[2026-03-13T09:47:50.109Z] ❌ 1267_Bohanna_200434610.pdf ERROR: Request failed with status code 500
+[2026-03-13T09:47:50.109Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:47:51.000Z] ✅ 1268_Beatty_200451418.pdf → edcf7f7a-0352-49ca-b58e-72435b57f5e5
+[2026-03-13T09:48:25.539Z] ✅ 1270_Arnold_200536748.pdf → 9f1fb2e7-3e66-438e-8b2c-2f020d5954d7
+[2026-03-13T09:48:26.031Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1274', retry_count: 0 } } }
+[2026-03-13T09:48:26.823Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1282', retry_count: 0 } } }
+[2026-03-13T09:48:26.858Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1276', retry_count: 0 } } }
+[2026-03-13T09:48:59.501Z] ✅ 1274_Cox_200453710.pdf → c7aad2f7-4dec-43aa-85ec-d9cd5ebfdd5a
+[2026-03-13T09:49:38.206Z] ✅ 1282_Ellingsgard_200739721.pdf → 54903916-71cd-450f-a2b5-41489517a90a
+[2026-03-13T09:49:38.287Z] ✅ 1276_O'Conner_200625954.pdf → 1a5da4f5-39ad-4bf5-b42e-0c306536f6de
+[2026-03-13T09:49:38.907Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '863', retry_count: 0 } } }
+[2026-03-13T09:49:38.939Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '862', retry_count: 0 } } }
+[2026-03-13T09:49:39.650Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '864', retry_count: 0 } } }
+[2026-03-13T09:50:13.151Z] ✅ 863_Smith_197321848.pdf → da9175e5-613d-443b-8cda-f3bf8c3cb5d3
+[2026-03-13T09:51:00.392Z] ✅ 862_Evans_197321818.pdf → bfcd96ea-3e44-4d63-9b52-83c3ec53baf2
+[2026-03-13T09:51:00.699Z] ✅ 864_Callicutt_197356773.pdf → 0f410d7e-4f9c-41ec-af74-15f53af18719
+[2026-03-13T09:51:01.307Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '925', retry_count: 0 } } }
+[2026-03-13T09:51:01.316Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '923', retry_count: 0 } } }
+[2026-03-13T09:51:02.112Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '935', retry_count: 0 } } }
+[2026-03-13T09:51:37.937Z] ❌ 925_Hopper_197570974.pdf ERROR: Request failed with status code 500
+[2026-03-13T09:51:37.938Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:52:25.014Z] ❌ 935_Freel_197626601.pdf ERROR: Request failed with status code 500
+[2026-03-13T09:52:25.015Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:52:25.772Z] ✅ 923_Wallace_197567530.pdf → 3033197a-047d-41af-8935-e902f88c93b7
+[2026-03-13T09:52:26.360Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '941', retry_count: 0 } } }
+[2026-03-13T09:52:26.708Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '940', retry_count: 0 } } }
+[2026-03-13T09:52:27.148Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '942', retry_count: 0 } } }
+[2026-03-13T09:52:55.708Z] ✅ 941_Blaine_197638987.pdf → 0803fea8-5ca3-46a1-a684-fc3cb5f67783
+[2026-03-13T09:54:10.358Z] ❌ 942_Mackey_197628279.pdf ERROR: Request failed with status code 500
+[2026-03-13T09:54:10.358Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:54:11.109Z] ✅ 940_Darnell_197623936.pdf → 5a8aa01d-9a41-4889-a54a-5f31b019a54c
+[2026-03-13T09:54:11.697Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '943', retry_count: 0 } } }
+[2026-03-13T09:54:11.763Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '944', retry_count: 0 } } }
+[2026-03-13T09:54:12.511Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '956', retry_count: 0 } } }
+[2026-03-13T09:54:29.443Z] ❌ 943_Alvarez_197446583.pdf ERROR: Request failed with status code 500
+[2026-03-13T09:54:29.443Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:54:59.149Z] ❌ 944_King_197379000.pdf ERROR: Request failed with status code 500
+[2026-03-13T09:54:59.149Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:55:00.402Z] ✅ 956_Hooks_197683324.pdf → 40d88d49-43c6-42bb-b77c-d555e0e950ac
+[2026-03-13T09:55:01.003Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '963', retry_count: 0 } } }
+[2026-03-13T09:55:01.050Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '964', retry_count: 0 } } }
+[2026-03-13T09:55:01.693Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '970', retry_count: 0 } } }
+[2026-03-13T09:55:22.910Z] ✅ 963_Nunn_197724544.pdf → 46ac7600-25d6-4262-8cca-591f19241d94
+[2026-03-13T09:56:06.604Z] ✅ 964_Richardson_197730347.pdf → b713f136-5dbe-47a5-bcda-b8c7ea06089f
+[2026-03-13T09:56:06.754Z] ✅ 970_Jones_197768100.pdf → 167ededb-016e-43b7-ac80-a30fab2dfd82
+[2026-03-13T09:56:07.351Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '983', retry_count: 0 } } }
+[2026-03-13T09:56:07.455Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '974', retry_count: 0 } } }
+[2026-03-13T09:56:08.095Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '984', retry_count: 0 } } }
+[2026-03-13T09:56:44.457Z] ✅ 983_Ellis_197895648.pdf → 12ba73df-20f4-44ef-8fc7-a29aa1665b8b
+[2026-03-13T09:57:15.809Z] ✅ 974_BOOKER_197850778.pdf → 99488ae6-9b66-4a1b-b3ed-2e5d3d8c3a93
+[2026-03-13T09:57:16.007Z] ✅ 984_Hopper_197895778.pdf → ea62d4d3-68d8-40dc-9ab9-84f7186eb30e
+[2026-03-13T09:57:16.610Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '986', retry_count: 0 } } }
+[2026-03-13T09:57:16.666Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '989', retry_count: 0 } } }
+[2026-03-13T09:57:16.861Z] ❌ 986_Block_197904322.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:16.861Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:16.926Z] ❌ 989_Anderson_197908037.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:16.926Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:17.343Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '992', retry_count: 0 } } }
+[2026-03-13T09:57:18.671Z] ❌ 992_Bailey_197934634.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:18.671Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:19.360Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '997', retry_count: 0 } } }
+[2026-03-13T09:57:19.365Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '999', retry_count: 0 } } }
+[2026-03-13T09:57:19.412Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '993', retry_count: 0 } } }
+[2026-03-13T09:57:19.856Z] ❌ 999_Smith_197962982.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:19.856Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:19.886Z] ❌ 997_Bartolotta_197954137.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:19.886Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:20.717Z] ❌ 993_Bomar_197937106.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:20.718Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:20.718Z] 📁 Processing ZIP PrePostPlus/tebra_facesheets_G_2026-02-27_7906.zip
+[2026-03-13T09:57:24.450Z] 📄 Found 6 PDFs
+[2026-03-13T09:57:25.852Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1321', retry_count: 0 } } }
+[2026-03-13T09:57:25.902Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1299', retry_count: 0 } } }
+[2026-03-13T09:57:25.972Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1307', retry_count: 0 } } }
+[2026-03-13T09:57:26.368Z] ❌ 1321_Kuespert_201189712.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:26.368Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:26.415Z] ❌ 1299_Jones_200848611.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:26.415Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:27.258Z] ❌ 1307_Byrd_200987360.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:27.258Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:27.853Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1328', retry_count: 0 } } }
+[2026-03-13T09:57:27.860Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1327', retry_count: 0 } } }
+[2026-03-13T09:57:27.907Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '1336', retry_count: 0 } } }
+[2026-03-13T09:57:28.371Z] ❌ 1328_Pierce_201261264.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:28.371Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:28.899Z] ❌ 1336_Simmons_201361762.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:28.899Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:29.121Z] ❌ 1327_Brigman_201251868.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:29.121Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:29.122Z] 📁 Processing ZIP The PreOP Center/tebra_facesheets_TPC_2025-08-13_2934.zip
+[2026-03-13T09:57:31.346Z] 📄 Found 223 PDFs
+[2026-03-13T09:57:32.026Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '101', retry_count: 0 } } }
+[2026-03-13T09:57:32.068Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '102', retry_count: 0 } } }
+[2026-03-13T09:57:32.105Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '100', retry_count: 0 } } }
+[2026-03-13T09:57:32.577Z] ❌ 102_BARNES_191581179.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:32.577Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:33.306Z] ❌ 101_Cox_191614146.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:33.307Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:33.322Z] ❌ 100_Borlo_191572207.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:33.322Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:33.996Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '104', retry_count: 0 } } }
+[2026-03-13T09:57:34.005Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '103', retry_count: 0 } } }
+[2026-03-13T09:57:34.057Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '105', retry_count: 0 } } }
+[2026-03-13T09:57:34.497Z] ❌ 104_HILL_191672870.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:34.497Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:34.529Z] ❌ 103_Morrow_191507488.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:34.529Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:34.576Z] ❌ 105_ADAIR_191569478.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:34.576Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:35.211Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '107', retry_count: 0 } } }
+[2026-03-13T09:57:35.256Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '108', retry_count: 0 } } }
+[2026-03-13T09:57:35.265Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '106', retry_count: 0 } } }
+[2026-03-13T09:57:35.705Z] ❌ 107_ACCARDO_191722554.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:35.705Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:35.783Z] ❌ 106_Mirdo_191631755.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:35.784Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:35.795Z] ❌ 108_Howell_191702213.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:35.795Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:36.399Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '110', retry_count: 0 } } }
+[2026-03-13T09:57:36.406Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '109', retry_count: 0 } } }
+[2026-03-13T09:57:36.453Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '111', retry_count: 0 } } }
+[2026-03-13T09:57:36.912Z] ❌ 110_Hance_191754204.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:36.912Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:36.917Z] ❌ 109_Simpson_191753258.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:36.917Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:36.961Z] ❌ 111_Gregson_191754771.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:36.962Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:37.558Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '113', retry_count: 0 } } }
+[2026-03-13T09:57:37.606Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '112', retry_count: 0 } } }
+[2026-03-13T09:57:37.609Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '114', retry_count: 0 } } }
+[2026-03-13T09:57:38.076Z] ❌ 113_Cunningham_191755755.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:38.076Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:38.119Z] ❌ 114_Hanks_191767844.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:38.119Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:38.930Z] ❌ 112_Hardin_191755109.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:38.930Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:39.548Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '115', retry_count: 0 } } }
+[2026-03-13T09:57:39.554Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '117', retry_count: 0 } } }
+[2026-03-13T09:57:39.597Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '116', retry_count: 0 } } }
+[2026-03-13T09:57:40.066Z] ❌ 117_HALL_191802393.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:40.066Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:40.077Z] ❌ 115_Johnson_191771285.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:40.077Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:40.095Z] ❌ 116_Haddad_191780329.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:40.097Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:40.699Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '120', retry_count: 0 } } }
+[2026-03-13T09:57:40.708Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '119', retry_count: 0 } } }
+[2026-03-13T09:57:40.755Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '118', retry_count: 0 } } }
+[2026-03-13T09:57:41.208Z] ❌ 120_SANGSTER_191828764.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:41.208Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:41.276Z] ❌ 118_GUINLE_191810717.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:41.276Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:41.704Z] ❌ 119_Parks_191823081.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:41.704Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:42.307Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '124', retry_count: 0 } } }
+[2026-03-13T09:57:42.350Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '125', retry_count: 0 } } }
+[2026-03-13T09:57:42.353Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '121', retry_count: 0 } } }
+[2026-03-13T09:57:42.804Z] ❌ 124_Hanissian_191951952.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:42.804Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:42.874Z] ❌ 121_HALL_191802393.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:42.874Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:42.886Z] ❌ 125_Liberto_191957504.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:42.886Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:43.454Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '127', retry_count: 0 } } }
+[2026-03-13T09:57:43.505Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '126', retry_count: 0 } } }
+[2026-03-13T09:57:43.511Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '128', retry_count: 0 } } }
+[2026-03-13T09:57:43.968Z] ❌ 127_SIMMONS_191960264.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:43.968Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:44.031Z] ❌ 128_Painter_191968235.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:44.031Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:44.053Z] ❌ 126_Spight_191958621.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:44.053Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:44.662Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '129', retry_count: 0 } } }
+[2026-03-13T09:57:44.701Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '130', retry_count: 0 } } }
+[2026-03-13T09:57:44.762Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '131', retry_count: 0 } } }
+[2026-03-13T09:57:45.190Z] ❌ 129_Russell_191968888.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:45.191Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:45.249Z] ❌ 130_Loving_191995535.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:45.249Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:46.034Z] ❌ 131_SWAN_191955269.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:46.034Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:46.611Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '137', retry_count: 0 } } }
+[2026-03-13T09:57:46.661Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '132', retry_count: 0 } } }
+[2026-03-13T09:57:46.704Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '133', retry_count: 0 } } }
+[2026-03-13T09:57:47.106Z] ❌ 137_TEMPLETON_192003201.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:47.106Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:47.178Z] ❌ 132_Dark_191997455.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:47.178Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:47.220Z] ❌ 133_Hoel_191999719.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:47.220Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:47.808Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '140', retry_count: 0 } } }
+[2026-03-13T09:57:47.856Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '139', retry_count: 0 } } }
+[2026-03-13T09:57:47.858Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '138', retry_count: 0 } } }
+[2026-03-13T09:57:48.333Z] ❌ 140_Archibald_192048154.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:48.334Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:48.350Z] ❌ 138_Rice_192004752.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:48.351Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:48.394Z] ❌ 139_Pechak_192008311.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:48.394Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:49.015Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '144', retry_count: 0 } } }
+[2026-03-13T09:57:49.061Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '141', retry_count: 0 } } }
+[2026-03-13T09:57:49.065Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '143', retry_count: 0 } } }
+[2026-03-13T09:57:49.544Z] ❌ 144_Dabbs_192062563.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:49.544Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:49.561Z] ❌ 143_Abee_192060656.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:49.561Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:49.596Z] ❌ 141_Moon_192048521.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:49.597Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:50.217Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '149', retry_count: 0 } } }
+[2026-03-13T09:57:50.258Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '145', retry_count: 0 } } }
+[2026-03-13T09:57:50.261Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '148', retry_count: 0 } } }
+[2026-03-13T09:57:50.738Z] ❌ 149_Everett_192097881.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:50.738Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:50.759Z] ❌ 148_EDWARDS_192004159.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:50.759Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:50.780Z] ❌ 145_Moorman_192065455.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:50.780Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:51.356Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '151', retry_count: 0 } } }
+[2026-03-13T09:57:51.401Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '150', retry_count: 0 } } }
+[2026-03-13T09:57:51.455Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '152', retry_count: 0 } } }
+[2026-03-13T09:57:51.867Z] ❌ 151_Barnett_192104198.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:51.867Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:51.912Z] ❌ 150_Sims_192102325.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:51.913Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:51.984Z] ❌ 152_Taylor_192099780.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:51.984Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:52.548Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '154', retry_count: 0 } } }
+[2026-03-13T09:57:52.602Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '155', retry_count: 0 } } }
+[2026-03-13T09:57:52.607Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '153', retry_count: 0 } } }
+[2026-03-13T09:57:53.068Z] ❌ 154_Johnson_192147896.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:53.068Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:53.124Z] ❌ 153_BRADY_192128886.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:53.124Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:53.139Z] ❌ 155_Taylor_192099780.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:53.139Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:53.701Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '159', retry_count: 0 } } }
+[2026-03-13T09:57:53.759Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '157', retry_count: 0 } } }
+[2026-03-13T09:57:53.807Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '158', retry_count: 0 } } }
+[2026-03-13T09:57:54.227Z] ❌ 159_Wessels_191581790.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:54.227Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:54.302Z] ❌ 157_Williams_192226714.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:54.302Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:54.324Z] ❌ 158_Rogers_192257048.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:54.325Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:54.968Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '161', retry_count: 0 } } }
+[2026-03-13T09:57:55.017Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '162', retry_count: 0 } } }
+[2026-03-13T09:57:55.025Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '160', retry_count: 0 } } }
+[2026-03-13T09:57:55.489Z] ❌ 161_McConnell_192277691.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:55.489Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:55.518Z] ❌ 162_Holmes-Johnson_192278370.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:55.518Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:55.542Z] ❌ 160_Morgan_192272729.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:55.542Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:56.161Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '164', retry_count: 0 } } }
+[2026-03-13T09:57:56.209Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '163', retry_count: 0 } } }
+[2026-03-13T09:57:56.217Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '165', retry_count: 0 } } }
+[2026-03-13T09:57:56.698Z] ❌ 164_Holmes-Johnson_192278370.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:56.698Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:56.712Z] ❌ 163_Neenan_192279227.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:56.712Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:56.729Z] ❌ 165_Painter_191968235.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:56.729Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:57.303Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '166', retry_count: 0 } } }
+[2026-03-13T09:57:57.362Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '169', retry_count: 0 } } }
+[2026-03-13T09:57:57.365Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '168', retry_count: 0 } } }
+[2026-03-13T09:57:57.813Z] ❌ 166_Martini_192059067.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:57.814Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:57.891Z] ❌ 168_Mullins_192311331.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:57.891Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:58.648Z] ❌ 169_Mcgoff_192270659.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:57:58.648Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:59.259Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '171', retry_count: 0 } } }
+[2026-03-13T09:57:59.268Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '174', retry_count: 0 } } }
+[2026-03-13T09:57:59.312Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '172', retry_count: 0 } } }
+[2026-03-13T09:57:59.789Z] ❌ 171_Crafton_192267673.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:59.789Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:59.797Z] ❌ 174_Hamilton_191716150.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:59.797Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:57:59.805Z] ❌ 172_Crumpton_192270364.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:57:59.805Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:00.420Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '176', retry_count: 0 } } }
+[2026-03-13T09:58:00.455Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '175', retry_count: 0 } } }
+[2026-03-13T09:58:00.457Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '178', retry_count: 0 } } }
+[2026-03-13T09:58:00.948Z] ❌ 175_Meadow_192339299.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:00.948Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:00.961Z] ❌ 178_Taylor_192099780.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:00.961Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:01.629Z] ❌ 176_Young_192422436.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:01.629Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:02.203Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '182', retry_count: 0 } } }
+[2026-03-13T09:58:02.265Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '179', retry_count: 0 } } }
+[2026-03-13T09:58:02.271Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '180', retry_count: 0 } } }
+[2026-03-13T09:58:02.759Z] ❌ 182_Wolfe_192436217.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:02.759Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:02.800Z] ❌ 180_Kent_192431258.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:02.800Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:03.618Z] ❌ 179_WILLIAMS_192430545.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:03.618Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:04.208Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '185', retry_count: 0 } } }
+[2026-03-13T09:58:04.257Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '183', retry_count: 0 } } }
+[2026-03-13T09:58:04.299Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '184', retry_count: 0 } } }
+[2026-03-13T09:58:04.782Z] ❌ 183_TRIPLETT_192439051.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:04.782Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:04.825Z] ❌ 184_Moyes_192440869.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:04.825Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:05.512Z] ❌ 185_Hess_192453688.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:05.512Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:06.102Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '186', retry_count: 0 } } }
+[2026-03-13T09:58:06.108Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '189', retry_count: 0 } } }
+[2026-03-13T09:58:06.156Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '188', retry_count: 0 } } }
+[2026-03-13T09:58:06.624Z] ❌ 186_SHELLEY_191125734.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:06.625Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:06.638Z] ❌ 189_Ballentine_192487061.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:06.639Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:06.659Z] ❌ 188_Cousins_192480340.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:06.659Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:07.255Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '190', retry_count: 0 } } }
+[2026-03-13T09:58:07.264Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '191', retry_count: 0 } } }
+[2026-03-13T09:58:07.306Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '192', retry_count: 0 } } }
+[2026-03-13T09:58:07.770Z] ❌ 190_Harrison_192489973.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:07.770Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:07.774Z] ❌ 191_Vallier_192429093.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:07.774Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:07.816Z] ❌ 192_MOBLEY_192443723.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:07.816Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:08.418Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '194', retry_count: 0 } } }
+[2026-03-13T09:58:08.460Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '193', retry_count: 0 } } }
+[2026-03-13T09:58:08.512Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '197', retry_count: 0 } } }
+[2026-03-13T09:58:08.979Z] ❌ 193_HAYES_192441805.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:08.979Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:09.036Z] ❌ 197_Lacy_191203521.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:09.037Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:09.705Z] ❌ 194_white_192528932.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:09.705Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:10.307Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '199', retry_count: 0 } } }
+[2026-03-13T09:58:10.315Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '198', retry_count: 0 } } }
+[2026-03-13T09:58:10.358Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '200', retry_count: 0 } } }
+[2026-03-13T09:58:10.828Z] ❌ 199_COLLIER_192537479.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:10.828Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:10.833Z] ❌ 198_Lunati_192538177.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:10.833Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:10.893Z] ❌ 200_Rico_192533114.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:10.893Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:11.501Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '202', retry_count: 0 } } }
+[2026-03-13T09:58:11.508Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '201', retry_count: 0 } } }
+[2026-03-13T09:58:11.557Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '203', retry_count: 0 } } }
+[2026-03-13T09:58:12.015Z] ❌ 202_Jones_192584607.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:12.015Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:12.026Z] ❌ 201_Mirdo_191631755.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:12.026Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:12.081Z] ❌ 203_BURKS_192587417.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:12.081Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:12.707Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '205', retry_count: 0 } } }
+[2026-03-13T09:58:12.761Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '207', retry_count: 0 } } }
+[2026-03-13T09:58:12.826Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '206', retry_count: 0 } } }
+[2026-03-13T09:58:13.210Z] ❌ 205_Fleming_191513066.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:13.210Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:13.275Z] ❌ 207_Kaserman_192648611.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:13.275Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:13.351Z] ❌ 206_Jayroe_192589745.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:13.351Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:13.961Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '208', retry_count: 0 } } }
+[2026-03-13T09:58:14.000Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '210', retry_count: 0 } } }
+[2026-03-13T09:58:14.053Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '209', retry_count: 0 } } }
+[2026-03-13T09:58:14.466Z] ❌ 208_Hagan_192649325.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:14.466Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:14.567Z] ❌ 209_ANDERSON_192584061.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:14.567Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:15.263Z] ❌ 210_Cody_192437196.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:15.263Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:15.853Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '211', retry_count: 0 } } }
+[2026-03-13T09:58:15.904Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '213', retry_count: 0 } } }
+[2026-03-13T09:58:15.962Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '214', retry_count: 0 } } }
+[2026-03-13T09:58:16.377Z] ❌ 211_Stachar_192664987.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:16.377Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:16.425Z] ❌ 213_Herron_192588029.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:16.425Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:16.463Z] ❌ 214_Mirdo_191631755.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:16.463Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:17.060Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '216', retry_count: 0 } } }
+[2026-03-13T09:58:17.092Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '215', retry_count: 0 } } }
+[2026-03-13T09:58:17.133Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '217', retry_count: 0 } } }
+[2026-03-13T09:58:17.573Z] ❌ 216_Clark_192655998.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:17.573Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:17.624Z] ❌ 215_COLLIER_192537479.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:17.624Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:17.658Z] ❌ 217_GUENTHER_192724276.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:17.659Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:18.370Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '218', retry_count: 0 } } }
+[2026-03-13T09:58:18.433Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '219', retry_count: 0 } } }
+[2026-03-13T09:58:18.455Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '220', retry_count: 0 } } }
+[2026-03-13T09:58:18.867Z] ❌ 218_Reyes_192271936.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:18.867Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:18.949Z] ❌ 219_Sherman_192734863.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:18.949Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:18.974Z] ❌ 220_Sloas_192735361.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:18.974Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:19.711Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '221', retry_count: 0 } } }
+[2026-03-13T09:58:19.713Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '223', retry_count: 0 } } }
+[2026-03-13T09:58:19.782Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '222', retry_count: 0 } } }
+[2026-03-13T09:58:20.206Z] ❌ 221_Hardy_192762875.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:20.206Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:20.235Z] ❌ 223_Adams_192777687.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:20.235Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:20.296Z] ❌ 222_Castillo-cohen_192591480.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:20.296Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:21.065Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '226', retry_count: 0 } } }
+[2026-03-13T09:58:21.068Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '224', retry_count: 0 } } }
+[2026-03-13T09:58:21.123Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '225', retry_count: 0 } } }
+[2026-03-13T09:58:21.580Z] ❌ 226_Clifton_191248346.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:21.580Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:21.596Z] ❌ 224_Whitlow_192779815.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:21.596Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:21.630Z] ❌ 225_THOMPSON_192781278.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:21.630Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:22.318Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '228', retry_count: 0 } } }
+[2026-03-13T09:58:22.355Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '229', retry_count: 0 } } }
+[2026-03-13T09:58:22.366Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '227', retry_count: 0 } } }
+[2026-03-13T09:58:22.858Z] ❌ 228_GILL_192812784.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:22.858Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:22.871Z] ❌ 229_Tate_192813369.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:22.871Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:22.885Z] ❌ 227_Hardy_192649879.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:22.886Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:23.569Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '233', retry_count: 0 } } }
+[2026-03-13T09:58:23.616Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '232', retry_count: 0 } } }
+[2026-03-13T09:58:23.624Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '231', retry_count: 0 } } }
+[2026-03-13T09:58:24.082Z] ❌ 233_Hall_192824381.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:24.083Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:24.130Z] ❌ 232_Riedel_192820457.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:24.130Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:24.156Z] ❌ 231_NUTT_192816085.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:24.157Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:24.923Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '237', retry_count: 0 } } }
+[2026-03-13T09:58:25.035Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '234', retry_count: 0 } } }
+[2026-03-13T09:58:25.108Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '236', retry_count: 0 } } }
+[2026-03-13T09:58:25.451Z] ❌ 237_Foret_192885603.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:25.451Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:25.557Z] ❌ 234_Carter_192821478.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:25.557Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:25.623Z] ❌ 236_LaCroix_192823483.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:25.624Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:26.264Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '241', retry_count: 0 } } }
+[2026-03-13T09:58:26.314Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '240', retry_count: 0 } } }
+[2026-03-13T09:58:26.404Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '239', retry_count: 0 } } }
+[2026-03-13T09:58:26.773Z] ❌ 241_Thompson_192924053.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:26.773Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:26.834Z] ❌ 240_LINDSEY_192916443.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:26.834Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:26.916Z] ❌ 239_Ross_192818807.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:26.917Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:27.565Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '242', retry_count: 0 } } }
+[2026-03-13T09:58:27.573Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '244', retry_count: 0 } } }
+[2026-03-13T09:58:27.614Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '243', retry_count: 0 } } }
+[2026-03-13T09:58:28.074Z] ❌ 242_Jones_192933998.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:28.074Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:28.114Z] ❌ 244_Hardy_192649879.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:28.114Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:28.141Z] ❌ 243_LINDSEY_192916443.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:28.141Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:28.757Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '245', retry_count: 0 } } }
+[2026-03-13T09:58:28.808Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '247', retry_count: 0 } } }
+[2026-03-13T09:58:28.814Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '246', retry_count: 0 } } }
+[2026-03-13T09:58:29.290Z] ❌ 245_LUNATI_192761829.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:29.290Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:29.307Z] ❌ 246_STRASSER_192976785.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:29.308Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:29.324Z] ❌ 247_IRBY_192977303.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:29.324Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:30.012Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '250', retry_count: 0 } } }
+[2026-03-13T09:58:30.117Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '252', retry_count: 0 } } }
+[2026-03-13T09:58:30.119Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '248', retry_count: 0 } } }
+[2026-03-13T09:58:30.527Z] ❌ 250_RICHARDSON_192885038.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:30.527Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:30.629Z] ❌ 252_Hall_192824381.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:30.629Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:30.632Z] ❌ 248_McLemore_192977575.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:30.632Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:31.263Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '254', retry_count: 0 } } }
+[2026-03-13T09:58:31.337Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '253', retry_count: 0 } } }
+[2026-03-13T09:58:31.368Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '255', retry_count: 0 } } }
+[2026-03-13T09:58:31.759Z] ❌ 254_Richardson_193043177.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:31.759Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:31.852Z] ❌ 253_Hall_193040757.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:31.852Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:31.902Z] ❌ 255_LUNATI_192761829.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:31.902Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:32.577Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '256', retry_count: 0 } } }
+[2026-03-13T09:58:32.662Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '258', retry_count: 0 } } }
+[2026-03-13T09:58:32.671Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '257', retry_count: 0 } } }
+[2026-03-13T09:58:33.153Z] ❌ 256_BRADLEY_192994772.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:33.153Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:33.177Z] ❌ 257_LOVE_193085805.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:33.177Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:33.187Z] ❌ 258_Carter_193086628.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:33.187Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:34.119Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '262', retry_count: 0 } } }
+[2026-03-13T09:58:34.124Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '259', retry_count: 0 } } }
+[2026-03-13T09:58:34.141Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '261', retry_count: 0 } } }
+[2026-03-13T09:58:34.617Z] ❌ 262_Torrance-Matthews_193089461.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:34.617Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:34.638Z] ❌ 259_Kellicut_193097660.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:34.639Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:34.659Z] ❌ 261_McMillan_193044369.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:34.659Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:35.410Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '263', retry_count: 0 } } }
+[2026-03-13T09:58:35.423Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '265', retry_count: 0 } } }
+[2026-03-13T09:58:35.428Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '264', retry_count: 0 } } }
+[2026-03-13T09:58:35.929Z] ❌ 264_Smith_193137151.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:35.929Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:35.940Z] ❌ 265_Pentecost_193137380.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:35.940Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:35.950Z] ❌ 263_BAKER_193134461.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:35.950Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:37.426Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '266', retry_count: 0 } } }
+[2026-03-13T09:58:37.470Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '267', retry_count: 0 } } }
+[2026-03-13T09:58:37.530Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '268', retry_count: 0 } } }
+[2026-03-13T09:58:37.918Z] ❌ 266_Scruggs_193137210.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:37.919Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:37.970Z] ❌ 267_Bland_193192634.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:37.970Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:38.060Z] ❌ 268_WILLIAMS_193202396.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:38.060Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:38.677Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '270', retry_count: 0 } } }
+[2026-03-13T09:58:38.769Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '269', retry_count: 0 } } }
+[2026-03-13T09:58:38.779Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '271', retry_count: 0 } } }
+[2026-03-13T09:58:39.173Z] ❌ 270_LUNATI_192761829.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:39.173Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:40.012Z] ❌ 269_Riedel_192820457.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:40.012Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:40.015Z] ❌ 271_Tigue_193332808.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:40.015Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:40.604Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '272', retry_count: 0 } } }
+[2026-03-13T09:58:40.652Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '273', retry_count: 0 } } }
+[2026-03-13T09:58:40.711Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '274', retry_count: 0 } } }
+[2026-03-13T09:58:41.128Z] ❌ 272_Rogers_193271713.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:41.128Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:41.163Z] ❌ 273_Boyce_193271895.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:41.163Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:41.232Z] ❌ 274_Hall_193214062.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:41.232Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:41.859Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '276', retry_count: 0 } } }
+[2026-03-13T09:58:41.862Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '275', retry_count: 0 } } }
+[2026-03-13T09:58:41.915Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '277', retry_count: 0 } } }
+[2026-03-13T09:58:42.380Z] ❌ 275_LAY_193361349.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:42.380Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:42.388Z] ❌ 276_Johnson_193271765.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:42.388Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:42.410Z] ❌ 277_Johnston_193389662.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:42.410Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:43.016Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '286', retry_count: 0 } } }
+[2026-03-13T09:58:43.022Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '285', retry_count: 0 } } }
+[2026-03-13T09:58:43.081Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '279', retry_count: 0 } } }
+[2026-03-13T09:58:43.534Z] ❌ 285_Hollingsworth_193411618.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:43.534Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:43.540Z] ❌ 286_Edmondson_193412527.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:43.540Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:43.617Z] ❌ 279_Hall_193040757.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:43.617Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:44.351Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '287', retry_count: 0 } } }
+[2026-03-13T09:58:44.372Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '289', retry_count: 0 } } }
+[2026-03-13T09:58:44.433Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '288', retry_count: 0 } } }
+[2026-03-13T09:58:44.846Z] ❌ 287_Huselton_193415793.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:44.847Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:44.905Z] ❌ 289_Lee_193410937.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:44.905Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:44.947Z] ❌ 288_COOPER_193410786.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:44.947Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:45.557Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '292', retry_count: 0 } } }
+[2026-03-13T09:58:45.560Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '290', retry_count: 0 } } }
+[2026-03-13T09:58:45.618Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '293', retry_count: 0 } } }
+[2026-03-13T09:58:46.099Z] ❌ 292_Chunn_193411111.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:46.099Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:46.555Z] ❌ 290_Fair_193411047.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:46.555Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:46.616Z] ❌ 293_THOMPSON_193411463.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:58:46.616Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:47.212Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '294', retry_count: 0 } } }
+[2026-03-13T09:58:47.260Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '297', retry_count: 0 } } }
+[2026-03-13T09:58:47.263Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '295', retry_count: 0 } } }
+[2026-03-13T09:58:47.736Z] ❌ 294_Edmondson_193412527.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:47.736Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:47.755Z] ❌ 297_Gillespie_193369339.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:47.756Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:47.781Z] ❌ 295_Pieri_192727767.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:47.781Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:48.430Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '301', retry_count: 0 } } }
+[2026-03-13T09:58:48.466Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '299', retry_count: 0 } } }
+[2026-03-13T09:58:48.468Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '300', retry_count: 0 } } }
+[2026-03-13T09:58:48.952Z] ❌ 301_BOWIE_193439718.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:48.952Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:58:48.994Z] ❌ 299_LAWSON_193436070.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:58:48.994Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:01.256Z] ❌ 300_Wright_193437201.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:01.256Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:02.661Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '304', retry_count: 0 } } }
+[2026-03-13T09:59:02.665Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '303', retry_count: 0 } } }
+[2026-03-13T09:59:02.715Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '302', retry_count: 0 } } }
+[2026-03-13T09:59:03.187Z] ❌ 303_Armstrong_193410293.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:03.188Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:03.202Z] ❌ 304_Lewis_193452219.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:03.202Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:03.233Z] ❌ 302_Barnes_193441289.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:03.233Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:03.853Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '308', retry_count: 0 } } }
+[2026-03-13T09:59:03.857Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '305', retry_count: 0 } } }
+[2026-03-13T09:59:03.903Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '311', retry_count: 0 } } }
+[2026-03-13T09:59:04.353Z] ❌ 305_HUINKER_193454663.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:04.354Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:04.369Z] ❌ 308_Kelley_193531831.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:04.369Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:04.412Z] ❌ 311_Diggs_193553915.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:04.412Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:05.018Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '313', retry_count: 0 } } }
+[2026-03-13T09:59:05.020Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '314', retry_count: 0 } } }
+[2026-03-13T09:59:05.058Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '312', retry_count: 0 } } }
+[2026-03-13T09:59:05.540Z] ❌ 313_Childs_193586533.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:05.540Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:06.257Z] ❌ 314_Mitchell_193587015.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:06.257Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:06.331Z] ❌ 312_Gause_193586396.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:06.331Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:06.950Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '317', retry_count: 0 } } }
+[2026-03-13T09:59:07.016Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '318', retry_count: 0 } } }
+[2026-03-13T09:59:07.053Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '315', retry_count: 0 } } }
+[2026-03-13T09:59:07.542Z] ❌ 318_JONES_193590521.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:07.542Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:08.230Z] ❌ 317_Ham_193586809.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:08.230Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:08.373Z] ❌ 315_Walton_193586959.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:08.373Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:08.977Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '320', retry_count: 0 } } }
+[2026-03-13T09:59:09.018Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '321', retry_count: 0 } } }
+[2026-03-13T09:59:09.060Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '319', retry_count: 0 } } }
+[2026-03-13T09:59:09.508Z] ❌ 320_Rouser_191366385.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:09.508Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:09.512Z] ❌ 321_Watkins_192829247.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:09.512Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:10.306Z] ❌ 319_Sealy_193586714.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:10.306Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:10.905Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '323', retry_count: 0 } } }
+[2026-03-13T09:59:10.913Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '324', retry_count: 0 } } }
+[2026-03-13T09:59:10.951Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '322', retry_count: 0 } } }
+[2026-03-13T09:59:11.429Z] ❌ 324_Sipe_193602954.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:11.429Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:11.436Z] ❌ 323_Jones_193609357.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:11.445Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:11.476Z] ❌ 322_Wilson_193554773.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:11.476Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:12.060Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '329', retry_count: 0 } } }
+[2026-03-13T09:59:12.112Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '325', retry_count: 0 } } }
+[2026-03-13T09:59:12.114Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '326', retry_count: 0 } } }
+[2026-03-13T09:59:12.582Z] ❌ 329_Davis_193651928.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:12.582Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:12.630Z] ❌ 326_BURNS_193601125.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:12.630Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:12.648Z] ❌ 325_Carr_193602254.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:12.648Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:13.254Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '334', retry_count: 0 } } }
+[2026-03-13T09:59:13.256Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '335', retry_count: 0 } } }
+[2026-03-13T09:59:13.308Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '332', retry_count: 0 } } }
+[2026-03-13T09:59:13.766Z] ❌ 335_Campos_193696735.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:13.766Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:13.770Z] ❌ 334_Mann_193698288.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:13.770Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:13.838Z] ❌ 332_Campos_193696735.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:13.838Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:14.451Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '339', retry_count: 0 } } }
+[2026-03-13T09:59:14.514Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '338', retry_count: 0 } } }
+[2026-03-13T09:59:14.520Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '336', retry_count: 0 } } }
+[2026-03-13T09:59:14.965Z] ❌ 339_Hampton_193638207.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:14.965Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:15.019Z] ❌ 338_Cunningham_193722371.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:15.019Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:15.028Z] ❌ 336_HAYES_192441805.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:15.028Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:15.611Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '340', retry_count: 0 } } }
+[2026-03-13T09:59:15.655Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '343', retry_count: 0 } } }
+[2026-03-13T09:59:15.657Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '342', retry_count: 0 } } }
+[2026-03-13T09:59:16.120Z] ❌ 340_Zelinski_193730098.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:16.120Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:16.138Z] ❌ 343_French_193741221.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:16.138Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:16.183Z] ❌ 342_Conner_193735974.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:16.183Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:16.753Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '345', retry_count: 0 } } }
+[2026-03-13T09:59:16.802Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '346', retry_count: 0 } } }
+[2026-03-13T09:59:16.862Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '347', retry_count: 0 } } }
+[2026-03-13T09:59:17.260Z] ❌ 345_Johnson_193700549.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:17.260Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:17.317Z] ❌ 346_Smith_193746806.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:17.317Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:18.141Z] ❌ 347_HAYES_192441805.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:18.141Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:18.762Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '350', retry_count: 0 } } }
+[2026-03-13T09:59:18.807Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '353', retry_count: 0 } } }
+[2026-03-13T09:59:18.809Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '357', retry_count: 0 } } }
+[2026-03-13T09:59:19.302Z] ❌ 350_Lawson_193799470.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:19.302Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:19.320Z] ❌ 353_Dieber_193799594.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:19.320Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:19.337Z] ❌ 357_Blancq_193781805.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:19.337Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:19.967Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '358', retry_count: 0 } } }
+[2026-03-13T09:59:20.004Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '363', retry_count: 0 } } }
+[2026-03-13T09:59:20.500Z] ❌ 358_Fontana_193410605.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:20.500Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:20.503Z] ❌ 363_HAYES_192441805.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:20.504Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:20.794Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '366', retry_count: 0 } } }
+[2026-03-13T09:59:21.290Z] ❌ 366_Stone_193890184.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:21.290Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:21.925Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '367', retry_count: 0 } } }
+[2026-03-13T09:59:21.953Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '36', retry_count: 0 } } }
+[2026-03-13T09:59:22.014Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '42', retry_count: 0 } } }
+[2026-03-13T09:59:22.417Z] ❌ 367_Davis_193898642.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:22.417Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:22.447Z] ❌ 36_FLEENOR_191124855.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:22.447Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:22.535Z] ❌ 42_RITTER_191204097.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:22.536Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:23.157Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '44', retry_count: 0 } } }
+[2026-03-13T09:59:23.160Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '52', retry_count: 0 } } }
+[2026-03-13T09:59:23.204Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '46', retry_count: 0 } } }
+[2026-03-13T09:59:23.674Z] ❌ 52_SHAW_191242603.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:23.674Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:23.678Z] ❌ 44_Garrison_191127309.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:23.678Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:23.721Z] ❌ 46_Morgan_191256449.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:23.721Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:24.302Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '59', retry_count: 0 } } }
+[2026-03-13T09:59:24.361Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '62', retry_count: 0 } } }
+[2026-03-13T09:59:24.406Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '63', retry_count: 0 } } }
+[2026-03-13T09:59:24.816Z] ❌ 59_Clifton_191248346.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:24.817Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:24.891Z] ❌ 62_MARCONI_191360851.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:24.892Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:24.947Z] ❌ 63_Yates_191362705.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:24.947Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:25.558Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '64', retry_count: 0 } } }
+[2026-03-13T09:59:25.611Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '72', retry_count: 0 } } }
+[2026-03-13T09:59:25.614Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '66', retry_count: 0 } } }
+[2026-03-13T09:59:26.072Z] ❌ 64_Moorlach_191365644.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:26.072Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:26.109Z] ❌ 66_Anderson_191395848.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:26.109Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:26.119Z] ❌ 72_CHALMERS_191397242.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:26.120Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:26.718Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '74', retry_count: 0 } } }
+[2026-03-13T09:59:26.765Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '80', retry_count: 0 } } }
+[2026-03-13T09:59:26.767Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '76', retry_count: 0 } } }
+[2026-03-13T09:59:27.239Z] ❌ 74_GRIFFITH_191398182.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:27.239Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:27.267Z] ❌ 76_Farris_191397687.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:27.267Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:27.287Z] ❌ 80_Turner_191463986.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:27.287Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:27.908Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '89', retry_count: 0 } } }
+[2026-03-13T09:59:28.406Z] ❌ 89_Holmes_191512222.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:28.407Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:28.407Z] 📁 Processing ZIP The PreOP Center/tebra_facesheets_TPC_2025-10-13_1895.zip
+[2026-03-13T09:59:29.593Z] 📄 Found 247 PDFs
+[2026-03-13T09:59:30.205Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '134', retry_count: 0 } } }
+[2026-03-13T09:59:30.212Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '136', retry_count: 0 } } }
+[2026-03-13T09:59:30.253Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '135', retry_count: 0 } } }
+[2026-03-13T09:59:30.708Z] ❌ 134_VINCENT_191995961.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:30.709Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:30.715Z] ❌ 136_Hill_191998110.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:30.715Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:30.776Z] ❌ 135_Brady_191344679.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:30.777Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:31.354Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '142', retry_count: 0 } } }
+[2026-03-13T09:59:31.413Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '146', retry_count: 0 } } }
+[2026-03-13T09:59:31.458Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '147', retry_count: 0 } } }
+[2026-03-13T09:59:31.877Z] ❌ 142_Horton_191998794.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:31.878Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:31.903Z] ❌ 146_Moore_192005412.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:31.904Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:31.978Z] ❌ 147_Purvis_192067249.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:31.978Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:32.619Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '177', retry_count: 0 } } }
+[2026-03-13T09:59:32.670Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '156', retry_count: 0 } } }
+[2026-03-13T09:59:32.901Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '167', retry_count: 0 } } }
+[2026-03-13T09:59:33.116Z] ❌ 177_Jefferson_192221827.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:33.116Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:33.155Z] ❌ 156_McCormick_192220736.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:33.155Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:33.437Z] ❌ 167_Compton_192273583.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:33.437Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:34.055Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '187', retry_count: 0 } } }
+[2026-03-13T09:59:34.107Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '195', retry_count: 0 } } }
+[2026-03-13T09:59:34.158Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '196', retry_count: 0 } } }
+[2026-03-13T09:59:34.576Z] ❌ 187_Law_192477094.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:34.576Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:34.630Z] ❌ 195_Pitcock_192221391.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:34.630Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:34.678Z] ❌ 196_Basar_192530300.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:34.678Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:35.317Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '281', retry_count: 0 } } }
+[2026-03-13T09:59:35.318Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '204', retry_count: 0 } } }
+[2026-03-13T09:59:35.361Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '280', retry_count: 0 } } }
+[2026-03-13T09:59:35.823Z] ❌ 204_Guy_192585208.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:35.824Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:35.838Z] ❌ 281_Moore_193271648.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:35.838Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:35.878Z] ❌ 280_Francis_193369380.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:35.878Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:36.464Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '283', retry_count: 0 } } }
+[2026-03-13T09:59:36.508Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '310', retry_count: 0 } } }
+[2026-03-13T09:59:36.551Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '306', retry_count: 0 } } }
+[2026-03-13T09:59:36.979Z] ❌ 283_Sharp_193412711.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:36.979Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:37.031Z] ❌ 310_Ware_193554238.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:37.031Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:37.061Z] ❌ 306_Laughlin_193436014.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:37.061Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:37.657Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '341', retry_count: 0 } } }
+[2026-03-13T09:59:37.663Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '333', retry_count: 0 } } }
+[2026-03-13T09:59:37.705Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '328', retry_count: 0 } } }
+[2026-03-13T09:59:38.172Z] ❌ 341_Roth_193734654.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:38.172Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:38.182Z] ❌ 333_Pearson-Rucker_193695932.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:38.182Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:38.233Z] ❌ 328_Pechak_192008311.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:38.233Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:38.814Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '354', retry_count: 0 } } }
+[2026-03-13T09:59:38.817Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '349', retry_count: 0 } } }
+[2026-03-13T09:59:38.863Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '348', retry_count: 0 } } }
+[2026-03-13T09:59:39.336Z] ❌ 349_Campos_193696735.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:39.337Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:39.404Z] ❌ 348_Grigsby_193745639.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:39.404Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:40.093Z] ❌ 354_Haas_193799726.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:40.093Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:40.712Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '355', retry_count: 0 } } }
+[2026-03-13T09:59:40.767Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '359', retry_count: 0 } } }
+[2026-03-13T09:59:40.813Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '360', retry_count: 0 } } }
+[2026-03-13T09:59:41.223Z] ❌ 355_Edmondson_193412527.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:41.224Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:42.056Z] ❌ 359_Campbell_193806183.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:42.056Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:42.116Z] ❌ 360_KING_191511026.pdf ERROR: Request failed with status code 403
+[2026-03-13T09:59:42.116Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:42.706Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '364', retry_count: 0 } } }
+[2026-03-13T09:59:42.763Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '365', retry_count: 0 } } }
+[2026-03-13T09:59:42.802Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '361', retry_count: 0 } } }
+[2026-03-13T09:59:43.237Z] ❌ 364_Olvey_193855957.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:43.237Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:43.288Z] ❌ 365_Borden_193866203.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:43.288Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:43.326Z] ❌ 361_Milstead_193836683.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:43.326Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:43.910Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '369', retry_count: 0 } } }
+[2026-03-13T09:59:43.974Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '370', retry_count: 0 } } }
+[2026-03-13T09:59:44.008Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '368', retry_count: 0 } } }
+[2026-03-13T09:59:44.422Z] ❌ 369_PRICE_193933048.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:44.422Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:44.498Z] ❌ 370_Lee_193933233.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:44.498Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:44.527Z] ❌ 368_Williams_193586909.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:44.527Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:45.164Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '371', retry_count: 0 } } }
+[2026-03-13T09:59:45.169Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '372', retry_count: 0 } } }
+[2026-03-13T09:59:45.212Z] 📥 Retry API response: { result: { data: { rpa_appointment_id: '373', retry_count: 0 } } }
+[2026-03-13T09:59:45.674Z] ❌ 371_BRYANT_193940082.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:45.674Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:45.686Z] ❌ 372_Halsted_193940021.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:45.686Z] ⚠️ Retry update failed: rpaAppointmentId is not defined
+[2026-03-13T09:59:45.694Z] ❌ 373_Wrenn_193960180.pdf ERROR: Client network socket disconnected before secure TLS connection was established
+[2026-03-13T09:59:45.695Z] ⚠️ Retry update failed: rpaAppointmentId is not defined

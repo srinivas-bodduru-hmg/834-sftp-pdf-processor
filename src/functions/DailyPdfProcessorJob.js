@@ -8,14 +8,8 @@ const jwt = require("jsonwebtoken");
 const util = require("util");
 const { performance } = require("perf_hooks");
 
-/* -------------------------------------------------------------------------- */
-/*                                CONFIG                                      */
-/* -------------------------------------------------------------------------- */
-
 const CONFIG = {
-  BACKEND_URL:
-    process.env.BACKEND_API_URL || "https://your-backend.azurewebsites.net",
-
+  BACKEND_URL: process.env.BACKEND_API_URL,
   BACKEND_EMAIL: process.env.BACKEND_EMAIL,
   BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
 
@@ -25,17 +19,12 @@ const CONFIG = {
   ACCOUNT_URL: process.env.ACCOUNT_URL,
 
   CONTAINER: "834labs-sftp",
-
   BATCH_SIZE: 3,
 };
 
 const ERROR_CODES = {
   DUPLICATE_FILE: "DUPLICATE_FILE",
 };
-
-/* -------------------------------------------------------------------------- */
-/*                                MAIN JOB                                    */
-/* -------------------------------------------------------------------------- */
 
 app.timer("DailyPdfProcessorJob", {
   schedule: "0 30 2 * * *",
@@ -47,44 +36,22 @@ app.timer("DailyPdfProcessorJob", {
     log("🚀 Daily PDF Processor Started");
 
     try {
-      validateConfig();
-
       const session = await login(log);
-
       const container = await getContainer(log);
-
-      const stats = {
-        total: 0,
-        processed: 0,
-        skipped: 0,
-        failed: 0,
-      };
-
-      const folderPrefix = "The PreOP Center/";
 
       for await (const blob of container.listBlobsFlat()) {
         if (!blob.name.endsWith(".zip")) continue;
-        await processZipBlob(container, blob.name, session, stats, log);
+        await processZipBlob(container, blob.name, session, log);
       }
-
-      printSummary(stats, log);
     } catch (err) {
       log("❌ CRITICAL ERROR");
-
-      if (err?.toJSON) {
-        log(JSON.stringify(err.toJSON(), null, 2));
-      } else {
-        log(util.inspect(err, { depth: null }));
-      }
-
+      log(util.inspect(err, { depth: null }));
       throw err;
     }
   },
 });
 
-/* -------------------------------------------------------------------------- */
-/*                               AUTH                                         */
-/* -------------------------------------------------------------------------- */
+/* ---------------- LOGIN ---------------- */
 
 async function login(log) {
   log("🔐 Logging in...");
@@ -97,76 +64,41 @@ async function login(log) {
         password: CONFIG.BACKEND_PASSWORD,
       },
     },
-    { withCredentials: true, timeout: 600000 },
+    { withCredentials: true }
   );
 
   const cookies = res.headers["set-cookie"];
-
-  if (!cookies) {
-    throw new Error("Login failed: No cookies");
-  }
-
   const cookieHeader = cookies.map((c) => c.split(";")[0]).join("; ");
 
   const tokenCookie = cookies.find((c) => c.includes("TOKEN="));
+  const token = tokenCookie.split("TOKEN=")[1].split(";")[0];
+  const decoded = jwt.decode(token);
 
-  let userId = null;
+  log(`✅ Authenticated userId=${decoded.userId}`);
 
-  if (tokenCookie) {
-    const token = tokenCookie.split("TOKEN=")[1].split(";")[0];
-    const decoded = jwt.decode(token);
-    userId = decoded?.userId;
-  }
-
-  if (!tokenCookie) {
-    throw new Error("Login failed: No tokenCookie");
-  }
-
-  if (!userId) {
-    throw new Error("Login failed: No userId");
-  }
-
-  log(`✅ Authenticated (userId: ${userId})`);
-
-  return { cookieHeader, userId };
+  return { cookieHeader, userId: decoded.userId };
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              STORAGE                                       */
-/* -------------------------------------------------------------------------- */
+/* ---------------- STORAGE ---------------- */
 
 async function getContainer(log) {
-  log("📦 Connecting to Blob Storage...");
-
   const client = new BlobServiceClient(
     CONFIG.ACCOUNT_URL,
-    new DefaultAzureCredential(),
+    new DefaultAzureCredential()
   );
 
   const container = client.getContainerClient(CONFIG.CONTAINER);
-
-  log(`✅ Connected to ${CONFIG.CONTAINER}`);
+  log("📦 Connected to blob storage");
 
   return container;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              ZIP PROCESS                                   */
-/* -------------------------------------------------------------------------- */
+/* ---------------- ZIP PROCESS ---------------- */
 
-async function processZipBlob(container, blobName, session, stats, log) {
-  const zipTimerStart = performance.now();
-  const zipStats = {
-    total: 0,
-    processed: 0,
-    skipped: 0,
-    failed: 0,
-  };
-  let aggregateBatchTime = 0;
-  const failedRpaApplicationIds = [];
-  log(`\n📁 Processing ZIP: ${blobName}`);
+async function processZipBlob(container, blobName, session, log) {
+  log(`📁 Processing ZIP ${blobName}`);
+
   const buffer = await downloadBlob(container, blobName);
-
   const zip = new AdmZip(buffer);
 
   const pdfs = zip
@@ -178,173 +110,57 @@ async function processZipBlob(container, blobName, session, stats, log) {
   for (let i = 0; i < pdfs.length; i += CONFIG.BATCH_SIZE) {
     const batch = pdfs.slice(i, i + CONFIG.BATCH_SIZE);
 
-    const start = i + 1;
-    const end = Math.min(i + CONFIG.BATCH_SIZE, pdfs.length);
-    const batchTimerStart = performance.now();
-    const batchStats = {
-      total: 0,
-      processed: 0,
-      skipped: 0,
-      failed: 0,
-    };
-
-    log(`📦 Starting batch ${start}-${end}`);
-
-    for (const pdf of batch) {
-      log(`   ➡️ ${pdf.entryName}`);
-    }
-
-    const results = await Promise.allSettled(
-      batch.map((pdf) =>
-        processPdf(pdf, session, log, failedRpaApplicationIds),
-      ),
-    );
-
-    for (const r of results) {
-      stats.total++;
-      batchStats.total++;
-      zipStats.total++;
-
-      if (r.status === "rejected") {
-        stats.failed++;
-        batchStats.failed++;
-        zipStats.failed++;
-        log("❌ Unhandled PDF error:", r.reason);
-        continue;
-      }
-
-      if (r.value.success) {
-        stats.processed++;
-        batchStats.processed++;
-        zipStats.processed++;
-      } else if (r.value.errorCode === ERROR_CODES.DUPLICATE_FILE) {
-        stats.skipped++;
-        batchStats.skipped++;
-        zipStats.skipped++;
-      } else {
-        stats.failed++;
-        batchStats.failed++;
-        zipStats.failed++;
-      }
-    }
-    const batchTime = performance.now() - batchTimerStart;
-    aggregateBatchTime += batchTime;
-    log(
-      `📊 Batch ${start}-${end} (Processed: ${batchStats.processed}, Skipped: ${batchStats.skipped}, Failed: ${batchStats.failed}, Total: ${batchStats.total}, TimeTaken: ${(batchTime / 1000).toFixed(2)}s)`,
+    await Promise.allSettled(
+      batch.map((pdf) => processPdf(pdf, session, log))
     );
   }
-  const zipTime = performance.now() - zipTimerStart;
-  const batchSize = CONFIG.BATCH_SIZE || 1;
-  const totalBatches = Math.ceil(pdfs.length / batchSize) || 1;
-  const avgBatchTime = aggregateBatchTime / totalBatches;
-
-  log(
-    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
-  );
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              PDF PROCESS                                   */
-/* -------------------------------------------------------------------------- */
+/* ---------------- PDF PROCESS ---------------- */
 
-async function processPdf(entry, session, log, failedRpaApplicationIds) {
+async function processPdf(entry, session, log) {
   const fileName = entry.entryName;
-  const rpa_appointment_id_match = fileName.trim().match(/^([0-9]+)_/);
-  const rpa_appointment_id = rpa_appointment_id_match[1];
-  let retryStatus;
-  try {
-    const buffer = entry.getData();
 
-    if (!buffer?.length) {
-      throw new Error("Empty PDF");
+  try {
+    const match = fileName.trim().match(/^([0-9]+)_/);
+
+    if (!match) {
+      throw new Error(`Invalid filename format: ${fileName}`);
     }
+
+    const rpaAppointmentId = match[1];
+    const buffer = entry.getData();
 
     await checkDuplicate(fileName, session);
 
-    retryStatus = await checkRetryStatus(rpa_appointment_id, session);
+    const retryStatus = await checkRetryStatus(rpaAppointmentId, session);
 
-    const apiData = await callMedicalApi(buffer, fileName, retryStatus);
+    const apiData = await callMedicalApi(buffer, fileName);
 
     const result = await sendToBackend(
       apiData,
       buffer,
       fileName,
-      session.userId,
+      session.userId
     );
 
     log(`✅ ${fileName} → ${result.claimId}`);
 
-    return {
-      success: true,
-      claimId: result.claimId,
-    };
+    return { success: true };
   } catch (err) {
-    let errorDetails = {
-      message: err.message,
-      code: err.code,
-    };
+    log(`❌ ${fileName} ERROR:`, err.message);
 
-    // If this is an HTTP/API error (Axios)
-    if (err.response) {
-      errorDetails.status = err.response.status;
-      errorDetails.statusText = err.response.statusText;
-      errorDetails.data = err.response.data;
-      errorDetails.headers = err.response.headers;
-    }
-
-    // If request was sent but no response
-    else if (err.request) {
-      errorDetails.request = "No response received from API";
-    }
-
-    // Other errors (coding, timeout, etc.)
-    else {
-      errorDetails.internal = err.toString();
-    }
-
-    log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
-
-    // Attempt to update retry count on backend
     try {
-      log(`📤 Updating retry count for appointment ${rpa_appointment_id}`);
-      await updateRetryCount(
-        rpa_appointment_id,
-        retryStatus.retry_count,
-        session,
-      );
-      log(`✅ Retry count updated successfully`);
+      await updateRetryCount(rpaAppointmentId, 1, session);
     } catch (retryErr) {
-      log(`⚠️  Failed to update retry count: ${retryErr.message}`);
-
-      // Add retry update error to error details
-      errorDetails.retryUpdateError = {
-        message: retryErr.message,
-      };
-
-      if (retryErr.response) {
-        errorDetails.retryUpdateError.status = retryErr.response.status;
-        errorDetails.retryUpdateError.statusText = retryErr.response.statusText;
-        errorDetails.retryUpdateError.data = retryErr.response.data;
-      } else if (retryErr.request) {
-        errorDetails.retryUpdateError.request = "No response received";
-      } else {
-        errorDetails.retryUpdateError.internal = retryErr.toString();
-      }
+      log("⚠️ Retry update failed:", retryErr.message);
     }
 
-    failedRpaApplicationIds.push(rpa_appointment_id);
-
-    return {
-      success: false,
-      errorCode: err.code,
-      error: errorDetails,
-    };
+    return { success: false };
   }
 }
 
-/* -------------------------------------------------------------------------- */
-/*                           EXTERNAL CALLS                                   */
-/* -------------------------------------------------------------------------- */
+/* ---------------- DUPLICATE CHECK ---------------- */
 
 async function checkDuplicate(fileName, session) {
   const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.isDuplicateMedicalFile`;
@@ -352,80 +168,80 @@ async function checkDuplicate(fileName, session) {
   const input = encodeURIComponent(JSON.stringify({ fileName }));
 
   const res = await axios.get(`${url}?input=${input}`, {
-    headers: {
-      Cookie: session.cookieHeader,
-      "Content-Type": "application/json",
-    },
-    timeout: 600000,
+    headers: { Cookie: session.cookieHeader },
   });
 
-  const isUnique =
-    (res?.data?.isDuplicate ??
-      res?.data?.isduplicate ??
-      res?.data?.result?.isDuplicate ??
-      res?.data?.result?.isduplicate ??
-      res?.data?.result?.data?.isDuplicate ??
-      res?.data?.result?.data?.isduplicate) === false;
+  const isDuplicate =
+    res?.data?.result?.data?.isDuplicate ??
+    res?.data?.result?.isDuplicate ??
+    false;
 
-  // We only proceed when the API explicitly confirms that the file is not a duplicate
-
-  if (!isUnique) {
+  if (isDuplicate) {
     const err = new Error("Duplicate file");
     err.code = ERROR_CODES.DUPLICATE_FILE;
     throw err;
   }
 }
 
-/* -------------------------------------------------------------------------- */
+/* ---------------- RETRY STATUS ---------------- */
 
 async function checkRetryStatus(rpaAppointmentId, session) {
-  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.getRetryCount`;
+  try {
+    const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.getRetryCount`;
 
-  const input = encodeURIComponent(JSON.stringify({ fileName }));
+    const fileName = `${rpaAppointmentId}_temp.pdf`;
 
-  const res = await axios.get(`${url}?input=${input}`, {
-    headers: {
-      Cookie: session.cookieHeader,
-      "Content-Type": "application/json",
-    },
-    timeout: 600000,
-  });
+    const input = encodeURIComponent(JSON.stringify({ fileName }));
 
-  log("retry status=", res?.data?.result?.data);
+    const res = await axios.get(`${url}?input=${input}`, {
+      headers: { Cookie: session.cookieHeader },
+    });
 
-  if (res?.data?.result?.data?.retry_count > 2) {
-    const err = new Error("Max retries exhausted");
+    console.log("📥 Retry API response:", res.data);
+
+    const retryData = res?.data?.result?.data;
+
+    if (!retryData) return { retry_count: 0 };
+
+    if (retryData.retry_count > 2) {
+      throw new Error("Max retries exhausted");
+    }
+
+    return retryData;
+  } catch (err) {
+    console.log("❌ Retry status error");
+
+    if (err.response) {
+      console.log(err.response.status, err.response.data);
+    }
+
     throw err;
   }
 }
 
-/* -------------------------------------------------------------------------- */
+/* ---------------- UPDATE RETRY ---------------- */
 
 async function updateRetryCount(rpaAppointmentId, retryCount, session) {
-  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalRetry.updateRetryCount`;
+  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.updateRetryCount`;
 
   const payload = {
     input: {
       rpa_appointment_id: rpaAppointmentId,
-      retry_count: retryCount || 1,
+      retry_count: retryCount,
     },
   };
 
   const res = await axios.post(url, payload, {
-    headers: {
-      Cookie: session.cookieHeader,
-      "Content-Type": "application/json",
-    },
-    timeout: 600000,
+    headers: { Cookie: session.cookieHeader },
   });
 
   return res.data;
 }
-/* -------------------------------------------------------------------------- */
+
+/* ---------------- MEDICAL API ---------------- */
 
 async function callMedicalApi(buffer, fileName) {
   const form = new FormData();
-
   form.append("files", buffer, fileName);
 
   const res = await axios.post(CONFIG.MEDICAL_API_URL, form, {
@@ -433,17 +249,12 @@ async function callMedicalApi(buffer, fileName) {
       ...form.getHeaders(),
       "x-auth-token": CONFIG.MEDICAL_API_TOKEN,
     },
-    timeout: 600000,
   });
-
-  if (!res.data) {
-    throw new Error("Empty medical API response");
-  }
 
   return res.data;
 }
 
-/* -------------------------------------------------------------------------- */
+/* ---------------- BACKEND ---------------- */
 
 async function sendToBackend(apiResponse, buffer, fileName, userId) {
   const payload = {
@@ -456,30 +267,20 @@ async function sendToBackend(apiResponse, buffer, fileName, userId) {
 
   const res = await axios.post(
     `${CONFIG.BACKEND_URL}/api/medical-extraction/process`,
-    payload,
-    { timeout: 600000 },
+    payload
   );
-
-  if (!res.data?.success) {
-    throw new Error("Backend rejected request");
-  }
 
   return res.data.data;
 }
 
-/* -------------------------------------------------------------------------- */
-/*                              HELPERS                                       */
-/* -------------------------------------------------------------------------- */
+/* ---------------- HELPERS ---------------- */
 
 async function downloadBlob(container, name) {
   const client = container.getBlobClient(name);
-
   const res = await client.download();
 
   return streamToBuffer(res.readableStreamBody);
 }
-
-/* -------------------------------------------------------------------------- */
 
 function streamToBuffer(stream) {
   return new Promise((resolve, reject) => {
@@ -489,41 +290,4 @@ function streamToBuffer(stream) {
     stream.on("end", () => resolve(Buffer.concat(chunks)));
     stream.on("error", reject);
   });
-}
-
-/* -------------------------------------------------------------------------- */
-
-function validateConfig() {
-  const required = [
-    "BACKEND_EMAIL",
-    "BACKEND_PASSWORD",
-    "MEDICAL_API_URL",
-    "MEDICAL_API_TOKEN",
-    "ACCOUNT_URL",
-    "BACKEND_URL",
-  ];
-
-  for (const key of required) {
-    if (!CONFIG[key]) {
-      throw new Error(`Missing env: ${key}`);
-    }
-  }
-}
-
-/* -------------------------------------------------------------------------- */
-
-function printSummary(stats, log) {
-  log("\n==============================");
-  log("📊 SUMMARY");
-  log(`Total     : ${stats.total}`);
-  log(`Processed : ${stats.processed}`);
-  log(`Skipped   : ${stats.skipped}`);
-  log(`Failed    : ${stats.failed}`);
-
-  const rate = stats.total
-    ? (((stats.processed + stats.skipped) / stats.total) * 100).toFixed(2)
-    : 0;
-
-  log(`Success % : ${rate}%`);
-  log("==============================");
 }
