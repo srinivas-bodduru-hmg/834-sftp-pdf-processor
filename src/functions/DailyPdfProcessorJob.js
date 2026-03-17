@@ -165,7 +165,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
   let aggregateBatchTime = 0;
   const failedRpaApplicationIds = [];
   log(`\n📁 Processing ZIP: ${blobName}`);
-  const buffer = await downloadBlob(log ,container, blobName);
+  const buffer = await downloadBlob(log, container, blobName);
 
   const zip = new AdmZip(buffer);
 
@@ -264,8 +264,8 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     log(`🔄 Checking retry status for appointment ${rpa_appointment_id}...`);
 
     retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
-
-    const apiData = await callMedicalApi(log ,buffer, fileName, retryStatus);
+    log(`✅ Retry status:`, retryStatus);
+    const apiData = await callMedicalApi(log, buffer, fileName, retryStatus);
 
     const result = await sendToBackend(
       log,
@@ -401,6 +401,8 @@ async function checkRetryStatus(log, rpa_appointment_id, session) {
     const err = new Error("Max retries exhausted");
     throw err;
   }
+
+  return res?.data?.result?.data || { retry_count: 0 };
 }
 
 /* -------------------------------------------------------------------------- */
