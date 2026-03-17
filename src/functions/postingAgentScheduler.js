@@ -46,7 +46,7 @@ app.timer("postingAgentScheduler", {
     }
     try {
       const url = `${CONFIG.BACKEND_URL}/api/trpc/scheduler.postingAgentStart`;
-      const res = await axios.post(`${url}`, {
+      const res = await axios.post(`${url}`,{}, {
         headers: {
           Cookie: session.cookieHeader,
           "Content-Type": "application/json",
