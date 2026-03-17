@@ -34,20 +34,17 @@ app.timer("outboundScheduler", {
   runOnStartup: true,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
-    context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
-    context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
+    context.log("[Outbound File Processor] ⏰ Timer trigger fired");
     let session;
     try {
       session = await login(context);
     } catch (error) {
-      context.log("[Outbound Scheduler] ❌ Login failed:", error.message);
-      context.log("[Outbound Scheduler] ❌ Login failed:");
-      context.log(`   Message: ${error.message}`);
+    context.log("[Outbound File Processor] ❌ Login failed:", error.message);
       throw error;
     }
     try {
        const url = `${CONFIG.BACKEND_URL}/api/trpc/scheduler.outboundFileProcessorSchedulerStart`;
-      const res = await axios.post(`${url}`, {
+      const res = await axios.post(`${url}`,{}, {
         headers: {
           Cookie: session.cookieHeader,
           "Content-Type": "application/json",
@@ -56,11 +53,9 @@ app.timer("outboundScheduler", {
       });
     } catch (error) {
       context.log(
-        "[Outbound Scheduler] ❌ Axios request failed:",
+        "[Outbound File Processor] ❌ Axios request failed:",
         error.message,
       );
-      context.log("[Outbound Scheduler] ❌ Axios request failed:");
-      context.log(`   Message: ${error.message}`);
 
       // If this is an HTTP/API error (Axios)
 
@@ -90,7 +85,7 @@ app.timer("outboundScheduler", {
 
       if (error.response) {
         context.log(
-          "[Outbound Scheduler] HTTP Error Details:",
+          "[Outbound File Processor] HTTP Error Details:",
           error.response.status,
         );
         context.log(`   HTTP Status: ${error.response.status}`);
@@ -100,15 +95,11 @@ app.timer("outboundScheduler", {
       throw error;
     }
 
-    context.log("[Outbound Scheduler] 📥 Axios response received");
-    context.log("[Outbound Scheduler] 📥 Axios response received");
-
-    context.log("[Outbound Scheduler] ✅ Backend login successful");
-    context.log("[Outbound Scheduler] ✅ Backend login successful");
+    context.log("[Outbound File Processor] 📥 Axios response received");
+    context.log("[Outbound File Processor] ✅ Backend login successful");
 
     const duration = Date.now() - startTime;
-    context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
-    context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
+    context.log(`[Outbound File Processor] ✅ Job completed in ${duration}ms`);
 
     return {
       success: true,
