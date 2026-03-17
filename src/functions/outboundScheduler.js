@@ -35,32 +35,29 @@ app.timer("outboundScheduler", {
   handler: async (myTimer, context) => {
     const startTime = Date.now();
     context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
-    context.log("[Outbound Scheduler] ⏰ Timer trigger fired");
     let session;
     try {
       session = await login(context);
     } catch (error) {
       context.log("[Outbound Scheduler] ❌ Login failed:", error.message);
-      context.log("[Outbound Scheduler] ❌ Login failed:");
-      context.log(`   Message: ${error.message}`);
+
       throw error;
     }
     try {
        const url = `${CONFIG.BACKEND_URL}/api/trpc/scheduler.outboundSchedulerStart`;
-      const res = await axios.post(`${url}`, {
+      const res = await axios.post(`${url}`,{} , {
         headers: {
           Cookie: session.cookieHeader,
           "Content-Type": "application/json",
         },
         timeout: 600000,
       });
+      context.log("[Outbound Scheduler] 📤 Axios request successful", res.data);
     } catch (error) {
       context.log(
         "[Outbound Scheduler] ❌ Axios request failed:",
         error.message,
       );
-      context.log("[Outbound Scheduler] ❌ Axios request failed:");
-      context.log(`   Message: ${error.message}`);
 
       // If this is an HTTP/API error (Axios)
 
@@ -101,13 +98,9 @@ app.timer("outboundScheduler", {
     }
 
     context.log("[Outbound Scheduler] 📥 Axios response received");
-    context.log("[Outbound Scheduler] 📥 Axios response received");
-
-    context.log("[Outbound Scheduler] ✅ Backend login successful");
     context.log("[Outbound Scheduler] ✅ Backend login successful");
 
     const duration = Date.now() - startTime;
-    context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
     context.log(`[Outbound Scheduler] ✅ Job completed in ${duration}ms`);
 
     return {
