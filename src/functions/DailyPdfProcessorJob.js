@@ -165,7 +165,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
   let aggregateBatchTime = 0;
   const failedRpaApplicationIds = [];
   log(`\n📁 Processing ZIP: ${blobName}`);
-  const buffer = await downloadBlob(container, blobName);
+  const buffer = await downloadBlob(log, container, blobName);
 
   const zip = new AdmZip(buffer);
 
@@ -250,7 +250,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
 async function processPdf(entry, session, log, failedRpaApplicationIds) {
   const fileName = entry.entryName;
   const rpa_appointment_id_match = fileName.trim().match(/^([0-9]+)_/);
-  const rpa_appointment_id = rpa_appointment_id_match[1];
+  const rpa_appointment_id = rpa_appointment_id_match?.[1];
   let retryStatus;
   try {
     const buffer = entry.getData();
@@ -259,13 +259,16 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
       throw new Error("Empty PDF");
     }
 
-    await checkDuplicate(fileName, session);
+    await checkDuplicate(log, fileName, session);
 
-    retryStatus = await checkRetryStatus(rpa_appointment_id, session);
+    log(`🔄 Checking retry status for appointment ${rpa_appointment_id}...`);
 
-    const apiData = await callMedicalApi(buffer, fileName, retryStatus);
+    retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
+    log(`✅ Retry status:`, retryStatus);
+    const apiData = await callMedicalApi(log, buffer, fileName, retryStatus);
 
     const result = await sendToBackend(
+      log,
       apiData,
       buffer,
       fileName,
@@ -308,6 +311,7 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     try {
       log(`📤 Updating retry count for appointment ${rpa_appointment_id}`);
       await updateRetryCount(
+        log,
         rpa_appointment_id,
         retryStatus.retry_count,
         session,
@@ -346,7 +350,7 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
 /*                           EXTERNAL CALLS                                   */
 /* -------------------------------------------------------------------------- */
 
-async function checkDuplicate(fileName, session) {
+async function checkDuplicate(log, fileName, session) {
   const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.isDuplicateMedicalFile`;
 
   const input = encodeURIComponent(JSON.stringify({ fileName }));
@@ -378,10 +382,10 @@ async function checkDuplicate(fileName, session) {
 
 /* -------------------------------------------------------------------------- */
 
-async function checkRetryStatus(rpaAppointmentId, session) {
+async function checkRetryStatus(log, rpa_appointment_id, session) {
   const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.getRetryCount`;
 
-  const input = encodeURIComponent(JSON.stringify({ fileName }));
+  const input = encodeURIComponent(JSON.stringify({ rpa_appointment_id }));
 
   const res = await axios.get(`${url}?input=${input}`, {
     headers: {
@@ -397,11 +401,13 @@ async function checkRetryStatus(rpaAppointmentId, session) {
     const err = new Error("Max retries exhausted");
     throw err;
   }
+
+  return res?.data?.result?.data || { retry_count: 0 };
 }
 
 /* -------------------------------------------------------------------------- */
 
-async function updateRetryCount(rpaAppointmentId, retryCount, session) {
+async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
   const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalRetry.updateRetryCount`;
 
   const payload = {
@@ -423,7 +429,7 @@ async function updateRetryCount(rpaAppointmentId, retryCount, session) {
 }
 /* -------------------------------------------------------------------------- */
 
-async function callMedicalApi(buffer, fileName) {
+async function callMedicalApi(log, buffer, fileName) {
   const form = new FormData();
 
   form.append("files", buffer, fileName);
@@ -445,7 +451,7 @@ async function callMedicalApi(buffer, fileName) {
 
 /* -------------------------------------------------------------------------- */
 
-async function sendToBackend(apiResponse, buffer, fileName, userId) {
+async function sendToBackend(log, apiResponse, buffer, fileName, userId) {
   const payload = {
     apiResponse,
     fileName,
@@ -471,7 +477,7 @@ async function sendToBackend(apiResponse, buffer, fileName, userId) {
 /*                              HELPERS                                       */
 /* -------------------------------------------------------------------------- */
 
-async function downloadBlob(container, name) {
+async function downloadBlob(log, container, name) {
   const client = container.getBlobClient(name);
 
   const res = await client.download();
