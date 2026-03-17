@@ -200,24 +200,24 @@ async function processZipBlob(container, blobName, session, stats, log) {
       ),
     );
 
-    for (const r of results) {
+    for (const result of results) {
       stats.total++;
       batchStats.total++;
       zipStats.total++;
 
-      if (r.status === "rejected") {
+      if (result.status === "rejected") {
         stats.failed++;
         batchStats.failed++;
         zipStats.failed++;
-        log("❌ Unhandled PDF error:", r.reason);
+        log("❌ Unhandled PDF error:", result.reason);
         continue;
       }
 
-      if (r.value.success) {
+      if (result.value?.success) {
         stats.processed++;
         batchStats.processed++;
         zipStats.processed++;
-      } else if (r.value.errorCode === ERROR_CODES.DUPLICATE_FILE) {
+      } else if (result.value?.errorCode === ERROR_CODES.DUPLICATE_FILE) {
         stats.skipped++;
         batchStats.skipped++;
         zipStats.skipped++;
@@ -309,6 +309,9 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
 
     // Attempt to update retry count on backend
     try {
+      if (!retryStatus?.retry_count) {
+        return;
+      }
       log(`📤 Updating retry count for appointment ${rpa_appointment_id}`);
       await updateRetryCount(
         log,
