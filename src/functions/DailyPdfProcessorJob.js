@@ -266,7 +266,7 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
     log(`✅ Retry status:`, retryStatus);
     const apiData = await callMedicalApi(log, buffer, fileName, retryStatus);
-
+    log(`✅ Medical API call successful for ${fileName}`, apiData?.[0]?.final_output);
     const result = await sendToBackend(
       log,
       apiData,
@@ -397,8 +397,6 @@ async function checkRetryStatus(log, rpa_appointment_id, session) {
     },
     timeout: 600000,
   });
-
-  log("retry status=", res?.data?.result?.data);
 
   if (res?.data?.result?.data?.retry_count > 2) {
     const err = new Error("Max retries exhausted");
