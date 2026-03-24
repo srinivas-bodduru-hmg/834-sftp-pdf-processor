@@ -265,8 +265,8 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
 
     retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
     log(`✅ Retry status:`, retryStatus);
-    const apiData = await callMedicalApi(log, buffer, fileName, retryStatus);
-    log(`✅ Medical API call successful for ${fileName}`, apiData?.[0]?.final_output);
+    const apiData = await callMedicalApi(log, buffer, fileName);
+
     const result = await sendToBackend(
       log,
       apiData,
@@ -431,14 +431,18 @@ async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
 /* -------------------------------------------------------------------------- */
 
 async function callMedicalApi(log, buffer, fileName) {
-  const form = new FormData();
+  const fileContent = buffer.toString("base64");
 
-  form.append("files", buffer, fileName);
+  const payload = {
+    fileName,
+    fileContent,
+    fileType: "pdf",
+  };
 
-  const res = await axios.post(CONFIG.MEDICAL_API_URL, form, {
+  const res = await axios.post(CONFIG.MEDICAL_API_URL, payload, {
     headers: {
-      ...form.getHeaders(),
       "x-auth-token": CONFIG.MEDICAL_API_TOKEN,
+      "Content-Type": "application/json",
     },
     timeout: 600000,
   });
