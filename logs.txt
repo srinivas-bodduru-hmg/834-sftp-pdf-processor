@@ -6,152 +6,273 @@ Azure Functions Core Tools
 Core Tools Version:       4.6.0+ab90faafcab539d63cd3d0ce5faf1bca4395fccc (64-bit)
 Function Runtime Version: 4.1045.200.25556
 
-[2026-03-20T07:58:48.286Z] Worker process started and initialized.
+[2026-03-25T12:16:04.303Z] Worker process started and initialized.
 
 Functions:
 
-	DailyPdfProcessorJob: timerTrigger
+	DailyPdfLoaderJob: timerTrigger
 
 For detailed output, run func with --verbose flag.
-[2026-03-20T07:58:49.416Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T07:58:49.416Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T07:58:49.416Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T07:58:49.416Z] ErrorCode: AuthorizationFailure
-[2026-03-20T07:58:49.416Z] 
-[2026-03-20T07:58:49.416Z] Headers:
-[2026-03-20T07:58:49.416Z] Transfer-Encoding: chunked
-[2026-03-20T07:58:49.416Z] Vary: Origin
-[2026-03-20T07:58:49.416Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T07:58:49.416Z] x-ms-request-id: e14cb2ae-801e-006c-183f-b8e01a000000
-[2026-03-20T07:58:49.416Z] x-ms-client-request-id: 83a080ce-f953-4d0f-bea4-05e5679b4a1c
-[2026-03-20T07:58:49.416Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T07:58:49.416Z] Date: Fri, 20 Mar 2026 07:58:48 GMT
-[2026-03-20T07:58:49.416Z] .
-[2026-03-20T07:58:51.677Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T07:58:51.677Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T07:58:51.677Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T07:58:51.677Z] ErrorCode: AuthorizationFailure
-[2026-03-20T07:58:51.677Z] 
-[2026-03-20T07:58:51.677Z] Headers:
-[2026-03-20T07:58:51.677Z] Transfer-Encoding: chunked
-[2026-03-20T07:58:51.677Z] Vary: Origin
-[2026-03-20T07:58:51.677Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T07:58:51.677Z] x-ms-request-id: e14cb901-801e-006c-473f-b8e01a000000
-[2026-03-20T07:58:51.677Z] x-ms-client-request-id: a775a284-202a-4800-8524-ea5c7a798a8a
-[2026-03-20T07:58:51.677Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T07:58:51.677Z] Date: Fri, 20 Mar 2026 07:58:50 GMT
-[2026-03-20T07:58:51.677Z] .
-[2026-03-20T07:58:56.131Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T07:58:56.131Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T07:58:56.131Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T07:58:56.131Z] ErrorCode: AuthorizationFailure
-[2026-03-20T07:58:56.131Z] 
-[2026-03-20T07:58:56.131Z] Headers:
-[2026-03-20T07:58:56.131Z] Transfer-Encoding: chunked
-[2026-03-20T07:58:56.131Z] Vary: Origin
-[2026-03-20T07:58:56.131Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T07:58:56.131Z] x-ms-request-id: e14cc463-801e-006c-5a3f-b8e01a000000
-[2026-03-20T07:58:56.131Z] x-ms-client-request-id: 451c4632-f272-4b09-aea5-3e8258244173
-[2026-03-20T07:58:56.131Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T07:58:56.132Z] Date: Fri, 20 Mar 2026 07:58:55 GMT
-[2026-03-20T07:58:56.132Z] .
-[2026-03-20T07:59:02.286Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T07:59:02.286Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T07:59:02.286Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T07:59:02.286Z] ErrorCode: AuthorizationFailure
-[2026-03-20T07:59:02.286Z] 
-[2026-03-20T07:59:02.286Z] Headers:
-[2026-03-20T07:59:02.286Z] Transfer-Encoding: chunked
-[2026-03-20T07:59:02.286Z] Vary: Origin
-[2026-03-20T07:59:02.286Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T07:59:02.286Z] x-ms-request-id: e14cd35c-801e-006c-613f-b8e01a000000
-[2026-03-20T07:59:02.286Z] x-ms-client-request-id: c8d14480-b2cd-4305-a626-87d204a64693
-[2026-03-20T07:59:02.287Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T07:59:02.287Z] Date: Fri, 20 Mar 2026 07:59:01 GMT
-[2026-03-20T07:59:02.287Z] .
-[2026-03-20T07:59:14.029Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T07:59:14.029Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T07:59:14.029Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T07:59:14.029Z] ErrorCode: AuthorizationFailure
-[2026-03-20T07:59:14.029Z] 
-[2026-03-20T07:59:14.029Z] Headers:
-[2026-03-20T07:59:14.029Z] Transfer-Encoding: chunked
-[2026-03-20T07:59:14.029Z] Vary: Origin
-[2026-03-20T07:59:14.029Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T07:59:14.029Z] x-ms-request-id: e14cf08b-801e-006c-3b3f-b8e01a000000
-[2026-03-20T07:59:14.029Z] x-ms-client-request-id: 3a40b8ff-acb8-4110-8201-de1d8778bdcc
-[2026-03-20T07:59:14.029Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T07:59:14.029Z] Date: Fri, 20 Mar 2026 07:59:13 GMT
-[2026-03-20T07:59:14.029Z] .
-[2026-03-20T07:59:35.098Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T07:59:35.098Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T07:59:35.098Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T07:59:35.098Z] ErrorCode: AuthorizationFailure
-[2026-03-20T07:59:35.098Z] 
-[2026-03-20T07:59:35.098Z] Headers:
-[2026-03-20T07:59:35.098Z] Transfer-Encoding: chunked
-[2026-03-20T07:59:35.098Z] Vary: Origin
-[2026-03-20T07:59:35.098Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T07:59:35.098Z] x-ms-request-id: e14d2994-801e-006c-143f-b8e01a000000
-[2026-03-20T07:59:35.098Z] x-ms-client-request-id: 5b34313c-7da9-40cf-ba0f-0bd3f8a3019b
-[2026-03-20T07:59:35.099Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T07:59:35.099Z] Date: Fri, 20 Mar 2026 07:59:34 GMT
-[2026-03-20T07:59:35.099Z] .
-[2026-03-20T08:00:09.950Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T08:00:09.951Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T08:00:09.951Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T08:00:09.951Z] ErrorCode: AuthorizationFailure
-[2026-03-20T08:00:09.951Z] 
-[2026-03-20T08:00:09.951Z] Headers:
-[2026-03-20T08:00:09.951Z] Transfer-Encoding: chunked
-[2026-03-20T08:00:09.951Z] Vary: Origin
-[2026-03-20T08:00:09.951Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T08:00:09.951Z] x-ms-request-id: e14d8ee9-801e-006c-5d3f-b8e01a000000
-[2026-03-20T08:00:09.951Z] x-ms-client-request-id: d4af06f4-4121-4ac8-aa2e-2375dbdea20b
-[2026-03-20T08:00:09.951Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T08:00:09.951Z] Date: Fri, 20 Mar 2026 08:00:08 GMT
-[2026-03-20T08:00:09.951Z] .
-[2026-03-20T08:01:23.923Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T08:01:23.924Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T08:01:23.925Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T08:01:23.925Z] ErrorCode: AuthorizationFailure
-[2026-03-20T08:01:23.925Z] 
-[2026-03-20T08:01:23.925Z] Headers:
-[2026-03-20T08:01:23.925Z] Transfer-Encoding: chunked
-[2026-03-20T08:01:23.925Z] Vary: Origin
-[2026-03-20T08:01:23.925Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T08:01:23.925Z] x-ms-request-id: e14eba8a-801e-006c-153f-b8e01a000000
-[2026-03-20T08:01:23.925Z] x-ms-client-request-id: c7f8050e-8bcf-418e-b28c-fbe153e2f0f2
-[2026-03-20T08:01:23.925Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T08:01:23.925Z] Date: Fri, 20 Mar 2026 08:01:22 GMT
-[2026-03-20T08:01:23.925Z] .
-[2026-03-20T08:03:24.204Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T08:03:24.206Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T08:03:24.206Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T08:03:24.206Z] ErrorCode: AuthorizationFailure
-[2026-03-20T08:03:24.206Z] 
-[2026-03-20T08:03:24.206Z] Headers:
-[2026-03-20T08:03:24.206Z] Transfer-Encoding: chunked
-[2026-03-20T08:03:24.206Z] Vary: Origin
-[2026-03-20T08:03:24.206Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T08:03:24.206Z] x-ms-request-id: e1506530-801e-006c-2640-b8e01a000000
-[2026-03-20T08:03:24.206Z] x-ms-client-request-id: 78d6f8f5-481d-4176-824c-425155fce7d4
-[2026-03-20T08:03:24.206Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T08:03:24.206Z] Date: Fri, 20 Mar 2026 08:03:23 GMT
-[2026-03-20T08:03:24.206Z] .
-[2026-03-20T08:05:24.465Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-03-20T08:05:24.466Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Storage.Blobs: Service request failed.
-[2026-03-20T08:05:24.467Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-20T08:05:24.467Z] ErrorCode: AuthorizationFailure
-[2026-03-20T08:05:24.467Z] 
-[2026-03-20T08:05:24.467Z] Headers:
-[2026-03-20T08:05:24.467Z] Transfer-Encoding: chunked
-[2026-03-20T08:05:24.467Z] Vary: Origin
-[2026-03-20T08:05:24.467Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-20T08:05:24.467Z] x-ms-request-id: 62344192-301e-0046-6940-b83f0a000000
-[2026-03-20T08:05:24.467Z] x-ms-client-request-id: 4c17ed81-2706-4662-be12-18889224c105
-[2026-03-20T08:05:24.467Z] x-ms-error-code: AuthorizationFailure
-[2026-03-20T08:05:24.467Z] Date: Fri, 20 Mar 2026 08:05:23 GMT
-[2026-03-20T08:05:24.467Z] .
-[2026-03-20T08:06:17.359Z] Language Worker Process exited. Pid=39035.
-[2026-03-20T08:06:17.359Z] node exited with code 130 (0x82). .
+[2026-03-25T12:16:06.116Z] Executing 'Functions.DailyPdfLoaderJob' (Reason='Timer fired at 2026-03-25T17:46:06.1055060+05:30', Id=4ba38a40-cf00-4298-846b-834011b27e92)
+[2026-03-25T12:16:06.116Z] Trigger Details: UnscheduledInvocationReason: IsPastDue, OriginalSchedule: 2026-03-21T07:00:00.0000000+05:30, ScheduleStatus: {"Last":"2026-03-20T11:06:30.006249+05:30","Next":"2026-03-21T07:00:00+05:30","LastUpdated":"2026-03-20T11:06:30.006249+05:30"}
+[2026-03-25T12:16:06.141Z] 🚀 DailyPdfLoaderJob (7AM) Started
+[2026-03-25T12:16:06.142Z] 📅 Step 1: Calculating date range
+[2026-03-25T12:16:06.142Z]    Current date: 2026-03-25T12:16:06.132Z
+[2026-03-25T12:16:06.142Z]    Yesterday date: 2026-03-24T12:16:06.132Z
+[2026-03-25T12:16:06.142Z]    Formatted range: 2026-03-24 to 2026-03-25
+[2026-03-25T12:16:06.142Z] 📋 Step 2: Creating payload
+[2026-03-25T12:16:06.142Z]    Payload created: {
+[2026-03-25T12:16:06.142Z]   "start_date": "2026-03-24",
+[2026-03-25T12:16:06.142Z]   "end_date": "2026-03-25",
+[2026-03-25T12:16:06.142Z]   "practice_name": "Germantown",
+[2026-03-25T12:16:06.142Z]   "entity": "270681372",
+[2026-03-25T12:16:06.142Z]   "sub_entity": "270681372001"
+[2026-03-25T12:16:06.142Z] }
+[2026-03-25T12:16:06.142Z] 📤 Step 3: Calling Tebra API endpoint
+[2026-03-25T12:16:06.142Z]    URL: http://57.154.234.15:8010/run-tebra
+[2026-03-25T12:16:06.142Z]    Sending request with 10 minute timeout...
+[2026-03-25T12:16:10.345Z] Host lock lease acquired by instance ID '000000000000000000000000F178F181'.
+[2026-03-25T12:17:21.161Z] ❌ DailyPdfLoaderJob Failed - Error handling initiated
+[2026-03-25T12:17:21.162Z]    Error Type: Error
+[2026-03-25T12:17:21.162Z]    Error Message: connect ETIMEDOUT 57.154.234.15:8010
+[2026-03-25T12:17:21.162Z] 🌐 Request was made but no response received:
+[2026-03-25T12:17:21.162Z]    Request: <ref *1> Writable {
+[2026-03-25T12:17:21.162Z]   _events: {
+[2026-03-25T12:17:21.162Z]     close: undefined,
+[2026-03-25T12:17:21.162Z]     error: [Function: handleRequestError],
+[2026-03-25T12:17:21.162Z]     prefinish: undefined,
+[2026-03-25T12:17:21.162Z]     finish: undefined,
+[2026-03-25T12:17:21.163Z]     drain: undefined,
+[2026-03-25T12:17:21.163Z]     response: [Function: handleResponse],
+[2026-03-25T12:17:21.163Z]     socket: [ [Function: handleRequestSocket], [Function: destroyOnTimeout] ],
+[2026-03-25T12:17:21.163Z]     timeout: undefined,
+[2026-03-25T12:17:21.163Z]     abort: undefined
+[2026-03-25T12:17:21.163Z]   },
+[2026-03-25T12:17:21.163Z]   _writableState: WritableState {
+[2026-03-25T12:17:21.163Z]     highWaterMark: 65536,
+[2026-03-25T12:17:21.163Z]     length: 0,
+[2026-03-25T12:17:21.163Z]     corked: 0,
+[2026-03-25T12:17:21.163Z]     onwrite: [Function: bound onwrite],
+[2026-03-25T12:17:21.163Z]     writelen: 0,
+[2026-03-25T12:17:21.163Z]     bufferedIndex: 0,
+[2026-03-25T12:17:21.163Z]     pendingcb: 0,
+[2026-03-25T12:17:21.163Z]     [Symbol(kState)]: 17580812,
+[2026-03-25T12:17:21.163Z]     [Symbol(kBufferedValue)]: null
+[2026-03-25T12:17:21.163Z]   },
+[2026-03-25T12:17:21.163Z]   _maxListeners: undefined,
+[2026-03-25T12:17:21.163Z]   _options: {
+[2026-03-25T12:17:21.163Z]     maxRedirects: 21,
+[2026-03-25T12:17:21.163Z]     maxBodyLength: Infinity,
+[2026-03-25T12:17:21.163Z]     protocol: 'http:',
+[2026-03-25T12:17:21.163Z]     path: '/run-tebra',
+[2026-03-25T12:17:21.163Z]     method: 'POST',
+[2026-03-25T12:17:21.163Z]     headers: [Object: null prototype] {
+[2026-03-25T12:17:21.163Z]       Accept: 'application/json, text/plain, */*',
+[2026-03-25T12:17:21.163Z]       'Content-Type': 'application/json',
+[2026-03-25T12:17:21.163Z]       'User-Agent': 'axios/1.13.4',
+[2026-03-25T12:17:21.163Z]       'Content-Length': '129',
+[2026-03-25T12:17:21.163Z]       'Accept-Encoding': 'gzip, compress, deflate, br'
+[2026-03-25T12:17:21.163Z]     },
+[2026-03-25T12:17:21.163Z]     agents: { http: undefined, https: undefined },
+[2026-03-25T12:17:21.163Z]     auth: undefined,
+[2026-03-25T12:17:21.163Z]     family: undefined,
+[2026-03-25T12:17:21.163Z]     beforeRedirect: [Function: dispatchBeforeRedirect],
+[2026-03-25T12:17:21.163Z]     beforeRedirects: { proxy: [Function: beforeRedirect] },
+[2026-03-25T12:17:21.163Z]     http2Options: undefined,
+[2026-03-25T12:17:21.163Z]     hostname: '57.154.234.15',
+[2026-03-25T12:17:21.163Z]     port: '8010',
+[2026-03-25T12:17:21.163Z]     agent: undefined,
+[2026-03-25T12:17:21.163Z]     nativeProtocols: { 'http:': [Object], 'https:': [Object] },
+[2026-03-25T12:17:21.163Z]     pathname: '/run-tebra'
+[2026-03-25T12:17:21.163Z]   },
+[2026-03-25T12:17:21.163Z]   _ended: true,
+[2026-03-25T12:17:21.163Z]   _ending: true,
+[2026-03-25T12:17:21.163Z]   _redirectCount: 0,
+[2026-03-25T12:17:21.163Z]   _redirects: [],
+[2026-03-25T12:17:21.163Z]   _requestBodyLength: 129,
+[2026-03-25T12:17:21.163Z]   _requestBodyBuffers: [
+[2026-03-25T12:17:21.163Z]     {
+[2026-03-25T12:17:21.163Z]       data: <Buffer 7b 22 73 74 61 72 74 5f 64 61 74 65 22 3a 22 32 30 32 36 2d 30 33 2d 32 34 22 2c 22 65 6e 64 5f 64 61 74 65 22 3a 22 32 30 32 36 2d 30 33 2d 32 35 22 ... 79 more bytes>,
+[2026-03-25T12:17:21.163Z]       encoding: undefined
+[2026-03-25T12:17:21.163Z]     }
+[2026-03-25T12:17:21.163Z]   ],
+[2026-03-25T12:17:21.163Z]   _eventsCount: 3,
+[2026-03-25T12:17:21.163Z]   _onNativeResponse: [Function (anonymous)],
+[2026-03-25T12:17:21.163Z]   _currentRequest: <ref *2> ClientRequest {
+[2026-03-25T12:17:21.163Z]     _events: [Object: null prototype] {
+[2026-03-25T12:17:21.163Z]       response: [Function],
+[2026-03-25T12:17:21.163Z]       abort: [Function (anonymous)],
+[2026-03-25T12:17:21.163Z]       aborted: [Function (anonymous)],
+[2026-03-25T12:17:21.163Z]       connect: [Function (anonymous)],
+[2026-03-25T12:17:21.163Z]       error: [Function (anonymous)],
+[2026-03-25T12:17:21.163Z]       socket: [Function (anonymous)],
+[2026-03-25T12:17:21.163Z]       timeout: [Function (anonymous)]
+[2026-03-25T12:17:21.163Z]     },
+[2026-03-25T12:17:21.163Z]     _eventsCount: 7,
+[2026-03-25T12:17:21.163Z]     _maxListeners: undefined,
+[2026-03-25T12:17:21.163Z]     outputData: [],
+[2026-03-25T12:17:21.163Z]     outputSize: 0,
+[2026-03-25T12:17:21.163Z]     writable: true,
+[2026-03-25T12:17:21.163Z]     destroyed: false,
+[2026-03-25T12:17:21.163Z]     _last: false,
+[2026-03-25T12:17:21.164Z]     chunkedEncoding: false,
+[2026-03-25T12:17:21.164Z]     shouldKeepAlive: true,
+[2026-03-25T12:17:21.164Z]     maxRequestsOnConnectionReached: false,
+[2026-03-25T12:17:21.164Z]     _defaultKeepAlive: true,
+[2026-03-25T12:17:21.164Z]     useChunkedEncodingByDefault: true,
+[2026-03-25T12:17:21.164Z]     sendDate: false,
+[2026-03-25T12:17:21.164Z]     _removedConnection: false,
+[2026-03-25T12:17:21.164Z]     _removedContLen: false,
+[2026-03-25T12:17:21.164Z]     _removedTE: false,
+[2026-03-25T12:17:21.164Z]     strictContentLength: false,
+[2026-03-25T12:17:21.164Z]     _contentLength: 129,
+[2026-03-25T12:17:21.164Z]     _hasBody: true,
+[2026-03-25T12:17:21.164Z]     _trailer: '',
+[2026-03-25T12:17:21.164Z]     finished: true,
+[2026-03-25T12:17:21.164Z]     _headerSent: true,
+[2026-03-25T12:17:21.164Z]     _closed: false,
+[2026-03-25T12:17:21.164Z]     _header: 'POST /run-tebra HTTP/1.1\r\n' +
+[2026-03-25T12:17:21.164Z]       'Accept: application/json, text/plain, */*\r\n' +
+[2026-03-25T12:17:21.164Z]       'Content-Type: application/json\r\n' +
+[2026-03-25T12:17:21.164Z]       'User-Agent: axios/1.13.4\r\n' +
+[2026-03-25T12:17:21.164Z]       'Content-Length: 129\r\n' +
+[2026-03-25T12:17:21.164Z]       'Accept-Encoding: gzip, compress, deflate, br\r\n' +
+[2026-03-25T12:17:21.164Z]       'Host: 57.154.234.15:8010\r\n' +
+[2026-03-25T12:17:21.164Z]       'Connection: keep-alive\r\n' +
+[2026-03-25T12:17:21.164Z]       '\r\n',
+[2026-03-25T12:17:21.164Z]     _keepAliveTimeout: 0,
+[2026-03-25T12:17:21.164Z]     _onPendingData: [Function: nop],
+[2026-03-25T12:17:21.164Z]     agent: Agent {
+[2026-03-25T12:17:21.164Z]       _events: [Object: null prototype],
+[2026-03-25T12:17:21.164Z]       _eventsCount: 2,
+[2026-03-25T12:17:21.164Z]       _maxListeners: undefined,
+[2026-03-25T12:17:21.164Z]       options: [Object: null prototype],
+[2026-03-25T12:17:21.164Z]       defaultPort: 80,
+[2026-03-25T12:17:21.164Z]       protocol: 'http:',
+[2026-03-25T12:17:21.164Z]       requests: [Object: null prototype] {},
+[2026-03-25T12:17:21.164Z]       sockets: [Object: null prototype],
+[2026-03-25T12:17:21.164Z]       freeSockets: [Object: null prototype] {},
+[2026-03-25T12:17:21.164Z]       keepAliveMsecs: 1000,
+[2026-03-25T12:17:21.164Z]       keepAlive: true,
+[2026-03-25T12:17:21.164Z]       maxSockets: Infinity,
+[2026-03-25T12:17:21.164Z]       maxFreeSockets: 256,
+[2026-03-25T12:17:21.164Z]       scheduling: 'lifo',
+[2026-03-25T12:17:21.164Z]       maxTotalSockets: Infinity,
+[2026-03-25T12:17:21.164Z]       totalSocketCount: 1,
+[2026-03-25T12:17:21.164Z]       agentKeepAliveTimeoutBuffer: 1000,
+[2026-03-25T12:17:21.164Z]       [Symbol(shapeMode)]: false,
+[2026-03-25T12:17:21.164Z]       [Symbol(kCapture)]: false
+[2026-03-25T12:17:21.164Z]     },
+[2026-03-25T12:17:21.164Z]     socketPath: undefined,
+[2026-03-25T12:17:21.164Z]     method: 'POST',
+[2026-03-25T12:17:21.164Z]     maxHeaderSize: undefined,
+[2026-03-25T12:17:21.164Z]     insecureHTTPParser: undefined,
+[2026-03-25T12:17:21.164Z]     joinDuplicateHeaders: undefined,
+[2026-03-25T12:17:21.164Z]     path: '/run-tebra',
+[2026-03-25T12:17:21.164Z]     _ended: false,
+[2026-03-25T12:17:21.164Z]     res: null,
+[2026-03-25T12:17:21.164Z]     aborted: false,
+[2026-03-25T12:17:21.164Z]     timeoutCb: [Function: emitRequestTimeout],
+[2026-03-25T12:17:21.164Z]     upgradeOrConnect: false,
+[2026-03-25T12:17:21.164Z]     parser: null,
+[2026-03-25T12:17:21.164Z]     maxHeadersCount: null,
+[2026-03-25T12:17:21.164Z]     reusedSocket: false,
+[2026-03-25T12:17:21.164Z]     host: '57.154.234.15',
+[2026-03-25T12:17:21.164Z]     protocol: 'http:',
+[2026-03-25T12:17:21.164Z]     _redirectable: [Circular *1],
+[2026-03-25T12:17:21.164Z]     [Symbol(shapeMode)]: false,
+[2026-03-25T12:17:21.164Z]     [Symbol(kCapture)]: false,
+[2026-03-25T12:17:21.164Z]     [Symbol(kBytesWritten)]: 0,
+[2026-03-25T12:17:21.164Z]     [Symbol(kNeedDrain)]: false,
+[2026-03-25T12:17:21.164Z]     [Symbol(corked)]: 0,
+[2026-03-25T12:17:21.164Z]     [Symbol(kChunkedBuffer)]: [],
+[2026-03-25T12:17:21.164Z]     [Symbol(kChunkedLength)]: 0,
+[2026-03-25T12:17:21.164Z]     [Symbol(kSocket)]: Socket {
+[2026-03-25T12:17:21.164Z]       connecting: false,
+[2026-03-25T12:17:21.164Z]       _hadError: true,
+[2026-03-25T12:17:21.164Z]       _parent: null,
+[2026-03-25T12:17:21.164Z]       _host: null,
+[2026-03-25T12:17:21.164Z]       _closeAfterHandlingError: false,
+[2026-03-25T12:17:21.164Z]       _events: [Object],
+[2026-03-25T12:17:21.164Z]       _readableState: [ReadableState],
+[2026-03-25T12:17:21.164Z]       _writableState: [WritableState],
+[2026-03-25T12:17:21.165Z]       allowHalfOpen: false,
+[2026-03-25T12:17:21.165Z]       _maxListeners: undefined,
+[2026-03-25T12:17:21.165Z]       _eventsCount: 8,
+[2026-03-25T12:17:21.165Z]       _sockname: null,
+[2026-03-25T12:17:21.165Z]       _pendingData: [Array],
+[2026-03-25T12:17:21.165Z]       _pendingEncoding: '',
+[2026-03-25T12:17:21.165Z]       server: null,
+[2026-03-25T12:17:21.165Z]       _server: null,
+[2026-03-25T12:17:21.165Z]       timeout: 600000,
+[2026-03-25T12:17:21.165Z]       parser: null,
+[2026-03-25T12:17:21.165Z]       _httpMessage: [Circular *2],
+[2026-03-25T12:17:21.165Z]       [Symbol(async_id_symbol)]: 92,
+[2026-03-25T12:17:21.165Z]       [Symbol(kHandle)]: null,
+[2026-03-25T12:17:21.165Z]       [Symbol(lastWriteQueueSize)]: 0,
+[2026-03-25T12:17:21.165Z]       [Symbol(timeout)]: Timeout {
+[2026-03-25T12:17:21.165Z]         _idleTimeout: -1,
+[2026-03-25T12:17:21.165Z]         _idlePrev: null,
+[2026-03-25T12:17:21.165Z]         _idleNext: null,
+[2026-03-25T12:17:21.165Z]         _idleStart: 4219,
+[2026-03-25T12:17:21.165Z]         _onTimeout: null,
+[2026-03-25T12:17:21.165Z]         _timerArgs: undefined,
+[2026-03-25T12:17:21.165Z]         _repeat: null,
+[2026-03-25T12:17:21.165Z]         _destroyed: true,
+[2026-03-25T12:17:21.165Z]         [Symbol(refed)]: false,
+[2026-03-25T12:17:21.165Z]         [Symbol(kHasPrimitive)]: false,
+[2026-03-25T12:17:21.165Z]         [Symbol(asyncId)]: 101,
+[2026-03-25T12:17:21.165Z]         [Symbol(triggerId)]: 94,
+[2026-03-25T12:17:21.165Z]         [Symbol(kAsyncContextFrame)]: undefined
+[2026-03-25T12:17:21.165Z]       },
+[2026-03-25T12:17:21.165Z]       [Symbol(kBuffer)]: null,
+[2026-03-25T12:17:21.165Z]       [Symbol(kBufferCb)]: null,
+[2026-03-25T12:17:21.165Z]       [Symbol(kBufferGen)]: null,
+[2026-03-25T12:17:21.165Z]       [Symbol(shapeMode)]: true,
+[2026-03-25T12:17:21.165Z]       [Symbol(kCapture)]: false,
+[2026-03-25T12:17:21.165Z]       [Symbol(kSetNoDelay)]: true,
+[2026-03-25T12:17:21.165Z]       [Symbol(kSetKeepAlive)]: true,
+[2026-03-25T12:17:21.165Z]       [Symbol(kSetKeepAliveInitialDelay)]: 60,
+[2026-03-25T12:17:21.165Z]       [Symbol(kBytesRead)]: 0,
+[2026-03-25T12:17:21.165Z]       [Symbol(kBytesWritten)]: 0
+[2026-03-25T12:17:21.165Z]     },
+[2026-03-25T12:17:21.165Z]     [Symbol(kOutHeaders)]: [Object: null prototype] {
+[2026-03-25T12:17:21.165Z]       accept: [Array],
+[2026-03-25T12:17:21.165Z]       'content-type': [Array],
+[2026-03-25T12:17:21.165Z]       'user-agent': [Array],
+[2026-03-25T12:17:21.165Z]       'content-length': [Array],
+[2026-03-25T12:17:21.165Z]       'accept-encoding': [Array],
+[2026-03-25T12:17:21.165Z]       host: [Array]
+[2026-03-25T12:17:21.165Z]     },
+[2026-03-25T12:17:21.165Z]     [Symbol(errored)]: null,
+[2026-03-25T12:17:21.165Z]     [Symbol(kHighWaterMark)]: 65536,
+[2026-03-25T12:17:21.165Z]     [Symbol(kRejectNonStandardBodyWrites)]: false,
+[2026-03-25T12:17:21.165Z]     [Symbol(kUniqueHeaders)]: null
+[2026-03-25T12:17:21.165Z]   },
+[2026-03-25T12:17:21.165Z]   _currentUrl: 'http://57.154.234.15:8010/run-tebra',
+[2026-03-25T12:17:21.165Z]   _timeout: null,
+[2026-03-25T12:17:21.165Z]   [Symbol(shapeMode)]: true,
+[2026-03-25T12:17:21.165Z]   [Symbol(kCapture)]: false
+[2026-03-25T12:17:21.165Z] }
+[2026-03-25T12:17:21.165Z] 💾 Logging complete, re-throwing error for Azure Functions retry mechanism
+[2026-03-25T12:17:21.196Z] Executed 'Functions.DailyPdfLoaderJob' (Failed, Id=4ba38a40-cf00-4298-846b-834011b27e92, Duration=75085ms)
+[2026-03-25T12:17:21.196Z] System.Private.CoreLib: Exception while executing function: Functions.DailyPdfLoaderJob. System.Private.CoreLib: Result: Failure
+[2026-03-25T12:17:21.196Z] Type: 
+[2026-03-25T12:17:21.196Z] Exception: connect ETIMEDOUT 57.154.234.15:8010
+[2026-03-25T12:17:21.196Z] Stack: Error: connect ETIMEDOUT 57.154.234.15:8010
+[2026-03-25T12:17:21.196Z]     at AxiosError.from (/Users/srinivasbodduru/834-sftp-pdf-processor/node_modules/axios/dist/node/axios.cjs:842:28)
+[2026-03-25T12:17:21.196Z]     at RedirectableRequest.handleRequestError (/Users/srinivasbodduru/834-sftp-pdf-processor/node_modules/axios/dist/node/axios.cjs:3498:27)
+[2026-03-25T12:17:21.196Z]     at RedirectableRequest.emit (node:events:531:35)
+[2026-03-25T12:17:21.196Z]     at eventHandlers.<computed> (/Users/srinivasbodduru/834-sftp-pdf-processor/node_modules/follow-redirects/index.js:49:24)
+[2026-03-25T12:17:21.196Z]     at ClientRequest.emit (node:events:519:28)
+[2026-03-25T12:17:21.196Z]     at emitErrorEvent (node:_http_client:107:11)
+[2026-03-25T12:17:21.196Z]     at Socket.socketErrorListener (node:_http_client:574:5)
+[2026-03-25T12:17:21.196Z]     at Socket.emit (node:events:519:28)
+[2026-03-25T12:17:21.196Z]     at emitErrorNT (node:internal/streams/destroy:170:8)
+[2026-03-25T12:17:21.196Z]     at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+[2026-03-25T12:17:21.196Z]     at Axios.request (/Users/srinivasbodduru/834-sftp-pdf-processor/node_modules/axios/dist/node/axios.cjs:4713:41)
+[2026-03-25T12:17:21.196Z]     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2026-03-25T12:17:21.196Z]     at async handler (/Users/srinivasbodduru/834-sftp-pdf-processor/src/functions/DailyPdfLoaderJob.js:48:24).
+[2026-03-25T12:17:43.487Z] Language Worker Process exited. Pid=98443.
+[2026-03-25T12:17:43.487Z] node exited with code 130 (0x82). .
+[2026-03-25T12:17:43.687Z] Worker process started and initialized.
