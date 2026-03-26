@@ -29,7 +29,7 @@ const CONFIG = {
 //  * 3. Inserts metadata record to database (atomic transaction)
 //  * 4. Deletes from SFTP (non-blocking cleanup)
 //  */
-app.timer("outboundScheduler", {
+app.timer("outboundFileProcessor", {
   schedule: "0 */30 * * * *", // Every 30 minutes at :00 and :30
   runOnStartup: true,
   handler: async (myTimer, context) => {
