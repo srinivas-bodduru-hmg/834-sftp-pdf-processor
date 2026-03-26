@@ -30,7 +30,7 @@ const CONFIG = {
 //  * 4. Deletes from SFTP (non-blocking cleanup)
 //  */
 app.timer("outboundScheduler", {
-  schedule: "0 */30 * * * *", // Every 30 minutes at :00 and :30
+  schedule: "0 0 * * * *", // Every 1 hour at :00
   runOnStartup: true,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
