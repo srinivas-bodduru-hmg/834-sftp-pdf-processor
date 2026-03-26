@@ -264,8 +264,8 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     log(`🔄 Checking retry status for appointment ${rpa_appointment_id}...`);
 
     retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
-    log(`✅ Retry status:`, retryStatus);
-    const apiData = await callMedicalApi(log, buffer, fileName, retryStatus);
+    log(` 🔄 Retry status:`, retryStatus);
+    const apiData = await callMedicalApi(log, buffer, fileName, session);
 
     const result = await sendToBackend(
       log,
@@ -398,8 +398,6 @@ async function checkRetryStatus(log, rpa_appointment_id, session) {
     timeout: 600000,
   });
 
-  log("retry status=", res?.data?.result?.data);
-
   if (res?.data?.result?.data?.retry_count > 2) {
     const err = new Error("Max retries exhausted");
     throw err;
@@ -432,18 +430,30 @@ async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
 }
 /* -------------------------------------------------------------------------- */
 
-async function callMedicalApi(log, buffer, fileName) {
-  const form = new FormData();
+async function callMedicalApi(log, buffer, fileName, session) {
+  const fileContent = buffer.toString("base64");
 
-  form.append("files", buffer, fileName);
+  const payload = {
+    fileName,
+    fileContent,
+    fileType: "application/pdf",
+  };
 
-  const res = await axios.post(CONFIG.MEDICAL_API_URL, form, {
-    headers: {
-      ...form.getHeaders(),
-      "x-auth-token": CONFIG.MEDICAL_API_TOKEN,
+  const res = await axios.post(
+    `${CONFIG.BACKEND_URL}/api/trpc/medicalExtraction.uploadMedicalFile`,
+    payload,
+    {
+      headers: {
+        "Content-Type": "application/json",
+        Cookie: session.cookieHeader,
+      },
+      timeout: 600000,
     },
-    timeout: 600000,
-  });
+  );
+
+  log(`   Medical API response received for ${fileName}`);
+  log(`   Status Code: ${res.status}`);
+  log(`   Response Data:`, JSON.stringify(res.data, null, 2));
 
   if (!res.data) {
     throw new Error("Empty medical API response");

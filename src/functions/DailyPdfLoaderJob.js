@@ -40,6 +40,7 @@ app.timer("DailyPdfLoaderJob", {
         practice_name: "Germantown",
         entity: "270681372",
         sub_entity: "270681372001",
+        ehr_name: "Tebra",
       };
       log("   Payload created:", JSON.stringify(payload, null, 2));
 
