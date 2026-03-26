@@ -29,7 +29,7 @@ const CONFIG = {
 //  * 3. Handles any errors and logs the process
 //  */
 app.timer("postingAgentScheduler", {
-  schedule: "0 */30 * * * *", // Every 30 minutes at :00 and :30
+  schedule: "0 0 */6 * * *", // Every 6 hours (00:00, 06:00, 12:00, 18:00)
   runOnStartup: true,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
