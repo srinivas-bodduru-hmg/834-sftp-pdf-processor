@@ -138,10 +138,11 @@ async function login(log) {
 async function getContainer(log) {
   log("📦 Connecting to Blob Storage...");
 
-  const client = new BlobServiceClient(
-    CONFIG.ACCOUNT_URL,
-    new DefaultAzureCredential(),
-  );
+  const connectionString = process.env.AzureWebJobsStorage;
+  
+  const client = connectionString
+    ? BlobServiceClient.fromConnectionString(connectionString)
+    : new BlobServiceClient(CONFIG.ACCOUNT_URL, new DefaultAzureCredential());
 
   const container = client.getContainerClient(CONFIG.CONTAINER);
 
@@ -459,7 +460,15 @@ async function callMedicalApi(log, buffer, fileName, session) {
     throw new Error("Empty medical API response");
   }
 
-  return res.data;
+  // Extract nested data structure from TRPC response
+  const extractedData = res.data?.result?.data || res.data;
+  
+  // If claimError is present, the upstream system failed - throw an error
+  if (extractedData?.claimError) {
+    throw new Error(`Claim creation failed: ${extractedData.claimError}`);
+  }
+
+  return extractedData;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -516,8 +525,6 @@ function validateConfig() {
   const required = [
     "BACKEND_EMAIL",
     "BACKEND_PASSWORD",
-    "MEDICAL_API_URL",
-    "MEDICAL_API_TOKEN",
     "ACCOUNT_URL",
     "BACKEND_URL",
   ];
