@@ -30,7 +30,9 @@ const CONFIG = {
 //  * 4. Deletes from SFTP (non-blocking cleanup)
 //  */
 app.timer("outboundFileProcessor", {
-  schedule: "0 30 * * * *", // Every 1 hour at :30 (00:30, 01:30, 02:30, etc.)
+  // Runs every hour at :30 UTC (6:00 AM onwards IST - India Standard Time)
+  // Cron format: second minute hour day month dayOfWeek
+  schedule: "0 30 * * * *", // Every 1 hour at :30 UTC
   runOnStartup: true,
   handler: async (myTimer, context) => {
     const startTime = Date.now();

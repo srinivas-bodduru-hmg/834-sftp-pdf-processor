@@ -5,7 +5,9 @@ const axios = require("axios");
  * 7 AM Job - Triggers Scraping API
  */
 app.timer("DailyPdfLoaderJob", {
-  schedule: "0 0 7 * * *", // 7 AM (UTC by default)
+  // Runs daily at 7:00 AM UTC (12:30 PM IST - India Standard Time)
+  // Cron format: second minute hour day month dayOfWeek
+  schedule: "0 0 7 * * *", // 7 AM UTC
   runOnStartup: true,
 
   handler: async (timer, context) => {

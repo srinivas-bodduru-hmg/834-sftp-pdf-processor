@@ -29,7 +29,9 @@ const CONFIG = {
 //  * 3. Handles any errors and logs the process
 //  */
 app.timer("postingAgentScheduler", {
-  schedule: "0 0 */6 * * *", // Every 6 hours (00:00, 06:00, 12:00, 18:00)
+  // Runs every 6 hours at UTC: 00:00, 06:00, 12:00, 18:00 (5:30 AM, 11:30 AM, 5:30 PM, 11:30 PM IST)
+  // Cron format: second minute hour day month dayOfWeek
+  schedule: "0 0 */6 * * *", // Every 6 hours UTC
   runOnStartup: true,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
