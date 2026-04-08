@@ -3,10 +3,10 @@ const { BlobServiceClient } = require("@azure/storage-blob");
 const { DefaultAzureCredential } = require("@azure/identity");
 const AdmZip = require("adm-zip");
 const axios = require("axios");
-const FormData = require("form-data");
 const jwt = require("jsonwebtoken");
 const util = require("util");
 const { performance } = require("perf_hooks");
+require("process");
 
 /* -------------------------------------------------------------------------- */
 /*                                CONFIG                                      */
@@ -60,7 +60,6 @@ app.timer("DailyPdfProcessorJob", {
         failed: 0,
       };
 
-      const folderPrefix = "The PreOP Center/";
 
       for await (const blob of container.listBlobsFlat()) {
         if (!blob.name.endsWith(".zip")) continue;
@@ -136,15 +135,14 @@ async function login(log) {
 /* -------------------------------------------------------------------------- */
 
 async function getContainer(log) {
-  log("📦 Connecting to Blob Storage...");
-
+  log(`📁 Connecting to blob storage ${CONFIG.CONTAINER}`);
   const client = CONFIG.STORAGE_CONNECTION_STRING
     ? BlobServiceClient.fromConnectionString(CONFIG.STORAGE_CONNECTION_STRING)
     : new BlobServiceClient(CONFIG.ACCOUNT_URL, new DefaultAzureCredential());
 
   const container = client.getContainerClient(CONFIG.CONTAINER);
 
-  log(`✅ Connected to ${CONFIG.CONTAINER}`);
+  log(`✅ Connected to ${container?.containerName}`);
 
   return container;
 }
@@ -189,9 +187,9 @@ async function processZipBlob(container, blobName, session, stats, log) {
 
     log(`📦 Starting batch ${start}-${end}`);
 
-    for (const pdf of batch) {
-      log(`   ➡️ ${pdf.entryName}`);
-    }
+    // for (const pdf of batch) {
+    //   log(`   ➡️ ${pdf.entryName}`);
+    // }
 
     const results = await Promise.allSettled(
       batch.map((pdf) =>
@@ -252,6 +250,14 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
   const rpa_appointment_id = rpa_appointment_id_match?.[1];
   let retryStatus;
   try {
+    retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
+  } catch (error) {
+    log(
+      `⚠️  Failed to fetch retry count for appointment ${rpa_appointment_id}: ${error.message}`,
+    );
+  }
+
+  try {
     const buffer = entry.getData();
 
     if (!buffer?.length) {
@@ -260,10 +266,6 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
 
     await checkDuplicate(log, fileName, session);
 
-    log(`🔄 Checking retry status for appointment ${rpa_appointment_id}...`);
-
-    retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
-    log(` 🔄 Retry status:`, retryStatus);
     const apiData = await callMedicalApi(log, buffer, fileName, session);
 
     const result = await sendToBackend(
@@ -274,7 +276,7 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
       session.userId,
     );
 
-    log(`✅ ${fileName} → ${result.claimId}`);
+    log(`✅ File processed and claim created: ${fileName} → ${result.claimId}`);
 
     return {
       success: true,
@@ -304,37 +306,31 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
       errorDetails.internal = err.toString();
     }
 
-    log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
+    // log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
 
     // Attempt to update retry count on backend
-    try {
-      if (!retryStatus?.retry_count) {
-        return;
-      }
-      log(`📤 Updating retry count for appointment ${rpa_appointment_id}`);
-      await updateRetryCount(
-        log,
-        rpa_appointment_id,
-        retryStatus.retry_count,
-        session,
-      );
-      log(`✅ Retry count updated successfully`);
-    } catch (retryErr) {
-      log(`⚠️  Failed to update retry count: ${retryErr.message}`);
+    if (retryStatus?.retryCount) {
+      try {
+        await updateRetryCount(
+          log,
+          rpa_appointment_id,
+          retryStatus.retry_count,
+          session,
+        );
+        log(
+          `✅ Retry count for appointment ${rpa_appointment_id} updated successfully`,
+        );
+      } catch (retryErr) {
+        log(
+          `⚠️  Failed to update retry count for appointment ${rpa_appointment_id}: ${retryErr.message}`,
+        );
 
-      // Add retry update error to error details
-      errorDetails.retryUpdateError = {
-        message: retryErr.message,
-      };
-
-      if (retryErr.response) {
-        errorDetails.retryUpdateError.status = retryErr.response.status;
-        errorDetails.retryUpdateError.statusText = retryErr.response.statusText;
-        errorDetails.retryUpdateError.data = retryErr.response.data;
-      } else if (retryErr.request) {
-        errorDetails.retryUpdateError.request = "No response received";
-      } else {
-        errorDetails.retryUpdateError.internal = retryErr.toString();
+        errorDetails.retryUpdateError = retryErr.response
+          ? {
+              status: retryErr.response.status,
+              message: retryErr.response.data?.error || retryErr.message,
+            }
+          : { message: retryErr.message };
       }
     }
 
@@ -408,13 +404,11 @@ async function checkRetryStatus(log, rpa_appointment_id, session) {
 /* -------------------------------------------------------------------------- */
 
 async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
-  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalRetry.updateRetryCount`;
+  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.updateRetryCount`;
 
   const payload = {
-    input: {
-      rpa_appointment_id: rpaAppointmentId,
-      retry_count: retryCount || 1,
-    },
+    rpa_appointment_id: rpaAppointmentId,
+    retry_count: (retryCount || 1) + 1,
   };
 
   const res = await axios.post(url, payload, {
@@ -450,9 +444,16 @@ async function callMedicalApi(log, buffer, fileName, session) {
     },
   );
 
-  log(`   Medical API response received for ${fileName}`);
-  log(`   Status Code: ${res.status}`);
-  log(`   Response Data:`, JSON.stringify(res.data, null, 2));
+  if (res.status === 200) {
+    log(`   ✅ Medical extraction API returned 200 OK for ${fileName}`);
+  } else {
+    log(`   ⚠️ Medical extraction API returned status ${res.status}:`);
+
+    log(
+      `   📋 Medical extraction API response received for ${fileName}:`,
+      JSON.stringify(res.data, null, 2),
+    );
+  }
 
   if (!res.data) {
     throw new Error("Empty medical API response");
@@ -472,25 +473,49 @@ async function callMedicalApi(log, buffer, fileName, session) {
 /* -------------------------------------------------------------------------- */
 
 async function sendToBackend(log, apiResponse, buffer, fileName, userId) {
-  const payload = {
-    apiResponse,
-    fileName,
-    fileType: "pdf",
-    fileBuffer: buffer.toString("base64"),
-    userId,
-  };
+  try {
+    const payload = {
+      apiResponse: [apiResponse], // Wrap in array - API expects array format
+      fileName,
+      fileType: "pdf",
+      fileBuffer: buffer.toString("base64"),
+      userId,
+    };
 
-  const res = await axios.post(
-    `${CONFIG.BACKEND_URL}/api/medical-extraction/process`,
-    payload,
-    { timeout: 600000 },
-  );
+    log(`   📤 Sending to backend for ${fileName}...`);
 
-  if (!res.data?.success) {
-    throw new Error("Backend rejected request");
+    const res = await axios.post(
+      `${CONFIG.BACKEND_URL}/api/medical-extraction/process`,
+      payload,
+      { timeout: 600000 },
+    );
+
+    if (res.status === 200) {
+      log(`   ✅ Backend processing returned 200 OK for ${fileName}`);
+    } else {
+      log(`   ⚠️ Backend returned status ${res.status}:`);
+      log(`   📋 Response:`, JSON.stringify(res.data, null, 2));
+    }
+
+    if (!res.data?.success) {
+      throw new Error(
+        `Backend rejected request: ${res.data?.error || "Unknown error"}`,
+      );
+    }
+
+    return res.data.data;
+  } catch (err) {
+    if (err.response) {
+      log(`   ❌ Backend API error - Status: ${err.response.status}`);
+      log(`   📋 Error details:`, JSON.stringify(err.response.data, null, 2));
+    } else if (err.request) {
+      log(`   ❌ Backend API - No response received`);
+      log(`   Request was made but no response received`);
+    } else {
+      log(`   ❌ Backend API - Error: ${err.message}`);
+    }
+    throw err;
   }
-
-  return res.data.data;
 }
 
 /* -------------------------------------------------------------------------- */
