@@ -23,6 +23,7 @@ const CONFIG = {
   MEDICAL_API_TOKEN: process.env.MEDICAL_EXTRACTION_API_TOKEN,
 
   ACCOUNT_URL: process.env.ACCOUNT_URL,
+  STORAGE_CONNECTION_STRING: process.env.AzureWebJobsStorage,
 
   CONTAINER: "834labs-sftp",
 
@@ -138,10 +139,8 @@ async function login(log) {
 async function getContainer(log) {
   log("📦 Connecting to Blob Storage...");
 
-  const connectionString = process.env.AzureWebJobsStorage;
-  
-  const client = connectionString
-    ? BlobServiceClient.fromConnectionString(connectionString)
+  const client = CONFIG.STORAGE_CONNECTION_STRING
+    ? BlobServiceClient.fromConnectionString(CONFIG.STORAGE_CONNECTION_STRING)
     : new BlobServiceClient(CONFIG.ACCOUNT_URL, new DefaultAzureCredential());
 
   const container = client.getContainerClient(CONFIG.CONTAINER);
@@ -462,7 +461,7 @@ async function callMedicalApi(log, buffer, fileName, session) {
 
   // Extract nested data structure from TRPC response
   const extractedData = res.data?.result?.data || res.data;
-  
+
   // If claimError is present, the upstream system failed - throw an error
   if (extractedData?.claimError) {
     throw new Error(`Claim creation failed: ${extractedData.claimError}`);
