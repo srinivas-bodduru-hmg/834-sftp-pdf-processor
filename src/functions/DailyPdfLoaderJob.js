@@ -20,14 +20,14 @@ app.timer("DailyPdfLoaderJob", {
     log("🚀 DailyPdfLoaderJob (7AM) Started");
 
     try {
-      // Step 1: Calculate 7 day window ending today
+      // Step 1: Calculate 7 day inclusive window ending today
       log("📅 Step 1: Calculating date range");
       const today = new Date();
       log(`   Current date: ${today.toISOString()}`);
 
       const startDate = new Date(today);
-      startDate.setDate(today.getDate() - 7);
-      log(`   Start date (7 days before end date): ${startDate.toISOString()}`);
+      startDate.setDate(today.getDate() - 6);
+      log(`   Start date (6 days before end date): ${startDate.toISOString()}`);
 
       const format = (d) => d.toISOString().split("T")[0];
       const formattedStartDate = format(startDate);
