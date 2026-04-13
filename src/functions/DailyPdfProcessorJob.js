@@ -60,7 +60,6 @@ app.timer("DailyPdfProcessorJob", {
         failed: 0,
       };
 
-
       for await (const blob of container.listBlobsFlat()) {
         if (!blob.name.endsWith(".zip")) continue;
         await processZipBlob(container, blob.name, session, stats, log);
@@ -268,19 +267,14 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
 
     const apiData = await callMedicalApi(log, buffer, fileName, session);
 
-    const result = await sendToBackend(
-      log,
-      apiData,
-      buffer,
-      fileName,
-      session.userId,
-    );
 
-    log(`✅ File processed and claim created: ${fileName} → ${result.claimId}`);
+    log(
+      `✅ File processed and claim created: ${fileName} → ${apiData?.claimId} -> ${apiData.serviceFacilityName}`,
+    );
 
     return {
       success: true,
-      claimId: result.claimId,
+      claimId: apiData?.claimId,
     };
   } catch (err) {
     let errorDetails = {
@@ -306,10 +300,10 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
       errorDetails.internal = err.toString();
     }
 
-    // log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
+    log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
 
     // Attempt to update retry count on backend
-    if (retryStatus?.retryCount) {
+    if (retryStatus?.retry_count !== undefined) {
       try {
         await updateRetryCount(
           log,
