@@ -241,9 +241,15 @@ async function processZipBlob(container, blobName, session, stats, log) {
 /* -------------------------------------------------------------------------- */
 
 async function processBlobPrefix(container, prefix, session, stats, log) {
+  log(`📂 Scanning folder: ${prefix || "/"}`);
+
   for await (const item of container.listBlobsByHierarchy("/", { prefix })) {
     if (item.kind === "prefix") {
-      if (isRestrictedBlob(item.name)) continue;
+      if (isRestrictedBlob(item.name, log)) {
+        log(`⏭️ Skipping restricted folder: ${item.name}`);
+        continue;
+      }
+
       await processBlobPrefix(container, item.name, session, stats, log);
       continue;
     }
@@ -539,9 +545,9 @@ async function downloadBlob(log, container, name) {
 
 /* -------------------------------------------------------------------------- */
 
-function isRestrictedBlob(blobName) {
+function isRestrictedBlob(blobName, log) {
   const pathParts = blobName.toLowerCase().split("/").filter(Boolean);
-
+  log(`   Checking if blob is in restricted folder: ${blobName}, ${pathParts}`);
   return pathParts.some((part) => CONFIG.RESTRICTED_FOLDERS.includes(part));
 }
 
