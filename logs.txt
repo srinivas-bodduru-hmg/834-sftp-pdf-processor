@@ -6,84 +6,16 @@ Azure Functions Core Tools
 Core Tools Version:       4.6.0+ab90faafcab539d63cd3d0ce5faf1bca4395fccc (64-bit)
 Function Runtime Version: 4.1045.200.25556
 
-[2026-03-25T13:57:52.801Z] Worker process started and initialized.
+[2026-04-13T08:02:03.891Z] Worker process started and initialized.
 
 Functions:
 
-	DailyPdfLoaderJob: timerTrigger
+	DailyPdfProcessorJob: timerTrigger
 
 For detailed output, run func with --verbose flag.
-[2026-03-25T13:57:54.379Z] Executing 'Functions.DailyPdfLoaderJob' (Reason='Timer fired at 2026-03-25T19:27:54.3684060+05:30', Id=0629140a-3d19-4ec2-850c-9e367f6521ed)
-[2026-03-25T13:57:54.379Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup, ScheduleStatus: {"Last":"2026-03-25T19:25:46.244333+05:30","Next":"2026-03-26T07:00:00+05:30","LastUpdated":"2026-03-25T19:25:46.244333+05:30"}
-[2026-03-25T13:57:54.405Z] 🚀 DailyPdfLoaderJob (7AM) Started
-[2026-03-25T13:57:54.405Z] 📅 Step 1: Calculating date range
-[2026-03-25T13:57:54.405Z]    Current date: 2026-03-25T13:57:54.395Z
-[2026-03-25T13:57:54.405Z]    Yesterday date: 2026-03-24T13:57:54.395Z
-[2026-03-25T13:57:54.405Z]    Formatted range: 2026-03-24 to 2026-03-25
-[2026-03-25T13:57:54.405Z] 📋 Step 2: Creating payload
-[2026-03-25T13:57:54.405Z]    Payload created: {
-[2026-03-25T13:57:54.405Z]   "start_date": "2026-03-24",
-[2026-03-25T13:57:54.405Z]   "end_date": "2026-03-25",
-[2026-03-25T13:57:54.405Z]   "practice_name": "Germantown",
-[2026-03-25T13:57:54.405Z]   "entity": "270681372",
-[2026-03-25T13:57:54.405Z]   "sub_entity": "270681372001",
-[2026-03-25T13:57:54.405Z]   "ehr_name": "Tebra"
-[2026-03-25T13:57:54.405Z] }
-[2026-03-25T13:57:54.405Z] 📤 Step 3: Calling Tebra API endpoint
-[2026-03-25T13:57:54.405Z]    URL: http://57.154.234.15:8010/run-tebra
-[2026-03-25T13:57:54.405Z]    Sending request with 10 minute timeout...
-[2026-03-25T13:57:55.097Z] ✅ Step 4: API call successful
-[2026-03-25T13:57:55.097Z]    Status Code: 200
-[2026-03-25T13:57:55.097Z]    Response Data: {
-[2026-03-25T13:57:55.097Z]   "status": "started",
-[2026-03-25T13:57:55.097Z]   "job_id": "d534a9b7-7452-4327-8836-7414682ff98f",
-[2026-03-25T13:57:55.097Z]   "ehr_name": "Tebra",
-[2026-03-25T13:57:55.097Z]   "message": "EHR RPA job started"
-[2026-03-25T13:57:55.097Z] }
-[2026-03-25T13:57:55.097Z] 🎉 DailyPdfLoaderJob completed successfully
-[2026-03-25T13:57:55.106Z] Executed 'Functions.DailyPdfLoaderJob' (Succeeded, Id=0629140a-3d19-4ec2-850c-9e367f6521ed, Duration=736ms)
-[2026-03-25T13:57:58.761Z] Host lock lease acquired by instance ID '000000000000000000000000F178F181'.
-[2026-03-25T14:21:58.605Z] Singleton lock renewal failed for blob 'srinivassmacbookair-256764243/host' with error code 403: AuthorizationFailure. The last successful renewal completed at 2026-03-25T14:05:04.251Z (1014352 milliseconds ago) with a duration of 292 milliseconds. The lease period was 15000 milliseconds.
-[2026-03-25T14:22:07.340Z] Singleton lock renewal failed for blob 'srinivassmacbookair-256764243/Host.Functions.DailyPdfLoaderJob.Listener' with error code 403: AuthorizationFailure. The last successful renewal completed at 2026-03-25T14:05:03.33Z (1024009 milliseconds ago) with a duration of 281 milliseconds. The lease period was 15000 milliseconds.
-[2026-03-25T14:22:07.354Z] An unhandled exception has occurred. Host is shutting down.
-[2026-03-25T14:22:07.354Z] Azure.Storage.Blobs: This request is not authorized to perform this operation.
-[2026-03-25T14:22:07.354Z] RequestId:11e899fe-c01e-0042-4f62-bcb20d000000
-[2026-03-25T14:22:07.354Z] Time:2026-03-25T14:22:07.2133910Z
-[2026-03-25T14:22:07.354Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-25T14:22:07.354Z] ErrorCode: AuthorizationFailure
-[2026-03-25T14:22:07.354Z] 
-[2026-03-25T14:22:07.354Z] Content:
-[2026-03-25T14:22:07.354Z] <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationFailure</Code><Message>This request is not authorized to perform this operation.
-[2026-03-25T14:22:07.354Z] RequestId:11e899fe-c01e-0042-4f62-bcb20d000000
-[2026-03-25T14:22:07.354Z] Time:2026-03-25T14:22:07.2133910Z</Message></Error>
-[2026-03-25T14:22:07.354Z] 
-[2026-03-25T14:22:07.354Z] Headers:
-[2026-03-25T14:22:07.354Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-25T14:22:07.354Z] x-ms-request-id: 11e899fe-c01e-0042-4f62-bcb20d000000
-[2026-03-25T14:22:07.354Z] x-ms-client-request-id: faba65c6-ea70-4f26-9b35-668e48674053
-[2026-03-25T14:22:07.354Z] x-ms-error-code: AuthorizationFailure
-[2026-03-25T14:22:07.354Z] Date: Wed, 25 Mar 2026 14:22:06 GMT
-[2026-03-25T14:22:07.354Z] Content-Length: 246
-[2026-03-25T14:22:07.354Z] Content-Type: application/xml
-[2026-03-25T14:22:07.354Z] .
-[2026-03-25T14:22:07.665Z] Failed to stop host instance '5ff2fa4e-0904-46bf-95af-f41b12512658'.
-[2026-03-25T14:22:07.665Z] Azure.Storage.Blobs: This request is not authorized to perform this operation.
-[2026-03-25T14:22:07.665Z] RequestId:11e89b14-c01e-0042-4b62-bcb20d000000
-[2026-03-25T14:22:07.665Z] Time:2026-03-25T14:22:07.5408647Z
-[2026-03-25T14:22:07.665Z] Status: 403 (This request is not authorized to perform this operation.)
-[2026-03-25T14:22:07.665Z] ErrorCode: AuthorizationFailure
-[2026-03-25T14:22:07.665Z] 
-[2026-03-25T14:22:07.665Z] Content:
-[2026-03-25T14:22:07.665Z] <?xml version="1.0" encoding="utf-8"?><Error><Code>AuthorizationFailure</Code><Message>This request is not authorized to perform this operation.
-[2026-03-25T14:22:07.665Z] RequestId:11e89b14-c01e-0042-4b62-bcb20d000000
-[2026-03-25T14:22:07.665Z] Time:2026-03-25T14:22:07.5408647Z</Message></Error>
-[2026-03-25T14:22:07.665Z] 
-[2026-03-25T14:22:07.665Z] Headers:
-[2026-03-25T14:22:07.665Z] Server: Microsoft-HTTPAPI/2.0
-[2026-03-25T14:22:07.665Z] x-ms-request-id: 11e89b14-c01e-0042-4b62-bcb20d000000
-[2026-03-25T14:22:07.665Z] x-ms-client-request-id: a5df8c2f-9646-48ad-9c03-9780624ac9f9
-[2026-03-25T14:22:07.665Z] x-ms-error-code: AuthorizationFailure
-[2026-03-25T14:22:07.665Z] Date: Wed, 25 Mar 2026 14:22:06 GMT
-[2026-03-25T14:22:07.665Z] Content-Length: 246
-[2026-03-25T14:22:07.665Z] Content-Type: application/xml
-[2026-03-25T14:22:07.665Z] .
+[2026-04-13T08:02:04.750Z] Language Worker Process exited. Pid=12206.
+[2026-04-13T08:02:04.750Z] node exited with code 130 (0x82). .
+[2026-04-13T08:02:04.832Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
+[2026-04-13T08:02:04.832Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Core: The operation was canceled.
+[2026-04-13T08:02:04.980Z] Worker process started and initialized.
+A task was canceled.

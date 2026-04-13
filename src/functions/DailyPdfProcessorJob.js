@@ -24,6 +24,8 @@ const CONFIG = {
 
   CONTAINER: "834labs-sftp",
 
+  RESTRICTED_FOLDERS: ["archived", "processed", "deleted"],
+
   BATCH_SIZE: 3,
 };
 
@@ -60,10 +62,7 @@ app.timer("DailyPdfProcessorJob", {
         failed: 0,
       };
 
-      for await (const blob of container.listBlobsFlat()) {
-        if (!blob.name.endsWith(".zip")) continue;
-        await processZipBlob(container, blob.name, session, stats, log);
-      }
+      await processBlobPrefix(container, "", session, stats, log);
 
       printSummary(stats, log);
     } catch (err) {
@@ -240,6 +239,21 @@ async function processZipBlob(container, blobName, session, stats, log) {
 }
 
 /* -------------------------------------------------------------------------- */
+
+async function processBlobPrefix(container, prefix, session, stats, log) {
+  for await (const item of container.listBlobsByHierarchy("/", { prefix })) {
+    if (item.kind === "prefix") {
+      if (isRestrictedBlob(item.name)) continue;
+      await processBlobPrefix(container, item.name, session, stats, log);
+      continue;
+    }
+
+    if (!item.name.endsWith(".zip")) continue;
+    await processZipBlob(container, item.name, session, stats, log);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
 /*                              PDF PROCESS                                   */
 /* -------------------------------------------------------------------------- */
 
@@ -266,7 +280,6 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     await checkDuplicate(log, fileName, session);
 
     const apiData = await callMedicalApi(log, buffer, fileName, session);
-
 
     log(
       `✅ File processed and claim created: ${fileName} → ${apiData?.claimId} -> ${apiData.serviceFacilityName}`,
@@ -522,6 +535,14 @@ async function downloadBlob(log, container, name) {
   const res = await client.download();
 
   return streamToBuffer(res.readableStreamBody);
+}
+
+/* -------------------------------------------------------------------------- */
+
+function isRestrictedBlob(blobName) {
+  const pathParts = blobName.toLowerCase().split("/").filter(Boolean);
+
+  return pathParts.some((part) => CONFIG.RESTRICTED_FOLDERS.includes(part));
 }
 
 /* -------------------------------------------------------------------------- */

@@ -39,7 +39,7 @@ app.timer("DailyPdfLoaderJob", {
       const payload = {
         start_date: formattedYesterday,
         end_date: formattedToday,
-        practice_name: "Germantown",
+        practice_name: "PreOp Memphis",
         entity: "270681372",
         sub_entity: "270681372001",
         ehr_name: "Tebra",
