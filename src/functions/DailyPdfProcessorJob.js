@@ -244,6 +244,10 @@ async function processZipBlob(container, blobName, session, stats, log) {
   log(
     `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Exhausted: ${zipStats.exhausted}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
   );
+
+  if (zipStats.processed + zipStats.exhausted === pdfs.length) {
+    await moveZipToProcessed(container, blobName, log);
+  }
 }
 
 /* -------------------------------------------------------------------------- */
@@ -549,9 +553,30 @@ async function downloadBlob(log, container, name) {
 
 /* -------------------------------------------------------------------------- */
 
+async function moveZipToProcessed(container, blobName, log) {
+  const sourceClient = container.getBlobClient(blobName);
+  const lastSlashIndex = blobName.lastIndexOf("/");
+  const folderPath = lastSlashIndex >= 0 ? blobName.slice(0, lastSlashIndex) : "";
+  const fileName = lastSlashIndex >= 0 ? blobName.slice(lastSlashIndex + 1) : blobName;
+  const destinationBlobName = folderPath
+    ? `${folderPath}/processed/${fileName}`
+    : `processed/${fileName}`;
+  const destinationClient = container.getBlobClient(destinationBlobName);
+
+  log(`📦 Moving ZIP to processed folder: ${blobName} -> ${destinationBlobName}`);
+
+  const copyPoller = await destinationClient.beginCopyFromURL(sourceClient.url);
+  await copyPoller.pollUntilDone();
+  await sourceClient.delete();
+
+  log(`✅ Moved ZIP to processed folder: ${destinationBlobName}`);
+}
+
+/* -------------------------------------------------------------------------- */
+
 function isRestrictedBlob(blobName, log) {
   const pathParts = blobName.toLowerCase().split("/").filter(Boolean);
-  log(`   Checking if blob is in restricted folder: ${blobName}, ${pathParts}`);
+  // log(`   Checking if blob is in restricted folder: ${blobName}, ${pathParts}`);
   return pathParts.some((part) => CONFIG.RESTRICTED_FOLDERS.includes(part));
 }
 
