@@ -64,6 +64,8 @@ app.timer("DailyPdfProcessorJob", {
         failed: 0,
       };
 
+      // await restoreZipsFromProcessedFolder(container, log);
+
       await processBlobPrefix(container, "", session, stats, log);
 
       printSummary(stats, log);
@@ -245,7 +247,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
     `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Exhausted: ${zipStats.exhausted}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
   );
 
-  if (zipStats.processed + zipStats.exhausted === pdfs.length) {
+  if (zipStats.processed + zipStats.exhausted + zipStats.skipped === pdfs.length) {
     log(
       `✅ All PDFs in ${blobName} processed or exhausted - moving ZIP to processed folder`,
     );
@@ -339,7 +341,7 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
 
     // Attempt to update retry count on backend
-    if (retryStatus?.retry_count !== undefined) {
+    if (retryStatus?.retry_count !== undefined && err.code !== ERROR_CODES.DUPLICATE_FILE) {
       try {
         await updateRetryCount(
           log,
