@@ -31,6 +31,7 @@ const CONFIG = {
 
 const ERROR_CODES = {
   DUPLICATE_FILE: "DUPLICATE_FILE",
+  EXHAUSTED: "EXHAUSTED",
 };
 
 /* -------------------------------------------------------------------------- */
@@ -59,6 +60,7 @@ app.timer("DailyPdfProcessorJob", {
         total: 0,
         processed: 0,
         skipped: 0,
+        exhausted: 0,
         failed: 0,
       };
 
@@ -155,6 +157,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
     total: 0,
     processed: 0,
     skipped: 0,
+    exhausted: 0,
     failed: 0,
   };
   let aggregateBatchTime = 0;
@@ -180,6 +183,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
       total: 0,
       processed: 0,
       skipped: 0,
+      exhausted: 0,
       failed: 0,
     };
 
@@ -216,6 +220,10 @@ async function processZipBlob(container, blobName, session, stats, log) {
         stats.skipped++;
         batchStats.skipped++;
         zipStats.skipped++;
+      } else if (result.value?.errorCode === ERROR_CODES.EXHAUSTED) {
+        stats.exhausted++;
+        batchStats.exhausted++;
+        zipStats.exhausted++;
       } else {
         stats.failed++;
         batchStats.failed++;
@@ -225,7 +233,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
     const batchTime = performance.now() - batchTimerStart;
     aggregateBatchTime += batchTime;
     log(
-      `📊 Batch ${start}-${end} (Processed: ${batchStats.processed}, Skipped: ${batchStats.skipped}, Failed: ${batchStats.failed}, Total: ${batchStats.total}, TimeTaken: ${(batchTime / 1000).toFixed(2)}s)`,
+      `📊 Batch ${start}-${end} (Processed: ${batchStats.processed}, Skipped: ${batchStats.skipped}, Exhausted: ${batchStats.exhausted}, Failed: ${batchStats.failed}, Total: ${batchStats.total}, TimeTaken: ${(batchTime / 1000).toFixed(2)}s)`,
     );
   }
   const zipTime = performance.now() - zipTimerStart;
@@ -234,7 +242,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
   const avgBatchTime = aggregateBatchTime / totalBatches;
 
   log(
-    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
+    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Exhausted: ${zipStats.exhausted}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
   );
 }
 
@@ -268,13 +276,6 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
   const rpa_appointment_id_match = fileName.trim().match(/^([0-9]+)_/);
   const rpa_appointment_id = rpa_appointment_id_match?.[1];
   let retryStatus;
-  try {
-    retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
-  } catch (error) {
-    log(
-      `⚠️  Failed to fetch retry count for appointment ${rpa_appointment_id}: ${error.message}`,
-    );
-  }
 
   try {
     const buffer = entry.getData();
@@ -284,6 +285,8 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     }
 
     await checkDuplicate(log, fileName, session);
+
+    retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
 
     const apiData = await callMedicalApi(log, buffer, fileName, session);
 
@@ -408,6 +411,7 @@ async function checkRetryStatus(log, rpa_appointment_id, session) {
 
   if (res?.data?.result?.data?.retry_count > 2) {
     const err = new Error("Max retries exhausted");
+    err.code = ERROR_CODES.EXHAUSTED;
     throw err;
   }
 
@@ -588,6 +592,7 @@ function printSummary(stats, log) {
   log(`Total     : ${stats.total}`);
   log(`Processed : ${stats.processed}`);
   log(`Skipped   : ${stats.skipped}`);
+  log(`Exhausted : ${stats.exhausted}`);
   log(`Failed    : ${stats.failed}`);
 
   const rate = stats.total
