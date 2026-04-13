@@ -12,7 +12,7 @@ app.timer("DailyPdfLoaderJob", {
 
   handler: async (timer, context) => {
     const log = (...args) => {
-      const msg = args.join(' ');
+      const msg = args.join(" ");
       context.log(msg);
       console.log(msg);
     };
@@ -20,28 +20,26 @@ app.timer("DailyPdfLoaderJob", {
     log("🚀 DailyPdfLoaderJob (7AM) Started");
 
     try {
-      // Step 1: Calculate yesterday -> today
+      // Step 1: Calculate 7 day window ending today
       log("📅 Step 1: Calculating date range");
       const today = new Date();
       log(`   Current date: ${today.toISOString()}`);
-      
-      const yesterday = new Date(today);
-      yesterday.setDate(today.getDate() - 1);
-      log(`   Yesterday date: ${yesterday.toISOString()}`);
+
+      const startDate = new Date(today);
+      startDate.setDate(today.getDate() - 7);
+      log(`   Start date (7 days before end date): ${startDate.toISOString()}`);
 
       const format = (d) => d.toISOString().split("T")[0];
-      const formattedYesterday = format(yesterday);
+      const formattedStartDate = format(startDate);
       const formattedToday = format(today);
-      log(`   Formatted range: ${formattedYesterday} to ${formattedToday}`);
+      log(`   Formatted range: ${formattedStartDate} to ${formattedToday}`);
 
       // Step 2: Create payload
       log("📋 Step 2: Creating payload");
       const payload = {
-        start_date: formattedYesterday,
+        start_date: formattedStartDate,
         end_date: formattedToday,
         practice_name: "PreOp Memphis",
-        entity: "270681372",
-        sub_entity: "270681372001",
         ehr_name: "Tebra",
       };
       log("   Payload created:", JSON.stringify(payload, null, 2));
@@ -63,7 +61,6 @@ app.timer("DailyPdfLoaderJob", {
       log(`   Status Code: ${response.status}`);
       log(`   Response Data:`, JSON.stringify(response.data, null, 2));
       log("🎉 DailyPdfLoaderJob completed successfully");
-
     } catch (err) {
       console.error("❌ DailyPdfLoaderJob Failed - Error handling initiated");
       log("❌ DailyPdfLoaderJob Failed - Error handling initiated");
@@ -85,7 +82,9 @@ app.timer("DailyPdfLoaderJob", {
         log(`   Details: ${err.message}`);
       }
 
-      log("💾 Logging complete, re-throwing error for Azure Functions retry mechanism");
+      log(
+        "💾 Logging complete, re-throwing error for Azure Functions retry mechanism",
+      );
       throw err; // Important for retry
     }
   },
