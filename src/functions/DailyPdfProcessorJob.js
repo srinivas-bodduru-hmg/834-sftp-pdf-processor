@@ -246,7 +246,17 @@ async function processZipBlob(container, blobName, session, stats, log) {
   );
 
   if (zipStats.processed + zipStats.exhausted === pdfs.length) {
-    await moveZipToProcessed(container, blobName, log);
+    log(
+      `✅ All PDFs in ${blobName} processed or exhausted - moving ZIP to processed folder`,
+    );
+
+    try {
+      await moveZipToProcessed(container, blobName, log);
+    } catch (err) {
+      log(
+        `❌ Failed to move ZIP to processed folder for ${blobName}: ${err.message}`,
+      );
+    }
   }
 }
 
@@ -556,20 +566,121 @@ async function downloadBlob(log, container, name) {
 async function moveZipToProcessed(container, blobName, log) {
   const sourceClient = container.getBlobClient(blobName);
   const lastSlashIndex = blobName.lastIndexOf("/");
-  const folderPath = lastSlashIndex >= 0 ? blobName.slice(0, lastSlashIndex) : "";
-  const fileName = lastSlashIndex >= 0 ? blobName.slice(lastSlashIndex + 1) : blobName;
+  const folderPath =
+    lastSlashIndex >= 0 ? blobName.slice(0, lastSlashIndex) : "";
+  const fileName =
+    lastSlashIndex >= 0 ? blobName.slice(lastSlashIndex + 1) : blobName;
   const destinationBlobName = folderPath
     ? `${folderPath}/processed/${fileName}`
     : `processed/${fileName}`;
   const destinationClient = container.getBlobClient(destinationBlobName);
 
-  log(`📦 Moving ZIP to processed folder: ${blobName} -> ${destinationBlobName}`);
+  log(
+    `📦 Moving ZIP to processed folder: ${blobName} -> ${destinationBlobName}`,
+  );
 
   const copyPoller = await destinationClient.beginCopyFromURL(sourceClient.url);
   await copyPoller.pollUntilDone();
   await sourceClient.delete();
 
   log(`✅ Moved ZIP to processed folder: ${destinationBlobName}`);
+}
+
+/* -------------------------------------------------------------------------- */
+
+async function restoreZipsFromProcessedFolder(container, log) {
+  log("♻️ Restoring ZIPs from processed folders");
+  try {
+    await restoreProcessedPrefixes(container, "", log);
+  } catch (err) {
+    log(`❌ Restore operation failed: ${err.message}`);
+  }
+  log("✅ Finished restoring ZIPs from processed folders");
+}
+
+/* -------------------------------------------------------------------------- */
+
+async function restoreProcessedPrefixes(container, prefix, log) {
+  for await (const item of container.listBlobsByHierarchy("/", { prefix })) {
+    if (item.kind !== "prefix") {
+      continue;
+    }
+
+    if (isProcessedFolder(item.name)) {
+      log(`📂 Restoring ZIPs from processed folder: ${item.name}`);
+
+      try {
+        await restoreZipsUnderPrefix(container, item.name, log);
+      } catch (err) {
+        log(
+          `❌ Failed to restore ZIPs from processed folder ${item.name}: ${err.message}`,
+        );
+      }
+
+      continue;
+    }
+
+    await restoreProcessedPrefixes(container, item.name, log);
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+async function restoreZipsUnderPrefix(container, prefix, log) {
+  for await (const blob of container.listBlobsFlat({ prefix })) {
+    if (!blob.name.endsWith(".zip")) continue;
+
+    try {
+      await moveZipOutOfProcessedFolder(container, blob.name, log);
+    } catch (err) {
+      log(`❌ Failed to restore ZIP ${blob.name}: ${err.message}`);
+    }
+  }
+}
+
+/* -------------------------------------------------------------------------- */
+
+async function moveZipOutOfProcessedFolder(container, blobName, log) {
+  const sourceClient = container.getBlobClient(blobName);
+  const destinationBlobName = removeProcessedSegment(blobName);
+
+  if (destinationBlobName === blobName) {
+    log(`⚠️ Could not derive restore path for ZIP: ${blobName}`);
+    return;
+  }
+
+  const destinationClient = container.getBlobClient(destinationBlobName);
+
+  log(`📦 Restoring ZIP: ${blobName} -> ${destinationBlobName}`);
+
+  const copyPoller = await destinationClient.beginCopyFromURL(sourceClient.url);
+  await copyPoller.pollUntilDone();
+  await sourceClient.delete();
+
+  log(`✅ Restored ZIP: ${destinationBlobName}`);
+}
+
+/* -------------------------------------------------------------------------- */
+
+function removeProcessedSegment(blobName) {
+  const pathParts = blobName.split("/").filter(Boolean);
+  const processedIndex = pathParts.findIndex(
+    (part) => part.toLowerCase() === "processed",
+  );
+
+  if (processedIndex === -1) {
+    return blobName;
+  }
+
+  pathParts.splice(processedIndex, 1);
+  return pathParts.join("/");
+}
+
+/* -------------------------------------------------------------------------- */
+
+function isProcessedFolder(prefix) {
+  const pathParts = prefix.toLowerCase().split("/").filter(Boolean);
+  return pathParts[pathParts.length - 1] === "processed";
 }
 
 /* -------------------------------------------------------------------------- */
