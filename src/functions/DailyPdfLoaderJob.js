@@ -9,7 +9,7 @@ const CONFIG = {
   IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
   RETRIEVAL_DATE_RANGE: Number(process.env.RETRIEVAL_DATE_RANGE || 1),
   TEBRA_API_URL:
-    process.env.TEBRA_API_URL || "http://57.154.234.15:8010/run-tebra",
+    process.env.TEBRA_API_URL || "http://10.0.0.6:8010/run-tebra",
   REQUEST_TIMEOUT_MS: 10 * 60 * 1000,
 };
 
