@@ -8,11 +8,9 @@ const CONFIG = {
   BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
   IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
   RETRIEVAL_DATE_RANGE: Number(process.env.RETRIEVAL_DATE_RANGE || 1),
-  TEBRA_API_URL:
-    process.env.TEBRA_API_URL || "http://10.0.0.6:8010/run-tebra",
+  TEBRA_API_URL: process.env.TEBRA_API_URL || "http://10.0.0.6:8010/run-tebra",
   REQUEST_TIMEOUT_MS: 10 * 60 * 1000,
 };
-
 
 /**
  * 7 AM Job - Triggers Scraping API
