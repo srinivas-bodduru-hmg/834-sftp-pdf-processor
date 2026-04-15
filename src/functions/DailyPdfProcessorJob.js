@@ -26,6 +26,8 @@ const CONFIG = {
 
   RESTRICTED_FOLDERS: ["archived", "processed", "deleted"],
 
+  MAX_RETRIES: 3,
+
   BATCH_SIZE: 3,
 };
 
@@ -247,7 +249,10 @@ async function processZipBlob(container, blobName, session, stats, log) {
     `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Exhausted: ${zipStats.exhausted}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
   );
 
-  if (zipStats.processed + zipStats.exhausted + zipStats.skipped === pdfs.length) {
+  if (
+    zipStats.processed + zipStats.exhausted + zipStats.skipped ===
+    pdfs.length
+  ) {
     log(
       `✅ All PDFs in ${blobName} processed or exhausted - moving ZIP to processed folder`,
     );
@@ -300,9 +305,13 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
       throw new Error("Empty PDF");
     }
 
-    await checkDuplicate(log, fileName, session);
+    retryStatus = await checkDuplicate(log, fileName, session);
 
-    retryStatus = await checkRetryStatus(log, rpa_appointment_id, session);
+    if (retryStatus.retry_count > CONFIG.MAX_RETRIES) {
+      const err = new Error("Max retries exhausted");
+      err.code = ERROR_CODES.EXHAUSTED;
+      throw err;
+    }
 
     const apiData = await callMedicalApi(log, buffer, fileName, session);
 
@@ -341,7 +350,10 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
     log(`❌ ${fileName} ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
 
     // Attempt to update retry count on backend
-    if (retryStatus?.retry_count !== undefined && err.code !== ERROR_CODES.DUPLICATE_FILE) {
+    if (
+      retryStatus?.retry_count !== undefined &&
+      err.code !== ERROR_CODES.DUPLICATE_FILE
+    ) {
       try {
         await updateRetryCount(
           log,
@@ -393,45 +405,18 @@ async function checkDuplicate(log, fileName, session) {
     timeout: 600000,
   });
 
-  const isUnique =
-    (res?.data?.isDuplicate ??
-      res?.data?.isduplicate ??
-      res?.data?.result?.isDuplicate ??
-      res?.data?.result?.isduplicate ??
-      res?.data?.result?.data?.isDuplicate ??
-      res?.data?.result?.data?.isduplicate) === false;
-
+  const resultData = res?.data?.result?.data || {};
+  const isDuplicate = resultData.isDuplicate ?? true;
   // We only proceed when the API explicitly confirms that the file is not a duplicate
 
-  if (!isUnique) {
+  if (isDuplicate) {
     const err = new Error("Duplicate file");
     err.code = ERROR_CODES.DUPLICATE_FILE;
     throw err;
   }
-}
 
-/* -------------------------------------------------------------------------- */
-
-async function checkRetryStatus(log, rpa_appointment_id, session) {
-  const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.getRetryCount`;
-
-  const input = encodeURIComponent(JSON.stringify({ rpa_appointment_id }));
-
-  const res = await axios.get(`${url}?input=${input}`, {
-    headers: {
-      Cookie: session.cookieHeader,
-      "Content-Type": "application/json",
-    },
-    timeout: 600000,
-  });
-
-  if (res?.data?.result?.data?.retry_count > 2) {
-    const err = new Error("Max retries exhausted");
-    err.code = ERROR_CODES.EXHAUSTED;
-    throw err;
-  }
-
-  return res?.data?.result?.data || { retry_count: 0 };
+  const retry_count = resultData.retry_count ?? 0;
+  return { retry_count };
 }
 
 /* -------------------------------------------------------------------------- */
@@ -441,7 +426,7 @@ async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
 
   const payload = {
     rpa_appointment_id: rpaAppointmentId,
-    retry_count: (retryCount || 1) + 1,
+    retry_count: (retryCount ?? 0) + 1,
   };
 
   const res = await axios.post(url, payload, {
