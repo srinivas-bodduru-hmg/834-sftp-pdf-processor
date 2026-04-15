@@ -6,6 +6,8 @@ const CONFIG = {
   BACKEND_URL:
     process.env.BACKEND_API_URL || "https://your-backend.azurewebsites.net",
 
+  IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
+
   BACKEND_EMAIL: process.env.BACKEND_EMAIL,
   BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
 
@@ -33,7 +35,7 @@ app.timer("outboundScheduler", {
   // Runs every hour at :00 UTC (5:30 AM onwards IST - India Standard Time)
   // Cron format: second minute hour day month dayOfWeek
   schedule: "0 0 * * * *", // Every 1 hour at :00 UTC
-  runOnStartup: true,
+  runOnStartup: CONFIG.IS_DEVELOPMENT,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
     context.log("[Outbound Scheduler] ⏰ Timer trigger fired");

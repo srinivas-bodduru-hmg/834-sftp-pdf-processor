@@ -13,8 +13,9 @@ require("process");
 /* -------------------------------------------------------------------------- */
 
 const CONFIG = {
-  BACKEND_URL:
-    process.env.BACKEND_API_URL || "https://your-backend.azurewebsites.net",
+  BACKEND_URL: process.env.BACKEND_API_URL,
+
+  IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
 
   BACKEND_EMAIL: process.env.BACKEND_EMAIL,
   BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
@@ -44,7 +45,7 @@ app.timer("DailyPdfProcessorJob", {
   // Runs daily at 2:30 AM UTC (8:00 AM IST - India Standard Time)
   // Cron format: second minute hour day month dayOfWeek
   schedule: "0 30 2 * * *",
-  runOnStartup: true,
+  runOnStartup: CONFIG.IS_DEVELOPMENT,
 
   handler: async (timer, context) => {
     const log = (...args) => context.log(...args);

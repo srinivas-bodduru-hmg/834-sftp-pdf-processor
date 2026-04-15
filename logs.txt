@@ -6,16 +6,63 @@ Azure Functions Core Tools
 Core Tools Version:       4.6.0+ab90faafcab539d63cd3d0ce5faf1bca4395fccc (64-bit)
 Function Runtime Version: 4.1045.200.25556
 
-[2026-04-13T08:02:03.891Z] Worker process started and initialized.
+[2026-04-15T12:36:22.078Z] Worker process started and initialized.
 
 Functions:
 
-	DailyPdfProcessorJob: timerTrigger
+	DailyPdfLoaderJob: timerTrigger
 
 For detailed output, run func with --verbose flag.
-[2026-04-13T08:02:04.750Z] Language Worker Process exited. Pid=12206.
-[2026-04-13T08:02:04.750Z] node exited with code 130 (0x82). .
-[2026-04-13T08:02:04.832Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start.
-[2026-04-13T08:02:04.832Z] The listener for function 'Functions.DailyPdfProcessorJob' was unable to start. Azure.Core: The operation was canceled.
-[2026-04-13T08:02:04.980Z] Worker process started and initialized.
-A task was canceled.
+[2026-04-15T12:36:48.855Z] Executing 'Functions.DailyPdfLoaderJob' (Reason='Timer fired at 2026-04-15T18:06:48.8417760+05:30', Id=ec911af4-177d-40c8-9e3a-3f05cb551b4e)
+[2026-04-15T12:36:48.855Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup, ScheduleStatus: {"Last":"2026-04-15T17:59:30.143733+05:30","Next":"2026-04-16T07:00:00+05:30","LastUpdated":"2026-04-15T17:59:30.143733+05:30"}
+[2026-04-15T12:36:48.881Z] 🚀 DailyPdfLoaderJob (7AM) Started
+[2026-04-15T12:36:48.881Z]    Formatted range: 2026-04-15 to 2026-04-15
+[2026-04-15T12:36:48.881Z] 🔐 Step 2: Logging into backend
+[2026-04-15T12:36:48.881Z] 🔐 Logging in...
+[2026-04-15T12:36:48.947Z] ✅ Authenticated (userId: 3ef58454-9fc4-46a8-a8b3-761018fb5657)
+[2026-04-15T12:36:48.947Z] 🏥 Step 3: Fetching practice names from V3 API
+[2026-04-15T12:36:48.949Z]    Retrieved 4 practice names
+[2026-04-15T12:36:48.949Z]    Patient Care Health
+[2026-04-15T12:36:48.949Z]    Test Practice
+[2026-04-15T12:36:48.949Z]    PrePostPlus Germantown
+[2026-04-15T12:36:48.949Z]    The PREOP Center
+[2026-04-15T12:36:48.949Z] 📤 Step 4: Calling Tebra API endpoint for each practice
+[2026-04-15T12:36:48.949Z]    ▶ Processing practice: Patient Care Health
+[2026-04-15T12:36:49.091Z] Host lock lease acquired by instance ID '000000000000000000000000F178F181'.
+[2026-04-15T12:36:49.669Z]    ✅ Patient Care Health completed with status 200
+[2026-04-15T12:36:49.669Z]    Response Data: {
+[2026-04-15T12:36:49.669Z]   "status": "started",
+[2026-04-15T12:36:49.670Z]   "job_id": "486223ed-35f8-44d9-9132-27f956969ea2",
+[2026-04-15T12:36:49.670Z]   "ehr_name": "Tebra",
+[2026-04-15T12:36:49.670Z]   "message": "EHR RPA job started"
+[2026-04-15T12:36:49.670Z] }
+[2026-04-15T12:36:49.670Z]    ▶ Processing practice: Test Practice
+[2026-04-15T12:36:50.154Z]    ✅ Test Practice completed with status 200
+[2026-04-15T12:36:50.154Z]    Response Data: {
+[2026-04-15T12:36:50.154Z]   "status": "started",
+[2026-04-15T12:36:50.154Z]   "job_id": "eba25fa1-08a5-4752-8e8e-87cd8c1b0f53",
+[2026-04-15T12:36:50.154Z]   "ehr_name": "Tebra",
+[2026-04-15T12:36:50.154Z]   "message": "EHR RPA job started"
+[2026-04-15T12:36:50.154Z] }
+[2026-04-15T12:36:50.154Z]    ▶ Processing practice: PrePostPlus Germantown
+[2026-04-15T12:36:50.637Z]    ✅ PrePostPlus Germantown completed with status 200
+[2026-04-15T12:36:50.637Z]    Response Data: {
+[2026-04-15T12:36:50.637Z]   "status": "started",
+[2026-04-15T12:36:50.637Z]   "job_id": "3e32fd91-9946-42d0-9c13-ed7416ad16a2",
+[2026-04-15T12:36:50.637Z]   "ehr_name": "Tebra",
+[2026-04-15T12:36:50.637Z]   "message": "EHR RPA job started"
+[2026-04-15T12:36:50.637Z] }
+[2026-04-15T12:36:50.637Z]    ▶ Processing practice: The PREOP Center
+[2026-04-15T12:36:51.138Z]    ✅ The PREOP Center completed with status 200
+[2026-04-15T12:36:51.138Z]    Response Data: {
+[2026-04-15T12:36:51.138Z]   "status": "started",
+[2026-04-15T12:36:51.138Z]   "job_id": "b493e50d-5f93-4576-9803-1c629594e94d",
+[2026-04-15T12:36:51.138Z]   "ehr_name": "Tebra",
+[2026-04-15T12:36:51.138Z]   "message": "EHR RPA job started"
+[2026-04-15T12:36:51.138Z] }
+[2026-04-15T12:36:51.138Z] 🎯 DailyPdfLoaderJob completed with 0 failures out of 4 practices 
+[2026-04-15T12:36:51.139Z] 🎉 DailyPdfLoaderJob completed successfully
+[2026-04-15T12:36:51.156Z] Executed 'Functions.DailyPdfLoaderJob' (Succeeded, Id=ec911af4-177d-40c8-9e3a-3f05cb551b4e, Duration=2310ms)
+[2026-04-15T12:37:28.473Z] Language Worker Process exited. Pid=66950.
+[2026-04-15T12:37:28.474Z] node exited with code 130 (0x82). .
+[2026-04-15T12:37:28.796Z] Worker process started and initialized.
