@@ -13,6 +13,7 @@ const CONFIG = {
   REQUEST_TIMEOUT_MS: 10 * 60 * 1000,
 };
 
+
 /**
  * 7 AM Job - Triggers Scraping API
  */
