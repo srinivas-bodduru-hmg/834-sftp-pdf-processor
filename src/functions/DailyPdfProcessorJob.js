@@ -42,9 +42,9 @@ const ERROR_CODES = {
 /* -------------------------------------------------------------------------- */
 
 app.timer("DailyPdfProcessorJob", {
-  // Runs daily at 2:30 AM UTC (8:00 AM IST - India Standard Time)
+  // Runs daily at 1:30 AM and 2:30 AM UTC (7:00 AM and 8:00 AM IST)
   // Cron format: second minute hour day month dayOfWeek
-  schedule: "0 30 2 * * *",
+  schedule: "0 30 1,2 * * *",
   runOnStartup: CONFIG.IS_DEVELOPMENT,
 
   handler: async (timer, context) => {
