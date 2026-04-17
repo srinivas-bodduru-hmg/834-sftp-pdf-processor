@@ -45,7 +45,7 @@ app.timer("DailyPdfLoaderJob", {
         log(`   ${practiceName}`);
       }
 
-      log("📤 Step 4: Calling Tebra API endpoint for each practice");
+      log(`📤 Step 4: Calling ${CONFIG.TEBRA_API_URL} endpoint for each practice`);
 
       const failures = [];
 
