@@ -200,7 +200,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
 
     const results = await Promise.allSettled(
       batch.map((pdf) =>
-        processPdf(pdf, session, log, failedRpaApplicationIds),
+        processPdf(pdf, blobName, session, log, failedRpaApplicationIds),
       ),
     );
 
@@ -293,8 +293,10 @@ async function processBlobPrefix(container, prefix, session, stats, log) {
 /*                              PDF PROCESS                                   */
 /* -------------------------------------------------------------------------- */
 
-async function processPdf(entry, session, log, failedRpaApplicationIds) {
+async function processPdf(entry, blobName, session, log, failedRpaApplicationIds) {
   const fileName = entry.entryName;
+  // const sftpFilePath = buildSftpFilePath(blobName, fileName);
+  const sftpFilePath = blobName;
   const rpa_appointment_id_match = fileName.trim().match(/^([0-9]+)_/);
   const rpa_appointment_id = rpa_appointment_id_match?.[1];
   let retryStatus;
@@ -314,7 +316,13 @@ async function processPdf(entry, session, log, failedRpaApplicationIds) {
       throw err;
     }
 
-    const apiData = await callMedicalApi(log, buffer, fileName, session);
+    const apiData = await callMedicalApi(
+      log,
+      buffer,
+      fileName,
+      sftpFilePath,
+      session,
+    );
 
     log(
       `✅ File processed and claim created: ${fileName} → ${apiData?.claimId} -> ${apiData.serviceFacilityName}`,
@@ -442,11 +450,12 @@ async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
 }
 /* -------------------------------------------------------------------------- */
 
-async function callMedicalApi(log, buffer, fileName, session) {
+async function callMedicalApi(log, buffer, fileName, sftpFilePath, session) {
   const fileContent = buffer.toString("base64");
 
   const payload = {
     fileName,
+    sftpFilePath,
     fileContent,
     fileType: "application/pdf",
   };
@@ -689,6 +698,15 @@ function streamToBuffer(stream) {
     stream.on("end", () => resolve(Buffer.concat(chunks)));
     stream.on("error", reject);
   });
+}
+
+/* -------------------------------------------------------------------------- */
+
+function buildSftpFilePath(blobName, fileName) {
+  const lastSlashIndex = blobName.lastIndexOf("/");
+  const parentPath = lastSlashIndex >= 0 ? blobName.slice(0, lastSlashIndex) : "";
+
+  return parentPath ? `${parentPath}/${fileName}` : fileName;
 }
 
 /* -------------------------------------------------------------------------- */
