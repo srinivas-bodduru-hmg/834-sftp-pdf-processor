@@ -11,6 +11,9 @@ const CONFIG = {
   BACKEND_EMAIL: process.env.BACKEND_EMAIL,
   BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
 
+  POSTING_AGENT_EMAIL: process.env.POSTING_AGENT_EMAIL,
+  POSTING_AGENT_PASSWORD: process.env.POSTING_AGENT_PASSWORD,
+
   MEDICAL_API_URL: process.env.MEDICAL_EXTRACTION_API_URL,
   MEDICAL_API_TOKEN: process.env.MEDICAL_EXTRACTION_API_TOKEN,
 
@@ -121,14 +124,14 @@ app.timer("postingAgentScheduler", {
 });
 
 async function login(context) {
-  context.log("🔐 Logging in...");
+  context.log("🔐 Logging in with Posting Agent credentials...");
 
   const res = await axios.post(
     `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
     {
       0: {
-        email: CONFIG.BACKEND_EMAIL,
-        password: CONFIG.BACKEND_PASSWORD,
+        email: CONFIG.POSTING_AGENT_EMAIL,
+        password: CONFIG.POSTING_AGENT_PASSWORD,
       },
     },
     { withCredentials: true, timeout: 600000 },
