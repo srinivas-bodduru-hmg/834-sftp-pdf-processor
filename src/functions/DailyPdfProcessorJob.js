@@ -25,6 +25,8 @@ const CONFIG = {
 
   CONTAINER: "834labs-sftp",
 
+  TARGET_PREFIX: "PrePostPlus Germantown/",
+
   RESTRICTED_FOLDERS: ["archived", "processed", "deleted"],
 
   MAX_RETRIES: 3,
@@ -68,8 +70,7 @@ app.timer("DailyPdfProcessorJob", {
       };
 
       // await restoreZipsFromProcessedFolder(container, log);
-
-      await processBlobPrefix(container, "", session, stats, log);
+      await processBlobPrefix(container, CONFIG.TARGET_PREFIX, session, stats, log);
 
       printSummary(stats, log);
     } catch (err) {
@@ -309,7 +310,7 @@ async function processPdf(entry, blobName, session, log, failedRpaApplicationIds
     }
 
     retryStatus = await checkDuplicate(log, fileName, session);
-
+    console.log(`Retry status for ${fileName}:`, retryStatus);
     if (retryStatus.retry_count > CONFIG.MAX_RETRIES) {
       const err = new Error("Max retries exhausted");
       err.code = ERROR_CODES.EXHAUSTED;
@@ -437,6 +438,8 @@ async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
     rpa_appointment_id: rpaAppointmentId,
     retry_count: (retryCount ?? 0) + 1,
   };
+
+  log(`🔄 Updating retry count for appointment ${rpaAppointmentId} to ${payload.retry_count}...`);
 
   const res = await axios.post(url, payload, {
     headers: {

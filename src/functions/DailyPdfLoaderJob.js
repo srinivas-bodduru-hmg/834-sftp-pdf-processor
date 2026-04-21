@@ -54,6 +54,8 @@ app.timer("DailyPdfLoaderJob", {
           start_date: formattedStartDate,
           end_date: formattedEndDate,
           practice_name: practiceName,
+          entity: "270681372",
+          sub_entity: "270681372001",
           ehr_name: "Tebra",
         };
 
