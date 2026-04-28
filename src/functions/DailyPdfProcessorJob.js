@@ -70,7 +70,13 @@ app.timer("DailyPdfProcessorJob", {
       };
 
       // await restoreZipsFromProcessedFolder(container, log);
-      await processBlobPrefix(container, CONFIG.TARGET_PREFIX, session, stats, log);
+      await processBlobPrefix(
+        container,
+        CONFIG.TARGET_PREFIX,
+        session,
+        stats,
+        log,
+      );
 
       printSummary(stats, log);
     } catch (err) {
@@ -172,6 +178,11 @@ async function processZipBlob(container, blobName, session, stats, log) {
   const buffer = await downloadBlob(log, container, blobName);
 
   const zip = new AdmZip(buffer);
+  const zipMetadata = extractZipMetadata(zip, blobName);
+
+  // log(
+  //   `📋 ZIP metadata loaded for ${blobName} ${JSON.stringify(zipMetadata, null, 2)}`,
+  // );
 
   const pdfs = zip
     .getEntries()
@@ -294,7 +305,13 @@ async function processBlobPrefix(container, prefix, session, stats, log) {
 /*                              PDF PROCESS                                   */
 /* -------------------------------------------------------------------------- */
 
-async function processPdf(entry, blobName, session, log, failedRpaApplicationIds) {
+async function processPdf(
+  entry,
+  blobName,
+  session,
+  log,
+  failedRpaApplicationIds,
+) {
   const fileName = entry.entryName;
   // const sftpFilePath = buildSftpFilePath(blobName, fileName);
   const sftpFilePath = blobName;
@@ -439,7 +456,9 @@ async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
     retry_count: (retryCount ?? 0) + 1,
   };
 
-  log(`🔄 Updating retry count for appointment ${rpaAppointmentId} to ${payload.retry_count}...`);
+  log(
+    `🔄 Updating retry count for appointment ${rpaAppointmentId} to ${payload.retry_count}...`,
+  );
 
   const res = await axios.post(url, payload, {
     headers: {
@@ -705,9 +724,55 @@ function streamToBuffer(stream) {
 
 /* -------------------------------------------------------------------------- */
 
+function extractZipMetadata(zip, blobName) {
+  const jsonEntry = zip
+    .getEntries()
+    .find((entry) => entry.entryName.toLowerCase().endsWith(".json"));
+
+  if (!jsonEntry) {
+    throw new Error(`ZIP ${blobName} does not contain a metadata JSON file`);
+  }
+
+  let parsedMetadata;
+
+  try {
+    parsedMetadata = JSON.parse(jsonEntry.getData().toString("utf8"));
+  } catch (err) {
+    throw new Error(
+      `ZIP ${blobName} contains an invalid metadata JSON file: ${err.message}`,
+    );
+  }
+
+  return {
+    generatedOn: parsedMetadata.generated_on ?? null,
+    entity: parsedMetadata.entity ?? null,
+    subEntity: parsedMetadata.sub_entity ?? null,
+    ehrName: parsedMetadata.ehr_name ?? null,
+    practice: parsedMetadata.practice ?? null,
+    appointments: Array.isArray(parsedMetadata.appointments)
+      ? parsedMetadata.appointments
+      : [],
+    appointmentsByPdfFile: new Map(
+      (Array.isArray(parsedMetadata.appointments)
+        ? parsedMetadata.appointments
+        : []
+      )
+        .filter(
+          (appointment) =>
+            typeof appointment?.pdf_file === "string" && appointment.pdf_file,
+        )
+        .map((appointment) => [appointment.pdf_file, appointment]),
+    ),
+    raw: parsedMetadata,
+  };
+}
+
+/* -------------------------------------------------------------------------- */
+
 function buildSftpFilePath(blobName, fileName) {
   const lastSlashIndex = blobName.lastIndexOf("/");
-  const parentPath = lastSlashIndex >= 0 ? blobName.slice(0, lastSlashIndex) : "";
+  const parentPath =
+    lastSlashIndex >= 0 ? blobName.slice(0, lastSlashIndex) : "";
 
   return parentPath ? `${parentPath}/${fileName}` : fileName;
 }
