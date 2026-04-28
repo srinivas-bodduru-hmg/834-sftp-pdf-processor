@@ -178,11 +178,15 @@ async function processZipBlob(container, blobName, session, stats, log) {
   const buffer = await downloadBlob(log, container, blobName);
 
   const zip = new AdmZip(buffer);
-  const zipMetadata = extractZipMetadata(zip, blobName);
-
-  // log(
-  //   `📋 ZIP metadata loaded for ${blobName} ${JSON.stringify(zipMetadata, null, 2)}`,
-  // );
+  const zipMetadata = extractZipMetadata(zip, blobName, log);
+  const mappedAppointments = Array.isArray(zipMetadata.appointments)
+    ? zipMetadata.appointments.map((appointment) => [
+        appointment.pdf_file,
+        appointment,
+      ])
+    : [];
+  const pdfMetadataMap = new Map(mappedAppointments);
+  log(`📋 ZIP metadata loaded for ${blobName}`, pdfMetadataMap);
 
   const pdfs = zip
     .getEntries()
@@ -724,47 +728,34 @@ function streamToBuffer(stream) {
 
 /* -------------------------------------------------------------------------- */
 
-function extractZipMetadata(zip, blobName) {
-  const jsonEntry = zip
-    .getEntries()
-    .find((entry) => entry.entryName.toLowerCase().endsWith(".json"));
-
-  if (!jsonEntry) {
-    throw new Error(`ZIP ${blobName} does not contain a metadata JSON file`);
-  }
-
-  let parsedMetadata;
-
+function extractZipMetadata(zip, blobName, log) {
   try {
-    parsedMetadata = JSON.parse(jsonEntry.getData().toString("utf8"));
-  } catch (err) {
-    throw new Error(
-      `ZIP ${blobName} contains an invalid metadata JSON file: ${err.message}`,
-    );
-  }
+    const jsonEntry = zip
+      .getEntries()
+      .find((entry) => entry.entryName.toLowerCase().endsWith(".json"));
 
-  return {
-    generatedOn: parsedMetadata.generated_on ?? null,
-    entity: parsedMetadata.entity ?? null,
-    subEntity: parsedMetadata.sub_entity ?? null,
-    ehrName: parsedMetadata.ehr_name ?? null,
-    practice: parsedMetadata.practice ?? null,
-    appointments: Array.isArray(parsedMetadata.appointments)
-      ? parsedMetadata.appointments
-      : [],
-    appointmentsByPdfFile: new Map(
-      (Array.isArray(parsedMetadata.appointments)
+    if (!jsonEntry) {
+      throw new Error(`ZIP ${blobName} does not contain a metadata JSON file`);
+    }
+
+    const parsedMetadata =
+      JSON.parse(jsonEntry.getData().toString("utf8")) ?? {};
+
+    return {
+      generatedOn: parsedMetadata.generated_on ?? null,
+      entity: parsedMetadata.entity ?? null,
+      subEntity: parsedMetadata.sub_entity ?? null,
+      ehrName: parsedMetadata.ehr_name ?? null,
+      practice: parsedMetadata.practice ?? null,
+      appointments: Array.isArray(parsedMetadata.appointments)
         ? parsedMetadata.appointments
-        : []
-      )
-        .filter(
-          (appointment) =>
-            typeof appointment?.pdf_file === "string" && appointment.pdf_file,
-        )
-        .map((appointment) => [appointment.pdf_file, appointment]),
-    ),
-    raw: parsedMetadata,
-  };
+        : [],
+      raw: parsedMetadata,
+    };
+  } catch (err) {
+    log(`⚠️ Failed to extract ZIP metadata for ${blobName}: ${err.message}`);
+    return null;
+  }
 }
 
 /* -------------------------------------------------------------------------- */
