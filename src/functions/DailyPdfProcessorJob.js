@@ -179,14 +179,19 @@ async function processZipBlob(container, blobName, session, stats, log) {
 
   const zip = new AdmZip(buffer);
   const zipMetadata = extractZipMetadata(zip, blobName, log);
-  const mappedAppointments = Array.isArray(zipMetadata.appointments)
+  const mappedAppointments = Array.isArray(zipMetadata?.appointments)
     ? zipMetadata.appointments.map((appointment) => [
         appointment.pdf_file,
         appointment,
       ])
     : [];
   const pdfMetadataMap = new Map(mappedAppointments);
-  log(`📋 ZIP metadata loaded for ${blobName}`, pdfMetadataMap);
+
+  if (zipMetadata) {
+    log(
+      `📋 ZIP metadata loaded for ${blobName} (appointments: ${pdfMetadataMap.size})`,
+    );
+  }
 
   const pdfs = zip
     .getEntries()
@@ -216,7 +221,15 @@ async function processZipBlob(container, blobName, session, stats, log) {
 
     const results = await Promise.allSettled(
       batch.map((pdf) =>
-        processPdf(pdf, blobName, session, log, failedRpaApplicationIds),
+        processPdf(
+          pdf,
+          blobName,
+          session,
+          log,
+          failedRpaApplicationIds,
+          pdfMetadataMap.get(pdf.entryName) ?? null,
+          zipMetadata?.practice ?? null,
+        ),
       ),
     );
 
@@ -315,6 +328,8 @@ async function processPdf(
   session,
   log,
   failedRpaApplicationIds,
+  manifestEntry,
+  group,
 ) {
   const fileName = entry.entryName;
   // const sftpFilePath = buildSftpFilePath(blobName, fileName);
@@ -344,6 +359,8 @@ async function processPdf(
       fileName,
       sftpFilePath,
       session,
+      manifestEntry,
+      group,
     );
 
     log(
@@ -476,7 +493,15 @@ async function updateRetryCount(log, rpaAppointmentId, retryCount, session) {
 }
 /* -------------------------------------------------------------------------- */
 
-async function callMedicalApi(log, buffer, fileName, sftpFilePath, session) {
+async function callMedicalApi(
+  log,
+  buffer,
+  fileName,
+  sftpFilePath,
+  session,
+  manifestEntry,
+  group,
+) {
   const fileContent = buffer.toString("base64");
 
   const payload = {
@@ -484,6 +509,8 @@ async function callMedicalApi(log, buffer, fileName, sftpFilePath, session) {
     sftpFilePath,
     fileContent,
     fileType: "application/pdf",
+    ...(manifestEntry ? { manifestEntry } : {}),
+    ...(group ? { group } : {}),
   };
 
   const res = await axios.post(
