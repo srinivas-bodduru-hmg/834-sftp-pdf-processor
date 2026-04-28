@@ -248,7 +248,7 @@ async function processZipBlob(container, blobName, session, stats, log) {
   const avgBatchTime = aggregateBatchTime / totalBatches;
 
   log(
-    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Exhausted: ${zipStats.exhausted}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s ,  )`,
+    `\n📁 ZIP ${blobName} (Processed: ${zipStats.processed}, Skipped: ${zipStats.skipped}, Exhausted: ${zipStats.exhausted}, Failed: ${zipStats.failed}, Total: ${zipStats.total}, TimeTaken: ${(zipTime / 1000).toFixed(2)}s, AvgTimeTakenPerBatch: ${(avgBatchTime / 1000).toFixed(2)}s)`,
   );
 
   if (
