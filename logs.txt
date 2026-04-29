@@ -6,1617 +6,1152 @@ Azure Functions Core Tools
 Core Tools Version:       4.6.0+ab90faafcab539d63cd3d0ce5faf1bca4395fccc (64-bit)
 Function Runtime Version: 4.1045.200.25556
 
-[2026-04-21T13:54:11.882Z] Worker process started and initialized.
+[2026-04-29T11:33:34.540Z] Worker process started and initialized.
 
 Functions:
 
 	DailyPdfProcessorJob: timerTrigger
 
 For detailed output, run func with --verbose flag.
-[2026-04-21T13:54:13.620Z] Executing 'Functions.DailyPdfProcessorJob' (Reason='Timer fired at 2026-04-21T19:24:13.5896380+05:30', Id=39f07a06-d250-45a1-94c5-c02880759e4f)
-[2026-04-21T13:54:13.622Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup, ScheduleStatus: {"Last":"2026-04-21T19:17:57.830662+05:30","Next":"2026-04-22T01:30:00+05:30","LastUpdated":"2026-04-21T19:17:57.830662+05:30"}
-[2026-04-21T13:54:13.663Z] 🚀 Daily PDF Processor Started
-[2026-04-21T13:54:13.663Z] 🔐 Logging in...
-[2026-04-21T13:54:14.767Z] ✅ Authenticated (userId: 3ef58454-9fc4-46a8-a8b3-761018fb5657)
-[2026-04-21T13:54:14.767Z] 📁 Connecting to blob storage 834labs-sftp
-[2026-04-21T13:54:14.767Z] ✅ Connected to 834labs-sftp
-[2026-04-21T13:54:14.767Z] 📂 Scanning folder: PrePostPlus Germantown/
-[2026-04-21T13:54:15.834Z] ⏭️ Skipping restricted folder: PrePostPlus Germantown/processed/
-[2026-04-21T13:54:15.834Z] 
-[2026-04-21T13:54:15.834Z] 📁 Processing ZIP: PrePostPlus Germantown/tebra_facesheets_PG_2026-04-20_7051.zip
-[2026-04-21T13:54:18.015Z] Host lock lease acquired by instance ID '000000000000000000000000F178F181'.
-[2026-04-21T13:54:20.351Z] 📄 Found 276 PDFs
-[2026-04-21T13:54:20.351Z] 📦 Starting batch 1-3
-[2026-04-21T13:54:21.349Z] ❌ 198658992_Geary.pdf ERROR: {
-[2026-04-21T13:54:21.349Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.349Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.349Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.349Z] }
-[2026-04-21T13:54:21.368Z] ❌ 199322221_Smith.pdf ERROR: {
-[2026-04-21T13:54:21.372Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.374Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.374Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.374Z] }
-[2026-04-21T13:54:21.407Z] ❌ 199273309_Wathen.pdf ERROR: {
-[2026-04-21T13:54:21.407Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.407Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.407Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.407Z] }
-[2026-04-21T13:54:21.407Z] 📊 Batch 1-3 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 1.06s)
-[2026-04-21T13:54:21.407Z] 📦 Starting batch 4-6
-[2026-04-21T13:54:21.661Z] ❌ 197895648_Ellis.pdf ERROR: {
-[2026-04-21T13:54:21.661Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.661Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.661Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.661Z] }
-[2026-04-21T13:54:21.663Z] ❌ 199903111_Alston.pdf ERROR: {
-[2026-04-21T13:54:21.663Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.663Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.663Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.663Z] }
-[2026-04-21T13:54:21.679Z] ❌ 197954137_Bartolotta.pdf ERROR: {
-[2026-04-21T13:54:21.679Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.679Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.679Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.679Z] }
-[2026-04-21T13:54:21.679Z] 📊 Batch 4-6 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:21.679Z] 📦 Starting batch 7-9
-[2026-04-21T13:54:21.933Z] ❌ 198091521_Brown.pdf ERROR: {
-[2026-04-21T13:54:21.933Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.933Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.933Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.933Z] }
-[2026-04-21T13:54:21.935Z] ❌ 197485748_Owen.pdf ERROR: {
-[2026-04-21T13:54:21.935Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.935Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.935Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.935Z] }
-[2026-04-21T13:54:21.967Z] ❌ 201492968_Munn.pdf ERROR: {
-[2026-04-21T13:54:21.967Z]   "message": "Duplicate file",
-[2026-04-21T13:54:21.967Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:21.967Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:21.967Z] }
-[2026-04-21T13:54:21.967Z] 📊 Batch 7-9 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.29s)
-[2026-04-21T13:54:21.967Z] 📦 Starting batch 10-12
-[2026-04-21T13:54:22.278Z] ❌ 200903307_Topp.pdf ERROR: {
-[2026-04-21T13:54:22.278Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.278Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.278Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.278Z] }
-[2026-04-21T13:54:22.279Z] ❌ 198909413_Grohe.pdf ERROR: {
-[2026-04-21T13:54:22.279Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.279Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.279Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.279Z] }
-[2026-04-21T13:54:22.283Z] ❌ 199404161_Dolan.pdf ERROR: {
-[2026-04-21T13:54:22.283Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.283Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.283Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.283Z] }
-[2026-04-21T13:54:22.283Z] 📊 Batch 10-12 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:22.283Z] 📦 Starting batch 13-15
-[2026-04-21T13:54:22.541Z] ❌ 198385074_Fite.pdf ERROR: {
-[2026-04-21T13:54:22.541Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.541Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.541Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.541Z] }
-[2026-04-21T13:54:22.541Z] ❌ 199529161_Sumner.pdf ERROR: {
-[2026-04-21T13:54:22.541Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.541Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.541Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.541Z] }
-[2026-04-21T13:54:22.557Z] ❌ 198072182_Willis.pdf ERROR: {
-[2026-04-21T13:54:22.557Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.557Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.557Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.557Z] }
-[2026-04-21T13:54:22.557Z] 📊 Batch 13-15 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:22.557Z] 📦 Starting batch 16-18
-[2026-04-21T13:54:22.893Z] ❌ 198643205_Ruffin.pdf ERROR: {
-[2026-04-21T13:54:22.893Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.893Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.893Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.893Z] }
-[2026-04-21T13:54:22.893Z] ❌ 197450007_Landau.pdf ERROR: {
-[2026-04-21T13:54:22.893Z]   "message": "Duplicate file",
-[2026-04-21T13:54:22.894Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:22.894Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:22.894Z] }
-[2026-04-21T13:54:22.896Z] Retry status for 201516494_Davis.pdf: { retry_count: 6 }
-[2026-04-21T13:54:22.896Z] ❌ 201516494_Davis.pdf ERROR: {
-[2026-04-21T13:54:22.896Z]   "message": "Max retries exhausted",
-[2026-04-21T13:54:22.896Z]   "code": "EXHAUSTED",
-[2026-04-21T13:54:22.896Z]   "internal": "Error: Max retries exhausted"
-[2026-04-21T13:54:22.896Z] }
-[2026-04-21T13:54:22.896Z] 🔄 Updating retry count for appointment 201516494 to 7...
-[2026-04-21T13:54:23.171Z] ✅ Retry count for appointment 201516494 updated successfully
-[2026-04-21T13:54:23.171Z] 📊 Batch 16-18 (Processed: 0, Skipped: 2, Exhausted: 1, Failed: 0, Total: 3, TimeTaken: 0.61s)
-[2026-04-21T13:54:23.171Z] 📦 Starting batch 19-21
-[2026-04-21T13:54:23.431Z] ❌ 197570974_Hopper.pdf ERROR: {
-[2026-04-21T13:54:23.431Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.431Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.431Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.431Z] }
-[2026-04-21T13:54:23.431Z] ❌ 199361440_Herring.pdf ERROR: {
-[2026-04-21T13:54:23.431Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.431Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.431Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.431Z] }
-[2026-04-21T13:54:23.444Z] ❌ 198243396_Hanissian.pdf ERROR: {
-[2026-04-21T13:54:23.445Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.445Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.445Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.445Z] }
-[2026-04-21T13:54:23.445Z] 📊 Batch 19-21 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:23.445Z] 📦 Starting batch 22-24
-[2026-04-21T13:54:23.704Z] ❌ 199007481_Byer.pdf ERROR: {
-[2026-04-21T13:54:23.704Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.704Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.704Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.704Z] }
-[2026-04-21T13:54:23.708Z] ❌ 200323116_Massie.pdf ERROR: {
-[2026-04-21T13:54:23.708Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.708Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.708Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.708Z] }
-[2026-04-21T13:54:23.722Z] ❌ 198083711_Whiddon.pdf ERROR: {
-[2026-04-21T13:54:23.722Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.723Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.723Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.723Z] }
-[2026-04-21T13:54:23.723Z] 📊 Batch 22-24 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:23.723Z] 📦 Starting batch 25-27
-[2026-04-21T13:54:23.974Z] ❌ 198085283_Gaither.pdf ERROR: {
-[2026-04-21T13:54:23.975Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.975Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.975Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.975Z] }
-[2026-04-21T13:54:23.980Z] ❌ 199292147_Roland.pdf ERROR: {
-[2026-04-21T13:54:23.980Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.980Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.980Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.980Z] }
-[2026-04-21T13:54:23.992Z] ❌ 197321741_Allen.pdf ERROR: {
-[2026-04-21T13:54:23.992Z]   "message": "Duplicate file",
-[2026-04-21T13:54:23.992Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:23.992Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:23.992Z] }
-[2026-04-21T13:54:23.992Z] 📊 Batch 25-27 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:23.992Z] 📦 Starting batch 28-30
-[2026-04-21T13:54:24.245Z] ❌ 200796271_Mcnamara.pdf ERROR: {
-[2026-04-21T13:54:24.246Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.246Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.246Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.246Z] }
-[2026-04-21T13:54:24.246Z] ❌ 198455803_Floyd.pdf ERROR: {
-[2026-04-21T13:54:24.246Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.246Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.246Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.246Z] }
-[2026-04-21T13:54:24.265Z] ❌ 199901476_Tanner.pdf ERROR: {
-[2026-04-21T13:54:24.265Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.265Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.265Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.265Z] }
-[2026-04-21T13:54:24.265Z] 📊 Batch 28-30 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:24.265Z] 📦 Starting batch 31-33
-[2026-04-21T13:54:24.529Z] ❌ 197528764_Foster.pdf ERROR: {
-[2026-04-21T13:54:24.529Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.529Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.529Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.529Z] }
-[2026-04-21T13:54:24.529Z] ❌ 201357038_Woody.pdf ERROR: {
-[2026-04-21T13:54:24.529Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.529Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.530Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.530Z] }
-[2026-04-21T13:54:24.536Z] ❌ 197715219_Harvey.pdf ERROR: {
-[2026-04-21T13:54:24.536Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.536Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.536Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.536Z] }
-[2026-04-21T13:54:24.536Z] 📊 Batch 31-33 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:24.536Z] 📦 Starting batch 34-36
-[2026-04-21T13:54:24.803Z] ❌ 199417707_EVANS.pdf ERROR: {
-[2026-04-21T13:54:24.803Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.803Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.804Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.804Z] }
-[2026-04-21T13:54:24.804Z] ❌ 198474948_Hall.pdf ERROR: {
-[2026-04-21T13:54:24.804Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.804Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.804Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.804Z] }
-[2026-04-21T13:54:24.808Z] ❌ 201251679_Hines.pdf ERROR: {
-[2026-04-21T13:54:24.808Z]   "message": "Duplicate file",
-[2026-04-21T13:54:24.808Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:24.808Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:24.808Z] }
-[2026-04-21T13:54:24.808Z] 📊 Batch 34-36 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:24.809Z] 📦 Starting batch 37-39
-[2026-04-21T13:54:25.064Z] ❌ 198395345_Holliday.pdf ERROR: {
-[2026-04-21T13:54:25.064Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.064Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.064Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.064Z] }
-[2026-04-21T13:54:25.077Z] ❌ 197321520_Guy.pdf ERROR: {
-[2026-04-21T13:54:25.077Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.077Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.077Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.077Z] }
-[2026-04-21T13:54:25.081Z] ❌ 201595640_Mcghee.pdf ERROR: {
-[2026-04-21T13:54:25.081Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.081Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.081Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.081Z] }
-[2026-04-21T13:54:25.082Z] 📊 Batch 37-39 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:25.082Z] 📦 Starting batch 40-42
-[2026-04-21T13:54:25.335Z] ❌ 201526503_Resendez.pdf ERROR: {
-[2026-04-21T13:54:25.335Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.335Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.335Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.335Z] }
-[2026-04-21T13:54:25.336Z] ❌ 202170091_Hart.pdf ERROR: {
-[2026-04-21T13:54:25.336Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.336Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.336Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.336Z] }
-[2026-04-21T13:54:25.352Z] ❌ 201773067_Whitlow.pdf ERROR: {
-[2026-04-21T13:54:25.352Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.352Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.352Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.352Z] }
-[2026-04-21T13:54:25.352Z] 📊 Batch 40-42 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:25.352Z] 📦 Starting batch 43-45
-[2026-04-21T13:54:25.607Z] ❌ 200789917_ROGERS.pdf ERROR: {
-[2026-04-21T13:54:25.607Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.607Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.607Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.607Z] }
-[2026-04-21T13:54:25.610Z] ❌ 200788597_Strickland.pdf ERROR: {
-[2026-04-21T13:54:25.610Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.610Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.610Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.610Z] }
-[2026-04-21T13:54:25.632Z] ❌ 198736925_Drew.pdf ERROR: {
-[2026-04-21T13:54:25.632Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.632Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.632Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.632Z] }
-[2026-04-21T13:54:25.632Z] 📊 Batch 43-45 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:25.632Z] 📦 Starting batch 46-48
-[2026-04-21T13:54:25.888Z] ❌ 198059941_Odom.pdf ERROR: {
-[2026-04-21T13:54:25.888Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.888Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.889Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.889Z] }
-[2026-04-21T13:54:25.892Z] ❌ 198339403_Patrick.pdf ERROR: {
-[2026-04-21T13:54:25.892Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.892Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.892Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.892Z] }
-[2026-04-21T13:54:25.909Z] ❌ 199665510_Brown.pdf ERROR: {
-[2026-04-21T13:54:25.909Z]   "message": "Duplicate file",
-[2026-04-21T13:54:25.909Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:25.909Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:25.909Z] }
-[2026-04-21T13:54:25.909Z] 📊 Batch 46-48 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:25.909Z] 📦 Starting batch 49-51
-[2026-04-21T13:54:26.272Z] ❌ 198894828_Prince.pdf ERROR: {
-[2026-04-21T13:54:26.272Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.272Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.272Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.272Z] }
-[2026-04-21T13:54:26.272Z] ❌ 197450058_Brown.pdf ERROR: {
-[2026-04-21T13:54:26.272Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.272Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.272Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.272Z] }
-[2026-04-21T13:54:26.272Z] ❌ 199819458_Ridley.pdf ERROR: {
-[2026-04-21T13:54:26.272Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.272Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.272Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.272Z] }
-[2026-04-21T13:54:26.272Z] 📊 Batch 49-51 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.37s)
-[2026-04-21T13:54:26.272Z] 📦 Starting batch 52-54
-[2026-04-21T13:54:26.527Z] ❌ 201240940_Mcmurry.pdf ERROR: {
-[2026-04-21T13:54:26.527Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.527Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.527Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.527Z] }
-[2026-04-21T13:54:26.527Z] ❌ 201089658_Mcelravey.pdf ERROR: {
-[2026-04-21T13:54:26.527Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.527Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.527Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.527Z] }
-[2026-04-21T13:54:26.546Z] ❌ 200434610_Bohanna.pdf ERROR: {
-[2026-04-21T13:54:26.546Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.546Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.546Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.546Z] }
-[2026-04-21T13:54:26.546Z] 📊 Batch 52-54 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:26.546Z] 📦 Starting batch 55-57
-[2026-04-21T13:54:26.801Z] ❌ 198134246_Armbruster.pdf ERROR: {
-[2026-04-21T13:54:26.802Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.802Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.802Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.802Z] }
-[2026-04-21T13:54:26.803Z] ❌ 199325805_Hurtt.pdf ERROR: {
-[2026-04-21T13:54:26.803Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.803Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.803Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.803Z] }
-[2026-04-21T13:54:26.816Z] ❌ 197487104_Austin.pdf ERROR: {
-[2026-04-21T13:54:26.816Z]   "message": "Duplicate file",
-[2026-04-21T13:54:26.816Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:26.816Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:26.816Z] }
-[2026-04-21T13:54:26.816Z] 📊 Batch 55-57 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:26.816Z] 📦 Starting batch 58-60
-[2026-04-21T13:54:27.089Z] ❌ 198084846_Hammond.pdf ERROR: {
-[2026-04-21T13:54:27.090Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.090Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.090Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.090Z] }
-[2026-04-21T13:54:27.094Z] ❌ 202113035_Smith.pdf ERROR: {
-[2026-04-21T13:54:27.094Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.094Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.094Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.094Z] }
-[2026-04-21T13:54:27.094Z] ❌ 199638827_Gates.pdf ERROR: {
-[2026-04-21T13:54:27.094Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.094Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.094Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.094Z] }
-[2026-04-21T13:54:27.094Z] 📊 Batch 58-60 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:27.094Z] 📦 Starting batch 61-63
-[2026-04-21T13:54:27.400Z] ❌ 198110992_Washington.pdf ERROR: {
-[2026-04-21T13:54:27.400Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.400Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.400Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.400Z] }
-[2026-04-21T13:54:27.400Z] ❌ 202207045_Ellis.pdf ERROR: {
-[2026-04-21T13:54:27.400Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.400Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.400Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.400Z] }
-[2026-04-21T13:54:27.400Z] ❌ 200987360_Byrd.pdf ERROR: {
-[2026-04-21T13:54:27.401Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.401Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.401Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.401Z] }
-[2026-04-21T13:54:27.401Z] 📊 Batch 61-63 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:27.401Z] 📦 Starting batch 64-66
-[2026-04-21T13:54:27.659Z] ❌ 199818055_Morley.pdf ERROR: {
-[2026-04-21T13:54:27.659Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.659Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.659Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.659Z] }
-[2026-04-21T13:54:27.659Z] ❌ 201546953_Mckay.pdf ERROR: {
-[2026-04-21T13:54:27.659Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.659Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.659Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.660Z] }
-[2026-04-21T13:54:27.674Z] ❌ 197965597_Forney.pdf ERROR: {
-[2026-04-21T13:54:27.674Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.674Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.674Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.674Z] }
-[2026-04-21T13:54:27.674Z] 📊 Batch 64-66 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:27.674Z] 📦 Starting batch 67-69
-[2026-04-21T13:54:27.927Z] ❌ 201181387_SPIEGEL.pdf ERROR: {
-[2026-04-21T13:54:27.927Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.927Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.927Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.927Z] }
-[2026-04-21T13:54:27.930Z] ❌ 201724674_Robertson.pdf ERROR: {
-[2026-04-21T13:54:27.930Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.930Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.930Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.930Z] }
-[2026-04-21T13:54:27.944Z] ❌ 201495076_Ficociello.pdf ERROR: {
-[2026-04-21T13:54:27.944Z]   "message": "Duplicate file",
-[2026-04-21T13:54:27.944Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:27.944Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:27.944Z] }
-[2026-04-21T13:54:27.944Z] 📊 Batch 67-69 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:27.944Z] 📦 Starting batch 70-72
-[2026-04-21T13:54:28.196Z] ❌ 197679488_Madden.pdf ERROR: {
-[2026-04-21T13:54:28.196Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.196Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.196Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.196Z] }
-[2026-04-21T13:54:28.201Z] ❌ 199384212_Parker.pdf ERROR: {
-[2026-04-21T13:54:28.201Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.201Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.201Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.201Z] }
-[2026-04-21T13:54:28.212Z] ❌ 198865836_Sallis.pdf ERROR: {
-[2026-04-21T13:54:28.212Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.212Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.212Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.212Z] }
-[2026-04-21T13:54:28.212Z] 📊 Batch 70-72 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:28.212Z] 📦 Starting batch 73-75
-[2026-04-21T13:54:28.525Z] ❌ 197562182_Carter.pdf ERROR: {
-[2026-04-21T13:54:28.525Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.525Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.525Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.525Z] }
-[2026-04-21T13:54:28.529Z] ❌ 201501908_Pope.pdf ERROR: {
-[2026-04-21T13:54:28.529Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.529Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.529Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.529Z] }
-[2026-04-21T13:54:28.529Z] ❌ 197359408_Oakley.pdf ERROR: {
-[2026-04-21T13:54:28.529Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.529Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.529Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.529Z] }
-[2026-04-21T13:54:28.529Z] 📊 Batch 73-75 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-04-21T13:54:28.529Z] 📦 Starting batch 76-78
-[2026-04-21T13:54:28.831Z] ❌ 200368322_Gray.pdf ERROR: {
-[2026-04-21T13:54:28.831Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.831Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.831Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.831Z] }
-[2026-04-21T13:54:28.834Z] ❌ 200325402_Behm.pdf ERROR: {
-[2026-04-21T13:54:28.834Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.834Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.834Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.834Z] }
-[2026-04-21T13:54:28.834Z] ❌ 200620543_Rooks.pdf ERROR: {
-[2026-04-21T13:54:28.834Z]   "message": "Duplicate file",
-[2026-04-21T13:54:28.834Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:28.834Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:28.834Z] }
-[2026-04-21T13:54:28.834Z] 📊 Batch 76-78 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:28.834Z] 📦 Starting batch 79-81
-[2026-04-21T13:54:29.137Z] ❌ 201517801_Lowrie.pdf ERROR: {
-[2026-04-21T13:54:29.137Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.137Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.137Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.137Z] }
-[2026-04-21T13:54:29.138Z] ❌ 197962982_Smith.pdf ERROR: {
-[2026-04-21T13:54:29.138Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.138Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.138Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.138Z] }
-[2026-04-21T13:54:29.141Z] ❌ 197319673_HURT.pdf ERROR: {
-[2026-04-21T13:54:29.141Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.141Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.141Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.141Z] }
-[2026-04-21T13:54:29.141Z] 📊 Batch 79-81 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:29.142Z] 📦 Starting batch 82-84
-[2026-04-21T13:54:29.395Z] ❌ 199940374_Henderson.pdf ERROR: {
-[2026-04-21T13:54:29.395Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.395Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.395Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.395Z] }
-[2026-04-21T13:54:29.400Z] ❌ 198779500_Weathers.pdf ERROR: {
-[2026-04-21T13:54:29.400Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.400Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.400Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.401Z] }
-[2026-04-21T13:54:29.414Z] ❌ 200451418_Beatty.pdf ERROR: {
-[2026-04-21T13:54:29.414Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.414Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.414Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.414Z] }
-[2026-04-21T13:54:29.414Z] 📊 Batch 82-84 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:29.414Z] 📦 Starting batch 85-87
-[2026-04-21T13:54:29.669Z] ❌ 197378219_Montgomery.pdf ERROR: {
-[2026-04-21T13:54:29.669Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.669Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.669Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.669Z] }
-[2026-04-21T13:54:29.680Z] ❌ 201846827_Crawford.pdf ERROR: {
-[2026-04-21T13:54:29.680Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.680Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.680Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.680Z] }
-[2026-04-21T13:54:29.685Z] ❌ 198524845_Talley.pdf ERROR: {
-[2026-04-21T13:54:29.685Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.686Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.686Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.686Z] }
-[2026-04-21T13:54:29.686Z] 📊 Batch 85-87 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:29.686Z] 📦 Starting batch 88-90
-[2026-04-21T13:54:29.957Z] ❌ 197470911_Pass.pdf ERROR: {
-[2026-04-21T13:54:29.957Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.957Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.957Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.957Z] }
-[2026-04-21T13:54:29.958Z] Retry status for 198757899_Almond.pdf: { retry_count: 6 }
-[2026-04-21T13:54:29.959Z] ❌ 198757899_Almond.pdf ERROR: {
-[2026-04-21T13:54:29.959Z]   "message": "Max retries exhausted",
-[2026-04-21T13:54:29.959Z]   "code": "EXHAUSTED",
-[2026-04-21T13:54:29.959Z]   "internal": "Error: Max retries exhausted"
-[2026-04-21T13:54:29.960Z] }
-[2026-04-21T13:54:29.960Z] 🔄 Updating retry count for appointment 198757899 to 7...
-[2026-04-21T13:54:29.960Z] ❌ 199820513_Wherry.pdf ERROR: {
-[2026-04-21T13:54:29.960Z]   "message": "Duplicate file",
-[2026-04-21T13:54:29.960Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:29.960Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:29.960Z] }
-[2026-04-21T13:54:30.233Z] ✅ Retry count for appointment 198757899 updated successfully
-[2026-04-21T13:54:30.233Z] 📊 Batch 88-90 (Processed: 0, Skipped: 2, Exhausted: 1, Failed: 0, Total: 3, TimeTaken: 0.55s)
-[2026-04-21T13:54:30.233Z] 📦 Starting batch 91-93
-[2026-04-21T13:54:30.490Z] ❌ 201331808_Harris.pdf ERROR: {
-[2026-04-21T13:54:30.490Z]   "message": "Duplicate file",
-[2026-04-21T13:54:30.490Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:30.490Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:30.490Z] }
-[2026-04-21T13:54:30.497Z] ❌ 198071629_George.pdf ERROR: {
-[2026-04-21T13:54:30.497Z]   "message": "Duplicate file",
-[2026-04-21T13:54:30.497Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:30.497Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:30.497Z] }
-[2026-04-21T13:54:30.505Z] ❌ 201416152_Bearden.pdf ERROR: {
-[2026-04-21T13:54:30.505Z]   "message": "Duplicate file",
-[2026-04-21T13:54:30.505Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:30.505Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:30.505Z] }
-[2026-04-21T13:54:30.505Z] 📊 Batch 91-93 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:30.505Z] 📦 Starting batch 94-96
-[2026-04-21T13:54:30.776Z] ❌ 197954244_Markle.pdf ERROR: {
-[2026-04-21T13:54:30.776Z]   "message": "Duplicate file",
-[2026-04-21T13:54:30.776Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:30.776Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:30.776Z] }
-[2026-04-21T13:54:30.779Z] ❌ 201201462_Kelly.pdf ERROR: {
-[2026-04-21T13:54:30.779Z]   "message": "Duplicate file",
-[2026-04-21T13:54:30.779Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:30.779Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:30.780Z] }
-[2026-04-21T13:54:30.780Z] ❌ 198425400_Payne.pdf ERROR: {
-[2026-04-21T13:54:30.780Z]   "message": "Duplicate file",
-[2026-04-21T13:54:30.780Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:30.780Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:30.780Z] }
-[2026-04-21T13:54:30.780Z] 📊 Batch 94-96 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:30.780Z] 📦 Starting batch 97-99
-[2026-04-21T13:54:31.083Z] ❌ 201605401_Vickery.pdf ERROR: {
-[2026-04-21T13:54:31.083Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.083Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.083Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.083Z] }
-[2026-04-21T13:54:31.087Z] ❌ 199595388_Hobbs.pdf ERROR: {
-[2026-04-21T13:54:31.087Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.087Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.087Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.087Z] }
-[2026-04-21T13:54:31.087Z] ❌ 197565147_Crockett.pdf ERROR: {
-[2026-04-21T13:54:31.087Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.087Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.087Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.087Z] }
-[2026-04-21T13:54:31.087Z] 📊 Batch 97-99 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:31.087Z] 📦 Starting batch 100-102
-[2026-04-21T13:54:31.342Z] ❌ 197677376_West.pdf ERROR: {
-[2026-04-21T13:54:31.342Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.342Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.342Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.342Z] }
-[2026-04-21T13:54:31.350Z] ❌ 197488281_Mccormack.pdf ERROR: {
-[2026-04-21T13:54:31.350Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.350Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.350Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.351Z] }
-[2026-04-21T13:54:31.354Z] ❌ 198060510_Thorpe.pdf ERROR: {
-[2026-04-21T13:54:31.354Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.354Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.354Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.354Z] }
-[2026-04-21T13:54:31.354Z] 📊 Batch 100-102 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:31.354Z] 📦 Starting batch 103-105
-[2026-04-21T13:54:31.610Z] ❌ 197493303_Kirk.pdf ERROR: {
-[2026-04-21T13:54:31.610Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.610Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.610Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.610Z] }
-[2026-04-21T13:54:31.620Z] ❌ 202175930_Hill.pdf ERROR: {
-[2026-04-21T13:54:31.621Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.621Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.621Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.621Z] }
-[2026-04-21T13:54:31.629Z] ❌ 201261264_Pierce.pdf ERROR: {
-[2026-04-21T13:54:31.629Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.629Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.629Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.629Z] }
-[2026-04-21T13:54:31.629Z] 📊 Batch 103-105 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:31.629Z] 📦 Starting batch 106-108
-[2026-04-21T13:54:31.886Z] ❌ 197540348_Pryor.pdf ERROR: {
-[2026-04-21T13:54:31.886Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.886Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.886Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.886Z] }
-[2026-04-21T13:54:31.897Z] ❌ 197520021_Chamberlin.pdf ERROR: {
-[2026-04-21T13:54:31.898Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.898Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.898Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.898Z] }
-[2026-04-21T13:54:31.903Z] ❌ 197527123_Champlain.pdf ERROR: {
-[2026-04-21T13:54:31.903Z]   "message": "Duplicate file",
-[2026-04-21T13:54:31.903Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:31.903Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:31.903Z] }
-[2026-04-21T13:54:31.903Z] 📊 Batch 106-108 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:31.903Z] 📦 Starting batch 109-111
-[2026-04-21T13:54:32.166Z] ❌ 197560372_Grant.pdf ERROR: {
-[2026-04-21T13:54:32.166Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.167Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.167Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.167Z] }
-[2026-04-21T13:54:32.174Z] ❌ 197529982_Wegner.pdf ERROR: {
-[2026-04-21T13:54:32.174Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.174Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.174Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.174Z] }
-[2026-04-21T13:54:32.183Z] ❌ 198271377_Woodson.pdf ERROR: {
-[2026-04-21T13:54:32.183Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.183Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.183Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.183Z] }
-[2026-04-21T13:54:32.183Z] 📊 Batch 109-111 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:32.183Z] 📦 Starting batch 112-114
-[2026-04-21T13:54:32.441Z] ❌ 200536748_Arnold.pdf ERROR: {
-[2026-04-21T13:54:32.441Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.441Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.441Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.441Z] }
-[2026-04-21T13:54:32.447Z] ❌ 198649345_Stueckrath.pdf ERROR: {
-[2026-04-21T13:54:32.447Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.447Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.447Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.447Z] }
-[2026-04-21T13:54:32.454Z] ❌ 199090275_Burton.pdf ERROR: {
-[2026-04-21T13:54:32.454Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.454Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.454Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.454Z] }
-[2026-04-21T13:54:32.454Z] 📊 Batch 112-114 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:32.454Z] 📦 Starting batch 115-117
-[2026-04-21T13:54:32.712Z] ❌ 200332055_Edwards.pdf ERROR: {
-[2026-04-21T13:54:32.713Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.713Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.713Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.713Z] }
-[2026-04-21T13:54:32.717Z] ❌ 199242237_Ezzell.pdf ERROR: {
-[2026-04-21T13:54:32.717Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.717Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.717Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.717Z] }
-[2026-04-21T13:54:32.726Z] ❌ 197642963_Colloredo.pdf ERROR: {
-[2026-04-21T13:54:32.726Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.726Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.726Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.726Z] }
-[2026-04-21T13:54:32.726Z] 📊 Batch 115-117 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:32.726Z] 📦 Starting batch 118-120
-[2026-04-21T13:54:32.985Z] ❌ 198483702_Adlon.pdf ERROR: {
-[2026-04-21T13:54:32.985Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.985Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.985Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.985Z] }
-[2026-04-21T13:54:32.987Z] ❌ 200930412_Cotten.pdf ERROR: {
-[2026-04-21T13:54:32.987Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.987Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.987Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.987Z] }
-[2026-04-21T13:54:32.999Z] ❌ 198543982_Vincent.pdf ERROR: {
-[2026-04-21T13:54:32.999Z]   "message": "Duplicate file",
-[2026-04-21T13:54:32.999Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:32.999Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:32.999Z] }
-[2026-04-21T13:54:32.999Z] 📊 Batch 118-120 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:32.999Z] 📦 Starting batch 121-123
-[2026-04-21T13:54:33.335Z] ❌ 198133879_Jewell.pdf ERROR: {
-[2026-04-21T13:54:33.336Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.336Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.336Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.336Z] }
-[2026-04-21T13:54:33.338Z] ❌ 198837169_Catafygiotu.pdf ERROR: {
-[2026-04-21T13:54:33.338Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.338Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.338Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.338Z] }
-[2026-04-21T13:54:33.339Z] ❌ 199901602_Garcia_Benossi.pdf ERROR: {
-[2026-04-21T13:54:33.339Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.339Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.339Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.339Z] }
-[2026-04-21T13:54:33.339Z] 📊 Batch 121-123 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-04-21T13:54:33.339Z] 📦 Starting batch 124-126
-[2026-04-21T13:54:33.646Z] ❌ 198112023_Jackson.pdf ERROR: {
-[2026-04-21T13:54:33.646Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.646Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.646Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.646Z] }
-[2026-04-21T13:54:33.650Z] ❌ 197765006_Williams.pdf ERROR: {
-[2026-04-21T13:54:33.650Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.650Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.650Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.650Z] }
-[2026-04-21T13:54:33.650Z] ❌ 201742264_Brugioni.pdf ERROR: {
-[2026-04-21T13:54:33.650Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.650Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.650Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.650Z] }
-[2026-04-21T13:54:33.650Z] 📊 Batch 124-126 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:33.650Z] 📦 Starting batch 127-129
-[2026-04-21T13:54:33.906Z] ❌ 199593099_Hollingsworth.pdf ERROR: {
-[2026-04-21T13:54:33.907Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.907Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.907Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.907Z] }
-[2026-04-21T13:54:33.914Z] ❌ 198226943_Graves.pdf ERROR: {
-[2026-04-21T13:54:33.914Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.914Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.914Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.914Z] }
-[2026-04-21T13:54:33.922Z] ❌ 197612675_Fair.pdf ERROR: {
-[2026-04-21T13:54:33.922Z]   "message": "Duplicate file",
-[2026-04-21T13:54:33.922Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:33.922Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:33.922Z] }
-[2026-04-21T13:54:33.922Z] 📊 Batch 127-129 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:33.922Z] 📦 Starting batch 130-132
-[2026-04-21T13:54:34.256Z] ❌ 197425265_Edgeston.pdf ERROR: {
-[2026-04-21T13:54:34.256Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.256Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.256Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.256Z] }
-[2026-04-21T13:54:34.257Z] ❌ 197560286_Etheridge.pdf ERROR: {
-[2026-04-21T13:54:34.257Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.257Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.257Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.257Z] }
-[2026-04-21T13:54:34.261Z] ❌ 199356995_Hilliard.pdf ERROR: {
-[2026-04-21T13:54:34.261Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.261Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.261Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.261Z] }
-[2026-04-21T13:54:34.261Z] 📊 Batch 130-132 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-04-21T13:54:34.261Z] 📦 Starting batch 133-135
-[2026-04-21T13:54:34.527Z] ❌ 198474475_Owen.pdf ERROR: {
-[2026-04-21T13:54:34.528Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.528Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.528Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.528Z] }
-[2026-04-21T13:54:34.528Z] ❌ 199408770_Farmer.pdf ERROR: {
-[2026-04-21T13:54:34.528Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.528Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.528Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.528Z] }
-[2026-04-21T13:54:34.532Z] ❌ 198184617_Palmer.pdf ERROR: {
-[2026-04-21T13:54:34.532Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.532Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.532Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.532Z] }
-[2026-04-21T13:54:34.532Z] 📊 Batch 133-135 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:34.533Z] 📦 Starting batch 136-138
-[2026-04-21T13:54:34.792Z] ❌ 201282713_Garcia.pdf ERROR: {
-[2026-04-21T13:54:34.792Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.792Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.793Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.793Z] }
-[2026-04-21T13:54:34.801Z] ❌ 201648694_Cortese.pdf ERROR: {
-[2026-04-21T13:54:34.802Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.802Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.802Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.802Z] }
-[2026-04-21T13:54:34.806Z] ❌ 198070844_Materia.pdf ERROR: {
-[2026-04-21T13:54:34.806Z]   "message": "Duplicate file",
-[2026-04-21T13:54:34.806Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:34.806Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:34.806Z] }
-[2026-04-21T13:54:34.806Z] 📊 Batch 136-138 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:34.806Z] 📦 Starting batch 139-141
-[2026-04-21T13:54:35.076Z] ❌ 198122354_Williams.pdf ERROR: {
-[2026-04-21T13:54:35.077Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.077Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.077Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.077Z] }
-[2026-04-21T13:54:35.077Z] ❌ 200682230_Lunsford.pdf ERROR: {
-[2026-04-21T13:54:35.077Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.077Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.077Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.077Z] }
-[2026-04-21T13:54:35.080Z] ❌ 200906364_Craft.pdf ERROR: {
-[2026-04-21T13:54:35.080Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.080Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.080Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.080Z] }
-[2026-04-21T13:54:35.080Z] 📊 Batch 139-141 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:35.080Z] 📦 Starting batch 142-144
-[2026-04-21T13:54:35.336Z] ❌ 197321550_Coleman.pdf ERROR: {
-[2026-04-21T13:54:35.336Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.336Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.336Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.336Z] }
-[2026-04-21T13:54:35.345Z] ❌ 201688510_Watkins.pdf ERROR: {
-[2026-04-21T13:54:35.345Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.345Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.345Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.345Z] }
-[2026-04-21T13:54:35.351Z] ❌ 197446583_Alvarez.pdf ERROR: {
-[2026-04-21T13:54:35.352Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.352Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.352Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.352Z] }
-[2026-04-21T13:54:35.352Z] 📊 Batch 142-144 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:35.352Z] 📦 Starting batch 145-147
-[2026-04-21T13:54:35.610Z] ❌ 202046591_Wilbanks.pdf ERROR: {
-[2026-04-21T13:54:35.610Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.610Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.610Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.610Z] }
-[2026-04-21T13:54:35.617Z] ❌ 197511050_Andersen.pdf ERROR: {
-[2026-04-21T13:54:35.617Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.617Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.617Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.617Z] }
-[2026-04-21T13:54:35.625Z] ❌ 198373465_Jones.pdf ERROR: {
-[2026-04-21T13:54:35.625Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.625Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.625Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.625Z] }
-[2026-04-21T13:54:35.625Z] 📊 Batch 145-147 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:35.625Z] 📦 Starting batch 148-150
-[2026-04-21T13:54:35.882Z] ❌ 201319997_Powell.pdf ERROR: {
-[2026-04-21T13:54:35.882Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.882Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.882Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.882Z] }
-[2026-04-21T13:54:35.888Z] ❌ 199553797_Schorman.pdf ERROR: {
-[2026-04-21T13:54:35.888Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.888Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.888Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.888Z] }
-[2026-04-21T13:54:35.894Z] ❌ 197562236_Lippard.pdf ERROR: {
-[2026-04-21T13:54:35.894Z]   "message": "Duplicate file",
-[2026-04-21T13:54:35.894Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:35.894Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:35.894Z] }
-[2026-04-21T13:54:35.894Z] 📊 Batch 148-150 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:35.894Z] 📦 Starting batch 151-153
-[2026-04-21T13:54:36.203Z] ❌ 197424035_Eytchisom.pdf ERROR: {
-[2026-04-21T13:54:36.203Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.203Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.203Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.203Z] }
-[2026-04-21T13:54:36.207Z] ❌ 197379809_Friedl.pdf ERROR: {
-[2026-04-21T13:54:36.207Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.207Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.207Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.207Z] }
-[2026-04-21T13:54:36.207Z] ❌ 198597659_Allen.pdf ERROR: {
-[2026-04-21T13:54:36.207Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.207Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.207Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.207Z] }
-[2026-04-21T13:54:36.207Z] 📊 Batch 151-153 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:36.208Z] 📦 Starting batch 154-156
-[2026-04-21T13:54:36.462Z] ❌ 197574767_Ahearn.pdf ERROR: {
-[2026-04-21T13:54:36.462Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.462Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.462Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.462Z] }
-[2026-04-21T13:54:36.472Z] ❌ 197511296_Middlebrook.pdf ERROR: {
-[2026-04-21T13:54:36.472Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.472Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.472Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.472Z] }
-[2026-04-21T13:54:36.479Z] ❌ 197624057_Crone.pdf ERROR: {
-[2026-04-21T13:54:36.479Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.479Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.479Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.479Z] }
-[2026-04-21T13:54:36.479Z] 📊 Batch 154-156 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:36.479Z] 📦 Starting batch 157-159
-[2026-04-21T13:54:36.736Z] ❌ 198173740_Bosi.pdf ERROR: {
-[2026-04-21T13:54:36.736Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.736Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.736Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.736Z] }
-[2026-04-21T13:54:36.748Z] ❌ 199333657_Icenberger.pdf ERROR: {
-[2026-04-21T13:54:36.748Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.748Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.748Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.748Z] }
-[2026-04-21T13:54:36.758Z] ❌ 197567530_Wallace.pdf ERROR: {
-[2026-04-21T13:54:36.758Z]   "message": "Duplicate file",
-[2026-04-21T13:54:36.758Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:36.758Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:36.758Z] }
-[2026-04-21T13:54:36.758Z] 📊 Batch 157-159 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:36.758Z] 📦 Starting batch 160-162
-[2026-04-21T13:54:37.015Z] ❌ 200434440_Jones.pdf ERROR: {
-[2026-04-21T13:54:37.015Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.015Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.015Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.015Z] }
-[2026-04-21T13:54:37.023Z] ❌ 199025830_Eckles.pdf ERROR: {
-[2026-04-21T13:54:37.023Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.023Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.023Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.023Z] }
-[2026-04-21T13:54:37.030Z] ❌ 200455789_Ryder.pdf ERROR: {
-[2026-04-21T13:54:37.030Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.030Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.030Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.030Z] }
-[2026-04-21T13:54:37.030Z] 📊 Batch 160-162 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:37.030Z] 📦 Starting batch 163-165
-[2026-04-21T13:54:37.329Z] ❌ 197430251_Owens.pdf ERROR: {
-[2026-04-21T13:54:37.330Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.330Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.330Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.330Z] }
-[2026-04-21T13:54:37.334Z] ❌ 199697743_Mitchell.pdf ERROR: {
-[2026-04-21T13:54:37.334Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.334Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.334Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.334Z] }
-[2026-04-21T13:54:37.334Z] ❌ 201251868_Brigman.pdf ERROR: {
-[2026-04-21T13:54:37.334Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.334Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.334Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.334Z] }
-[2026-04-21T13:54:37.334Z] 📊 Batch 163-165 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.30s)
-[2026-04-21T13:54:37.334Z] 📦 Starting batch 166-168
-[2026-04-21T13:54:37.637Z] ❌ 197735813_Edwards.pdf ERROR: {
-[2026-04-21T13:54:37.637Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.637Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.637Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.637Z] }
-[2026-04-21T13:54:37.641Z] ❌ 199241664_Campbell.pdf ERROR: {
-[2026-04-21T13:54:37.641Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.642Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.642Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.642Z] }
-[2026-04-21T13:54:37.642Z] ❌ 201010963_Bishop.pdf ERROR: {
-[2026-04-21T13:54:37.642Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.642Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.642Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.642Z] }
-[2026-04-21T13:54:37.642Z] 📊 Batch 166-168 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:37.642Z] 📦 Starting batch 169-171
-[2026-04-21T13:54:37.906Z] ❌ 197636918_Southall.pdf ERROR: {
-[2026-04-21T13:54:37.906Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.906Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.906Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.906Z] }
-[2026-04-21T13:54:37.906Z] ❌ 201827311_Weatherall.pdf ERROR: {
-[2026-04-21T13:54:37.906Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.906Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.906Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.906Z] }
-[2026-04-21T13:54:37.909Z] ❌ 197443810_Bohannon.pdf ERROR: {
-[2026-04-21T13:54:37.909Z]   "message": "Duplicate file",
-[2026-04-21T13:54:37.909Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:37.909Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:37.909Z] }
-[2026-04-21T13:54:37.909Z] 📊 Batch 169-171 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:37.910Z] 📦 Starting batch 172-174
-[2026-04-21T13:54:38.167Z] ❌ 201731106_HARRIS.pdf ERROR: {
-[2026-04-21T13:54:38.167Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.167Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.167Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.167Z] }
-[2026-04-21T13:54:38.173Z] ❌ 198131608_Gordon.pdf ERROR: {
-[2026-04-21T13:54:38.173Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.174Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.174Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.174Z] }
-[2026-04-21T13:54:38.180Z] ❌ 198457515_Walker.pdf ERROR: {
-[2026-04-21T13:54:38.180Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.180Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.181Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.181Z] }
-[2026-04-21T13:54:38.181Z] 📊 Batch 172-174 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:38.181Z] 📦 Starting batch 175-177
-[2026-04-21T13:54:38.440Z] ❌ 200903401_Yates.pdf ERROR: {
-[2026-04-21T13:54:38.440Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.440Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.440Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.440Z] }
-[2026-04-21T13:54:38.447Z] ❌ 199894100_M_Steward.pdf ERROR: {
-[2026-04-21T13:54:38.447Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.447Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.447Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.447Z] }
-[2026-04-21T13:54:38.455Z] ❌ 197433417_Wolfe.pdf ERROR: {
-[2026-04-21T13:54:38.455Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.455Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.455Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.455Z] }
-[2026-04-21T13:54:38.455Z] 📊 Batch 175-177 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:38.455Z] 📦 Starting batch 178-180
-[2026-04-21T13:54:38.714Z] ❌ 201516431_Morgan.pdf ERROR: {
-[2026-04-21T13:54:38.714Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.714Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.714Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.714Z] }
-[2026-04-21T13:54:38.720Z] ❌ 200680604_Shannon.pdf ERROR: {
-[2026-04-21T13:54:38.720Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.720Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.721Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.721Z] }
-[2026-04-21T13:54:38.729Z] ❌ 197730347_Richardson.pdf ERROR: {
-[2026-04-21T13:54:38.729Z]   "message": "Duplicate file",
-[2026-04-21T13:54:38.729Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:38.729Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:38.729Z] }
-[2026-04-21T13:54:38.729Z] 📊 Batch 178-180 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:38.729Z] 📦 Starting batch 181-183
-[2026-04-21T13:54:39.029Z] ❌ 198173947_Downs.pdf ERROR: {
-[2026-04-21T13:54:39.029Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.029Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.029Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.029Z] }
-[2026-04-21T13:54:39.032Z] ❌ 198482898_Young.pdf ERROR: {
-[2026-04-21T13:54:39.032Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.032Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.032Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.032Z] }
-[2026-04-21T13:54:39.033Z] ❌ 197575038_Davis.pdf ERROR: {
-[2026-04-21T13:54:39.033Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.033Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.033Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.033Z] }
-[2026-04-21T13:54:39.033Z] 📊 Batch 181-183 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:39.033Z] 📦 Starting batch 184-186
-[2026-04-21T13:54:39.377Z] ❌ 197556125_Mccarter.pdf ERROR: {
-[2026-04-21T13:54:39.377Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.377Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.377Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.377Z] }
-[2026-04-21T13:54:39.380Z] ❌ 197555651_Bowdery.pdf ERROR: {
-[2026-04-21T13:54:39.380Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.380Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.380Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.380Z] }
-[2026-04-21T13:54:39.383Z] ❌ 197662338_Green.pdf ERROR: {
-[2026-04-21T13:54:39.383Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.383Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.383Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.383Z] }
-[2026-04-21T13:54:39.383Z] 📊 Batch 184-186 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.35s)
-[2026-04-21T13:54:39.383Z] 📦 Starting batch 187-189
-[2026-04-21T13:54:39.684Z] ❌ 198079303_Horn.pdf ERROR: {
-[2026-04-21T13:54:39.684Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.684Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.684Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.684Z] }
-[2026-04-21T13:54:39.689Z] ❌ 200432994_Patrick.pdf ERROR: {
-[2026-04-21T13:54:39.689Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.689Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.689Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.689Z] }
-[2026-04-21T13:54:39.689Z] ❌ 199665186_Strain.pdf ERROR: {
-[2026-04-21T13:54:39.689Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.689Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.689Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.689Z] }
-[2026-04-21T13:54:39.689Z] 📊 Batch 187-189 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:39.689Z] 📦 Starting batch 190-192
-[2026-04-21T13:54:39.946Z] ❌ 201242859_Baymon.pdf ERROR: {
-[2026-04-21T13:54:39.946Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.946Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.946Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.946Z] }
-[2026-04-21T13:54:39.952Z] ❌ 202316749_MATHIS.pdf ERROR: {
-[2026-04-21T13:54:39.952Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.952Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.952Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.952Z] }
-[2026-04-21T13:54:39.959Z] ❌ 198340230_Berretta.pdf ERROR: {
-[2026-04-21T13:54:39.959Z]   "message": "Duplicate file",
-[2026-04-21T13:54:39.959Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:39.960Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:39.960Z] }
-[2026-04-21T13:54:39.960Z] 📊 Batch 190-192 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:39.960Z] 📦 Starting batch 193-195
-[2026-04-21T13:54:40.217Z] ❌ 198855142_Lewis.pdf ERROR: {
-[2026-04-21T13:54:40.217Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.217Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.217Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.218Z] }
-[2026-04-21T13:54:40.224Z] ❌ 198720748_Skinner.pdf ERROR: {
-[2026-04-21T13:54:40.224Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.224Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.224Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.224Z] }
-[2026-04-21T13:54:40.231Z] ❌ 197683324_Hooks.pdf ERROR: {
-[2026-04-21T13:54:40.231Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.231Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.231Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.231Z] }
-[2026-04-21T13:54:40.231Z] 📊 Batch 193-195 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:40.231Z] 📦 Starting batch 196-198
-[2026-04-21T13:54:40.489Z] ❌ 201730793_Stanley.pdf ERROR: {
-[2026-04-21T13:54:40.490Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.490Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.490Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.490Z] }
-[2026-04-21T13:54:40.495Z] ❌ 201829451_Mancini.pdf ERROR: {
-[2026-04-21T13:54:40.495Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.495Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.495Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.495Z] }
-[2026-04-21T13:54:40.503Z] ❌ 201086872_Banks.pdf ERROR: {
-[2026-04-21T13:54:40.503Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.503Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.503Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.503Z] }
-[2026-04-21T13:54:40.503Z] 📊 Batch 196-198 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:40.504Z] 📦 Starting batch 199-201
-[2026-04-21T13:54:40.759Z] ❌ 197850778_BOOKER.pdf ERROR: {
-[2026-04-21T13:54:40.759Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.759Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.759Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.759Z] }
-[2026-04-21T13:54:40.769Z] ❌ 199901728_Golden.pdf ERROR: {
-[2026-04-21T13:54:40.769Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.769Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.769Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.769Z] }
-[2026-04-21T13:54:40.775Z] ❌ 197572035_PAINTER.pdf ERROR: {
-[2026-04-21T13:54:40.775Z]   "message": "Duplicate file",
-[2026-04-21T13:54:40.775Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:40.775Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:40.775Z] }
-[2026-04-21T13:54:40.775Z] 📊 Batch 199-201 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:40.775Z] 📦 Starting batch 202-204
-[2026-04-21T13:54:41.034Z] ❌ 201923464_STEPHENSON.pdf ERROR: {
-[2026-04-21T13:54:41.034Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.034Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.035Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.035Z] }
-[2026-04-21T13:54:41.040Z] ❌ 197562274_Stepter.pdf ERROR: {
-[2026-04-21T13:54:41.040Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.040Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.040Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.040Z] }
-[2026-04-21T13:54:41.044Z] ❌ 198236311_Fleming.pdf ERROR: {
-[2026-04-21T13:54:41.044Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.044Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.044Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.045Z] }
-[2026-04-21T13:54:41.045Z] 📊 Batch 202-204 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:41.045Z] 📦 Starting batch 205-207
-[2026-04-21T13:54:41.323Z] ❌ 197908037_Anderson.pdf ERROR: {
-[2026-04-21T13:54:41.323Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.323Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.323Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.323Z] }
-[2026-04-21T13:54:41.327Z] ❌ 198136759_Antoine.pdf ERROR: {
-[2026-04-21T13:54:41.327Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.327Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.327Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.327Z] }
-[2026-04-21T13:54:41.327Z] ❌ 200848611_Jones.pdf ERROR: {
-[2026-04-21T13:54:41.327Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.327Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.327Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.327Z] }
-[2026-04-21T13:54:41.327Z] 📊 Batch 205-207 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:41.327Z] 📦 Starting batch 208-210
-[2026-04-21T13:54:41.614Z] ❌ 201299035_Barnett.pdf ERROR: {
-[2026-04-21T13:54:41.615Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.615Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.615Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.615Z] }
-[2026-04-21T13:54:41.618Z] ❌ 201189712_Kuespert.pdf ERROR: {
-[2026-04-21T13:54:41.618Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.618Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.618Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.618Z] }
-[2026-04-21T13:54:41.618Z] ❌ 197569854_Gossman.pdf ERROR: {
-[2026-04-21T13:54:41.618Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.618Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.618Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.618Z] }
-[2026-04-21T13:54:41.618Z] 📊 Batch 208-210 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.29s)
-[2026-04-21T13:54:41.618Z] 📦 Starting batch 211-213
-[2026-04-21T13:54:41.881Z] ❌ 197768100_Jones.pdf ERROR: {
-[2026-04-21T13:54:41.881Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.881Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.881Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.881Z] }
-[2026-04-21T13:54:41.893Z] Retry status for 199639680_Darnell.pdf: { retry_count: 5 }
-[2026-04-21T13:54:41.894Z] ❌ 199639680_Darnell.pdf ERROR: {
-[2026-04-21T13:54:41.894Z]   "message": "Max retries exhausted",
-[2026-04-21T13:54:41.894Z]   "code": "EXHAUSTED",
-[2026-04-21T13:54:41.894Z]   "internal": "Error: Max retries exhausted"
-[2026-04-21T13:54:41.894Z] }
-[2026-04-21T13:54:41.894Z] 🔄 Updating retry count for appointment 199639680 to 6...
-[2026-04-21T13:54:41.895Z] ❌ 197611369_Whitehorn.pdf ERROR: {
-[2026-04-21T13:54:41.895Z]   "message": "Duplicate file",
-[2026-04-21T13:54:41.895Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:41.895Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:41.895Z] }
-[2026-04-21T13:54:42.166Z] ✅ Retry count for appointment 199639680 updated successfully
-[2026-04-21T13:54:42.166Z] 📊 Batch 211-213 (Processed: 0, Skipped: 2, Exhausted: 1, Failed: 0, Total: 3, TimeTaken: 0.55s)
-[2026-04-21T13:54:42.166Z] 📦 Starting batch 214-216
-[2026-04-21T13:54:42.422Z] ❌ 197628279_Mackey.pdf ERROR: {
-[2026-04-21T13:54:42.422Z]   "message": "Duplicate file",
-[2026-04-21T13:54:42.422Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:42.422Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:42.422Z] }
-[2026-04-21T13:54:42.431Z] ❌ 200788423_Ambrose.pdf ERROR: {
-[2026-04-21T13:54:42.432Z]   "message": "Duplicate file",
-[2026-04-21T13:54:42.432Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:42.432Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:42.432Z] }
-[2026-04-21T13:54:42.438Z] ❌ 198504228_Brehm.pdf ERROR: {
-[2026-04-21T13:54:42.438Z]   "message": "Duplicate file",
-[2026-04-21T13:54:42.438Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:42.438Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:42.439Z] }
-[2026-04-21T13:54:42.439Z] 📊 Batch 214-216 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:42.439Z] 📦 Starting batch 217-219
-[2026-04-21T13:54:42.757Z] ❌ 197934634_Bailey.pdf ERROR: {
-[2026-04-21T13:54:42.757Z]   "message": "Duplicate file",
-[2026-04-21T13:54:42.757Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:42.757Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:42.757Z] }
-[2026-04-21T13:54:42.761Z] ❌ 197623936_Darnell.pdf ERROR: {
-[2026-04-21T13:54:42.761Z]   "message": "Duplicate file",
-[2026-04-21T13:54:42.761Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:42.761Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:42.761Z] }
-[2026-04-21T13:54:42.761Z] ❌ 197683521_Mclean.pdf ERROR: {
-[2026-04-21T13:54:42.761Z]   "message": "Duplicate file",
-[2026-04-21T13:54:42.761Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:42.761Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:42.761Z] }
-[2026-04-21T13:54:42.761Z] 📊 Batch 217-219 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.32s)
-[2026-04-21T13:54:42.761Z] 📦 Starting batch 220-222
-[2026-04-21T13:54:43.016Z] ❌ 197560329_Anderson.pdf ERROR: {
-[2026-04-21T13:54:43.017Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.017Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.017Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.017Z] }
-[2026-04-21T13:54:43.029Z] ❌ 201072352_Johnson.pdf ERROR: {
-[2026-04-21T13:54:43.029Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.029Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.029Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.029Z] }
-[2026-04-21T13:54:43.033Z] ❌ 198064740_Dale.pdf ERROR: {
-[2026-04-21T13:54:43.033Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.033Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.033Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.033Z] }
-[2026-04-21T13:54:43.033Z] 📊 Batch 220-222 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:43.033Z] 📦 Starting batch 223-225
-[2026-04-21T13:54:43.297Z] ❌ 197321712_Mctaggart.pdf ERROR: {
-[2026-04-21T13:54:43.297Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.297Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.297Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.297Z] }
-[2026-04-21T13:54:43.298Z] ❌ 197380185_Fiveash.pdf ERROR: {
-[2026-04-21T13:54:43.298Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.298Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.298Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.298Z] }
-[2026-04-21T13:54:43.302Z] ❌ 199552213_Lovett.pdf ERROR: {
-[2026-04-21T13:54:43.302Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.302Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.302Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.302Z] }
-[2026-04-21T13:54:43.302Z] 📊 Batch 223-225 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:43.303Z] 📦 Starting batch 226-228
-[2026-04-21T13:54:43.571Z] ❌ 197450165_Burgess.pdf ERROR: {
-[2026-04-21T13:54:43.571Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.571Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.571Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.571Z] }
-[2026-04-21T13:54:43.574Z] ❌ 201971659_Guess.pdf ERROR: {
-[2026-04-21T13:54:43.574Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.574Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.574Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.574Z] }
-[2026-04-21T13:54:43.578Z] ❌ 197379586_Harris.pdf ERROR: {
-[2026-04-21T13:54:43.578Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.578Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.578Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.578Z] }
-[2026-04-21T13:54:43.578Z] 📊 Batch 226-228 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:43.578Z] 📦 Starting batch 229-231
-[2026-04-21T13:54:43.840Z] ❌ 197849412_Lewis.pdf ERROR: {
-[2026-04-21T13:54:43.840Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.840Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.840Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.840Z] }
-[2026-04-21T13:54:43.843Z] ❌ 197509723_Brucker.pdf ERROR: {
-[2026-04-21T13:54:43.843Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.843Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.843Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.843Z] }
-[2026-04-21T13:54:43.854Z] ❌ 199893529_Fisher.pdf ERROR: {
-[2026-04-21T13:54:43.855Z]   "message": "Duplicate file",
-[2026-04-21T13:54:43.855Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:43.855Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:43.855Z] }
-[2026-04-21T13:54:43.855Z] 📊 Batch 229-231 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:43.855Z] 📦 Starting batch 232-234
-[2026-04-21T13:54:44.111Z] ❌ 198116373_Thomas.pdf ERROR: {
-[2026-04-21T13:54:44.111Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.111Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.111Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.112Z] }
-[2026-04-21T13:54:44.119Z] ❌ 197530663_Johnson.pdf ERROR: {
-[2026-04-21T13:54:44.119Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.119Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.119Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.119Z] }
-[2026-04-21T13:54:44.122Z] ❌ 201516497_Varner.pdf ERROR: {
-[2026-04-21T13:54:44.122Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.122Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.122Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.122Z] }
-[2026-04-21T13:54:44.122Z] 📊 Batch 232-234 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:44.122Z] 📦 Starting batch 235-237
-[2026-04-21T13:54:44.380Z] ❌ 200901111_Burk.pdf ERROR: {
-[2026-04-21T13:54:44.380Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.380Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.380Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.380Z] }
-[2026-04-21T13:54:44.387Z] ❌ 199933018_Anderson.pdf ERROR: {
-[2026-04-21T13:54:44.387Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.387Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.387Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.387Z] }
-[2026-04-21T13:54:44.393Z] ❌ 199951138_Coffield.pdf ERROR: {
-[2026-04-21T13:54:44.393Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.393Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.393Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.393Z] }
-[2026-04-21T13:54:44.393Z] 📊 Batch 235-237 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:44.393Z] 📦 Starting batch 238-240
-[2026-04-21T13:54:44.648Z] ❌ 198475438_Wilson.pdf ERROR: {
-[2026-04-21T13:54:44.648Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.648Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.648Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.649Z] }
-[2026-04-21T13:54:44.657Z] ❌ 197685877_Griffin.pdf ERROR: {
-[2026-04-21T13:54:44.657Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.657Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.657Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.657Z] }
-[2026-04-21T13:54:44.664Z] ❌ 198113164_Warford.pdf ERROR: {
-[2026-04-21T13:54:44.664Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.664Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.664Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.664Z] }
-[2026-04-21T13:54:44.665Z] 📊 Batch 238-240 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:44.665Z] 📦 Starting batch 241-243
-[2026-04-21T13:54:44.922Z] ❌ 199237952_Smith.pdf ERROR: {
-[2026-04-21T13:54:44.922Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.922Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.923Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.923Z] }
-[2026-04-21T13:54:44.930Z] ❌ 201210114_Butler.pdf ERROR: {
-[2026-04-21T13:54:44.930Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.930Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.930Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.930Z] }
-[2026-04-21T13:54:44.937Z] ❌ 199469159_Griffin.pdf ERROR: {
-[2026-04-21T13:54:44.937Z]   "message": "Duplicate file",
-[2026-04-21T13:54:44.937Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:44.937Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:44.937Z] }
-[2026-04-21T13:54:44.937Z] 📊 Batch 241-243 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:44.937Z] 📦 Starting batch 244-246
-[2026-04-21T13:54:45.214Z] ❌ 197674397_Brownlee.pdf ERROR: {
-[2026-04-21T13:54:45.215Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.215Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.215Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.215Z] }
-[2026-04-21T13:54:45.218Z] ❌ 197470824_Sansom.pdf ERROR: {
-[2026-04-21T13:54:45.218Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.218Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.219Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.219Z] }
-[2026-04-21T13:54:45.219Z] ❌ 201801402_Smith.pdf ERROR: {
-[2026-04-21T13:54:45.219Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.219Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.219Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.219Z] }
-[2026-04-21T13:54:45.219Z] 📊 Batch 244-246 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:45.219Z] 📦 Starting batch 247-249
-[2026-04-21T13:54:45.476Z] ❌ 198167007_Haideri.pdf ERROR: {
-[2026-04-21T13:54:45.476Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.477Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.477Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.477Z] }
-[2026-04-21T13:54:45.485Z] ❌ 197978476_Biggs.pdf ERROR: {
-[2026-04-21T13:54:45.485Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.485Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.485Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.485Z] }
-[2026-04-21T13:54:45.489Z] ❌ 201516856_Rivers.pdf ERROR: {
-[2026-04-21T13:54:45.489Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.489Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.489Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.489Z] }
-[2026-04-21T13:54:45.489Z] 📊 Batch 247-249 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:45.489Z] 📦 Starting batch 250-252
-[2026-04-21T13:54:45.745Z] ❌ 197516611_Brown.pdf ERROR: {
-[2026-04-21T13:54:45.745Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.745Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.745Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.745Z] }
-[2026-04-21T13:54:45.754Z] ❌ 197683200_Martin.pdf ERROR: {
-[2026-04-21T13:54:45.754Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.754Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.754Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.754Z] }
-[2026-04-21T13:54:45.760Z] ❌ 197895778_Hopper.pdf ERROR: {
-[2026-04-21T13:54:45.760Z]   "message": "Duplicate file",
-[2026-04-21T13:54:45.760Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:45.760Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:45.760Z] }
-[2026-04-21T13:54:45.760Z] 📊 Batch 250-252 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:45.760Z] 📦 Starting batch 253-255
-[2026-04-21T13:54:46.033Z] ❌ 198243281_Carrasco.pdf ERROR: {
-[2026-04-21T13:54:46.033Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.033Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.033Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.034Z] }
-[2026-04-21T13:54:46.037Z] ❌ 199319420_Coker.pdf ERROR: {
-[2026-04-21T13:54:46.037Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.037Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.037Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.037Z] }
-[2026-04-21T13:54:46.037Z] ❌ 199628503_Johnston.pdf ERROR: {
-[2026-04-21T13:54:46.037Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.037Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.037Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.037Z] }
-[2026-04-21T13:54:46.037Z] 📊 Batch 253-255 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:46.037Z] 📦 Starting batch 256-258
-[2026-04-21T13:54:46.292Z] ❌ 197937106_Bomar.pdf ERROR: {
-[2026-04-21T13:54:46.293Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.293Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.293Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.293Z] }
-[2026-04-21T13:54:46.299Z] ❌ 197321870_Meyer.pdf ERROR: {
-[2026-04-21T13:54:46.299Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.299Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.299Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.299Z] }
-[2026-04-21T13:54:46.308Z] ❌ 198087267_Cromeans.pdf ERROR: {
-[2026-04-21T13:54:46.309Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.309Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.309Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.309Z] }
-[2026-04-21T13:54:46.309Z] 📊 Batch 256-258 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:46.309Z] 📦 Starting batch 259-261
-[2026-04-21T13:54:46.648Z] ❌ 201670368_Pham.pdf ERROR: {
-[2026-04-21T13:54:46.648Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.648Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.648Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.648Z] }
-[2026-04-21T13:54:46.648Z] ❌ 202172660_Hays.pdf ERROR: {
-[2026-04-21T13:54:46.648Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.649Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.649Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.649Z] }
-[2026-04-21T13:54:46.651Z] ❌ 198719645_Davis.pdf ERROR: {
-[2026-04-21T13:54:46.651Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.651Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.651Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.651Z] }
-[2026-04-21T13:54:46.651Z] 📊 Batch 259-261 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.34s)
-[2026-04-21T13:54:46.652Z] 📦 Starting batch 262-264
-[2026-04-21T13:54:46.931Z] ❌ 197523996_Bone.pdf ERROR: {
-[2026-04-21T13:54:46.931Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.931Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.931Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.931Z] }
-[2026-04-21T13:54:46.935Z] ❌ 201491732_Hourican.pdf ERROR: {
-[2026-04-21T13:54:46.935Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.935Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.935Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.935Z] }
-[2026-04-21T13:54:46.935Z] ❌ 197904322_Block.pdf ERROR: {
-[2026-04-21T13:54:46.935Z]   "message": "Duplicate file",
-[2026-04-21T13:54:46.935Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:46.935Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:46.935Z] }
-[2026-04-21T13:54:46.935Z] 📊 Batch 262-264 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.28s)
-[2026-04-21T13:54:46.935Z] 📦 Starting batch 265-267
-[2026-04-21T13:54:47.189Z] ❌ 197724544_Nunn.pdf ERROR: {
-[2026-04-21T13:54:47.189Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.190Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.190Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.190Z] }
-[2026-04-21T13:54:47.202Z] ❌ 198738959_Rainey.pdf ERROR: {
-[2026-04-21T13:54:47.202Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.202Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.202Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.202Z] }
-[2026-04-21T13:54:47.206Z] ❌ 200734091_Pampley.pdf ERROR: {
-[2026-04-21T13:54:47.206Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.206Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.206Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.206Z] }
-[2026-04-21T13:54:47.206Z] 📊 Batch 265-267 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.27s)
-[2026-04-21T13:54:47.206Z] 📦 Starting batch 268-270
-[2026-04-21T13:54:47.569Z] ❌ 199542437_Davis.pdf ERROR: {
-[2026-04-21T13:54:47.570Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.570Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.570Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.570Z] }
-[2026-04-21T13:54:47.573Z] ❌ 197379448_Lively.pdf ERROR: {
-[2026-04-21T13:54:47.573Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.573Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.573Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.573Z] }
-[2026-04-21T13:54:47.573Z] ❌ 198089878_Marsh.pdf ERROR: {
-[2026-04-21T13:54:47.574Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.574Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.574Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.574Z] }
-[2026-04-21T13:54:47.574Z] 📊 Batch 268-270 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.37s)
-[2026-04-21T13:54:47.574Z] 📦 Starting batch 271-273
-[2026-04-21T13:54:47.877Z] ❌ 197450117_Parsley.pdf ERROR: {
-[2026-04-21T13:54:47.877Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.877Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.877Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.877Z] }
-[2026-04-21T13:54:47.878Z] ❌ 197321669_Mcknight.pdf ERROR: {
-[2026-04-21T13:54:47.878Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.878Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.878Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.878Z] }
-[2026-04-21T13:54:47.881Z] ❌ 198543469_Rivera.pdf ERROR: {
-[2026-04-21T13:54:47.881Z]   "message": "Duplicate file",
-[2026-04-21T13:54:47.881Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:47.881Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:47.881Z] }
-[2026-04-21T13:54:47.881Z] 📊 Batch 271-273 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.31s)
-[2026-04-21T13:54:47.881Z] 📦 Starting batch 274-276
-[2026-04-21T13:54:48.135Z] ❌ 198136850_Isbell.pdf ERROR: {
-[2026-04-21T13:54:48.135Z]   "message": "Duplicate file",
-[2026-04-21T13:54:48.135Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:48.135Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:48.135Z] }
-[2026-04-21T13:54:48.144Z] Retry status for 199405861_Mcnair.pdf: { retry_count: 4 }
-[2026-04-21T13:54:48.145Z] ❌ 199405861_Mcnair.pdf ERROR: {
-[2026-04-21T13:54:48.146Z]   "message": "Max retries exhausted",
-[2026-04-21T13:54:48.146Z]   "code": "EXHAUSTED",
-[2026-04-21T13:54:48.146Z]   "internal": "Error: Max retries exhausted"
-[2026-04-21T13:54:48.146Z] }
-[2026-04-21T13:54:48.146Z] 🔄 Updating retry count for appointment 199405861 to 5...
-[2026-04-21T13:54:48.147Z] ❌ 198737082_Davis.pdf ERROR: {
-[2026-04-21T13:54:48.147Z]   "message": "Duplicate file",
-[2026-04-21T13:54:48.147Z]   "code": "DUPLICATE_FILE",
-[2026-04-21T13:54:48.147Z]   "internal": "Error: Duplicate file"
-[2026-04-21T13:54:48.147Z] }
-[2026-04-21T13:54:48.495Z] ✅ Retry count for appointment 199405861 updated successfully
-[2026-04-21T13:54:48.495Z] 📊 Batch 274-276 (Processed: 0, Skipped: 2, Exhausted: 1, Failed: 0, Total: 3, TimeTaken: 0.61s)
-[2026-04-21T13:54:48.495Z] 
-[2026-04-21T13:54:48.495Z] 📁 ZIP PrePostPlus Germantown/tebra_facesheets_PG_2026-04-20_7051.zip (Processed: 0, Skipped: 272, Exhausted: 4, Failed: 0, Total: 276, TimeTaken: 32.66, AvgTimeTakenPerBatch: 0.31s ,  )
-[2026-04-21T13:54:48.495Z] ✅ All PDFs in PrePostPlus Germantown/tebra_facesheets_PG_2026-04-20_7051.zip processed or exhausted - moving ZIP to processed folder
-[2026-04-21T13:54:48.495Z] 📦 Moving ZIP to processed folder: PrePostPlus Germantown/tebra_facesheets_PG_2026-04-20_7051.zip -> PrePostPlus Germantown/processed/tebra_facesheets_PG_2026-04-20_7051.zip
-[2026-04-21T13:54:49.245Z] ✅ Moved ZIP to processed folder: PrePostPlus Germantown/processed/tebra_facesheets_PG_2026-04-20_7051.zip
-[2026-04-21T13:54:49.245Z] 
-[2026-04-21T13:54:49.245Z] ==============================
-[2026-04-21T13:54:49.246Z] 📊 SUMMARY
-[2026-04-21T13:54:49.246Z] Total     : 276
-[2026-04-21T13:54:49.246Z] Processed : 0
-[2026-04-21T13:54:49.246Z] Skipped   : 272
-[2026-04-21T13:54:49.246Z] Exhausted : 4
-[2026-04-21T13:54:49.246Z] Failed    : 0
-[2026-04-21T13:54:49.246Z] Success % : 98.55%
-[2026-04-21T13:54:49.246Z] ==============================
-[2026-04-21T13:54:49.266Z] Executed 'Functions.DailyPdfProcessorJob' (Succeeded, Id=39f07a06-d250-45a1-94c5-c02880759e4f, Duration=35672ms)
-[2026-04-21T16:23:16.553Z] Language Worker Process exited. Pid=97254.
-[2026-04-21T16:23:16.554Z] node exited with code 130 (0x82). .
+[2026-04-29T11:33:36.613Z] Executing 'Functions.DailyPdfProcessorJob' (Reason='Timer fired at 2026-04-29T17:03:36.6028340+05:30', Id=2b9f3d22-1bca-4869-b065-262ca6d4799a)
+[2026-04-29T11:33:36.613Z] Trigger Details: UnscheduledInvocationReason: RunOnStartup, ScheduleStatus: {"Last":"2026-04-29T16:46:18.423405+05:30","Next":"2026-04-30T01:30:00+05:30","LastUpdated":"2026-04-29T16:46:18.423405+05:30"}
+[2026-04-29T11:33:36.638Z] 🚀 Daily PDF Processor Started
+[2026-04-29T11:33:36.638Z] 🔐 Logging in...
+[2026-04-29T11:33:36.849Z] ✅ Authenticated (userId: 3ef58454-9fc4-46a8-a8b3-761018fb5657)
+[2026-04-29T11:33:36.849Z] 📁 Connecting to blob storage 834labs-sftp
+[2026-04-29T11:33:36.849Z] ✅ Connected to 834labs-sftp
+[2026-04-29T11:33:36.849Z] 📂 Scanning folder: PrePostPlus Germantown/
+[2026-04-29T11:33:37.938Z] ⏭️ Skipping restricted folder: PrePostPlus Germantown/processed/
+[2026-04-29T11:33:37.938Z] 
+[2026-04-29T11:33:37.938Z] 📁 Processing ZIP: PrePostPlus Germantown/tebra_facesheets_PG_2026-04-20_7051.zip
+[2026-04-29T11:33:40.695Z] Host lock lease acquired by instance ID '000000000000000000000000F178F181'.
+[2026-04-29T11:34:04.286Z] 📋 ZIP metadata loaded for PrePostPlus Germantown/tebra_facesheets_PG_2026-04-20_7051.zip (appointments: 276)
+[2026-04-29T11:34:04.286Z] 📄 Found 276 PDFs
+[2026-04-29T11:34:04.286Z] 📦 Starting batch 1-3
+[2026-04-29T11:34:04.340Z] ❌ 199322221_Smith.pdf ERROR: {
+[2026-04-29T11:34:04.341Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.343Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.343Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.343Z] }
+[2026-04-29T11:34:04.417Z] ❌ 198658992_Geary.pdf ERROR: {
+[2026-04-29T11:34:04.417Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.418Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.418Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.418Z] }
+[2026-04-29T11:34:04.420Z] ❌ 199273309_Wathen.pdf ERROR: {
+[2026-04-29T11:34:04.420Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.420Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.420Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.420Z] }
+[2026-04-29T11:34:04.420Z] 📊 Batch 1-3 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.14s)
+[2026-04-29T11:34:04.420Z] 📦 Starting batch 4-6
+[2026-04-29T11:34:04.448Z] ❌ 197895648_Ellis.pdf ERROR: {
+[2026-04-29T11:34:04.448Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.448Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.448Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.448Z] }
+[2026-04-29T11:34:04.449Z] ❌ 197954137_Bartolotta.pdf ERROR: {
+[2026-04-29T11:34:04.449Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.449Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.449Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.449Z] }
+[2026-04-29T11:34:04.453Z] ❌ 199903111_Alston.pdf ERROR: {
+[2026-04-29T11:34:04.453Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.453Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.453Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.453Z] }
+[2026-04-29T11:34:04.453Z] 📊 Batch 4-6 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.03s)
+[2026-04-29T11:34:04.453Z] 📦 Starting batch 7-9
+[2026-04-29T11:34:04.460Z] ❌ 197485748_Owen.pdf ERROR: {
+[2026-04-29T11:34:04.460Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.460Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.460Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.460Z] }
+[2026-04-29T11:34:04.461Z] ❌ 201492968_Munn.pdf ERROR: {
+[2026-04-29T11:34:04.461Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.461Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.461Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.461Z] }
+[2026-04-29T11:34:04.463Z] ❌ 198091521_Brown.pdf ERROR: {
+[2026-04-29T11:34:04.463Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.463Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.463Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.464Z] }
+[2026-04-29T11:34:04.464Z] 📊 Batch 7-9 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.464Z] 📦 Starting batch 10-12
+[2026-04-29T11:34:04.467Z] ❌ 200903307_Topp.pdf ERROR: {
+[2026-04-29T11:34:04.467Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.467Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.467Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.467Z] }
+[2026-04-29T11:34:04.468Z] ❌ 198909413_Grohe.pdf ERROR: {
+[2026-04-29T11:34:04.468Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.468Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.468Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.468Z] }
+[2026-04-29T11:34:04.469Z] ❌ 199404161_Dolan.pdf ERROR: {
+[2026-04-29T11:34:04.469Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.469Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.469Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.469Z] }
+[2026-04-29T11:34:04.469Z] 📊 Batch 10-12 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.469Z] 📦 Starting batch 13-15
+[2026-04-29T11:34:04.476Z] ❌ 199529161_Sumner.pdf ERROR: {
+[2026-04-29T11:34:04.476Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.476Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.476Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.476Z] }
+[2026-04-29T11:34:04.477Z] ❌ 198385074_Fite.pdf ERROR: {
+[2026-04-29T11:34:04.477Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.477Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.477Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.477Z] }
+[2026-04-29T11:34:04.477Z] ❌ 198072182_Willis.pdf ERROR: {
+[2026-04-29T11:34:04.477Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.477Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.477Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.477Z] }
+[2026-04-29T11:34:04.477Z] 📊 Batch 13-15 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.477Z] 📦 Starting batch 16-18
+[2026-04-29T11:34:04.479Z] ❌ 198643205_Ruffin.pdf ERROR: {
+[2026-04-29T11:34:04.479Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.479Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.479Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.479Z] }
+[2026-04-29T11:34:04.479Z] ❌ 197450007_Landau.pdf ERROR: {
+[2026-04-29T11:34:04.479Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.479Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.479Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.479Z] }
+[2026-04-29T11:34:04.481Z] ❌ 201516494_Davis.pdf ERROR: {
+[2026-04-29T11:34:04.481Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.481Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.481Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.481Z] }
+[2026-04-29T11:34:04.481Z] 📊 Batch 16-18 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.481Z] 📦 Starting batch 19-21
+[2026-04-29T11:34:04.485Z] ❌ 197570974_Hopper.pdf ERROR: {
+[2026-04-29T11:34:04.485Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.486Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.486Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.486Z] }
+[2026-04-29T11:34:04.486Z] ❌ 198243396_Hanissian.pdf ERROR: {
+[2026-04-29T11:34:04.486Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.486Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.486Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.486Z] }
+[2026-04-29T11:34:04.488Z] ❌ 199361440_Herring.pdf ERROR: {
+[2026-04-29T11:34:04.488Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.488Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.488Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.488Z] }
+[2026-04-29T11:34:04.488Z] 📊 Batch 19-21 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.488Z] 📦 Starting batch 22-24
+[2026-04-29T11:34:04.493Z] ❌ 198083711_Whiddon.pdf ERROR: {
+[2026-04-29T11:34:04.493Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.493Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.493Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.493Z] }
+[2026-04-29T11:34:04.493Z] ❌ 199007481_Byer.pdf ERROR: {
+[2026-04-29T11:34:04.493Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.493Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.493Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.493Z] }
+[2026-04-29T11:34:04.493Z] ❌ 200323116_Massie.pdf ERROR: {
+[2026-04-29T11:34:04.493Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.493Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.493Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.493Z] }
+[2026-04-29T11:34:04.493Z] 📊 Batch 22-24 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.493Z] 📦 Starting batch 25-27
+[2026-04-29T11:34:04.495Z] ❌ 197321741_Allen.pdf ERROR: {
+[2026-04-29T11:34:04.495Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.495Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.495Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.495Z] }
+[2026-04-29T11:34:04.495Z] ❌ 198085283_Gaither.pdf ERROR: {
+[2026-04-29T11:34:04.495Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.495Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.495Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.495Z] }
+[2026-04-29T11:34:04.497Z] ❌ 199292147_Roland.pdf ERROR: {
+[2026-04-29T11:34:04.497Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.497Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.497Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.497Z] }
+[2026-04-29T11:34:04.497Z] 📊 Batch 25-27 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.497Z] 📦 Starting batch 28-30
+[2026-04-29T11:34:04.506Z] ❌ 199901476_Tanner.pdf ERROR: {
+[2026-04-29T11:34:04.506Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.506Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.506Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.506Z] }
+[2026-04-29T11:34:04.507Z] ❌ 200796271_Mcnamara.pdf ERROR: {
+[2026-04-29T11:34:04.507Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.507Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.507Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.507Z] }
+[2026-04-29T11:34:04.507Z] ❌ 198455803_Floyd.pdf ERROR: {
+[2026-04-29T11:34:04.507Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.507Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.507Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.507Z] }
+[2026-04-29T11:34:04.507Z] 📊 Batch 28-30 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.507Z] 📦 Starting batch 31-33
+[2026-04-29T11:34:04.520Z] ❌ 197715219_Harvey.pdf ERROR: {
+[2026-04-29T11:34:04.520Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.520Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.520Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.520Z] }
+[2026-04-29T11:34:04.520Z] ❌ 197528764_Foster.pdf ERROR: {
+[2026-04-29T11:34:04.520Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.520Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.520Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.520Z] }
+[2026-04-29T11:34:04.522Z] ❌ 201357038_Woody.pdf ERROR: {
+[2026-04-29T11:34:04.522Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.522Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.522Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.522Z] }
+[2026-04-29T11:34:04.522Z] 📊 Batch 31-33 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.522Z] 📦 Starting batch 34-36
+[2026-04-29T11:34:04.525Z] ❌ 199417707_EVANS.pdf ERROR: {
+[2026-04-29T11:34:04.525Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.525Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.525Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.525Z] }
+[2026-04-29T11:34:04.525Z] ❌ 198474948_Hall.pdf ERROR: {
+[2026-04-29T11:34:04.525Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.525Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.525Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.525Z] }
+[2026-04-29T11:34:04.526Z] ❌ 201251679_Hines.pdf ERROR: {
+[2026-04-29T11:34:04.526Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.526Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.526Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.526Z] }
+[2026-04-29T11:34:04.526Z] 📊 Batch 34-36 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.526Z] 📦 Starting batch 37-39
+[2026-04-29T11:34:04.534Z] ❌ 201595640_Mcghee.pdf ERROR: {
+[2026-04-29T11:34:04.534Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.534Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.534Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.534Z] }
+[2026-04-29T11:34:04.536Z] ❌ 197321520_Guy.pdf ERROR: {
+[2026-04-29T11:34:04.536Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.536Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.536Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.536Z] }
+[2026-04-29T11:34:04.536Z] ❌ 198395345_Holliday.pdf ERROR: {
+[2026-04-29T11:34:04.536Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.536Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.536Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.536Z] }
+[2026-04-29T11:34:04.536Z] 📊 Batch 37-39 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.536Z] 📦 Starting batch 40-42
+[2026-04-29T11:34:04.540Z] ❌ 201773067_Whitlow.pdf ERROR: {
+[2026-04-29T11:34:04.540Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.540Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.540Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.540Z] }
+[2026-04-29T11:34:04.540Z] ❌ 202170091_Hart.pdf ERROR: {
+[2026-04-29T11:34:04.540Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.540Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.540Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.540Z] }
+[2026-04-29T11:34:04.541Z] ❌ 201526503_Resendez.pdf ERROR: {
+[2026-04-29T11:34:04.541Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.541Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.541Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.541Z] }
+[2026-04-29T11:34:04.541Z] 📊 Batch 40-42 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.541Z] 📦 Starting batch 43-45
+[2026-04-29T11:34:04.543Z] ❌ 198736925_Drew.pdf ERROR: {
+[2026-04-29T11:34:04.543Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.543Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.543Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.543Z] }
+[2026-04-29T11:34:04.543Z] ❌ 200788597_Strickland.pdf ERROR: {
+[2026-04-29T11:34:04.543Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.543Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.543Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.543Z] }
+[2026-04-29T11:34:04.543Z] ❌ 200789917_ROGERS.pdf ERROR: {
+[2026-04-29T11:34:04.543Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.544Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.544Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.544Z] }
+[2026-04-29T11:34:04.544Z] 📊 Batch 43-45 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.544Z] 📦 Starting batch 46-48
+[2026-04-29T11:34:04.549Z] ❌ 199665510_Brown.pdf ERROR: {
+[2026-04-29T11:34:04.549Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.549Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.549Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.549Z] }
+[2026-04-29T11:34:04.549Z] ❌ 198059941_Odom.pdf ERROR: {
+[2026-04-29T11:34:04.549Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.549Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.549Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.549Z] }
+[2026-04-29T11:34:04.550Z] ❌ 198339403_Patrick.pdf ERROR: {
+[2026-04-29T11:34:04.550Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.550Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.550Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.550Z] }
+[2026-04-29T11:34:04.550Z] 📊 Batch 46-48 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.550Z] 📦 Starting batch 49-51
+[2026-04-29T11:34:04.557Z] ❌ 199819458_Ridley.pdf ERROR: {
+[2026-04-29T11:34:04.557Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.557Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.557Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.557Z] }
+[2026-04-29T11:34:04.557Z] ❌ 197450058_Brown.pdf ERROR: {
+[2026-04-29T11:34:04.557Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.557Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.557Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.557Z] }
+[2026-04-29T11:34:04.558Z] ❌ 198894828_Prince.pdf ERROR: {
+[2026-04-29T11:34:04.558Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.558Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.558Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.558Z] }
+[2026-04-29T11:34:04.558Z] 📊 Batch 49-51 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.558Z] 📦 Starting batch 52-54
+[2026-04-29T11:34:04.561Z] ❌ 201089658_Mcelravey.pdf ERROR: {
+[2026-04-29T11:34:04.561Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.561Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.561Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.561Z] }
+[2026-04-29T11:34:04.561Z] ❌ 201240940_Mcmurry.pdf ERROR: {
+[2026-04-29T11:34:04.561Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.561Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.561Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.561Z] }
+[2026-04-29T11:34:04.563Z] ❌ 200434610_Bohanna.pdf ERROR: {
+[2026-04-29T11:34:04.563Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.563Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.563Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.563Z] }
+[2026-04-29T11:34:04.563Z] 📊 Batch 52-54 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.563Z] 📦 Starting batch 55-57
+[2026-04-29T11:34:04.567Z] ❌ 198134246_Armbruster.pdf ERROR: {
+[2026-04-29T11:34:04.567Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.567Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.567Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.567Z] }
+[2026-04-29T11:34:04.567Z] ❌ 197487104_Austin.pdf ERROR: {
+[2026-04-29T11:34:04.567Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.567Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.567Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.567Z] }
+[2026-04-29T11:34:04.572Z] ❌ 199325805_Hurtt.pdf ERROR: {
+[2026-04-29T11:34:04.572Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.572Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.572Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.572Z] }
+[2026-04-29T11:34:04.572Z] 📊 Batch 55-57 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.572Z] 📦 Starting batch 58-60
+[2026-04-29T11:34:04.574Z] ❌ 198084846_Hammond.pdf ERROR: {
+[2026-04-29T11:34:04.574Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.574Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.574Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.574Z] }
+[2026-04-29T11:34:04.575Z] ❌ 199638827_Gates.pdf ERROR: {
+[2026-04-29T11:34:04.575Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.575Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.575Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.575Z] }
+[2026-04-29T11:34:04.576Z] ❌ 202113035_Smith.pdf ERROR: {
+[2026-04-29T11:34:04.576Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.576Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.576Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.576Z] }
+[2026-04-29T11:34:04.576Z] 📊 Batch 58-60 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.577Z] 📦 Starting batch 61-63
+[2026-04-29T11:34:04.583Z] ❌ 198110992_Washington.pdf ERROR: {
+[2026-04-29T11:34:04.583Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.583Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.583Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.583Z] }
+[2026-04-29T11:34:04.584Z] ❌ 200987360_Byrd.pdf ERROR: {
+[2026-04-29T11:34:04.584Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.584Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.584Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.584Z] }
+[2026-04-29T11:34:04.586Z] ❌ 202207045_Ellis.pdf ERROR: {
+[2026-04-29T11:34:04.586Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.586Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.586Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.586Z] }
+[2026-04-29T11:34:04.586Z] 📊 Batch 61-63 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.586Z] 📦 Starting batch 64-66
+[2026-04-29T11:34:04.589Z] ❌ 197965597_Forney.pdf ERROR: {
+[2026-04-29T11:34:04.589Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.589Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.589Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.589Z] }
+[2026-04-29T11:34:04.589Z] ❌ 201546953_Mckay.pdf ERROR: {
+[2026-04-29T11:34:04.589Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.589Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.589Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.589Z] }
+[2026-04-29T11:34:04.590Z] ❌ 199818055_Morley.pdf ERROR: {
+[2026-04-29T11:34:04.590Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.590Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.590Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.590Z] }
+[2026-04-29T11:34:04.590Z] 📊 Batch 64-66 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.590Z] 📦 Starting batch 67-69
+[2026-04-29T11:34:04.592Z] ❌ 201724674_Robertson.pdf ERROR: {
+[2026-04-29T11:34:04.593Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.593Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.593Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.593Z] }
+[2026-04-29T11:34:04.593Z] ❌ 201181387_SPIEGEL.pdf ERROR: {
+[2026-04-29T11:34:04.593Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.593Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.593Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.593Z] }
+[2026-04-29T11:34:04.594Z] ❌ 201495076_Ficociello.pdf ERROR: {
+[2026-04-29T11:34:04.594Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.594Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.594Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.594Z] }
+[2026-04-29T11:34:04.594Z] 📊 Batch 67-69 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.594Z] 📦 Starting batch 70-72
+[2026-04-29T11:34:04.597Z] ❌ 198865836_Sallis.pdf ERROR: {
+[2026-04-29T11:34:04.597Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.597Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.597Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.597Z] }
+[2026-04-29T11:34:04.597Z] ❌ 199384212_Parker.pdf ERROR: {
+[2026-04-29T11:34:04.597Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.597Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.597Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.597Z] }
+[2026-04-29T11:34:04.598Z] ❌ 197679488_Madden.pdf ERROR: {
+[2026-04-29T11:34:04.598Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.598Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.598Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.598Z] }
+[2026-04-29T11:34:04.598Z] 📊 Batch 70-72 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.598Z] 📦 Starting batch 73-75
+[2026-04-29T11:34:04.600Z] ❌ 197359408_Oakley.pdf ERROR: {
+[2026-04-29T11:34:04.600Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.600Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.600Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.600Z] }
+[2026-04-29T11:34:04.600Z] ❌ 197562182_Carter.pdf ERROR: {
+[2026-04-29T11:34:04.600Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.600Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.600Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.600Z] }
+[2026-04-29T11:34:04.601Z] ❌ 201501908_Pope.pdf ERROR: {
+[2026-04-29T11:34:04.601Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.601Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.601Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.601Z] }
+[2026-04-29T11:34:04.601Z] 📊 Batch 73-75 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.601Z] 📦 Starting batch 76-78
+[2026-04-29T11:34:04.603Z] ❌ 200620543_Rooks.pdf ERROR: {
+[2026-04-29T11:34:04.603Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.603Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.603Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.603Z] }
+[2026-04-29T11:34:04.603Z] ❌ 200325402_Behm.pdf ERROR: {
+[2026-04-29T11:34:04.603Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.603Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.603Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.603Z] }
+[2026-04-29T11:34:04.604Z] ❌ 200368322_Gray.pdf ERROR: {
+[2026-04-29T11:34:04.604Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.604Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.604Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.604Z] }
+[2026-04-29T11:34:04.604Z] 📊 Batch 76-78 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.604Z] 📦 Starting batch 79-81
+[2026-04-29T11:34:04.610Z] ❌ 197319673_HURT.pdf ERROR: {
+[2026-04-29T11:34:04.610Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.610Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.610Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.610Z] }
+[2026-04-29T11:34:04.610Z] ❌ 197962982_Smith.pdf ERROR: {
+[2026-04-29T11:34:04.610Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.610Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.610Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.610Z] }
+[2026-04-29T11:34:04.611Z] ❌ 201517801_Lowrie.pdf ERROR: {
+[2026-04-29T11:34:04.611Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.611Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.611Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.611Z] }
+[2026-04-29T11:34:04.611Z] 📊 Batch 79-81 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.611Z] 📦 Starting batch 82-84
+[2026-04-29T11:34:04.613Z] ❌ 200451418_Beatty.pdf ERROR: {
+[2026-04-29T11:34:04.613Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.613Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.613Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.613Z] }
+[2026-04-29T11:34:04.613Z] ❌ 198779500_Weathers.pdf ERROR: {
+[2026-04-29T11:34:04.613Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.613Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.613Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.613Z] }
+[2026-04-29T11:34:04.614Z] ❌ 199940374_Henderson.pdf ERROR: {
+[2026-04-29T11:34:04.614Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.614Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.614Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.614Z] }
+[2026-04-29T11:34:04.614Z] 📊 Batch 82-84 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.614Z] 📦 Starting batch 85-87
+[2026-04-29T11:34:04.616Z] ❌ 198524845_Talley.pdf ERROR: {
+[2026-04-29T11:34:04.616Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.616Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.616Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.616Z] }
+[2026-04-29T11:34:04.616Z] ❌ 197378219_Montgomery.pdf ERROR: {
+[2026-04-29T11:34:04.616Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.616Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.616Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.616Z] }
+[2026-04-29T11:34:04.618Z] ❌ 201846827_Crawford.pdf ERROR: {
+[2026-04-29T11:34:04.618Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.618Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.618Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.618Z] }
+[2026-04-29T11:34:04.618Z] 📊 Batch 85-87 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.618Z] 📦 Starting batch 88-90
+[2026-04-29T11:34:04.623Z] ❌ 197470911_Pass.pdf ERROR: {
+[2026-04-29T11:34:04.623Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.623Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.623Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.623Z] }
+[2026-04-29T11:34:04.623Z] ❌ 199820513_Wherry.pdf ERROR: {
+[2026-04-29T11:34:04.623Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.623Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.623Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.623Z] }
+[2026-04-29T11:34:04.624Z] ❌ 198757899_Almond.pdf ERROR: {
+[2026-04-29T11:34:04.624Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.624Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.624Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.624Z] }
+[2026-04-29T11:34:04.624Z] 📊 Batch 88-90 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.624Z] 📦 Starting batch 91-93
+[2026-04-29T11:34:04.626Z] ❌ 201331808_Harris.pdf ERROR: {
+[2026-04-29T11:34:04.626Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.626Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.626Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.626Z] }
+[2026-04-29T11:34:04.626Z] ❌ 201416152_Bearden.pdf ERROR: {
+[2026-04-29T11:34:04.626Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.626Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.626Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.626Z] }
+[2026-04-29T11:34:04.627Z] ❌ 198071629_George.pdf ERROR: {
+[2026-04-29T11:34:04.627Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.627Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.627Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.627Z] }
+[2026-04-29T11:34:04.627Z] 📊 Batch 91-93 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.627Z] 📦 Starting batch 94-96
+[2026-04-29T11:34:04.632Z] ❌ 198425400_Payne.pdf ERROR: {
+[2026-04-29T11:34:04.632Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.632Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.632Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.632Z] }
+[2026-04-29T11:34:04.632Z] ❌ 197954244_Markle.pdf ERROR: {
+[2026-04-29T11:34:04.632Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.632Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.632Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.632Z] }
+[2026-04-29T11:34:04.633Z] ❌ 201201462_Kelly.pdf ERROR: {
+[2026-04-29T11:34:04.633Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.633Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.633Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.633Z] }
+[2026-04-29T11:34:04.633Z] 📊 Batch 94-96 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.633Z] 📦 Starting batch 97-99
+[2026-04-29T11:34:04.636Z] ❌ 197565147_Crockett.pdf ERROR: {
+[2026-04-29T11:34:04.636Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.636Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.636Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.636Z] }
+[2026-04-29T11:34:04.636Z] ❌ 199595388_Hobbs.pdf ERROR: {
+[2026-04-29T11:34:04.636Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.636Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.636Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.636Z] }
+[2026-04-29T11:34:04.637Z] ❌ 201605401_Vickery.pdf ERROR: {
+[2026-04-29T11:34:04.637Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.637Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.637Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.637Z] }
+[2026-04-29T11:34:04.637Z] 📊 Batch 97-99 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.638Z] 📦 Starting batch 100-102
+[2026-04-29T11:34:04.639Z] ❌ 198060510_Thorpe.pdf ERROR: {
+[2026-04-29T11:34:04.639Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.639Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.639Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.639Z] }
+[2026-04-29T11:34:04.639Z] ❌ 197488281_Mccormack.pdf ERROR: {
+[2026-04-29T11:34:04.639Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.639Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.639Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.639Z] }
+[2026-04-29T11:34:04.640Z] ❌ 197677376_West.pdf ERROR: {
+[2026-04-29T11:34:04.640Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.640Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.640Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.640Z] }
+[2026-04-29T11:34:04.640Z] 📊 Batch 100-102 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.640Z] 📦 Starting batch 103-105
+[2026-04-29T11:34:04.642Z] ❌ 201261264_Pierce.pdf ERROR: {
+[2026-04-29T11:34:04.642Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.642Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.642Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.642Z] }
+[2026-04-29T11:34:04.642Z] ❌ 202175930_Hill.pdf ERROR: {
+[2026-04-29T11:34:04.642Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.642Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.642Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.642Z] }
+[2026-04-29T11:34:04.643Z] ❌ 197493303_Kirk.pdf ERROR: {
+[2026-04-29T11:34:04.643Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.643Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.643Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.643Z] }
+[2026-04-29T11:34:04.643Z] 📊 Batch 103-105 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.643Z] 📦 Starting batch 106-108
+[2026-04-29T11:34:04.645Z] ❌ 197520021_Chamberlin.pdf ERROR: {
+[2026-04-29T11:34:04.645Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.645Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.645Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.645Z] }
+[2026-04-29T11:34:04.645Z] ❌ 197527123_Champlain.pdf ERROR: {
+[2026-04-29T11:34:04.646Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.646Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.646Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.646Z] }
+[2026-04-29T11:34:04.647Z] ❌ 197540348_Pryor.pdf ERROR: {
+[2026-04-29T11:34:04.648Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.648Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.648Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.648Z] }
+[2026-04-29T11:34:04.648Z] 📊 Batch 106-108 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.648Z] 📦 Starting batch 109-111
+[2026-04-29T11:34:04.650Z] ❌ 197529982_Wegner.pdf ERROR: {
+[2026-04-29T11:34:04.650Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.650Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.650Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.650Z] }
+[2026-04-29T11:34:04.651Z] ❌ 197560372_Grant.pdf ERROR: {
+[2026-04-29T11:34:04.651Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.651Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.651Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.651Z] }
+[2026-04-29T11:34:04.651Z] ❌ 198271377_Woodson.pdf ERROR: {
+[2026-04-29T11:34:04.651Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.651Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.651Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.651Z] }
+[2026-04-29T11:34:04.651Z] 📊 Batch 109-111 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.651Z] 📦 Starting batch 112-114
+[2026-04-29T11:34:04.652Z] ❌ 199090275_Burton.pdf ERROR: {
+[2026-04-29T11:34:04.652Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.652Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.652Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.652Z] }
+[2026-04-29T11:34:04.653Z] ❌ 200536748_Arnold.pdf ERROR: {
+[2026-04-29T11:34:04.653Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.653Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.653Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.653Z] }
+[2026-04-29T11:34:04.654Z] ❌ 198649345_Stueckrath.pdf ERROR: {
+[2026-04-29T11:34:04.654Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.654Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.654Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.654Z] }
+[2026-04-29T11:34:04.654Z] 📊 Batch 112-114 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.654Z] 📦 Starting batch 115-117
+[2026-04-29T11:34:04.656Z] ❌ 200332055_Edwards.pdf ERROR: {
+[2026-04-29T11:34:04.656Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.656Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.656Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.656Z] }
+[2026-04-29T11:34:04.657Z] ❌ 199242237_Ezzell.pdf ERROR: {
+[2026-04-29T11:34:04.657Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.657Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.657Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.657Z] }
+[2026-04-29T11:34:04.657Z] ❌ 197642963_Colloredo.pdf ERROR: {
+[2026-04-29T11:34:04.657Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.657Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.657Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.657Z] }
+[2026-04-29T11:34:04.657Z] 📊 Batch 115-117 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.657Z] 📦 Starting batch 118-120
+[2026-04-29T11:34:04.660Z] ❌ 200930412_Cotten.pdf ERROR: {
+[2026-04-29T11:34:04.660Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.660Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.660Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.660Z] }
+[2026-04-29T11:34:04.660Z] ❌ 198543982_Vincent.pdf ERROR: {
+[2026-04-29T11:34:04.660Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.660Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.660Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.660Z] }
+[2026-04-29T11:34:04.661Z] ❌ 198483702_Adlon.pdf ERROR: {
+[2026-04-29T11:34:04.661Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.661Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.661Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.661Z] }
+[2026-04-29T11:34:04.661Z] 📊 Batch 118-120 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.661Z] 📦 Starting batch 121-123
+[2026-04-29T11:34:04.663Z] ❌ 198837169_Catafygiotu.pdf ERROR: {
+[2026-04-29T11:34:04.663Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.663Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.663Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.663Z] }
+[2026-04-29T11:34:04.663Z] ❌ 199901602_Garcia_Benossi.pdf ERROR: {
+[2026-04-29T11:34:04.663Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.663Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.663Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.663Z] }
+[2026-04-29T11:34:04.664Z] ❌ 198133879_Jewell.pdf ERROR: {
+[2026-04-29T11:34:04.664Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.664Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.664Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.664Z] }
+[2026-04-29T11:34:04.664Z] 📊 Batch 121-123 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.664Z] 📦 Starting batch 124-126
+[2026-04-29T11:34:04.666Z] ❌ 198112023_Jackson.pdf ERROR: {
+[2026-04-29T11:34:04.666Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.666Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.666Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.666Z] }
+[2026-04-29T11:34:04.666Z] ❌ 201742264_Brugioni.pdf ERROR: {
+[2026-04-29T11:34:04.666Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.666Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.666Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.666Z] }
+[2026-04-29T11:34:04.667Z] ❌ 197765006_Williams.pdf ERROR: {
+[2026-04-29T11:34:04.667Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.667Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.667Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.667Z] }
+[2026-04-29T11:34:04.667Z] 📊 Batch 124-126 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.667Z] 📦 Starting batch 127-129
+[2026-04-29T11:34:04.668Z] ❌ 198226943_Graves.pdf ERROR: {
+[2026-04-29T11:34:04.668Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.668Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.668Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.668Z] }
+[2026-04-29T11:34:04.668Z] ❌ 197612675_Fair.pdf ERROR: {
+[2026-04-29T11:34:04.668Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.668Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.668Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.668Z] }
+[2026-04-29T11:34:04.669Z] ❌ 199593099_Hollingsworth.pdf ERROR: {
+[2026-04-29T11:34:04.669Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.669Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.669Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.669Z] }
+[2026-04-29T11:34:04.669Z] 📊 Batch 127-129 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.669Z] 📦 Starting batch 130-132
+[2026-04-29T11:34:04.670Z] ❌ 197425265_Edgeston.pdf ERROR: {
+[2026-04-29T11:34:04.670Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.670Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.670Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.670Z] }
+[2026-04-29T11:34:04.670Z] ❌ 197560286_Etheridge.pdf ERROR: {
+[2026-04-29T11:34:04.670Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.670Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.670Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.670Z] }
+[2026-04-29T11:34:04.671Z] ❌ 199356995_Hilliard.pdf ERROR: {
+[2026-04-29T11:34:04.671Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.671Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.671Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.671Z] }
+[2026-04-29T11:34:04.671Z] 📊 Batch 130-132 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.672Z] 📦 Starting batch 133-135
+[2026-04-29T11:34:04.673Z] ❌ 199408770_Farmer.pdf ERROR: {
+[2026-04-29T11:34:04.673Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.673Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.673Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.673Z] }
+[2026-04-29T11:34:04.673Z] ❌ 198474475_Owen.pdf ERROR: {
+[2026-04-29T11:34:04.673Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.673Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.673Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.673Z] }
+[2026-04-29T11:34:04.674Z] ❌ 198184617_Palmer.pdf ERROR: {
+[2026-04-29T11:34:04.674Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.674Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.674Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.674Z] }
+[2026-04-29T11:34:04.674Z] 📊 Batch 133-135 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.675Z] 📦 Starting batch 136-138
+[2026-04-29T11:34:04.679Z] ❌ 198070844_Materia.pdf ERROR: {
+[2026-04-29T11:34:04.679Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.679Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.679Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.679Z] }
+[2026-04-29T11:34:04.679Z] ❌ 201282713_Garcia.pdf ERROR: {
+[2026-04-29T11:34:04.679Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.679Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.679Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.679Z] }
+[2026-04-29T11:34:04.679Z] ❌ 201648694_Cortese.pdf ERROR: {
+[2026-04-29T11:34:04.679Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.679Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.679Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.679Z] }
+[2026-04-29T11:34:04.679Z] 📊 Batch 136-138 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.679Z] 📦 Starting batch 139-141
+[2026-04-29T11:34:04.680Z] ❌ 198122354_Williams.pdf ERROR: {
+[2026-04-29T11:34:04.680Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.680Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.680Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.680Z] }
+[2026-04-29T11:34:04.680Z] ❌ 200906364_Craft.pdf ERROR: {
+[2026-04-29T11:34:04.680Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.680Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.680Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.680Z] }
+[2026-04-29T11:34:04.681Z] ❌ 200682230_Lunsford.pdf ERROR: {
+[2026-04-29T11:34:04.681Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.681Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.681Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.681Z] }
+[2026-04-29T11:34:04.681Z] 📊 Batch 139-141 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.681Z] 📦 Starting batch 142-144
+[2026-04-29T11:34:04.682Z] ❌ 201688510_Watkins.pdf ERROR: {
+[2026-04-29T11:34:04.682Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.682Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.682Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.682Z] }
+[2026-04-29T11:34:04.683Z] ❌ 197321550_Coleman.pdf ERROR: {
+[2026-04-29T11:34:04.683Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.683Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.683Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.683Z] }
+[2026-04-29T11:34:04.684Z] ❌ 197446583_Alvarez.pdf ERROR: {
+[2026-04-29T11:34:04.684Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.684Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.684Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.684Z] }
+[2026-04-29T11:34:04.684Z] 📊 Batch 142-144 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.684Z] 📦 Starting batch 145-147
+[2026-04-29T11:34:04.686Z] ❌ 198373465_Jones.pdf ERROR: {
+[2026-04-29T11:34:04.686Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.686Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.686Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.686Z] }
+[2026-04-29T11:34:04.686Z] ❌ 197511050_Andersen.pdf ERROR: {
+[2026-04-29T11:34:04.686Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.686Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.686Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.686Z] }
+[2026-04-29T11:34:04.686Z] ❌ 202046591_Wilbanks.pdf ERROR: {
+[2026-04-29T11:34:04.686Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.687Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.687Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.687Z] }
+[2026-04-29T11:34:04.687Z] 📊 Batch 145-147 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.687Z] 📦 Starting batch 148-150
+[2026-04-29T11:34:04.687Z] ❌ 197562236_Lippard.pdf ERROR: {
+[2026-04-29T11:34:04.688Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.688Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.688Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.688Z] }
+[2026-04-29T11:34:04.688Z] ❌ 199553797_Schorman.pdf ERROR: {
+[2026-04-29T11:34:04.688Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.688Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.688Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.688Z] }
+[2026-04-29T11:34:04.689Z] ❌ 201319997_Powell.pdf ERROR: {
+[2026-04-29T11:34:04.689Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.689Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.689Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.689Z] }
+[2026-04-29T11:34:04.689Z] 📊 Batch 148-150 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.689Z] 📦 Starting batch 151-153
+[2026-04-29T11:34:04.690Z] ❌ 198597659_Allen.pdf ERROR: {
+[2026-04-29T11:34:04.690Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.690Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.690Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.690Z] }
+[2026-04-29T11:34:04.690Z] ❌ 197379809_Friedl.pdf ERROR: {
+[2026-04-29T11:34:04.690Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.690Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.690Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.690Z] }
+[2026-04-29T11:34:04.691Z] ❌ 197424035_Eytchisom.pdf ERROR: {
+[2026-04-29T11:34:04.691Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.691Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.691Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.691Z] }
+[2026-04-29T11:34:04.691Z] 📊 Batch 151-153 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.691Z] 📦 Starting batch 154-156
+[2026-04-29T11:34:04.693Z] ❌ 197624057_Crone.pdf ERROR: {
+[2026-04-29T11:34:04.693Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.693Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.693Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.693Z] }
+[2026-04-29T11:34:04.693Z] ❌ 197511296_Middlebrook.pdf ERROR: {
+[2026-04-29T11:34:04.693Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.693Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.693Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.693Z] }
+[2026-04-29T11:34:04.694Z] ❌ 197574767_Ahearn.pdf ERROR: {
+[2026-04-29T11:34:04.694Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.694Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.694Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.694Z] }
+[2026-04-29T11:34:04.694Z] 📊 Batch 154-156 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.694Z] 📦 Starting batch 157-159
+[2026-04-29T11:34:04.700Z] ❌ 198173740_Bosi.pdf ERROR: {
+[2026-04-29T11:34:04.700Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.700Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.700Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.700Z] }
+[2026-04-29T11:34:04.701Z] ❌ 197567530_Wallace.pdf ERROR: {
+[2026-04-29T11:34:04.701Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.701Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.701Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.701Z] }
+[2026-04-29T11:34:04.701Z] ❌ 199333657_Icenberger.pdf ERROR: {
+[2026-04-29T11:34:04.701Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.701Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.701Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.701Z] }
+[2026-04-29T11:34:04.701Z] 📊 Batch 157-159 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.01s)
+[2026-04-29T11:34:04.701Z] 📦 Starting batch 160-162
+[2026-04-29T11:34:04.702Z] ❌ 199025830_Eckles.pdf ERROR: {
+[2026-04-29T11:34:04.702Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.702Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.702Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.702Z] }
+[2026-04-29T11:34:04.702Z] ❌ 200455789_Ryder.pdf ERROR: {
+[2026-04-29T11:34:04.702Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.702Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.702Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.702Z] }
+[2026-04-29T11:34:04.703Z] ❌ 200434440_Jones.pdf ERROR: {
+[2026-04-29T11:34:04.703Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.703Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.703Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.703Z] }
+[2026-04-29T11:34:04.703Z] 📊 Batch 160-162 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.703Z] 📦 Starting batch 163-165
+[2026-04-29T11:34:04.704Z] ❌ 201251868_Brigman.pdf ERROR: {
+[2026-04-29T11:34:04.704Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.704Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.704Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.704Z] }
+[2026-04-29T11:34:04.704Z] ❌ 197430251_Owens.pdf ERROR: {
+[2026-04-29T11:34:04.704Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.704Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.704Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.704Z] }
+[2026-04-29T11:34:04.705Z] ❌ 199697743_Mitchell.pdf ERROR: {
+[2026-04-29T11:34:04.705Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.705Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.705Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.705Z] }
+[2026-04-29T11:34:04.705Z] 📊 Batch 163-165 (Processed: 0, Skipped: 3, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 0.00s)
+[2026-04-29T11:34:04.705Z] 📦 Starting batch 166-168
+[2026-04-29T11:34:04.707Z] ❌ 201010963_Bishop.pdf ERROR: {
+[2026-04-29T11:34:04.707Z]   "message": "Duplicate file",
+[2026-04-29T11:34:04.707Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:34:04.707Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:34:04.707Z] }
+[2026-04-29T11:34:04.707Z] Retry status for 199241664_Campbell.pdf: { retry_count: 0 }
+[2026-04-29T11:34:04.707Z] Retry status for 197735813_Edwards.pdf: { retry_count: 0 }
+[2026-04-29T11:34:27.494Z]    ✅ Medical extraction API returned 200 OK for 197735813_Edwards.pdf
+[2026-04-29T11:34:27.495Z] ✅ File processed and claim created: 197735813_Edwards.pdf → a88e0aeb-5157-4535-9087-b7a547b5b4df -> PrePostPlus Germantown
+[2026-04-29T11:34:59.348Z]    ✅ Medical extraction API returned 200 OK for 199241664_Campbell.pdf
+[2026-04-29T11:34:59.349Z] ✅ File processed and claim created: 199241664_Campbell.pdf → be3ec39d-9ea2-41eb-bfcb-73e96ef63cdf -> PrePostPlus Germantown
+[2026-04-29T11:34:59.349Z] 📊 Batch 166-168 (Processed: 2, Skipped: 1, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 54.63s)
+[2026-04-29T11:34:59.349Z] 📦 Starting batch 169-171
+[2026-04-29T11:34:59.353Z] Retry status for 197443810_Bohannon.pdf: { retry_count: 0 }
+[2026-04-29T11:34:59.353Z] Retry status for 201827311_Weatherall.pdf: { retry_count: 0 }
+[2026-04-29T11:34:59.353Z] Retry status for 197636918_Southall.pdf: { retry_count: 0 }
+[2026-04-29T11:35:21.637Z]    ✅ Medical extraction API returned 200 OK for 197443810_Bohannon.pdf
+[2026-04-29T11:35:21.637Z] ✅ File processed and claim created: 197443810_Bohannon.pdf → 809d65eb-9410-4ae4-b6ec-801ac27db9fa -> PrePostPlus Germantown
+[2026-04-29T11:35:42.614Z]    ✅ Medical extraction API returned 200 OK for 201827311_Weatherall.pdf
+[2026-04-29T11:35:42.614Z] ✅ File processed and claim created: 201827311_Weatherall.pdf → 7662cee1-f2c6-46be-a83c-050a2e642eec -> PrePostPlus Germantown
+[2026-04-29T11:35:46.842Z]    ✅ Medical extraction API returned 200 OK for 197636918_Southall.pdf
+[2026-04-29T11:35:46.842Z] ✅ File processed and claim created: 197636918_Southall.pdf → 44cc2452-483b-4a66-ad5b-481d3be5ba82 -> PrePostPlus Germantown
+[2026-04-29T11:35:46.842Z] 📊 Batch 169-171 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 47.50s)
+[2026-04-29T11:35:46.842Z] 📦 Starting batch 172-174
+[2026-04-29T11:35:46.845Z] Retry status for 198131608_Gordon.pdf: { retry_count: 0 }
+[2026-04-29T11:35:46.846Z] Retry status for 198457515_Walker.pdf: { retry_count: 0 }
+[2026-04-29T11:35:46.847Z] Retry status for 201731106_HARRIS.pdf: { retry_count: 0 }
+[2026-04-29T11:36:05.178Z]    ✅ Medical extraction API returned 200 OK for 198457515_Walker.pdf
+[2026-04-29T11:36:05.178Z] ✅ File processed and claim created: 198457515_Walker.pdf → 6418d4c9-098a-45d9-a750-cac08e9a82dd -> PrePostPlus Germantown
+[2026-04-29T11:36:20.227Z]    ✅ Medical extraction API returned 200 OK for 198131608_Gordon.pdf
+[2026-04-29T11:36:20.227Z] ✅ File processed and claim created: 198131608_Gordon.pdf → 3e740700-12ee-4cff-87c8-cc6f7d4d954b -> PrePostPlus Germantown
+[2026-04-29T11:36:22.756Z]    ✅ Medical extraction API returned 200 OK for 201731106_HARRIS.pdf
+[2026-04-29T11:36:22.756Z] ✅ File processed and claim created: 201731106_HARRIS.pdf → 25d1e255-dcb5-4757-abb1-36d1eed352cb -> PrePostPlus Germantown
+[2026-04-29T11:36:22.761Z] 📊 Batch 172-174 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 35.92s)
+[2026-04-29T11:36:22.761Z] 📦 Starting batch 175-177
+[2026-04-29T11:36:22.763Z] Retry status for 197433417_Wolfe.pdf: { retry_count: 0 }
+[2026-04-29T11:36:22.764Z] Retry status for 199894100_M_Steward.pdf: { retry_count: 0 }
+[2026-04-29T11:36:22.771Z] ❌ 200903401_Yates.pdf ERROR: {
+[2026-04-29T11:36:22.771Z]   "message": "Duplicate file",
+[2026-04-29T11:36:22.771Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:36:22.771Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:36:22.771Z] }
+[2026-04-29T11:36:45.791Z]    ✅ Medical extraction API returned 200 OK for 197433417_Wolfe.pdf
+[2026-04-29T11:36:45.791Z] ✅ File processed and claim created: 197433417_Wolfe.pdf → 404cfbb0-7092-4b65-8202-f89a8b5569ee -> PrePostPlus Germantown
+[2026-04-29T11:36:54.077Z]    ✅ Medical extraction API returned 200 OK for 199894100_M_Steward.pdf
+[2026-04-29T11:36:54.078Z] ✅ File processed and claim created: 199894100_M_Steward.pdf → bebfe095-7a4d-4a1b-abe1-535f7042f666 -> PrePostPlus Germantown
+[2026-04-29T11:36:54.078Z] 📊 Batch 175-177 (Processed: 2, Skipped: 1, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 31.32s)
+[2026-04-29T11:36:54.078Z] 📦 Starting batch 178-180
+[2026-04-29T11:36:54.085Z] Retry status for 197730347_Richardson.pdf: { retry_count: 0 }
+[2026-04-29T11:36:54.085Z] Retry status for 201516431_Morgan.pdf: { retry_count: 0 }
+[2026-04-29T11:36:54.085Z] Retry status for 200680604_Shannon.pdf: { retry_count: 0 }
+[2026-04-29T11:37:12.295Z]    ✅ Medical extraction API returned 200 OK for 197730347_Richardson.pdf
+[2026-04-29T11:37:12.296Z] ✅ File processed and claim created: 197730347_Richardson.pdf → 884856b8-8acd-4dec-bdeb-34807237a5b6 -> PrePostPlus Germantown
+[2026-04-29T11:37:14.091Z]    ✅ Medical extraction API returned 200 OK for 200680604_Shannon.pdf
+[2026-04-29T11:37:14.091Z] ✅ File processed and claim created: 200680604_Shannon.pdf → a8b1bef9-0d61-4b40-887d-647d1bed7e8f -> PrePostPlus Germantown
+[2026-04-29T11:37:31.639Z]    ✅ Medical extraction API returned 200 OK for 201516431_Morgan.pdf
+[2026-04-29T11:37:31.639Z] ✅ File processed and claim created: 201516431_Morgan.pdf → a1f16eae-9fd6-4cf0-8a6d-c8abc5c0322d -> PrePostPlus Germantown
+[2026-04-29T11:37:31.639Z] 📊 Batch 178-180 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 37.55s)
+[2026-04-29T11:37:31.639Z] 📦 Starting batch 181-183
+[2026-04-29T11:37:31.642Z] Retry status for 197575038_Davis.pdf: { retry_count: 0 }
+[2026-04-29T11:37:31.642Z] Retry status for 198173947_Downs.pdf: { retry_count: 0 }
+[2026-04-29T11:37:31.643Z] Retry status for 198482898_Young.pdf: { retry_count: 0 }
+[2026-04-29T11:37:50.258Z]    ✅ Medical extraction API returned 200 OK for 198173947_Downs.pdf
+[2026-04-29T11:37:50.258Z] ✅ File processed and claim created: 198173947_Downs.pdf → f45f9579-8285-459d-8e79-521db731e801 -> PrePostPlus Germantown
+[2026-04-29T11:37:51.192Z]    ✅ Medical extraction API returned 200 OK for 197575038_Davis.pdf
+[2026-04-29T11:37:51.192Z] ✅ File processed and claim created: 197575038_Davis.pdf → 4f2d3ad7-3c6f-4656-aaa2-cf9661227b3a -> PrePostPlus Germantown
+[2026-04-29T11:37:55.965Z]    ✅ Medical extraction API returned 200 OK for 198482898_Young.pdf
+[2026-04-29T11:37:55.965Z] ✅ File processed and claim created: 198482898_Young.pdf → 16ca7c6b-e4bf-4d62-adb8-17fea973004f -> PrePostPlus Germantown
+[2026-04-29T11:37:55.968Z] 📊 Batch 181-183 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 24.33s)
+[2026-04-29T11:37:55.968Z] 📦 Starting batch 184-186
+[2026-04-29T11:37:55.970Z] Retry status for 197556125_Mccarter.pdf: { retry_count: 0 }
+[2026-04-29T11:37:55.970Z] Retry status for 197555651_Bowdery.pdf: { retry_count: 0 }
+[2026-04-29T11:37:55.971Z] Retry status for 197662338_Green.pdf: { retry_count: 0 }
+[2026-04-29T11:38:11.189Z]    ✅ Medical extraction API returned 200 OK for 197662338_Green.pdf
+[2026-04-29T11:38:11.189Z] ✅ File processed and claim created: 197662338_Green.pdf → ade0e8e4-88e8-4a93-b9bf-f394905feb8d -> PrePostPlus Germantown
+[2026-04-29T11:38:11.356Z]    ✅ Medical extraction API returned 200 OK for 197555651_Bowdery.pdf
+[2026-04-29T11:38:11.356Z] ✅ File processed and claim created: 197555651_Bowdery.pdf → 455a444f-f9a8-46ca-bfa4-53b92fd05b03 -> PrePostPlus Germantown
+[2026-04-29T11:38:31.318Z]    ✅ Medical extraction API returned 200 OK for 197556125_Mccarter.pdf
+[2026-04-29T11:38:31.319Z] ✅ File processed and claim created: 197556125_Mccarter.pdf → 672bd962-ce44-4eb9-a89f-c1b2d3ae0f8f -> PrePostPlus Germantown
+[2026-04-29T11:38:31.319Z] 📊 Batch 184-186 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 35.35s)
+[2026-04-29T11:38:31.319Z] 📦 Starting batch 187-189
+[2026-04-29T11:38:31.325Z] Retry status for 199665186_Strain.pdf: { retry_count: 0 }
+[2026-04-29T11:38:31.325Z] Retry status for 200432994_Patrick.pdf: { retry_count: 0 }
+[2026-04-29T11:38:31.325Z] Retry status for 198079303_Horn.pdf: { retry_count: 0 }
+[2026-04-29T11:38:52.051Z]    ✅ Medical extraction API returned 200 OK for 199665186_Strain.pdf
+[2026-04-29T11:38:52.051Z] ✅ File processed and claim created: 199665186_Strain.pdf → 4db70637-3a48-4570-bcb9-513583bc02b3 -> PrePostPlus Germantown
+[2026-04-29T11:38:53.287Z]    ✅ Medical extraction API returned 200 OK for 198079303_Horn.pdf
+[2026-04-29T11:38:53.287Z] ✅ File processed and claim created: 198079303_Horn.pdf → 9756bbda-f2c3-4dd1-a93a-9ae073d023c3 -> PrePostPlus Germantown
+[2026-04-29T11:39:11.637Z]    ✅ Medical extraction API returned 200 OK for 200432994_Patrick.pdf
+[2026-04-29T11:39:11.637Z] ✅ File processed and claim created: 200432994_Patrick.pdf → 22380e7c-fdbf-466e-9b12-f49ba23cea89 -> PrePostPlus Germantown
+[2026-04-29T11:39:11.637Z] 📊 Batch 187-189 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 40.32s)
+[2026-04-29T11:39:11.638Z] 📦 Starting batch 190-192
+[2026-04-29T11:39:11.641Z] Retry status for 198340230_Berretta.pdf: { retry_count: 0 }
+[2026-04-29T11:39:11.641Z] Retry status for 201242859_Baymon.pdf: { retry_count: 0 }
+[2026-04-29T11:39:11.641Z] Retry status for 202316749_MATHIS.pdf: { retry_count: 0 }
+[2026-04-29T11:39:31.102Z]    ✅ Medical extraction API returned 200 OK for 201242859_Baymon.pdf
+[2026-04-29T11:39:31.103Z] ✅ File processed and claim created: 201242859_Baymon.pdf → 0807af98-424d-46e9-9243-2bfb4e0bc892 -> PrePostPlus Germantown
+[2026-04-29T11:39:32.225Z]    ✅ Medical extraction API returned 200 OK for 198340230_Berretta.pdf
+[2026-04-29T11:39:32.226Z] ✅ File processed and claim created: 198340230_Berretta.pdf → 9e19b287-bd93-4feb-8d7b-75f8da745c76 -> PrePostPlus Germantown
+[2026-04-29T11:39:41.601Z]    ✅ Medical extraction API returned 200 OK for 202316749_MATHIS.pdf
+[2026-04-29T11:39:41.601Z] ✅ File processed and claim created: 202316749_MATHIS.pdf → 4e6add56-0e0d-4576-97a1-20d721bbd8bc -> PrePostPlus Germantown
+[2026-04-29T11:39:41.602Z] 📊 Batch 190-192 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 29.96s)
+[2026-04-29T11:39:41.602Z] 📦 Starting batch 193-195
+[2026-04-29T11:39:41.604Z] Retry status for 197683324_Hooks.pdf: { retry_count: 0 }
+[2026-04-29T11:39:41.605Z] Retry status for 198720748_Skinner.pdf: { retry_count: 0 }
+[2026-04-29T11:39:41.606Z] Retry status for 198855142_Lewis.pdf: { retry_count: 0 }
+[2026-04-29T11:39:55.887Z]    ✅ Medical extraction API returned 200 OK for 198720748_Skinner.pdf
+[2026-04-29T11:39:55.887Z] ✅ File processed and claim created: 198720748_Skinner.pdf → 7c3fbde3-9289-4c6e-94fb-893d8ada770a -> PrePostPlus Germantown
+[2026-04-29T11:40:02.193Z]    ✅ Medical extraction API returned 200 OK for 197683324_Hooks.pdf
+[2026-04-29T11:40:02.193Z] ✅ File processed and claim created: 197683324_Hooks.pdf → 1dc9b191-51af-4ca9-80d9-9cd30dd82852 -> PrePostPlus Germantown
+[2026-04-29T11:40:11.068Z]    ✅ Medical extraction API returned 200 OK for 198855142_Lewis.pdf
+[2026-04-29T11:40:11.068Z] ✅ File processed and claim created: 198855142_Lewis.pdf → 00af817c-53ae-440c-ac2d-cdaf99ecd496 -> PrePostPlus Germantown
+[2026-04-29T11:40:11.069Z] 📊 Batch 193-195 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 29.47s)
+[2026-04-29T11:40:11.069Z] 📦 Starting batch 196-198
+[2026-04-29T11:40:11.072Z] Retry status for 201730793_Stanley.pdf: { retry_count: 0 }
+[2026-04-29T11:40:11.072Z] Retry status for 201829451_Mancini.pdf: { retry_count: 0 }
+[2026-04-29T11:40:11.072Z] Retry status for 201086872_Banks.pdf: { retry_count: 0 }
+[2026-04-29T11:40:30.892Z]    ✅ Medical extraction API returned 200 OK for 201086872_Banks.pdf
+[2026-04-29T11:40:30.892Z] ✅ File processed and claim created: 201086872_Banks.pdf → 0f01f9b4-0b33-4a07-8572-b2f2d1c7bb33 -> PrePostPlus Germantown
+[2026-04-29T11:40:45.888Z]    ✅ Medical extraction API returned 200 OK for 201730793_Stanley.pdf
+[2026-04-29T11:40:45.888Z] ✅ File processed and claim created: 201730793_Stanley.pdf → d23cda06-8454-4685-bb65-f29db2120e27 -> PrePostPlus Germantown
+[2026-04-29T11:43:51.934Z]    ✅ Medical extraction API returned 200 OK for 201829451_Mancini.pdf
+[2026-04-29T11:43:51.934Z] ✅ File processed and claim created: 201829451_Mancini.pdf → 514c35c1-ea0d-4386-b2a0-7259eaed1819 -> PrePostPlus Germantown
+[2026-04-29T11:43:51.935Z] 📊 Batch 196-198 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 220.87s)
+[2026-04-29T11:43:51.935Z] 📦 Starting batch 199-201
+[2026-04-29T11:43:51.938Z] Retry status for 197572035_PAINTER.pdf: { retry_count: 0 }
+[2026-04-29T11:43:51.940Z] Retry status for 197850778_BOOKER.pdf: { retry_count: 0 }
+[2026-04-29T11:43:51.941Z] Retry status for 199901728_Golden.pdf: { retry_count: 0 }
+[2026-04-29T11:44:09.146Z]    ✅ Medical extraction API returned 200 OK for 197850778_BOOKER.pdf
+[2026-04-29T11:44:09.147Z] ✅ File processed and claim created: 197850778_BOOKER.pdf → b0f2cfa7-f7df-46df-a745-80393dea694f -> PrePostPlus Germantown
+[2026-04-29T11:44:11.438Z]    ✅ Medical extraction API returned 200 OK for 197572035_PAINTER.pdf
+[2026-04-29T11:44:11.438Z] ✅ File processed and claim created: 197572035_PAINTER.pdf → 8108e698-86eb-4df4-9d21-6c33ef0bf241 -> PrePostPlus Germantown
+[2026-04-29T11:44:30.961Z]    ✅ Medical extraction API returned 200 OK for 199901728_Golden.pdf
+[2026-04-29T11:44:30.962Z] ✅ File processed and claim created: 199901728_Golden.pdf → cec166a5-9989-400d-9ca6-dd2befe0361a -> PrePostPlus Germantown
+[2026-04-29T11:44:30.963Z] 📊 Batch 199-201 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 39.02s)
+[2026-04-29T11:44:30.963Z] 📦 Starting batch 202-204
+[2026-04-29T11:44:30.966Z] Retry status for 198236311_Fleming.pdf: { retry_count: 0 }
+[2026-04-29T11:44:30.967Z] Retry status for 197562274_Stepter.pdf: { retry_count: 0 }
+[2026-04-29T11:44:30.968Z] Retry status for 201923464_STEPHENSON.pdf: { retry_count: 0 }
+[2026-04-29T11:44:53.020Z]    ✅ Medical extraction API returned 200 OK for 197562274_Stepter.pdf
+[2026-04-29T11:44:53.020Z] ✅ File processed and claim created: 197562274_Stepter.pdf → bae3b10f-b587-4f85-875d-971ba53f3512 -> PrePostPlus Germantown
+[2026-04-29T11:44:55.840Z]    ✅ Medical extraction API returned 200 OK for 198236311_Fleming.pdf
+[2026-04-29T11:44:55.843Z] ✅ File processed and claim created: 198236311_Fleming.pdf → 55947d56-2106-43a7-b548-0433fa9a1548 -> PrePostPlus Germantown
+[2026-04-29T11:44:59.478Z]    ✅ Medical extraction API returned 200 OK for 201923464_STEPHENSON.pdf
+[2026-04-29T11:44:59.479Z] ✅ File processed and claim created: 201923464_STEPHENSON.pdf → 85b00999-051e-4c7e-8758-08d6427ce766 -> PrePostPlus Germantown
+[2026-04-29T11:44:59.479Z] 📊 Batch 202-204 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 28.52s)
+[2026-04-29T11:44:59.480Z] 📦 Starting batch 205-207
+[2026-04-29T11:44:59.483Z] Retry status for 200848611_Jones.pdf: { retry_count: 0 }
+[2026-04-29T11:44:59.483Z] Retry status for 197908037_Anderson.pdf: { retry_count: 0 }
+[2026-04-29T11:44:59.484Z] Retry status for 198136759_Antoine.pdf: { retry_count: 0 }
+[2026-04-29T11:45:16.505Z]    ✅ Medical extraction API returned 200 OK for 198136759_Antoine.pdf
+[2026-04-29T11:45:16.505Z] ✅ File processed and claim created: 198136759_Antoine.pdf → 1e488edd-db8b-42d0-ae7a-32129d088526 -> PrePostPlus Germantown
+[2026-04-29T11:45:31.472Z]    ✅ Medical extraction API returned 200 OK for 200848611_Jones.pdf
+[2026-04-29T11:45:31.472Z] ✅ File processed and claim created: 200848611_Jones.pdf → c1548f1c-7827-43be-aece-2b22ea974397 -> PrePostPlus Germantown
+[2026-04-29T11:45:36.036Z]    ✅ Medical extraction API returned 200 OK for 197908037_Anderson.pdf
+[2026-04-29T11:45:36.037Z] ✅ File processed and claim created: 197908037_Anderson.pdf → a8510866-73d2-4d6c-be7d-302950e743fc -> PrePostPlus Germantown
+[2026-04-29T11:45:36.037Z] 📊 Batch 205-207 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 36.56s)
+[2026-04-29T11:45:36.037Z] 📦 Starting batch 208-210
+[2026-04-29T11:45:36.039Z] Retry status for 197569854_Gossman.pdf: { retry_count: 0 }
+[2026-04-29T11:45:36.040Z] Retry status for 201189712_Kuespert.pdf: { retry_count: 0 }
+[2026-04-29T11:45:36.040Z] Retry status for 201299035_Barnett.pdf: { retry_count: 0 }
+[2026-04-29T11:45:57.133Z]    ✅ Medical extraction API returned 200 OK for 201189712_Kuespert.pdf
+[2026-04-29T11:45:57.139Z] ✅ File processed and claim created: 201189712_Kuespert.pdf → 14b7d525-07d9-475a-9523-ee7909211ea7 -> PrePostPlus Germantown
+[2026-04-29T11:45:57.203Z]    ✅ Medical extraction API returned 200 OK for 201299035_Barnett.pdf
+[2026-04-29T11:45:57.203Z] ✅ File processed and claim created: 201299035_Barnett.pdf → c25330c5-3026-463e-beee-2b8ee8ddaab6 -> PrePostPlus Germantown
+[2026-04-29T11:46:09.264Z]    ✅ Medical extraction API returned 200 OK for 197569854_Gossman.pdf
+[2026-04-29T11:46:09.264Z] ✅ File processed and claim created: 197569854_Gossman.pdf → 5d74465d-a68e-4d9b-ae43-51d546f4b85d -> PrePostPlus Germantown
+[2026-04-29T11:46:09.264Z] 📊 Batch 208-210 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 33.23s)
+[2026-04-29T11:46:09.264Z] 📦 Starting batch 211-213
+[2026-04-29T11:46:09.269Z] Retry status for 197611369_Whitehorn.pdf: { retry_count: 0 }
+[2026-04-29T11:46:09.269Z] Retry status for 197768100_Jones.pdf: { retry_count: 0 }
+[2026-04-29T11:46:09.269Z] Retry status for 199639680_Darnell.pdf: { retry_count: 0 }
+[2026-04-29T11:46:26.752Z]    ✅ Medical extraction API returned 200 OK for 197768100_Jones.pdf
+[2026-04-29T11:46:26.752Z] ✅ File processed and claim created: 197768100_Jones.pdf → 0e71f2e9-25f3-4ca7-ab26-2dd85b940ad2 -> PrePostPlus Germantown
+[2026-04-29T11:46:30.041Z]    ✅ Medical extraction API returned 200 OK for 199639680_Darnell.pdf
+[2026-04-29T11:46:30.041Z] ✅ File processed and claim created: 199639680_Darnell.pdf → 0a847825-b51f-45f3-9e6f-61cb4a4cb89e -> PrePostPlus Germantown
+[2026-04-29T11:46:42.868Z]    ✅ Medical extraction API returned 200 OK for 197611369_Whitehorn.pdf
+[2026-04-29T11:46:42.869Z] ✅ File processed and claim created: 197611369_Whitehorn.pdf → 774ad386-71a8-4f32-b15a-3c93f2071c9b -> PrePostPlus Germantown
+[2026-04-29T11:46:42.871Z] 📊 Batch 211-213 (Processed: 3, Skipped: 0, Exhausted: 0, Failed: 0, Total: 3, TimeTaken: 33.60s)
+[2026-04-29T11:46:42.871Z] 📦 Starting batch 214-216
+[2026-04-29T11:46:42.874Z] ❌ 200788423_Ambrose.pdf ERROR: {
+[2026-04-29T11:46:42.874Z]   "message": "Duplicate file",
+[2026-04-29T11:46:42.874Z]   "code": "DUPLICATE_FILE",
+[2026-04-29T11:46:42.874Z]   "internal": "Error: Duplicate file"
+[2026-04-29T11:46:42.874Z] }
+[2026-04-29T11:46:42.874Z] Retry status for 198504228_Brehm.pdf: { retry_count: 0 }
+[2026-04-29T11:46:42.874Z] Retry status for 197628279_Mackey.pdf: { retry_count: 0 }
+[2026-04-29T11:46:49.787Z] Language Worker Process exited. Pid=49634.
+[2026-04-29T11:46:49.787Z] node exited with code 130 (0x82). .
+[2026-04-29T11:46:50.057Z] Executed 'Functions.DailyPdfProcessorJob' (Failed, Id=2b9f3d22-1bca-4869-b065-262ca6d4799a, Duration=793451ms)
+[2026-04-29T11:46:50.057Z] System.Private.CoreLib: Exception while executing function: Functions.DailyPdfProcessorJob. System.Private.CoreLib: node exited with code 130 (0x82). .
+[2026-04-29T11:46:50.293Z] Worker process started and initialized.

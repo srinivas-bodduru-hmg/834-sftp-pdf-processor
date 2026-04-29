@@ -335,7 +335,8 @@ async function processPdf(
   // const sftpFilePath = buildSftpFilePath(blobName, fileName);
   const sftpFilePath = blobName;
   const rpa_appointment_id_match = fileName.trim().match(/^([0-9]+)_/);
-  const rpa_appointment_id = rpa_appointment_id_match?.[1];
+  const rpa_appointment_id =
+    manifestEntry?.appt_id ?? rpa_appointment_id_match?.[1];
   let retryStatus;
 
   try {
@@ -345,7 +346,12 @@ async function processPdf(
       throw new Error("Empty PDF");
     }
 
-    retryStatus = await checkDuplicate(log, fileName, session);
+    retryStatus = await checkDuplicate(
+      log,
+      fileName,
+      session,
+      rpa_appointment_id,
+    );
     console.log(`Retry status for ${fileName}:`, retryStatus);
     if (retryStatus.retry_count > CONFIG.MAX_RETRIES) {
       const err = new Error("Max retries exhausted");
@@ -440,10 +446,15 @@ async function processPdf(
 /*                           EXTERNAL CALLS                                   */
 /* -------------------------------------------------------------------------- */
 
-async function checkDuplicate(log, fileName, session) {
+async function checkDuplicate(log, fileName, session, manifestAppointmentID) {
   const url = `${CONFIG.BACKEND_URL}/api/trpc/medicalDuplicate.isDuplicateMedicalFile`;
 
-  const input = encodeURIComponent(JSON.stringify({ fileName }));
+  const input = encodeURIComponent(
+    JSON.stringify({
+      ...(fileName ? { fileName } : {}),
+      ...(manifestAppointmentID ? { manifestAppointmentID } : {}),
+    }),
+  );
 
   const res = await axios.get(`${url}?input=${input}`, {
     headers: {
