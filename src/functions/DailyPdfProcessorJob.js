@@ -17,6 +17,8 @@ const CONFIG = {
 
   IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
 
+  IS_RESTORE_MODE: process.env.IS_RESTORE_MODE === "true",
+
   BACKEND_EMAIL: process.env.BACKEND_EMAIL,
   BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
 
@@ -69,14 +71,19 @@ app.timer("DailyPdfProcessorJob", {
         failed: 0,
       };
 
-      // await restoreZipsFromProcessedFolder(container, log);
-      await processBlobPrefix(
-        container,
-        CONFIG.TARGET_PREFIX,
-        session,
-        stats,
-        log,
-      );
+      if (CONFIG.IS_RESTORE_MODE) {
+        log("🔄 Running in RESTORE MODE");
+        await restoreZipsFromProcessedFolder(container, log);
+      } else {
+        log("📋 Running in PROCESS MODE");
+        await processBlobPrefix(
+          container,
+          CONFIG.TARGET_PREFIX,
+          session,
+          stats,
+          log,
+        );
+      }
 
       printSummary(stats, log);
     } catch (err) {
