@@ -52,74 +52,78 @@ app.timer("collectionAgentScheduler", {
       throw error;
     }
     try {
-      const url = `${CONFIG.BACKEND_URL}/api/trpc/agent.AutoSecondaryClaimsforPatientRessponsibility`;
-      const res = await axios.post(`${url}`,{}, {
-        headers: {
-          Cookie: session.cookieHeader,
-          "Content-Type": "application/json",
-        },
-        timeout: 600000,
-      });
-    } catch (error) {
-      context.log(
-        "[Collection Agent Scheduler] ❌ Axios request failed:",
-        error.message,
-      );
-      context.log("[Collection Agent Scheduler] ❌ Axios request failed:");
-      context.log(`   Message: ${error.message}`);
-
-      // If this is an HTTP/API error (Axios)
-
-      let errorDetails = {
-        message: error.message,
-        code: error.code,
-      };
-
-      if (error.response) {
-        errorDetails.status = error.response.status;
-        errorDetails.statusText = error.response.statusText;
-        errorDetails.data = error.response.data;
-        errorDetails.headers = error.response.headers;
-      }
-
-      // If request was sent but no response
-      else if (error.request) {
-        errorDetails.request = "No response received from API";
-      }
-
-      // Other errors (coding, timeout, etc.)
-      else {
-        errorDetails.internal = error.toString();
-      }
-
-      context.log(`❌ ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
-
-      if (error.response) {
+      try {
+        const url = `${CONFIG.BACKEND_URL}/api/trpc/agent.AutoSecondaryClaimsforPatientRessponsibility`;
+        const res = await axios.post(`${url}`, {}, {
+          headers: {
+            Cookie: session.cookieHeader,
+            "Content-Type": "application/json",
+          },
+          timeout: 600000,
+        });
+      } catch (error) {
         context.log(
-          "[Collection Agent Scheduler] HTTP Error Details:",
-          error.response.status,
+          "[Collection Agent Scheduler] ❌ Axios request failed:",
+          error.message,
         );
-        context.log(`   HTTP Status: ${error.response.status}`);
-        context.log(`   Data: ${JSON.stringify(error.response.data)}`);
+        context.log("[Collection Agent Scheduler] ❌ Axios request failed:");
+        context.log(`   Message: ${error.message}`);
+
+        // If this is an HTTP/API error (Axios)
+
+        let errorDetails = {
+          message: error.message,
+          code: error.code,
+        };
+
+        if (error.response) {
+          errorDetails.status = error.response.status;
+          errorDetails.statusText = error.response.statusText;
+          errorDetails.data = error.response.data;
+          errorDetails.headers = error.response.headers;
+        }
+
+        // If request was sent but no response
+        else if (error.request) {
+          errorDetails.request = "No response received from API";
+        }
+
+        // Other errors (coding, timeout, etc.)
+        else {
+          errorDetails.internal = error.toString();
+        }
+
+        context.log(`❌ ERROR: ${JSON.stringify(errorDetails, null, 2)}`);
+
+        if (error.response) {
+          context.log(
+            "[Collection Agent Scheduler] HTTP Error Details:",
+            error.response.status,
+          );
+          context.log(`   HTTP Status: ${error.response.status}`);
+          context.log(`   Data: ${JSON.stringify(error.response.data)}`);
+        }
+
+        throw error;
       }
 
-      throw error;
+      context.log("[Collection Agent Scheduler] 📥 Axios response received");
+      context.log("[Collection Agent Scheduler] 📥 Axios response received");
+
+      context.log("[Collection Agent Scheduler] ✅ Backend login successful");
+      context.log("[Collection Agent Scheduler] ✅ Backend login successful");
+
+      const duration = Date.now() - startTime;
+      context.log(`[Collection Agent Scheduler] ✅ Job completed in ${duration}ms`);
+      context.log(`[Collection Agent Scheduler] ✅ Job completed in ${duration}ms`);
+
+      return {
+        success: true,
+        duration,
+      };
+    } finally {
+      await logout(context, session);
     }
-
-    context.log("[Collection Agent Scheduler] 📥 Axios response received");
-    context.log("[Collection Agent Scheduler] 📥 Axios response received");
-
-    context.log("[Collection Agent Scheduler] ✅ Backend login successful");
-    context.log("[Collection Agent Scheduler] ✅ Backend login successful");
-
-    const duration = Date.now() - startTime;
-    context.log(`[Collection Agent Scheduler] ✅ Job completed in ${duration}ms`);
-    context.log(`[Collection Agent Scheduler] ✅ Job completed in ${duration}ms`);
-
-    return {
-      success: true,
-      duration,
-    };
   },
 });
 
@@ -166,4 +170,29 @@ async function login(context) {
   context.log(`✅ Authenticated (userId: ${userId})`);
 
   return { cookieHeader, userId };
+}
+
+async function logout(context, session) {
+  if (!session?.cookieHeader) {
+    return;
+  }
+
+  try {
+    context.log("[Collection Agent Scheduler] 🔓 Logging out backend session...");
+
+    await axios.post(`${CONFIG.BACKEND_URL}/api/trpc/auth.logout?batch=1`, {}, {
+      headers: {
+        Cookie: session.cookieHeader,
+        "Content-Type": "application/json",
+      },
+      timeout: 600000,
+    });
+
+    context.log("[Collection Agent Scheduler] ✅ Backend logout successful");
+  } catch (error) {
+    context.log(
+      "[Collection Agent Scheduler] ⚠️ Backend logout failed:",
+      error.message,
+    );
+  }
 }

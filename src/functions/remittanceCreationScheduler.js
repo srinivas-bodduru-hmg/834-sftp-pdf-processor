@@ -8,14 +8,8 @@ const CONFIG = {
 
   IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
 
-  BACKEND_EMAIL: process.env.BACKEND_EMAIL,
-  BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
-
-  POSTING_AGENT_EMAIL: process.env.POSTING_AGENT_EMAIL,
-  POSTING_AGENT_PASSWORD: process.env.POSTING_AGENT_PASSWORD,
-
-  MEDICAL_API_URL: process.env.MEDICAL_EXTRACTION_API_URL,
-  MEDICAL_API_TOKEN: process.env.MEDICAL_EXTRACTION_API_TOKEN,
+  RCM_AGENT_EMAIL: process.env.RCM_AGENT_EMAIL,
+  RCM_AGENT_PASSWORD: process.env.RCM_AGENT_PASSWORD,
 
   ACCOUNT_URL: process.env.ACCOUNT_URL,
 
@@ -25,35 +19,34 @@ const CONFIG = {
 };
 
 // /**
-//  * Azure Function Timer Trigger: Posting Agent Scheduler
-//  * Runs every 15 minutes (0 */15 * * * *)
+//  * Azure Function Timer Trigger: RCM Agent Scheduler
 //  *
-//  * Triggers the posting agent start process:
+//  * Triggers the RCM agent start process:
 //  * 1. Authenticates with the backend
-//  * 2. Calls the posting agent scheduler API
+//  * 2. Calls the RCM agent scheduler API
 //  * 3. Handles any errors and logs the process
 //  */
-app.timer("postingAgentScheduler", {
-  // Runs every 6 hours at UTC: 00:00, 06:00, 12:00, 18:00 (5:30 AM, 11:30 AM, 5:30 PM, 11:30 PM IST)
+app.timer("remittanceCreationScheduler", {
+  // Runs every 3 hours at UTC: 00:00, 03:00, 06:00, 09:00, 12:00, 15:00, 18:00, 21:00
   // Cron format: second minute hour day month dayOfWeek
-  schedule: "0 0 */6 * * *", // Every 6 hours UTC
+  schedule: "0 0 */3 * * *", // Every 3 hours on the hour
   runOnStartup: CONFIG.IS_DEVELOPMENT,
   handler: async (myTimer, context) => {
     const startTime = Date.now();
-    context.log("[Posting Agent Scheduler] ⏰ Timer trigger fired");
-    context.log("[Posting Agent Scheduler] ⏰ Timer trigger fired");
+    context.log("[Remittance Creation Scheduler] ⏰ Timer trigger fired");
+    context.log("[Remittance Creation Scheduler] ⏰ Timer trigger fired");
     let session;
     try {
       session = await login(context);
     } catch (error) {
-      context.log("[Posting Agent Scheduler] ❌ Login failed:", error.message);
-      context.log("[Posting Agent Scheduler] ❌ Login failed:");
+      context.log("[Remittance Creation Scheduler] ❌ Login failed:", error.message);
+      context.log("[Remittance Creation Scheduler] ❌ Login failed:");
       context.log(`   Message: ${error.message}`);
       throw error;
     }
     try {
       try {
-        const url = `${CONFIG.BACKEND_URL}/api/trpc/agent.postingAgentScheduler`;
+        const url = `${CONFIG.BACKEND_URL}/api/trpc/eobDepositProcessing.processPendingDeposits`;
         const res = await axios.post(`${url}`, {}, {
           headers: {
             Cookie: session.cookieHeader,
@@ -63,10 +56,10 @@ app.timer("postingAgentScheduler", {
         });
       } catch (error) {
         context.log(
-          "[Posting Agent Scheduler] ❌ Axios request failed:",
+          "[Remittance Creation Scheduler] ❌ Axios request failed:",
           error.message,
         );
-        context.log("[Posting Agent Scheduler] ❌ Axios request failed:");
+        context.log("[Remittance Creation Scheduler] ❌ Axios request failed:");
         context.log(`   Message: ${error.message}`);
 
         // If this is an HTTP/API error (Axios)
@@ -97,7 +90,7 @@ app.timer("postingAgentScheduler", {
 
         if (error.response) {
           context.log(
-            "[Posting Agent Scheduler] HTTP Error Details:",
+            "[Remittance Creation Scheduler] HTTP Error Details:",
             error.response.status,
           );
           context.log(`   HTTP Status: ${error.response.status}`);
@@ -107,15 +100,16 @@ app.timer("postingAgentScheduler", {
         throw error;
       }
 
-      context.log("[Posting Agent Scheduler] 📥 Axios response received");
-      context.log("[Posting Agent Scheduler] 📥 Axios response received");
+      context.log("[Remittance Creation Scheduler] 📥 Axios response received");
+      context.log("[Remittance Creation Scheduler] 📥 Axios response received");
+      context.log("[Remittance Creation Scheduler] 📥 Axios response received");
 
-      context.log("[Posting Agent Scheduler] ✅ Backend login successful");
-      context.log("[Posting Agent Scheduler] ✅ Backend login successful");
+      context.log("[Remittance Creation Scheduler] ✅ Backend login successful");
+      context.log("[Remittance Creation Scheduler] ✅ Backend login successful");
 
       const duration = Date.now() - startTime;
-      context.log(`[Posting Agent Scheduler] ✅ Job completed in ${duration}ms`);
-      context.log(`[Posting Agent Scheduler] ✅ Job completed in ${duration}ms`);
+      context.log(`[Remittance Creation Scheduler] ✅ Job completed in ${duration}ms`);
+      context.log(`[Remittance Creation Scheduler] ✅ Job completed in ${duration}ms`);
 
       return {
         success: true,
@@ -128,14 +122,14 @@ app.timer("postingAgentScheduler", {
 });
 
 async function login(context) {
-  context.log("🔐 Logging in with Posting Agent credentials...");
+  context.log("🔐 Logging in with RCM Agent credentials...");
 
   const res = await axios.post(
     `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
     {
       0: {
-        email: CONFIG.POSTING_AGENT_EMAIL,
-        password: CONFIG.POSTING_AGENT_PASSWORD,
+        email: CONFIG.RCM_AGENT_EMAIL,
+        password: CONFIG.RCM_AGENT_PASSWORD,
       },
     },
     { withCredentials: true, timeout: 600000 },
@@ -178,7 +172,7 @@ async function logout(context, session) {
   }
 
   try {
-    context.log("[Posting Agent Scheduler] 🔓 Logging out backend session...");
+    context.log("[Remittance Creation Scheduler] 🔓 Logging out backend session...");
 
     await axios.post(`${CONFIG.BACKEND_URL}/api/trpc/auth.logout?batch=1`, {}, {
       headers: {
@@ -188,10 +182,10 @@ async function logout(context, session) {
       timeout: 600000,
     });
 
-    context.log("[Posting Agent Scheduler] ✅ Backend logout successful");
+    context.log("[Remittance Creation Scheduler] ✅ Backend logout successful");
   } catch (error) {
     context.log(
-      "[Posting Agent Scheduler] ⚠️ Backend logout failed:",
+      "[Remittance Creation Scheduler] ⚠️ Backend logout failed:",
       error.message,
     );
   }
