@@ -8,8 +8,8 @@ const CONFIG = {
 
   IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
 
-  RCM_AGENT_EMAIL: process.env.RCM_AGENT_EMAIL,
-  RCM_AGENT_PASSWORD: process.env.RCM_AGENT_PASSWORD,
+  RCM_SYSTEM_EMAIL: process.env.RCM_SYSTEM_EMAIL,
+  RCM_SYSTEM_PASSWORD: process.env.RCM_SYSTEM_PASSWORD,
 
   ACCOUNT_URL: process.env.ACCOUNT_URL,
 
@@ -122,14 +122,14 @@ app.timer("remittanceCreationScheduler", {
 });
 
 async function login(context) {
-  context.log("🔐 Logging in with RCM Agent credentials...");
+  context.log("🔐 Logging in with RCM System credentials...");
 
   const res = await axios.post(
     `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
     {
       0: {
-        email: CONFIG.RCM_AGENT_EMAIL,
-        password: CONFIG.RCM_AGENT_PASSWORD,
+        email: CONFIG.RCM_SYSTEM_EMAIL,
+        password: CONFIG.RCM_SYSTEM_PASSWORD,
       },
     },
     { withCredentials: true, timeout: 600000 },
