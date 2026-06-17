@@ -4,8 +4,8 @@ const jwt = require("jsonwebtoken");
 
 const CONFIG = {
   BACKEND_URL: process.env.BACKEND_API_URL,
-  BACKEND_EMAIL: process.env.BACKEND_EMAIL,
-  BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
+  RCM_SYSTEM_EMAIL: process.env.RCM_SYSTEM_EMAIL,
+  RCM_SYSTEM_PASSWORD: process.env.RCM_SYSTEM_PASSWORD,
   IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
   RETRIEVAL_DATE_RANGE: Number(process.env.RETRIEVAL_DATE_RANGE || 1),
   TEBRA_API_URL: process.env.TEBRA_API_URL || "http://10.0.0.6:8010/run-tebra",
@@ -112,8 +112,8 @@ async function login(log) {
     `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
     {
       0: {
-        email: CONFIG.BACKEND_EMAIL,
-        password: CONFIG.BACKEND_PASSWORD,
+        email: CONFIG.RCM_SYSTEM_EMAIL,
+        password: CONFIG.RCM_SYSTEM_PASSWORD,
       },
     },
     { withCredentials: true, timeout: 600000 },

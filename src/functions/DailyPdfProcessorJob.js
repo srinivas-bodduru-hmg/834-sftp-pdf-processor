@@ -19,8 +19,8 @@ const CONFIG = {
 
   IS_RESTORE_MODE: process.env.IS_RESTORE_MODE === "true",
 
-  BACKEND_EMAIL: process.env.BACKEND_EMAIL,
-  BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
+  RCM_SYSTEM_EMAIL: process.env.RCM_SYSTEM_EMAIL,
+  RCM_SYSTEM_PASSWORD: process.env.RCM_SYSTEM_PASSWORD,
 
   ACCOUNT_URL: process.env.ACCOUNT_URL,
   STORAGE_CONNECTION_STRING: process.env.AzureWebJobsStorage,
@@ -111,8 +111,8 @@ async function login(log) {
     `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
     {
       0: {
-        email: CONFIG.BACKEND_EMAIL,
-        password: CONFIG.BACKEND_PASSWORD,
+        email: CONFIG.RCM_SYSTEM_EMAIL,
+        password: CONFIG.RCM_SYSTEM_PASSWORD,
       },
     },
     { withCredentials: true, timeout: 600000 },
@@ -817,8 +817,8 @@ function buildSftpFilePath(blobName, fileName) {
 
 function validateConfig() {
   const required = [
-    "BACKEND_EMAIL",
-    "BACKEND_PASSWORD",
+    "RCM_SYSTEM_EMAIL",
+    "RCM_SYSTEM_PASSWORD",
     "ACCOUNT_URL",
     "BACKEND_URL",
   ];

@@ -8,8 +8,8 @@ const CONFIG = {
 
   IS_DEVELOPMENT: process.env.IS_DEVELOPMENT === "true",
 
-  BACKEND_EMAIL: process.env.BACKEND_EMAIL,
-  BACKEND_PASSWORD: process.env.BACKEND_PASSWORD,
+  RCM_SYSTEM_EMAIL: process.env.RCM_SYSTEM_EMAIL,
+  RCM_SYSTEM_PASSWORD: process.env.RCM_SYSTEM_PASSWORD,
 
   MEDICAL_API_URL: process.env.MEDICAL_EXTRACTION_API_URL,
   MEDICAL_API_TOKEN: process.env.MEDICAL_EXTRACTION_API_TOKEN,
@@ -121,8 +121,8 @@ async function login(context) {
     `${CONFIG.BACKEND_URL}/api/trpc/auth.login?batch=1`,
     {
       0: {
-        email: CONFIG.BACKEND_EMAIL,
-        password: CONFIG.BACKEND_PASSWORD,
+        email: CONFIG.RCM_SYSTEM_EMAIL,
+        password: CONFIG.RCM_SYSTEM_PASSWORD,
       },
     },
     { withCredentials: true, timeout: 600000 },
