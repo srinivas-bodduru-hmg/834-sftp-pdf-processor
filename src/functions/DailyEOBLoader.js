@@ -18,7 +18,7 @@ const CONFIG = {
 /**
  * 7 AM Job - Triggers EOB pipeline
  */
-app.timer("dailyEOBLoader", {
+app.timer("DailyEOBLoader", {
   // Runs daily at 7:00 AM UTC (12:30 PM IST - India Standard Time)
   // Cron format: second minute hour day month dayOfWeek
   schedule: "0 0 7 * * *",
